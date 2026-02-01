@@ -197,8 +197,6 @@ yt-live-chat-text-message-renderer[is-highlighted] {
   width: fit-content !important;
   max-width: 95% !important;
 
-  /* CẬP NHẬT: Kéo dài khung chat tương ứng channel name (+45px) */
-
   display: flex !important;
   clear: both !important;
 }
@@ -216,7 +214,7 @@ yt-live-chat-text-message-renderer::after {
   z-index: 0 !important;
 }
 
-/* Khung chat: mặc định duy nhất (dứa) cho mọi loại. Chỉ channel name đổi màu theo mod/hội viên/owner. */
+/* Khung chat*/
 
 yt-live-chat-text-message-renderer #content {
   position: relative !important;
@@ -398,21 +396,7 @@ yt-live-chat-paid-message-renderer {
 }
 
 yt-live-chat-paid-message-renderer::after {
-  content: "" !important;
-  position: absolute !important;
-  top: 5px !important;
-  left: 5px !important;
-  right: 5px !important;
-  bottom: 5px !important;
-  /* Stitching Effect: WHITE (Neutral for Blue/Yellow/Red) */
-  border: 2px dashed #FFFFFF !important;
-  border-radius: 16px !important;
-  pointer-events: none !important;
-  z-index: 2 !important;
-  opacity: 0.8 !important;
-  /* Slight transparency */
-  filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.2)) !important;
-  /* Help visible on light bg */
+  display: none !important;
 }
 
 yt-live-chat-paid-message-renderer #header {
@@ -455,7 +439,7 @@ yt-live-chat-paid-message-renderer #purchase-amount-chip {
 }
 
 yt-live-chat-paid-message-renderer #message {
-  /* CẬP NHẬT: Text Trắng + Viền Trắng (Theo yêu cầu: chữ trắng viền trắng) */
+
   color: #FFFFFF !important;
   font-family: "Nunito", "Noto Sans", sans-serif !important;
   font-size: 26px !important;
@@ -496,16 +480,7 @@ yt-live-chat-legacy-paid-message-renderer {
 }
 
 yt-live-chat-legacy-paid-message-renderer::after {
-  content: "" !important;
-  position: absolute !important;
-  top: 5px !important;
-  left: 5px !important;
-  right: 5px !important;
-  bottom: 5px !important;
-  border: 2px dashed #2E7D32 !important;
-  border-radius: 16px !important;
-  pointer-events: none !important;
-  z-index: 2 !important;
+  display: none !important;
 }
 
 yt-live-chat-legacy-paid-message-renderer #event-text,
