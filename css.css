@@ -1,0 +1,846 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Itim&family=Mali:wght@400;700&family=Patrick+Hand&display=swap");
+
+/* Background colors */
+body {
+  overflow: hidden !important;
+  background-color: rgba(0, 0, 0, 0);
+}
+
+/* ===== CHAT RENDERER ===== */
+yt-live-chat-renderer {
+  background: transparent !important;
+  border: none !important;
+  margin: 0 !important;
+  padding: 5px !important;
+  box-shadow: none !important;
+  position: relative !important;
+  overflow: hidden !important;
+}
+
+/* =========================================================================
+   1. PINNED MESSAGE (KHUNG GHIM)
+   ========================================================================= */
+yt-live-chat-banner-renderer {
+  display: block !important;
+  margin-top: 70px !important;
+  margin-bottom: 30px !important;
+  margin-left: 10px !important;
+  margin-right: 10px !important;
+  position: relative !important;
+  z-index: 9999 !important;
+  box-shadow: none !important;
+  background: transparent !important;
+  overflow: visible !important;
+  height: auto !important;
+  min-height: unset !important;
+  animation: none !important;
+  opacity: 1 !important;
+}
+
+yt-live-chat-banner-renderer>div {
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+yt-live-chat-banner-renderer #banner {
+  /* Apple-style shape: Rectangular with nice rounded corners */
+  border-radius: 20px !important;
+  box-shadow: 0 8px 30px rgba(255, 143, 0, 0.2), 0 4px 10px rgba(0, 0, 0, 0.1) !important;
+
+  /* Pineapple Pattern Background - Increased Visibility */
+  background:
+    linear-gradient(135deg, rgba(230, 81, 0, 0.08) 25%, transparent 25%, transparent 50%, rgba(230, 81, 0, 0.08) 50%, rgba(230, 81, 0, 0.08) 75%, transparent 75%, transparent 100%),
+    linear-gradient(45deg, rgba(230, 81, 0, 0.08) 25%, transparent 25%, transparent 50%, rgba(230, 81, 0, 0.08) 50%, rgba(230, 81, 0, 0.08) 75%, transparent 75%, transparent 100%),
+    #FFF9C4 !important;
+  background-size: 20px 20px !important;
+  background-position: 0 0 !important;
+
+  /* Golden Frame */
+  border: 4px solid #FFCA28 !important;
+  /* Lighter Gold */
+
+  position: relative !important;
+  overflow: visible !important;
+  contain: none !important;
+  clip-path: none !important;
+  padding: 15px 20px 20px 20px !important;
+  min-height: unset !important;
+  height: auto !important;
+  width: fit-content !important;
+  max-width: 95% !important;
+  /* Kéo dài khung ghim tương ứng (+45px) */
+  min-width: 345px !important;
+}
+
+yt-live-chat-banner-renderer #banner::after {
+  content: "" !important;
+  position: absolute !important;
+  top: 5px !important;
+  left: 5px !important;
+  right: 5px !important;
+  bottom: 5px !important;
+  /* Stitching Effect (Hiệu ứng khâu) */
+  border: 2px dashed #E65100 !important;
+  /* Dark orange stitch */
+  border-radius: 15px !important;
+  pointer-events: none !important;
+  z-index: 0 !important;
+  opacity: 0.6 !important;
+}
+
+yt-live-chat-banner-renderer #header {
+  display: flex !important;
+  background: transparent !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  border: none !important;
+  overflow: visible !important;
+  align-items: center !important;
+  min-height: unset !important;
+}
+
+yt-live-chat-banner-renderer #contents {
+  background: transparent !important;
+  padding: 0 !important;
+  margin-top: 10px !important;
+  overflow: visible !important;
+}
+
+yt-live-chat-banner-renderer #author-photo {
+  width: 50px !important;
+  height: 50px !important;
+  border-radius: 50% !important;
+  border: 3px solid #FF8F00 !important;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2) !important;
+  overflow: hidden !important;
+  margin-right: 15px !important;
+  position: relative !important;
+  z-index: 2 !important;
+  flex-shrink: 0 !important;
+}
+
+yt-live-chat-banner-renderer #author-photo img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+}
+
+/* Tên người ghim */
+yt-live-chat-banner-renderer #author-name {
+  color: #FFFFFF !important;
+  font-family: "Nunito", "Noto Sans", sans-serif !important;
+  font-weight: 900 !important;
+  font-size: 26px !important;
+  line-height: 1.1 !important;
+  position: absolute !important;
+  top: -50px !important;
+  left: 0px !important;
+  z-index: 99999 !important;
+  padding: 8px 25px !important;
+  border-radius: 25px !important;
+  border: 3px solid #FFFFFF !important;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25) !important;
+  white-space: nowrap !important;
+  background: linear-gradient(135deg, #FF8F00 0%, #E65100 100%) !important;
+}
+
+yt-live-chat-banner-renderer #text {
+  color: #3E2000 !important;
+  font-family: "Nunito", "Noto Sans", sans-serif !important;
+  font-size: 24px !important;
+  line-height: 1.4 !important;
+  font-weight: 800 !important;
+  text-shadow: -1px -1px 0 #FFF, 1px -1px 0 #FFF, -1px 1px 0 #FFF, 1px 1px 0 #FFF !important;
+  position: relative !important;
+  z-index: 2 !important;
+  display: block !important;
+  overflow: visible !important;
+  white-space: normal !important;
+  overflow-wrap: anywhere !important;
+  word-break: break-word !important;
+  opacity: 1 !important;
+}
+
+/* ẨN MENU TRONG GHIM */
+yt-live-chat-banner-renderer #menu-button,
+yt-live-chat-banner-renderer yt-icon,
+yt-live-chat-banner-renderer #action-button,
+yt-live-chat-banner-renderer #menu {
+  display: none !important;
+}
+
+
+/* =========================================================================
+   2. NORMAL CHAT STYLE
+   ========================================================================= */
+yt-live-chat-text-message-renderer,
+yt-live-chat-text-message-renderer[is-highlighted] {
+  background:
+    repeating-linear-gradient(60deg, transparent 0px, transparent 8px, rgba(200, 150, 30, 0.1) 8px, rgba(200, 150, 30, 0.1) 10px),
+    repeating-linear-gradient(-60deg, transparent 0px, transparent 8px, rgba(200, 150, 30, 0.1) 8px, rgba(200, 150, 30, 0.1) 10px),
+    #FFFDE7 !important;
+  border: 3px solid #DAA520 !important;
+  border-radius: 22px !important;
+  margin: 12px 10px 6px 6px !important;
+  padding: 12px 12px 8px 8px !important;
+  box-shadow: 4px 4px 0px rgba(218, 165, 32, 0.25) !important;
+  position: relative !important;
+  overflow: visible !important;
+  contain: none !important;
+  clip-path: none !important;
+  z-index: 1 !important;
+  animation: none !important;
+  transition: none !important;
+
+  width: fit-content !important;
+  max-width: 95% !important;
+
+  /* CẬP NHẬT: Kéo dài khung chat tương ứng channel name (+45px) */
+
+  display: flex !important;
+  clear: both !important;
+}
+
+yt-live-chat-text-message-renderer::after {
+  content: "" !important;
+  position: absolute !important;
+  top: 4px !important;
+  left: 4px !important;
+  right: 4px !important;
+  bottom: 4px !important;
+  border: 2px dashed #DAA520 !important;
+  border-radius: 16px !important;
+  pointer-events: none !important;
+  z-index: 0 !important;
+}
+
+/* Khung chat: mặc định duy nhất (dứa) cho mọi loại. Chỉ channel name đổi màu theo mod/hội viên/owner. */
+
+yt-live-chat-text-message-renderer #content {
+  position: relative !important;
+  z-index: 1 !important;
+  margin-top: -4px !important;
+}
+
+/* Avatar */
+yt-live-chat-text-message-renderer #author-photo,
+yt-live-chat-paid-message-renderer #author-photo,
+yt-live-chat-legacy-paid-message-renderer #author-photo {
+  width: 24px !important;
+  height: 24px !important;
+  border-radius: 50% !important;
+  margin-right: 8px !important;
+  border: 2px solid rgba(180, 150, 80, 0.8) !important;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25) !important;
+  overflow: hidden !important;
+  animation: none !important;
+  z-index: 99999 !important;
+  position: relative !important;
+}
+
+yt-live-chat-text-message-renderer #author-photo img,
+yt-live-chat-paid-message-renderer #author-photo img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+}
+
+/* Text Styles - Mặc định duy nhất cho mọi chat (chỉ channel name đổi theo mod/hội viên) */
+yt-live-chat-text-message-renderer #message {
+  color: #3E2000 !important;
+  display: block !important;
+  font-family: "Nunito", "Noto Sans", sans-serif !important;
+  font-size: 30px !important;
+  line-height: 1.4 !important;
+  font-weight: 700 !important;
+  text-shadow: -1px -1px 0 #FFF, 1px -1px 0 #FFF, -1px 1px 0 #FFF, 1px 1px 0 #FFF, 0 0 6px rgba(255, 255, 255, 1) !important;
+  white-space: normal !important;
+  overflow-wrap: anywhere !important;
+  word-break: break-word !important;
+}
+
+yt-live-chat-text-message-renderer #message img,
+yt-live-chat-paid-message-renderer #message img {
+  display: inline-block !important;
+  vertical-align: middle !important;
+  max-width: 100% !important;
+  height: auto !important;
+}
+
+/* --- TÊN VÀ LOGO (CHIP) --- */
+yt-live-chat-text-message-renderer yt-live-chat-author-chip {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 5px !important;
+  position: relative !important;
+  top: 0 !important;
+  margin-left: 0 !important;
+  z-index: 999 !important;
+  margin-bottom: 2px !important;
+  padding: 3px 18px !important;
+  border-radius: 20px !important;
+  border: 2.5px solid rgba(255, 255, 255, 0.9) !important;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3) !important;
+  white-space: nowrap !important;
+  background: linear-gradient(135deg, #FFC107 0%, #FF8F00 100%) !important;
+  width: max-content !important;
+}
+
+yt-live-chat-text-message-renderer[author-type="moderator"] yt-live-chat-author-chip {
+  background: linear-gradient(135deg, #42A5F5 0%, #1565C0 100%) !important;
+  border-color: #1565C0 !important;
+}
+
+yt-live-chat-text-message-renderer[author-type="member"] yt-live-chat-author-chip {
+  background: linear-gradient(135deg, #66BB6A 0%, #2E7D32 100%) !important;
+  border-color: #2E7D32 !important;
+}
+
+yt-live-chat-text-message-renderer[author-type="owner"] yt-live-chat-author-chip {
+  background: linear-gradient(135deg, #FFA000 0%, #E65100 100%) !important;
+  border-color: #E65100 !important;
+}
+
+yt-live-chat-text-message-renderer #author-name {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  position: static !important;
+  color: #FFFFFF !important;
+  font-family: "Nunito", "Noto Sans", sans-serif !important;
+  font-weight: 900 !important;
+  font-size: 20px !important;
+  line-height: 26px !important;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4) !important;
+}
+
+yt-live-chat-text-message-renderer #author-name::after {
+  display: none !important;
+}
+
+yt-live-chat-text-message-renderer #author-badges {
+  display: inline-flex !important;
+  vertical-align: middle !important;
+  margin-left: 2px !important;
+}
+
+yt-live-chat-text-message-renderer #author-badges img {
+  width: 28px !important;
+  height: 28px !important;
+  /* Phong cách coin/medal */
+  background: linear-gradient(135deg, #FFC107 0%, #FF8F00 100%) !important;
+  border: 2px solid #FFFFFF !important;
+  border-radius: 50% !important;
+  padding: 3px !important;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3) !important;
+  margin-left: 2px !important;
+}
+
+yt-live-chat-text-message-renderer[author-type="moderator"] #author-badges img {
+  content: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGhlaWdodD0iMjRweCIgdmlld0JveD0iMCAwIDI0IDI0IiB3aWR0aD0iMjRweCIgZmlsbD0iI0ZGRkZGRiI+PHBhdGggZD0iTTEyIDFMMyA1djZjMCA1LjU1IDMuODQgMTAuNzQgOSAxMiA1LjE2LTEuMjYgOS02LjQ1IDktMTJWNWwtOS00em0tMiAxNmwtNC00IDEuNDEtMS40MUwxMCAxNC4xN2w2LjU5LTYuNTlMMTggOWwtOCA4eiIvPjwvc3ZnPg==") !important;
+  width: 28px !important;
+  height: 28px !important;
+  filter: drop-shadow(0 0 4px rgba(0, 0, 0, 0.4)) !important;
+}
+
+yt-live-chat-text-message-renderer[author-type="member"] #author-badges img {
+  width: 28px !important;
+  height: 28px !important;
+  filter: drop-shadow(0 0 4px rgba(255, 255, 255, 0.8)) !important;
+}
+
+/* =========================================================================
+   3. SUPER CHAT & TICKER
+   ========================================================================= */
+yt-live-chat-paid-message-renderer {
+  background: #FFF8E1 !important;
+  background-color: #FFF8E1 !important;
+  border: 3px solid #FF6F00 !important;
+  border-radius: 22px !important;
+  margin: 38px 10px 6px 6px !important;
+  box-shadow: 4px 4px 0px rgba(255, 111, 0, 0.25) !important;
+  position: relative !important;
+  overflow: visible !important;
+  padding: 0 !important;
+  display: flex !important;
+  flex-direction: column !important;
+
+  animation: superChatPop 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
+
+  /* CẬP NHẬT: Khung to cố định theo chiều rộng chat (Full Width) */
+  width: auto !important;
+  max-width: 100% !important;
+}
+
+@keyframes superChatPop {
+  0% {
+    transform: scale(0.5) translateY(50px) rotate(-10deg);
+    opacity: 0;
+  }
+
+  60% {
+    transform: scale(1.15) translateY(-10px) rotate(3deg);
+    opacity: 1;
+  }
+
+  80% {
+    transform: scale(0.95) translateY(5px) rotate(-1deg);
+  }
+
+  100% {
+    transform: scale(1) translateY(0) rotate(0);
+    opacity: 1;
+  }
+}
+
+yt-live-chat-paid-message-renderer::after {
+  content: "" !important;
+  position: absolute !important;
+  top: 5px !important;
+  left: 5px !important;
+  right: 5px !important;
+  bottom: 5px !important;
+  /* Stitching Effect: WHITE (Neutral for Blue/Yellow/Red) */
+  border: 2px dashed #FFFFFF !important;
+  border-radius: 16px !important;
+  pointer-events: none !important;
+  z-index: 2 !important;
+  opacity: 0.8 !important;
+  /* Slight transparency */
+  filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.2)) !important;
+  /* Help visible on light bg */
+}
+
+yt-live-chat-paid-message-renderer #header {
+  background: rgba(255, 143, 0, 0.15) !important;
+  background-color: rgba(255, 143, 0, 0.15) !important;
+  border-bottom: 2px dashed #FF8F00 !important;
+  border-radius: 19px 19px 0 0 !important;
+  padding: 10px 15px 5px 15px !important;
+  min-height: unset !important;
+  align-items: center !important;
+  position: relative !important;
+  z-index: 3 !important;
+  margin-right: 0 !important;
+}
+
+yt-live-chat-paid-message-renderer #content {
+  padding: 8px 15px 12px 15px !important;
+  z-index: 3 !important;
+  border-radius: 0 0 19px 19px !important;
+  overflow: visible !important;
+}
+
+yt-live-chat-paid-message-renderer #author-name {
+  color: #FFFFFF !important;
+  font-family: "Nunito", "Noto Sans", sans-serif !important;
+  font-weight: 900 !important;
+  font-size: 20px !important;
+  line-height: 26px !important;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4) !important;
+  white-space: nowrap !important;
+}
+
+yt-live-chat-paid-message-renderer #purchase-amount,
+yt-live-chat-paid-message-renderer #purchase-amount-chip {
+  color: #FFFFFF !important;
+  font-family: "Nunito", "Noto Sans", sans-serif !important;
+  font-weight: 900 !important;
+  font-size: 22px !important;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4) !important;
+}
+
+yt-live-chat-paid-message-renderer #message {
+  /* CẬP NHẬT: Text Trắng + Viền Trắng (Theo yêu cầu: chữ trắng viền trắng) */
+  color: #FFFFFF !important;
+  font-family: "Nunito", "Noto Sans", sans-serif !important;
+  font-size: 26px !important;
+  line-height: 1.4 !important;
+  font-weight: 900 !important;
+
+  /* Viền chữ Trắng (White Stroke) */
+  -webkit-text-stroke: 2px #FFFFFF !important;
+  /* Thêm bóng đổ nhẹ để text không bị chìm nghỉm trên nền sáng */
+  text-shadow: 0 0 4px rgba(0, 0, 0, 0.25) !important;
+  paint-order: stroke fill;
+
+  white-space: normal !important;
+  overflow-wrap: anywhere !important;
+  word-break: break-word !important;
+}
+
+yt-live-chat-paid-message-renderer #timestamp {
+  display: none !important;
+}
+
+/* Legacy Paid */
+yt-live-chat-legacy-paid-message-renderer {
+  background-color: #E8F5E9 !important;
+  background: #E8F5E9 !important;
+  background-image: none !important;
+  border: 3px solid #2E7D32 !important;
+  border-radius: 22px !important;
+  margin: 28px 10px 6px 6px !important;
+  box-shadow: 4px 4px 0px rgba(46, 125, 50, 0.25) !important;
+  position: relative !important;
+  overflow: visible !important;
+  padding: 10px 15px !important;
+  animation: superChatPop 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
+  width: fit-content !important;
+  min-width: 295px !important;
+  /* Kéo dài tương ứng (+45px) */
+}
+
+yt-live-chat-legacy-paid-message-renderer::after {
+  content: "" !important;
+  position: absolute !important;
+  top: 5px !important;
+  left: 5px !important;
+  right: 5px !important;
+  bottom: 5px !important;
+  border: 2px dashed #2E7D32 !important;
+  border-radius: 16px !important;
+  pointer-events: none !important;
+  z-index: 2 !important;
+}
+
+yt-live-chat-legacy-paid-message-renderer #event-text,
+yt-live-chat-legacy-paid-message-renderer #detail-text {
+  color: #1B5E20 !important;
+  font-family: "Nunito", sans-serif !important;
+  font-weight: 800 !important;
+  font-size: 20px !important;
+  text-shadow: -1px -1px 0 #FFF, 1px 1px 0 #FFF !important;
+  white-space: normal !important;
+  overflow-wrap: anywhere !important;
+  word-break: break-word !important;
+}
+
+/* Ticker - BỎ/ẨN THEO YÊU CẦU */
+yt-live-chat-ticker-renderer {
+  display: none !important;
+}
+
+yt-live-chat-ticker-renderer::after {
+  content: "" !important;
+  position: absolute !important;
+  top: 4px !important;
+  left: 4px !important;
+  right: 4px !important;
+  bottom: 4px !important;
+  /* Stitching Effect */
+  border: 2px dashed #E65100 !important;
+  border-radius: 14px !important;
+  pointer-events: none !important;
+  z-index: 0 !important;
+}
+
+yt-live-chat-ticker-renderer #items {
+  position: relative !important;
+  z-index: 1 !important;
+  display: flex !important;
+  flex-wrap: nowrap !important;
+  gap: 8px !important;
+  overflow-x: auto !important;
+  overflow-y: visible !important;
+  padding: 2px 0 !important;
+  scrollbar-width: none !important;
+  min-height: 52px !important;
+  align-items: center !important;
+}
+
+yt-live-chat-ticker-renderer #items::-webkit-scrollbar {
+  display: none !important;
+}
+
+yt-live-chat-ticker-paid-message-item-renderer {
+  border-radius: 28px !important;
+  margin: 0 4px !important;
+  overflow: visible !important;
+  height: 52px !important;
+  min-height: 52px !important;
+  min-width: 140px !important;
+  flex-shrink: 0 !important;
+  animation: tickerPopIn 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55) !important;
+}
+
+@keyframes tickerPopIn {
+  0% {
+    transform: scale(0) rotate(-20deg);
+    opacity: 0;
+  }
+
+  50% {
+    transform: scale(1.2) rotate(10deg);
+  }
+
+  70% {
+    transform: scale(0.9) rotate(-5deg);
+  }
+
+  100% {
+    transform: scale(1) rotate(0deg);
+    opacity: 1;
+  }
+}
+
+yt-live-chat-ticker-paid-message-item-renderer #container {
+  border-radius: 28px !important;
+  padding: 5px 14px 5px 8px !important;
+  height: 50px !important;
+  min-height: 50px !important;
+  min-width: 130px !important;
+  display: flex !important;
+  align-items: center !important;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.4), inset 0 1px 3px rgba(255, 255, 255, 0.3) !important;
+  overflow: visible !important;
+}
+
+yt-live-chat-ticker-paid-message-item-renderer #author-photo img {
+  width: 36px !important;
+  height: 36px !important;
+  border-radius: 50% !important;
+  border: 2px solid rgba(255, 255, 255, 0.9) !important;
+}
+
+yt-live-chat-ticker-paid-message-item-renderer #content {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  gap: 8px !important;
+  padding-left: 8px !important;
+  min-width: 80px !important;
+  overflow: visible !important;
+}
+
+yt-live-chat-ticker-paid-message-item-renderer #author-name {
+  color: #ffffff !important;
+  font-family: "Nunito", sans-serif !important;
+  font-weight: 700 !important;
+  font-size: 17px !important;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.9) !important;
+  max-width: 120px !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  white-space: nowrap !important;
+}
+
+yt-live-chat-ticker-paid-message-item-renderer #purchase-amount {
+  color: #FFD700 !important;
+  font-family: "Nunito", sans-serif !important;
+  font-weight: 900 !important;
+  font-size: 20px !important;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 1) !important;
+}
+
+yt-live-chat-ticker-sponsor-item-renderer {
+  animation: tickerPopIn 0.6s ease-out !important;
+  border-radius: 28px !important;
+  margin: 0 4px !important;
+  height: 52px !important;
+}
+
+yt-live-chat-ticker-sponsor-item-renderer #container {
+  border-radius: 28px !important;
+  padding: 5px 14px 5px 8px !important;
+  height: 50px !important;
+  display: flex !important;
+  align-items: center !important;
+}
+
+/* UTILITIES */
+yt-live-chat-item-list-renderer {
+  padding-top: 40px !important;
+}
+
+yt-live-chat-item-list-renderer #items {
+  overflow: hidden !important;
+  padding-top: 10px !important;
+  padding-bottom: 15px !important;
+}
+
+yt-live-chat-item-list-renderer #item-scroller {
+  overflow-y: hidden !important;
+  overflow-x: hidden !important;
+}
+
+yt-live-chat-text-message-renderer #timestamp {
+  color: rgba(100, 80, 50, 0.8) !important;
+  font-family: "Nunito", sans-serif;
+  font-size: 17px !important;
+  font-weight: 600 !important;
+}
+
+/* ẨN DẤU 3 CHẤM (MENU) */
+yt-live-chat-text-message-renderer #menu,
+yt-live-chat-paid-message-renderer #menu,
+#menu {
+  display: none !important;
+}
+
+/* Ẩn rác */
+yt-live-chat-header-renderer,
+yt-live-chat-message-input-renderer,
+yt-live-chat-mode-change-message-renderer,
+yt-live-chat-viewer-engagement-message-renderer,
+yt-live-chat-restricted-participation-renderer,
+yt-live-chat-banner-manager,
+yt-live-chat-action-panel-renderer,
+yt-live-chat-renderer #action-panel,
+yt-live-chat-renderer #panels,
+yt-live-chat-renderer #input-panel,
+#picker-buttons,
+yt-live-chat-ninja-message-renderer,
+yt-reaction-control-panel-overlay,
+yt-reaction-control-panel-view-model {
+  display: none !important;
+  height: 0 !important;
+  visibility: hidden !important;
+}
+
+a {
+  text-decoration: none !important;
+  color: #1565C0 !important;
+  font-weight: 700 !important;
+}
+
+/* =========================================================================
+   4. MEMBERSHIP & GIFT (JOIN/TẶNG GÓI)
+   ========================================================================= */
+
+/* CHUNG CHO MEMBERSHIP & GIFT */
+yt-live-chat-membership-item-renderer,
+ytd-sponsorships-live-chat-gift-purchase-announcement-renderer,
+ytd-sponsorships-live-chat-gift-redemption-announcement-renderer {
+  /* Hoạ tiết lưới đan chéo (giống Message thường) nhưng tông Xanh lá */
+  background:
+    repeating-linear-gradient(60deg, transparent 0px, transparent 8px, rgba(46, 125, 50, 0.08) 8px, rgba(46, 125, 50, 0.08) 10px),
+    repeating-linear-gradient(-60deg, transparent 0px, transparent 8px, rgba(46, 125, 50, 0.08) 8px, rgba(46, 125, 50, 0.08) 10px),
+    #E8F5E9 !important;
+
+  border: 3px solid #00C853 !important;
+  /* Xanh lá tươi */
+  border-radius: 22px !important;
+  margin: 38px 10px 6px 6px !important;
+  box-shadow: 4px 4px 15px rgba(0, 200, 83, 0.3) !important;
+  position: relative !important;
+  overflow: visible !important;
+  padding: 0 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  animation: superChatPop 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
+  width: fit-content !important;
+  min-width: 295px !important;
+}
+
+/* Hiệu ứng khâu (Stitching) - Màu trắng đồng bộ */
+yt-live-chat-membership-item-renderer::after,
+ytd-sponsorships-live-chat-gift-purchase-announcement-renderer::after,
+ytd-sponsorships-live-chat-gift-redemption-announcement-renderer::after {
+  content: "" !important;
+  position: absolute !important;
+  top: 5px !important;
+  left: 5px !important;
+  right: 5px !important;
+  bottom: 5px !important;
+  border: 2px dashed #FFFFFF !important;
+  /* Chỉ trắng */
+  border-radius: 16px !important;
+  pointer-events: none !important;
+  z-index: 2 !important;
+  opacity: 0.8 !important;
+  filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.2)) !important;
+}
+
+/* HEADER (Phần trên chứa tên) */
+yt-live-chat-membership-item-renderer #header,
+ytd-sponsorships-live-chat-gift-purchase-announcement-renderer #header,
+ytd-sponsorships-live-chat-gift-redemption-announcement-renderer #header {
+  background: rgba(0, 200, 83, 0.15) !important;
+  border-bottom: 2px dashed rgba(255, 255, 255, 0.5) !important;
+  border-radius: 19px 19px 0 0 !important;
+  padding: 8px 15px 5px 15px !important;
+  min-height: unset !important;
+  align-items: center !important;
+  position: relative !important;
+  z-index: 3 !important;
+}
+
+/* CONTENT (Phần dưới chứa message) */
+yt-live-chat-membership-item-renderer #content,
+ytd-sponsorships-live-chat-gift-purchase-announcement-renderer #content,
+ytd-sponsorships-live-chat-gift-redemption-announcement-renderer #content {
+  padding: 8px 15px 12px 15px !important;
+  z-index: 3 !important;
+  border-radius: 0 0 19px 19px !important;
+  overflow: visible !important;
+}
+
+/* TÊN NGƯỜI DÙNG */
+yt-live-chat-membership-item-renderer #author-name,
+ytd-sponsorships-live-chat-gift-purchase-announcement-renderer #author-name,
+ytd-sponsorships-live-chat-gift-redemption-announcement-renderer #author-name {
+  color: #FFFFFF !important;
+  /* Trắng */
+  font-family: "Nunito", "Noto Sans", sans-serif !important;
+  font-weight: 900 !important;
+  font-size: 20px !important;
+
+  /* Viền chữ đậm */
+  -webkit-text-stroke: 1.2px #1B5E20 !important;
+  text-shadow: 2px 2px 0 #1B5E20 !important;
+}
+
+/* TEXT MEMBERSHIP (Cập nhật: Trắng viền Xanh đậm cho dễ đọc) */
+yt-live-chat-membership-item-renderer #header-subtext,
+yt-live-chat-membership-item-renderer #header-primary-text,
+ytd-sponsorships-live-chat-gift-purchase-announcement-renderer #header-primary-text,
+ytd-sponsorships-live-chat-gift-redemption-announcement-renderer #message {
+  color: #FFFFFF !important;
+  font-family: "Nunito", sans-serif !important;
+  font-size: 20px !important;
+  /* Tăng size chút cho dễ đọc */
+  font-weight: 900 !important;
+
+  /* Viền chữ (Stroke) giúp nổi trên nền xanh */
+  -webkit-text-stroke: 1.2px #1B5E20 !important;
+  text-shadow: 2px 2px 0 #1B5E20 !important;
+
+  white-space: normal !important;
+  overflow-wrap: anywhere !important;
+}
+
+/* HEADER CỤ THỂ CHO PHẦN TẶNG QUÀ (Gift Header) */
+ytd-sponsorships-live-chat-header-renderer {
+  background: transparent !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  display: flex !important;
+  align-items: center !important;
+}
+
+/* Header Text (Gift) */
+ytd-sponsorships-live-chat-header-renderer #primary-text {
+  color: #FFFFFF !important;
+  font-weight: 900 !important;
+  font-size: 18px !important;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3) !important;
+}
+
+/* Avatar trong Membership */
+yt-live-chat-membership-item-renderer #author-photo,
+ytd-sponsorships-live-chat-gift-purchase-announcement-renderer #author-photo,
+ytd-sponsorships-live-chat-gift-redemption-announcement-renderer #author-photo {
+  width: 40px !important;
+  height: 40px !important;
+  border-radius: 50% !important;
+  border: 2px solid #FFFFFF !important;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2) !important;
+  margin-right: 10px !important;
+}
