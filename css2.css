@@ -233,6 +233,11 @@ yt-live-chat-legacy-paid-message-renderer #author-photo {
     margin: 0 !important;
 }
 
+/* Dịch avatar sang phải cho MEMBER để tránh che quả dứa */
+yt-live-chat-text-message-renderer[author-type="member"] #author-photo {
+    left: 25px !important;
+}
+
 yt-live-chat-text-message-renderer #author-photo img,
 yt-live-chat-paid-message-renderer #author-photo img {
     width: 100% !important;
@@ -282,32 +287,72 @@ yt-live-chat-text-message-renderer yt-live-chat-author-chip {
     z-index: 999 !important;
     margin-bottom: 2px !important;
 
-    /* Padding-left increased to accommodate Absolute Avatar */
+    /* Padding-left for Avatar */
     padding: 3px 15px 3px 34px !important;
 
     border-radius: 20px !important;
     border: 2.5px solid rgba(255, 255, 255, 0.9) !important;
     box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3) !important;
     white-space: nowrap !important;
-    background: linear-gradient(135deg, #FFC107 0%, #FF8F00 100%) !important;
+
+    /* Pineapple Pattern Background - Diamond/Scale Pattern */
+    background:
+        repeating-linear-gradient(60deg, transparent 0px, transparent 6px, rgba(230, 81, 0, 0.15) 6px, rgba(230, 81, 0, 0.15) 8px),
+        repeating-linear-gradient(-60deg, transparent 0px, transparent 6px, rgba(230, 81, 0, 0.15) 6px, rgba(230, 81, 0, 0.15) 8px),
+        linear-gradient(135deg, #FFC107 0%, #FF8F00 100%) !important;
+
     width: max-content !important;
     vertical-align: middle !important;
     margin-right: 8px !important;
     /* Add space between chip and text */
 }
 
+/* Xoá quả dứa cho chip chung - chỉ member mới có */
+yt-live-chat-text-message-renderer yt-live-chat-author-chip::before {
+    display: none !important;
+}
+
 yt-live-chat-text-message-renderer[author-type="moderator"] yt-live-chat-author-chip {
-    background: linear-gradient(135deg, #42A5F5 0%, #1565C0 100%) !important;
+    background:
+        repeating-linear-gradient(60deg, transparent 0px, transparent 6px, rgba(21, 101, 192, 0.15) 6px, rgba(21, 101, 192, 0.15) 8px),
+        repeating-linear-gradient(-60deg, transparent 0px, transparent 6px, rgba(21, 101, 192, 0.15) 6px, rgba(21, 101, 192, 0.15) 8px),
+        linear-gradient(135deg, #42A5F5 0%, #1565C0 100%) !important;
     border-color: #1565C0 !important;
 }
 
 yt-live-chat-text-message-renderer[author-type="member"] yt-live-chat-author-chip {
-    background: linear-gradient(135deg, #66BB6A 0%, #2E7D32 100%) !important;
+    /* Tăng padding để chứa quả dứa */
+    padding: 3px 15px 3px 46px !important;
+    background:
+        repeating-linear-gradient(60deg, transparent 0px, transparent 6px, rgba(46, 125, 50, 0.15) 6px, rgba(46, 125, 50, 0.15) 8px),
+        repeating-linear-gradient(-60deg, transparent 0px, transparent 6px, rgba(46, 125, 50, 0.15) 6px, rgba(46, 125, 50, 0.15) 8px),
+        linear-gradient(135deg, #66BB6A 0%, #2E7D32 100%) !important;
     border-color: #2E7D32 !important;
 }
 
+/* Quả dứa cute cho hội viên (member) */
+yt-live-chat-text-message-renderer[author-type="member"] yt-live-chat-author-chip::before {
+    content: "" !important;
+    display: block !important;
+    position: absolute !important;
+    top: -12px !important;
+    left: -8px !important;
+    width: 32px !important;
+    height: 32px !important;
+    z-index: 1001 !important;
+    filter: drop-shadow(1px 2px 2px rgba(0, 0, 0, 0.3)) !important;
+    transform: rotate(-10deg) !important;
+    /* Cute Kawaii Pineapple SVG - Smiling Face */
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3C!-- Leaves --%3E%3Cpath d='M50 28 C45 10 35 10 30 20' stroke='%234CAF50' stroke-width='5' stroke-linecap='round' fill='none'/%3E%3Cpath d='M50 28 C55 10 65 10 70 20' stroke='%234CAF50' stroke-width='5' stroke-linecap='round' fill='none'/%3E%3Cpath d='M50 28 L50 5' stroke='%23388E3C' stroke-width='5' stroke-linecap='round' fill='none'/%3E%3C!-- Body --%3E%3Crect x='20' y='28' width='60' height='65' rx='30' ry='30' fill='%23FFCA28'/%3E%3C!-- Pattern (Subtle) --%3E%3Cpath d='M20 45 L80 45 M20 65 L80 65 M35 28 L35 93 M65 28 L65 93' stroke='%23FF6F00' stroke-width='2' opacity='0.15'/%3E%3C!-- Face --%3E%3Ccircle cx='38' cy='52' r='6' fill='%23212121'/%3E%3Ccircle cx='62' cy='52' r='6' fill='%23212121'/%3E%3C!-- Eye Highlights --%3E%3Ccircle cx='35' cy='49' r='2.5' fill='%23FFF'/%3E%3Ccircle cx='59' cy='49' r='2.5' fill='%23FFF'/%3E%3C!-- Smile (Mouth) --%3E%3Cpath d='M42 62 Q50 70 58 62' stroke='%23212121' stroke-width='3' fill='none' stroke-linecap='round'/%3E%3C!-- Cheeks --%3E%3Ccircle cx='28' cy='60' r='5' fill='%23FF7043' opacity='0.5'/%3E%3Ccircle cx='72' cy='60' r='5' fill='%23FF7043' opacity='0.5'/%3E%3C/svg%3E") !important;
+    background-size: contain !important;
+    background-repeat: no-repeat !important;
+}
+
 yt-live-chat-text-message-renderer[author-type="owner"] yt-live-chat-author-chip {
-    background: linear-gradient(135deg, #FFA000 0%, #E65100 100%) !important;
+    background:
+        repeating-linear-gradient(60deg, transparent 0px, transparent 6px, rgba(230, 81, 0, 0.15) 6px, rgba(230, 81, 0, 0.15) 8px),
+        repeating-linear-gradient(-60deg, transparent 0px, transparent 6px, rgba(230, 81, 0, 0.15) 6px, rgba(230, 81, 0, 0.15) 8px),
+        linear-gradient(135deg, #FFA000 0%, #E65100 100%) !important;
     border-color: #E65100 !important;
 }
 
