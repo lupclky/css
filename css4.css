@@ -494,6 +494,7 @@ yt-live-chat-text-message-renderer[author-type="member"] #author-badges img {
 yt-live-chat-text-message-renderer .ytSpecButtonViewModelHost {
     display: inline-block !important;
     vertical-align: middle !important;
+    margin-top: -10px !important;
     margin-left: 8px !important;
 }
 
@@ -635,6 +636,12 @@ yt-live-chat-paid-message-renderer #message {
 }
 
 yt-live-chat-paid-message-renderer #timestamp {
+    display: none !important;
+}
+
+yt-live-chat-paid-message-renderer #creator-heart-button,
+yt-live-chat-paid-message-renderer #reply-button,
+yt-live-chat-paid-message-renderer yt-live-chat-paid-message-footer-renderer {
     display: none !important;
 }
 

@@ -593,6 +593,12 @@ yt-live-chat-paid-message-renderer #timestamp {
   display: none !important;
 }
 
+yt-live-chat-paid-message-renderer #creator-heart-button,
+yt-live-chat-paid-message-renderer #reply-button,
+yt-live-chat-paid-message-renderer yt-live-chat-paid-message-footer-renderer {
+  display: none !important;
+}
+
 /* Legacy Paid */
 yt-live-chat-legacy-paid-message-renderer {
   background-color: #E8F5E9 !important;
