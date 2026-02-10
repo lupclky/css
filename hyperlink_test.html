@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hyperlink Style Test</title>
+    <link rel="stylesheet" href="css3.css">
+    <style>
+        body {
+            background-color: #333;
+            color: white;
+            padding: 20px;
+            font-family: sans-serif;
+        }
+
+        .message-container {
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Hyperlink Style Test</h1>
+
+    <div class="message-container">
+        <yt-live-chat-text-message-renderer>
+            <div id="content">
+                <span id="message">
+                    Đây là một tin nhắn bình thường.<br>
+                    Đây là một <a href="https://youtube.com">Link YouTube</a>.<br>
+                    Đây là một <a href="https://google.com">Link Google</a> (External).<br>
+                    Đây là một mention <a href="/@username">@username</a>.<br>
+                    Đây là một channel <a href="/channel/UC12345">Channel Name</a>.
+                </span>
+            </div>
+        </yt-live-chat-text-message-renderer>
+    </div>
+
+    <div class="message-container">
+        <h2>Superchat Context</h2>
+        <yt-live-chat-paid-message-renderer style="--yt-live-chat-paid-message-background-color: #E62117;">
+            <div id="content">
+                <span id="message">
+                    Cảm ơn streamer! Check link này nhé: <a href="https://example.com">Example Link</a>
+                    Và đừng quên subscribe <a href="/@mychannel">@MyChannel</a>!
+                </span>
+            </div>
+        </yt-live-chat-paid-message-renderer>
+    </div>
+
+</body>
+
+</html>

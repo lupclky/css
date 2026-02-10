@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Superchat Animation Test</title>
+
+    <link rel="stylesheet" href="css3.css">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 40px;
+            font-family: 'Nunito', sans-serif;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .container {
+            max-width: 800px;
+            width: 100%;
+        }
+
+        h1 {
+            text-align: center;
+            color: white;
+            font-size: 42px;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .subtitle {
+            text-align: center;
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 20px;
+            margin-bottom: 40px;
+        }
+
+        #replay-btn {
+            display: block;
+            margin: 0 auto 40px;
+            padding: 15px 40px;
+            font-size: 20px;
+            font-weight: bold;
+            color: white;
+            background: linear-gradient(135deg, #FF6B6B 0%, #C92A2A 100%);
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        #replay-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+        }
+
+        #replay-btn:active {
+            transform: translateY(-1px);
+        }
+
+        .superchat-container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        /* Force display for custom tags */
+        yt-live-chat-paid-message-renderer {
+            display: block !important;
+        }
+
+        .replay {
+            animation: none !important;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>💥 Superchat Animation Test 💥</h1>
+        <p class="subtitle">Hiệu ứng nổi khối 3D cực mạnh với bounce và rotation!</p>
+
+        <button id="replay-btn">🔄 Replay Animation</button>
+
+        <div class="superchat-container" id="superchat-container">
+            <!-- Superchat Red -->
+            <yt-live-chat-paid-message-renderer style="--yt-live-chat-paid-message-background-color: #E62117;">
+                <div id="author-photo">
+                    <img src="https://ui-avatars.com/api/?name=Rich&background=E62117" alt="">
+                </div>
+                <div id="header">
+                    <span id="author-name">Đại Gia Siêu Cấp VIP</span>
+                    <span id="purchase-amount">₫1,000,000</span>
+                </div>
+                <div id="content">
+                    <span id="message">Chúc streamer thành công! 🔥💰 Animation này cực kỳ mạnh mẽ và ấn tượng!</span>
+                </div>
+            </yt-live-chat-paid-message-renderer>
+
+            <!-- Superchat Blue -->
+            <yt-live-chat-paid-message-renderer style="--yt-live-chat-paid-message-background-color: #1565C0;">
+                <div id="author-photo">
+                    <img src="https://ui-avatars.com/api/?name=Blue&background=1565C0" alt="">
+                </div>
+                <div id="header">
+                    <span id="author-name">Fan Xanh Dương</span>
+                    <span id="purchase-amount">₫500,000</span>
+                </div>
+                <div id="content">
+                    <span id="message">Hiệu ứng 3D nổi khối với bounce effect rất đỉnh! 💙✨</span>
+                </div>
+            </yt-live-chat-paid-message-renderer>
+
+            <!-- Superchat Green -->
+            <yt-live-chat-paid-message-renderer style="--yt-live-chat-paid-message-background-color: #2E7D32;">
+                <div id="author-photo">
+                    <img src="https://ui-avatars.com/api/?name=Green&background=2E7D32" alt="">
+                </div>
+                <div id="header">
+                    <span id="author-name">Supporter Xanh Lá</span>
+                    <span id="purchase-amount">₫200,000</span>
+                </div>
+                <div id="content">
+                    <span id="message">Animation có nhiều lớp, bounce mạnh mẽ! 🍀🎊</span>
+                </div>
+            </yt-live-chat-paid-message-renderer>
+
+            <!-- Superchat Orange -->
+            <yt-live-chat-paid-message-renderer style="--yt-live-chat-paid-message-background-color: #FF6F00;">
+                <div id="author-photo">
+                    <img src="https://ui-avatars.com/api/?name=Orange&background=FF6F00" alt="">
+                </div>
+                <div id="header">
+                    <span id="author-name">Fan Cam Nhiệt Tình</span>
+                    <span id="purchase-amount">₫100,000</span>
+                </div>
+                <div id="content">
+                    <span id="message">Rotation 3D + scale + blur effect tuyệt vời! 🧡🚀</span>
+                </div>
+            </yt-live-chat-paid-message-renderer>
+        </div>
+    </div>
+
+    <script>
+        const replayBtn = document.getElementById('replay-btn');
+        const container = document.getElementById('superchat-container');
+
+        replayBtn.addEventListener('click', function () {
+            // Remove and re-add all superchats to replay animation
+            const superchats = Array.from(container.querySelectorAll('yt-live-chat-paid-message-renderer'));
+
+            superchats.forEach((sc, index) => {
+                // Add replay class to stop animation
+                sc.classList.add('replay');
+
+                // Remove from DOM
+                setTimeout(() => {
+                    sc.remove();
+                }, 50);
+
+                // Re-add to DOM with delay to trigger animation
+                setTimeout(() => {
+                    sc.classList.remove('replay');
+                    container.appendChild(sc);
+                }, 100 + (index * 300)); // Stagger each superchat by 300ms
+            });
+        });
+    </script>
+</body>
+
+</html>

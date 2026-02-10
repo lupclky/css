@@ -1,192 +1,456 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chat Overlay Test</title>
+    <title>CSS Test - 2 Column Layout</title>
+
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;600;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Itim&family=Mali:wght@400;700&family=Patrick+Hand&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700;800;900&display=swap"
         rel="stylesheet">
 
-    <!-- Link existing CSS -->
-    <link rel="stylesheet" href="css2.css">
+    <!-- Link CSS -->
+    <link rel="stylesheet" href="css3.css">
 
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
-            background-color: #0f9d58;
-            /* Green screen background for testing */
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             padding: 20px;
-            font-family: 'Nunito', sans-serif;
+            font-family: 'Nunito Sans', sans-serif;
             overflow: auto !important;
-            /* Override CSS for testing scrolling */
+        }
+
+        .test-container {
+            max-width: 1600px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+
+        h1 {
+            text-align: center;
+            color: white;
+            font-size: 36px;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .subtitle {
+            text-align: center;
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+
+        .columns {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-top: 20px;
+        }
+
+        .column {
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 15px;
+            padding: 20px;
+            overflow: visible;
+        }
+
+        .column h2 {
+            color: white;
+            font-size: 24px;
+            margin-bottom: 20px;
+            padding: 10px 15px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            text-align: center;
         }
 
         yt-live-chat-renderer {
-            width: 400px;
-            border: 1px dashed rgba(255, 255, 255, 0.2) !important;
-            margin: 0 auto !important;
-            height: 800px;
-            overflow-y: auto !important;
-            background: rgba(0, 0, 0, 0.1) !important;
+            background: transparent !important;
+            overflow: visible !important;
         }
 
-        /* Helper to mimic badge structure */
-        yt-live-chat-author-badge-renderer {
-            display: inline-block;
-            width: 16px;
-            height: 16px;
-            margin-left: 2px;
-        }
-
-        /* Force display for custom tags in standalone html */
+        /* Force display for custom tags */
         yt-live-chat-app,
         yt-live-chat-renderer,
         yt-live-chat-text-message-renderer,
         yt-live-chat-paid-message-renderer,
-        yt-live-chat-banner-renderer {
+        yt-live-chat-legacy-paid-message-renderer,
+        yt-live-chat-banner-renderer,
+        yt-live-chat-author-chip,
+        yt-live-chat-author-badge-renderer,
+        .ytSpecButtonViewModelHost {
             display: block;
+        }
+
+        yt-live-chat-author-chip,
+        .ytSpecButtonViewModelHost {
+            display: inline-block !important;
+        }
+
+        @media (max-width: 1200px) {
+            .columns {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
 
 <body>
+    <div class="test-container">
+        <h1>🎨 CSS3 Chat Styling Test</h1>
+        <p class="subtitle">iOS 26 Style Animation • Top Fan Badges • @Mentions • Soft Colors</p>
 
-    <yt-live-chat-renderer>
-        <!-- Pinned Message -->
-        <yt-live-chat-banner-renderer>
-            <div id="banner">
-                <div id="header">
-                    <div id="author-photo">
-                        <img src="https://ui-avatars.com/api/?name=Admin&background=random" alt="">
-                    </div>
-                    <div id="author-name">Chủ Kênh</div>
-                </div>
-                <div id="contents">
-                    <span id="text">Chào mừng các bạn đến với stream! Hôm nay chúng ta sẽ leo rank nhé :3</span>
-                </div>
-            </div>
-        </yt-live-chat-banner-renderer>
+        <div class="columns">
+            <!-- Left Column -->
+            <div class="column">
+                <h2>📝 Basic Messages & Roles</h2>
+                <yt-live-chat-renderer>
 
-        <!-- Normal Message -->
-        <yt-live-chat-text-message-renderer>
-            <div id="author-photo">
-                <img src="https://ui-avatars.com/api/?name=User+One&background=random" alt="">
-            </div>
-            <div id="content">
-                <yt-live-chat-author-chip>
-                    <span id="author-name">Viewer Thường</span>
-                </yt-live-chat-author-chip>
-                <span id="message">Giao diện này nhìn cute quá ad ơi! text sáng dễ đọc hơn hẳn</span>
-            </div>
-        </yt-live-chat-text-message-renderer>
+                    <!-- Normal Message -->
+                    <yt-live-chat-text-message-renderer>
+                        <div id="author-photo">
+                            <img src="https://ui-avatars.com/api/?name=User&background=random" alt="">
+                        </div>
+                        <div id="content">
+                            <yt-live-chat-author-chip>
+                                <span id="author-name">Viewer Thường</span>
+                            </yt-live-chat-author-chip>
+                            <span id="message">Giao diện này đẹp quá! 😍</span>
+                        </div>
+                    </yt-live-chat-text-message-renderer>
 
-        <!-- Member Message (Should have Pineapple) -->
-        <yt-live-chat-text-message-renderer author-type="member">
-            <div id="author-photo">
-                <img src="https://ui-avatars.com/api/?name=Member+Two&background=random" alt="">
-            </div>
-            <div id="content">
-                <yt-live-chat-author-chip>
-                    <span id="author-name">Fan Cứng</span>
-                    <span id="author-badges">
-                        <img src="https://ui-avatars.com/api/?name=M&background=00C853&color=fff&rounded=true" alt="">
-                    </span>
-                    <yt-live-chat-author-badge-renderer type="member"></yt-live-chat-author-badge-renderer>
-                </yt-live-chat-author-chip>
-                <span id="message">Có quả dứa cute xỉu luôn á 🍍</span>
-            </div>
-        </yt-live-chat-text-message-renderer>
+                    <!-- Member Message with Pineapple -->
+                    <yt-live-chat-text-message-renderer author-type="member">
+                        <div id="author-photo">
+                            <img src="https://ui-avatars.com/api/?name=Member&background=2E7D32" alt="">
+                        </div>
+                        <div id="content">
+                            <yt-live-chat-author-chip>
+                                <span id="author-name">Fan Cứng</span>
+                                <span id="author-badges">
+                                    <img src="https://ui-avatars.com/api/?name=M&background=00C853&color=fff&rounded=true"
+                                        alt="">
+                                </span>
+                            </yt-live-chat-author-chip>
+                            <span id="message">Có dứa cute! 🍍</span>
+                        </div>
+                    </yt-live-chat-text-message-renderer>
 
-        <!-- Moderator Message -->
-        <yt-live-chat-text-message-renderer author-type="moderator">
-            <div id="author-photo">
-                <img src="https://ui-avatars.com/api/?name=Mod+Three&background=random" alt="">
-            </div>
-            <div id="content">
-                <yt-live-chat-author-chip>
-                    <span id="author-name">Anh Mod Đẹp Trai</span>
-                    <span id="author-badges">
-                        <!-- Mod icon approximated structure from CSS -->
-                        <img src="data:image/svg+xml;base64,PHN2ZyAgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiBoZWlnaHQ9IjI0cHgiIHZpZXdCb3g9IjAgMCAyNCAyNCIgd2lkdGg9IjI0cHgiIGZpbGw9IiNGRkZGRkYiPjxwYXRoIGQ9Ik0xMiAxTDMgNXY2YzAgNS41NSAzLjg0IDEwLjc0IDkgMTIgNS4xNi0xLjI2IDktNi40NSA5LTEyVjVsLTktNHptLTIgMTZsLTQtNCAxLjQxLTEuNDFMMTAgMTQuMTdsNi41OS02LjU5TDE4IDlsLTggOHoiLz48L3N2Zz4="
-                            alt="">
-                    </span>
-                </yt-live-chat-author-chip>
-                <span id="message">Mọi người chú ý không spam kênh chat nhé!</span>
-            </div>
-        </yt-live-chat-text-message-renderer>
+                    <!-- Moderator Message -->
+                    <yt-live-chat-text-message-renderer author-type="moderator">
+                        <div id="author-photo">
+                            <img src="https://ui-avatars.com/api/?name=Mod&background=1565C0" alt="">
+                        </div>
+                        <div id="content">
+                            <yt-live-chat-author-chip>
+                                <span id="author-name">Mod Đẹp Trai</span>
+                                <span id="author-badges">
+                                    <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGhlaWdodD0iMjRweCIgdmlld0JveD0iMCAwIDI0IDI0IiB3aWR0aD0iMjRweCIgZmlsbD0iI0ZGRkZGRiI+PHBhdGggZD0iTTEyIDFMMyA1djZjMCA1LjU1IDMuODQgMTAuNzQgOSAxMiA1LjE2LTEuMjYgOS02LjQ1IDktMTJWNWwtOS00em0tMiAxNmwtNC00IDEuNDEtMS40MUwxMCAxNC4xN2w2LjU5LTYuNTlMMTggOWwtOCA4eiIvPjwvc3ZnPg=="
+                                        alt="">
+                                </span>
+                            </yt-live-chat-author-chip>
+                            <span id="message">Không spam chat nhé! 🛡️</span>
+                        </div>
+                    </yt-live-chat-text-message-renderer>
 
-        <!-- Moderator + Member Message (TEST CASE: Should have Pineapple AND Mod Colors) -->
-        <yt-live-chat-text-message-renderer author-type="moderator">
-            <div id="author-photo">
-                <img src="https://ui-avatars.com/api/?name=Super+Mod&background=random" alt="">
-            </div>
-            <div id="content">
-                <yt-live-chat-author-chip>
-                    <span id="author-name">Mod Kiêm Fan Cứng</span>
-                    <span id="author-badges">
-                        <img src="data:image/svg+xml;base64,PHN2ZyAgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiBoZWlnaHQ9IjI0cHgiIHZpZXdCb3g9IjAgMCAyNCAyNCIgd2lkdGg9IjI0cHgiIGZpbGw9IiNGRkZGRkYiPjxwYXRoIGQ9Ik0xMiAxTDMgNXY2YzAgNS41NSAzLjg0IDEwLjc0IDkgMTIgNS4xNi0xLjI2IDktNi40NSA5LTEyVjVsLTktNHptLTIgMTZsLTQtNCAxLjQxLTEuNDFMMTAgMTQuMTdsNi41OS02LjU5TDE4IDlsLTggOHoiLz48L3N2Zz4="
-                            alt="">
-                    </span>
-                    <!-- This hidden element triggers the :has() selector in CSS -->
-                    <yt-live-chat-author-badge-renderer type="member"></yt-live-chat-author-badge-renderer>
-                </yt-live-chat-author-chip>
-                <span id="message">Test trường hợp vừa là Mod vừa là Member nè! Có dứa không ta? 🤔</span>
-            </div>
-        </yt-live-chat-text-message-renderer>
+                    <!-- Owner Message -->
+                    <yt-live-chat-text-message-renderer author-type="owner">
+                        <div id="author-photo">
+                            <img src="https://ui-avatars.com/api/?name=Owner&background=FFD700" alt="">
+                        </div>
+                        <div id="content">
+                            <yt-live-chat-author-chip>
+                                <span id="author-name">Chủ Kênh</span>
+                                <span id="author-badges">
+                                    <img src="https://ui-avatars.com/api/?name=K&background=000&color=fff&rounded=true"
+                                        alt="">
+                                </span>
+                            </yt-live-chat-author-chip>
+                            <span id="message">Vua dứa đây! 🍍👑✨</span>
+                        </div>
+                    </yt-live-chat-text-message-renderer>
 
-        <!-- OWNER Message (TEST CASE: PINEAPPLE KING) -->
-        <yt-live-chat-text-message-renderer author-type="owner">
-            <div id="author-photo">
-                <img src="https://ui-avatars.com/api/?name=Owner+Boss&background=FFD700&color=fff" alt="">
-            </div>
-            <div id="content">
-                <yt-live-chat-author-chip>
-                    <span id="author-name">Chủ Kênh Vĩ Đại</span>
-                    <span id="author-badges">
-                        <img src="https://ui-avatars.com/api/?name=K&background=000&color=fff&rounded=true" alt="">
-                    </span>
-                </yt-live-chat-author-chip>
-                <span id="message">Ta là vua của dứa! Các ngươi thấy ta nổi bật không? 🍍👑✨</span>
-            </div>
-        </yt-live-chat-text-message-renderer>
+                    <!-- Message with @mention -->
+                    <yt-live-chat-text-message-renderer>
+                        <div id="author-photo">
+                            <img src="https://ui-avatars.com/api/?name=User2&background=random" alt="">
+                        </div>
+                        <div id="content">
+                            <yt-live-chat-author-chip>
+                                <span id="author-name">Người Dùng</span>
+                            </yt-live-chat-author-chip>
+                            <span id="message">Chào <a href="https://youtube.com/@wow-2810">@wow-2810</a> nhé
+                                bạn!</span>
+                        </div>
+                    </yt-live-chat-text-message-renderer>
 
-        <!-- Super Chat -->
-        <yt-live-chat-paid-message-renderer>
-            <div id="header">
-                <div id="author-photo">
-                    <img src="https://ui-avatars.com/api/?name=Rich+Kid&background=random" alt="">
-                </div>
-                <div id="header-content-primary-column">
-                    <div id="author-name">Đại Gia Ngầm</div>
-                    <div id="purchase-amount">₫500.000</div>
-                </div>
-            </div>
-            <div id="content">
-                <div id="message">Donate ủng hộ streamer tô phở nè! Hiệu ứng dồn dập ghê chưa 🚀</div>
-            </div>
-        </yt-live-chat-paid-message-renderer>
+                    <!-- Message with hyperlink -->
+                    <yt-live-chat-text-message-renderer>
+                        <div id="author-photo">
+                            <img src="https://ui-avatars.com/api/?name=User3&background=random" alt="">
+                        </div>
+                        <div id="content">
+                            <yt-live-chat-author-chip>
+                                <span id="author-name">Link Sharer</span>
+                            </yt-live-chat-author-chip>
+                            <span id="message">Xem video này: <a
+                                    href="https://youtube.com/watch?v=example">youtube.com/watch</a></span>
+                        </div>
+                    </yt-live-chat-text-message-renderer>
 
-        <!-- Membership Join -->
-        <yt-live-chat-membership-item-renderer>
-            <div id="header">
-                <div id="author-photo">
-                    <img src="https://ui-avatars.com/api/?name=New+Mem&background=random" alt="">
-                </div>
-                <div id="header-content-primary-column">
-                    <div id="author-name">Fan Mới Nhú</div>
-                    <div id="header-subtext">Welcome to Membership!</div>
-                </div>
+                </yt-live-chat-renderer>
             </div>
-            <div id="content">
-                <div id="message">Đã tham gia hội viên!</div>
+
+            <!-- Right Column -->
+            <div class="column">
+                <h2>🏆 Top Fans & Special Features</h2>
+                <yt-live-chat-renderer>
+
+                    <!-- Top Fan #1 -->
+                    <yt-live-chat-text-message-renderer>
+                        <div id="author-photo">
+                            <img src="https://ui-avatars.com/api/?name=Top1&background=FFD700" alt="">
+                        </div>
+                        <div id="content">
+                            <yt-live-chat-author-chip>
+                                <span id="author-name">Top Fan #1</span>
+                            </yt-live-chat-author-chip>
+                            <span class="ytSpecButtonViewModelHost">
+                                <button class="yt-spec-button-shape-next" aria-label="#1">
+                                    <div class="yt-spec-button-shape-next__icon">
+                                        <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24"
+                                            width="24">
+                                            <path
+                                                d="M12 2a1.5 1.5 0 00-1.296 2.253L7.64 9.617 3.996 7.432A1.498 1.498 0 102.19 8.967l1.833 8.25A1 1 0 005 18h14a1 1 0 00.977-.783l1.833-8.249a1.499 1.499 0 10-1.807-1.536l-3.642 2.185-3.065-5.364A1.5 1.5 0 0012 2Z" />
+                                        </svg>
+                                    </div>
+                                    <div class="yt-spec-button-shape-next__button-text-content">#1</div>
+                                </button>
+                            </span>
+                            <span id="message">Vàng rực rỡ! 👑</span>
+                        </div>
+                    </yt-live-chat-text-message-renderer>
+
+                    <!-- Top Fan #2 -->
+                    <yt-live-chat-text-message-renderer>
+                        <div id="author-photo">
+                            <img src="https://ui-avatars.com/api/?name=Top2&background=C0C0C0" alt="">
+                        </div>
+                        <div id="content">
+                            <yt-live-chat-author-chip>
+                                <span id="author-name">Top Fan #2</span>
+                            </yt-live-chat-author-chip>
+                            <span class="ytSpecButtonViewModelHost">
+                                <button class="yt-spec-button-shape-next" aria-label="#2">
+                                    <div class="yt-spec-button-shape-next__icon">
+                                        <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24"
+                                            width="24">
+                                            <path
+                                                d="M12 2a1.5 1.5 0 00-1.296 2.253L7.64 9.617 3.996 7.432A1.498 1.498 0 102.19 8.967l1.833 8.25A1 1 0 005 18h14a1 1 0 00.977-.783l1.833-8.249a1.499 1.499 0 10-1.807-1.536l-3.642 2.185-3.065-5.364A1.5 1.5 0 0012 2Z" />
+                                        </svg>
+                                    </div>
+                                    <div class="yt-spec-button-shape-next__button-text-content">#2</div>
+                                </button>
+                            </span>
+                            <span id="message">Bạc lấp lánh! 🥈</span>
+                        </div>
+                    </yt-live-chat-text-message-renderer>
+
+                    <!-- Top Fan #3 -->
+                    <yt-live-chat-text-message-renderer>
+                        <div id="author-photo">
+                            <img src="https://ui-avatars.com/api/?name=Top3&background=CD7F32" alt="">
+                        </div>
+                        <div id="content">
+                            <yt-live-chat-author-chip>
+                                <span id="author-name">Top Fan #3</span>
+                            </yt-live-chat-author-chip>
+                            <span class="ytSpecButtonViewModelHost">
+                                <button class="yt-spec-button-shape-next" aria-label="#3">
+                                    <div class="yt-spec-button-shape-next__icon">
+                                        <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24"
+                                            width="24">
+                                            <path
+                                                d="M12 2a1.5 1.5 0 00-1.296 2.253L7.64 9.617 3.996 7.432A1.498 1.498 0 102.19 8.967l1.833 8.25A1 1 0 005 18h14a1 1 0 00.977-.783l1.833-8.249a1.499 1.499 0 10-1.807-1.536l-3.642 2.185-3.065-5.364A1.5 1.5 0 0012 2Z" />
+                                        </svg>
+                                    </div>
+                                    <div class="yt-spec-button-shape-next__button-text-content">#3</div>
+                                </button>
+                            </span>
+                            <span id="message">Đồng sáng ngời! 🥉</span>
+                        </div>
+                    </yt-live-chat-text-message-renderer>
+
+                    <!-- Superchat Reply (soft green) -->
+                    <yt-live-chat-text-message-renderer>
+                        <div id="author-photo">
+                            <img src="https://ui-avatars.com/api/?name=Reply&background=66BB6A" alt="">
+                        </div>
+                        <div id="content">
+                            <yt-live-chat-author-chip>
+                                <span id="author-name">Người Trả Lời</span>
+                            </yt-live-chat-author-chip>
+                            <button class="yt-spec-button-shape-next yt-spec-button-shape-next--tonal">
+                                <div class="yt-spec-button-shape-next__button-text-content">@peterduong3459</div>
+                                <div class="yt-spec-button-shape-next__icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24">
+                                        <path
+                                            d="M1 6a4 4 0 014-4h14a4 4 0 014 4v10a4 4 0 01-4 4h-4.8l-5.105 2.836A1.41 1.41 0 017 21.604V20H5a4 4 0 01-4-4V6Z" />
+                                    </svg>
+                                </div>
+                            </button>
+                            <span id="message">Cảm ơn bạn nhé!</span>
+                        </div>
+                    </yt-live-chat-text-message-renderer>
+
+                    <!-- Superchat Legacy (soft blue) -->
+                    <yt-live-chat-legacy-paid-message-renderer>
+                        <span id="event-text">💙 Superchat Reply - Màu xanh nhẹ nhàng!</span>
+                    </yt-live-chat-legacy-paid-message-renderer>
+
+                    <!-- Banner/Pinned Message -->
+                    <yt-live-chat-banner-renderer>
+                        <div id="banner">
+                            <div id="header">
+                                <div id="author-photo">
+                                    <img src="https://ui-avatars.com/api/?name=Admin&background=FF8F00" alt="">
+                                </div>
+                                <div id="author-name">Thông Báo</div>
+                            </div>
+                            <div id="contents">
+                                <span id="text">Chào mừng đến stream! Nhớ đăng ký kênh nhé! 🎉</span>
+                            </div>
+                        </div>
+                    </yt-live-chat-banner-renderer>
+
+                    <!-- New Membership -->
+                    <yt-live-chat-membership-item-renderer>
+                        <div id="card">
+                            <div id="header">
+                                <div id="author-photo">
+                                    <img src="https://ui-avatars.com/api/?name=NewMem&background=66BB6A" alt="">
+                                </div>
+                                <div id="header-content">
+                                    <div id="header-content-primary-column">
+                                        <span id="author-name">Fan Mới Nhú</span>
+                                        <span id="header-subtext">Thành viên mới</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="message">Vừa đăng ký hội viên! 🎊</div>
+                        </div>
+                    </yt-live-chat-membership-item-renderer>
+
+                    <!-- Gift Membership -->
+                    <yt-live-chat-membership-item-renderer>
+                        <div id="card">
+                            <div id="header">
+                                <div id="author-photo">
+                                    <img src="https://ui-avatars.com/api/?name=Gifter&background=FF9800" alt="">
+                                </div>
+                                <div id="header-content">
+                                    <div id="header-content-primary-column">
+                                        <span id="author-name">Đại Gia Tặng Quà</span>
+                                        <span id="header-subtext">Tặng 5 gói hội viên</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="message">Tặng gói hội viên cho cộng đồng! 🎁</div>
+                        </div>
+                    </yt-live-chat-membership-item-renderer>
+
+                    <!-- Receive Membership Gift -->
+                    <yt-live-chat-membership-item-renderer>
+                        <div id="card">
+                            <div id="header">
+                                <div id="author-photo">
+                                    <img src="https://ui-avatars.com/api/?name=Lucky&background=4CAF50" alt="">
+                                </div>
+                                <div id="header-content">
+                                    <div id="header-content-primary-column">
+                                        <span id="author-name">Người May Mắn</span>
+                                        <span id="header-subtext">Nhận được gói hội viên</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="message">Nhận được gói hội viên từ @daigia! 🍀</div>
+                        </div>
+                    </yt-live-chat-membership-item-renderer>
+
+                    <!-- Superchat Example 1 - Red -->
+                    <yt-live-chat-paid-message-renderer style="--yt-live-chat-paid-message-background-color: #E62117;">
+                        <div id="author-photo">
+                            <img src="https://ui-avatars.com/api/?name=Rich&background=E62117" alt="">
+                        </div>
+                        <div id="header">
+                            <span id="author-name">Đại Gia Đỏ</span>
+                            <span id="purchase-amount">₫500,000</span>
+                        </div>
+                        <div id="content">
+                            <span id="message">Chúc stream thành công! 🔥💰 Hiệu ứng 3D nổi khối rất đẹp!</span>
+                        </div>
+                    </yt-live-chat-paid-message-renderer>
+
+                    <!-- Superchat Example 2 - Blue -->
+                    <yt-live-chat-paid-message-renderer style="--yt-live-chat-paid-message-background-color: #1565C0;">
+                        <div id="author-photo">
+                            <img src="https://ui-avatars.com/api/?name=Blue&background=1565C0" alt="">
+                        </div>
+                        <div id="header">
+                            <span id="author-name">Fan Xanh Lam</span>
+                            <span id="purchase-amount">₫200,000</span>
+                        </div>
+                        <div id="content">
+                            <span id="message">Kênh hay quá! 💙 Di chuột vào để xem hiệu ứng 3D!</span>
+                        </div>
+                    </yt-live-chat-paid-message-renderer>
+
+                    <!-- Superchat Example 3 - Green -->
+                    <yt-live-chat-paid-message-renderer style="--yt-live-chat-paid-message-background-color: #2E7D32;">
+                        <div id="author-photo">
+                            <img src="https://ui-avatars.com/api/?name=Green&background=2E7D32" alt="">
+                        </div>
+                        <div id="header">
+                            <span id="author-name">Người Ủng Hộ Xanh</span>
+                            <span id="purchase-amount">₫100,000</span>
+                        </div>
+                        <div id="content">
+                            <span id="message">Hiệu ứng nổi khối 3D cực đỉnh! 🍀✨</span>
+                        </div>
+                    </yt-live-chat-paid-message-renderer>
+
+                    <!-- Superchat Example 4 - Orange -->
+                    <yt-live-chat-paid-message-renderer style="--yt-live-chat-paid-message-background-color: #FF6F00;">
+                        <div id="author-photo">
+                            <img src="https://ui-avatars.com/api/?name=Orange&background=FF6F00" alt="">
+                        </div>
+                        <div id="header">
+                            <span id="author-name">Supporter Cam</span>
+                            <span id="purchase-amount">₫50,000</span>
+                        </div>
+                        <div id="content">
+                            <span id="message">Chúc mừng! Bóng đổ nhiều lớp tạo chiều sâu thật tuyệt! 🧡🎨</span>
+                        </div>
+                    </yt-live-chat-paid-message-renderer>
+
+                </yt-live-chat-renderer>
             </div>
-        </yt-live-chat-membership-item-renderer>
-
-    </yt-live-chat-renderer>
-
+        </div>
+    </div>
 </body>
 
 </html>

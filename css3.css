@@ -1,994 +1,1421 @@
-@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;600;700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Itim&family=Mali:wght@400;700&family=Patrick+Hand&display=swap");
-
-/* Background colors */
-body {
-    overflow: hidden !important;
-    background-color: rgba(0, 0, 0, 0);
-}
-
-/* ===== CHAT RENDERER ===== */
-yt-live-chat-renderer {
-    background: transparent !important;
-    border: none !important;
-    margin: 0 !important;
-    padding: 5px !important;
-    box-shadow: none !important;
-    position: relative !important;
-    overflow: hidden !important;
-}
-
-/* =========================================================================
-   1. PINNED MESSAGE (KHUNG GHIM)
-   ========================================================================= */
-yt-live-chat-banner-renderer {
-    display: block !important;
-    margin-top: 70px !important;
-    margin-bottom: 30px !important;
-    margin-left: 10px !important;
-    margin-right: 10px !important;
-    position: relative !important;
-    z-index: 9999 !important;
-    box-shadow: none !important;
-    background: transparent !important;
-    overflow: visible !important;
-    height: auto !important;
-    min-height: unset !important;
-    animation: none !important;
-    opacity: 1 !important;
-}
-
-yt-live-chat-banner-renderer>div {
-    background: transparent !important;
-    box-shadow: none !important;
-}
-
-yt-live-chat-banner-renderer #banner {
-    /* Apple-style shape: Rectangular with nice rounded corners */
-    border-radius: 20px !important;
-    box-shadow: 0 8px 30px rgba(255, 143, 0, 0.2), 0 4px 10px rgba(0, 0, 0, 0.1) !important;
-
-    /* Pineapple Pattern Background - Increased Visibility */
-    background:
-        linear-gradient(135deg, rgba(230, 81, 0, 0.08) 25%, transparent 25%, transparent 50%, rgba(230, 81, 0, 0.08) 50%, rgba(230, 81, 0, 0.08) 75%, transparent 75%, transparent 100%),
-        linear-gradient(45deg, rgba(230, 81, 0, 0.08) 25%, transparent 25%, transparent 50%, rgba(230, 81, 0, 0.08) 50%, rgba(230, 81, 0, 0.08) 75%, transparent 75%, transparent 100%),
-        #FFF9C4 !important;
-    background-size: 20px 20px !important;
-    background-position: 0 0 !important;
-
-    /* Golden Frame */
-    border: 4px solid #FFCA28 !important;
-    /* Lighter Gold */
-
-    position: relative !important;
-    overflow: visible !important;
-    contain: none !important;
-    clip-path: none !important;
-    padding: 15px 20px 20px 20px !important;
-    min-height: unset !important;
-    height: auto !important;
-    width: fit-content !important;
-    max-width: 95% !important;
-    /* Kéo dài khung ghim tương ứng (+45px) */
-    min-width: 345px !important;
-}
-
-yt-live-chat-banner-renderer #banner::after {
-    content: "" !important;
-    position: absolute !important;
-    top: 5px !important;
-    left: 5px !important;
-    right: 5px !important;
-    bottom: 5px !important;
-    /* Stitching Effect (Hiệu ứng khâu) */
-    border: 2px dashed #E65100 !important;
-    /* Dark orange stitch */
-    border-radius: 15px !important;
-    pointer-events: none !important;
-    z-index: 0 !important;
-    opacity: 0.6 !important;
-}
-
-yt-live-chat-banner-renderer #header {
-    display: flex !important;
-    background: transparent !important;
-    padding: 0 !important;
-    margin: 0 !important;
-    border: none !important;
-    overflow: visible !important;
-    align-items: center !important;
-    min-height: unset !important;
-}
-
-yt-live-chat-banner-renderer #contents {
-    background: transparent !important;
-    padding: 0 !important;
-    margin-top: 10px !important;
-    overflow: visible !important;
-}
-
-yt-live-chat-banner-renderer #author-photo {
-    width: 50px !important;
-    height: 50px !important;
-    border-radius: 50% !important;
-    border: 3px solid #FF8F00 !important;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2) !important;
-    overflow: hidden !important;
-    margin-right: 15px !important;
-    position: relative !important;
-    z-index: 2 !important;
-    flex-shrink: 0 !important;
-}
-
-yt-live-chat-banner-renderer #author-photo img {
-    width: 100% !important;
-    height: 100% !important;
-    object-fit: cover !important;
-}
-
-/* Tên người ghim */
-yt-live-chat-banner-renderer #author-name {
-    color: #FFFFFF !important;
-    font-family: "Nunito", "Noto Sans", sans-serif !important;
-    font-weight: 900 !important;
-    font-size: 26px !important;
-    line-height: 1.1 !important;
-    position: absolute !important;
-    top: -50px !important;
-    left: 0px !important;
-    z-index: 99999 !important;
-    padding: 8px 25px !important;
-    border-radius: 25px !important;
-    border: 3px solid #FFFFFF !important;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25) !important;
-    white-space: nowrap !important;
-    background: linear-gradient(135deg, #FF8F00 0%, #E65100 100%) !important;
-}
-
-yt-live-chat-banner-renderer #text {
-    color: #3E2000 !important;
-    font-family: "Nunito", "Noto Sans", sans-serif !important;
-    font-size: 24px !important;
-    line-height: 1.4 !important;
-    font-weight: 800 !important;
-    text-shadow: -1px -1px 0 #FFF, 1px -1px 0 #FFF, -1px 1px 0 #FFF, 1px 1px 0 #FFF !important;
-    position: relative !important;
-    z-index: 2 !important;
-    display: block !important;
-    overflow: visible !important;
-    white-space: normal !important;
-    overflow-wrap: anywhere !important;
-    word-break: break-word !important;
-    opacity: 1 !important;
-}
-
-/* ẨN MENU TRONG GHIM */
-yt-live-chat-banner-renderer #menu-button,
-yt-live-chat-banner-renderer yt-icon,
-yt-live-chat-banner-renderer #action-button,
-yt-live-chat-banner-renderer #menu {
-    display: none !important;
-}
+    @import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;600;700&display=swap");
+    @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap");
+    @import url("https://fonts.googleapis.com/css2?family=Itim&family=Mali:wght@400;700&family=Patrick+Hand&display=swap");
 
 
-/* =========================================================================
-   2. NORMAL CHAT STYLE
-   ========================================================================= */
-yt-live-chat-text-message-renderer,
-yt-live-chat-text-message-renderer[is-highlighted] {
-    background: transparent !important;
-    border: none !important;
-    border-radius: 0 !important;
-    margin: 10px 10px 4px 6px !important;
-    padding: 4px !important;
-    box-shadow: none !important;
-    position: relative !important;
-    overflow: visible !important;
-    contain: none !important;
-    clip-path: none !important;
-    z-index: 1 !important;
-    animation: none !important;
-    transition: none !important;
-
-    width: fit-content !important;
-    max-width: 95% !important;
-
-    display: flex !important;
-    clear: both !important;
-}
-
-yt-live-chat-text-message-renderer::after {
-    display: none !important;
-}
-
-/* Khung chat*/
-
-yt-live-chat-text-message-renderer #content {
-    position: relative !important;
-    z-index: 1 !important;
-    margin-top: -4px !important;
-}
-
-/* Avatar */
-/* Avatar - Move into Chip visually */
-yt-live-chat-text-message-renderer #author-photo,
-yt-live-chat-paid-message-renderer #author-photo,
-yt-live-chat-legacy-paid-message-renderer #author-photo {
-    width: 24px !important;
-    height: 24px !important;
-    border-radius: 50% !important;
-    border: 2px solid rgba(255, 255, 255, 0.9) !important;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3) !important;
-    overflow: hidden !important;
-    animation: none !important;
-    z-index: 1000 !important;
-
-    /* Absolute Positioning to sit "inside" the chip */
-    position: absolute !important;
-    top: 3px !important;
-    /* Move up to center with channel name */
-    /* Adjust based on renderer padding + chip padding alignment */
-    left: 10px !important;
-    margin: 0 !important;
-}
-
-/* Dịch avatar sang phải cho MEMBER để tránh che quả dứa */
-yt-live-chat-text-message-renderer[author-type="member"] #author-photo,
-yt-live-chat-text-message-renderer[author-type="moderator"]:has(yt-live-chat-author-badge-renderer[type="member"]) #author-photo {
-    left: 25px !important;
-}
-
-yt-live-chat-text-message-renderer[author-type="owner"] #author-photo {
-    left: 35px !important;
-}
-
-yt-live-chat-text-message-renderer #author-photo img,
-yt-live-chat-paid-message-renderer #author-photo img {
-    width: 100% !important;
-    height: 100% !important;
-    object-fit: cover !important;
-}
-
-/* Text Styles - Mặc định duy nhất cho mọi chat (chỉ channel name đổi theo mod/hội viên) */
-yt-live-chat-text-message-renderer #message {
-    color: #FFFFFF !important;
-    display: inline !important;
-    /* Font 'Nunito': Rounded, Cute, but extremely legible like the image */
-    font-family: "Nunito", sans-serif !important;
-    font-size: 28px !important;
-    line-height: 1.3 !important;
-    font-weight: 800 !important;
-    /* Bold for readability */
-    vertical-align: middle !important;
-
-    /* High readability stroke style similar to the image */
-    /* paint-order saves the inner font shape */
-    paint-order: stroke fill !important;
-    -webkit-text-stroke: 4px #000000 !important;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8) !important;
-
-    white-space: normal !important;
-    overflow-wrap: anywhere !important;
-    word-break: break-word !important;
-}
-
-yt-live-chat-text-message-renderer #message img,
-yt-live-chat-paid-message-renderer #message img {
-    display: inline-block !important;
-    vertical-align: middle !important;
-    max-width: 100% !important;
-    height: auto !important;
-}
-
-/* --- TÊN VÀ LOGO (CHIP) --- */
-yt-live-chat-text-message-renderer yt-live-chat-author-chip {
-    display: inline-flex !important;
-    align-items: center !important;
-    gap: 5px !important;
-    position: relative !important;
-    top: 0 !important;
-    margin-left: 0 !important;
-    z-index: 999 !important;
-    margin-bottom: 2px !important;
-
-    /* Padding-left for Avatar */
-    padding: 3px 15px 3px 34px !important;
-
-    border-radius: 20px !important;
-    border: 2.5px solid rgba(255, 255, 255, 0.9) !important;
-    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3) !important;
-    white-space: nowrap !important;
-
-    /* Pineapple Pattern Background - Diamond/Scale Pattern */
-    background:
-        repeating-linear-gradient(60deg, transparent 0px, transparent 6px, rgba(230, 81, 0, 0.15) 6px, rgba(230, 81, 0, 0.15) 8px),
-        repeating-linear-gradient(-60deg, transparent 0px, transparent 6px, rgba(230, 81, 0, 0.15) 6px, rgba(230, 81, 0, 0.15) 8px),
-        linear-gradient(135deg, #FFC107 0%, #FF8F00 100%) !important;
-
-    width: max-content !important;
-    vertical-align: middle !important;
-    margin-right: 8px !important;
-    /* Add space between chip and text */
-}
-
-/* Xoá quả dứa cho chip chung - chỉ member mới có */
-yt-live-chat-text-message-renderer yt-live-chat-author-chip::before {
-    display: none !important;
-}
-
-yt-live-chat-text-message-renderer[author-type="moderator"] yt-live-chat-author-chip {
-    background:
-        repeating-linear-gradient(60deg, transparent 0px, transparent 6px, rgba(21, 101, 192, 0.15) 6px, rgba(21, 101, 192, 0.15) 8px),
-        repeating-linear-gradient(-60deg, transparent 0px, transparent 6px, rgba(21, 101, 192, 0.15) 6px, rgba(21, 101, 192, 0.15) 8px),
-        linear-gradient(135deg, #42A5F5 0%, #1565C0 100%) !important;
-    border-color: #1565C0 !important;
-}
-
-yt-live-chat-text-message-renderer[author-type="member"] yt-live-chat-author-chip {
-    /* Tăng padding để chứa quả dứa */
-    padding: 3px 15px 3px 46px !important;
-    background:
-        repeating-linear-gradient(60deg, transparent 0px, transparent 6px, rgba(46, 125, 50, 0.15) 6px, rgba(46, 125, 50, 0.15) 8px),
-        repeating-linear-gradient(-60deg, transparent 0px, transparent 6px, rgba(46, 125, 50, 0.15) 6px, rgba(46, 125, 50, 0.15) 8px),
-        linear-gradient(135deg, #66BB6A 0%, #2E7D32 100%) !important;
-    border-color: #2E7D32 !important;
-}
-
-/* Quả dứa cute cho hội viên (member) */
-yt-live-chat-text-message-renderer[author-type="member"] yt-live-chat-author-chip::before {
-    content: "" !important;
-    display: block !important;
-    position: absolute !important;
-    top: -12px !important;
-    left: -8px !important;
-    width: 32px !important;
-    height: 32px !important;
-    z-index: 1001 !important;
-    filter: drop-shadow(1px 2px 2px rgba(0, 0, 0, 0.3)) !important;
-    transform: rotate(-10deg) !important;
-    /* Cute Kawaii Pineapple SVG - Smiling Face */
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3C!-- Leaves --%3E%3Cpath d='M50 28 C45 10 35 10 30 20' stroke='%234CAF50' stroke-width='5' stroke-linecap='round' fill='none'/%3E%3Cpath d='M50 28 C55 10 65 10 70 20' stroke='%234CAF50' stroke-width='5' stroke-linecap='round' fill='none'/%3E%3Cpath d='M50 28 L50 5' stroke='%23388E3C' stroke-width='5' stroke-linecap='round' fill='none'/%3E%3C!-- Body --%3E%3Crect x='20' y='28' width='60' height='65' rx='30' ry='30' fill='%23FFCA28'/%3E%3C!-- Pattern (Subtle) --%3E%3Cpath d='M20 45 L80 45 M20 65 L80 65 M35 28 L35 93 M65 28 L65 93' stroke='%23FF6F00' stroke-width='2' opacity='0.15'/%3E%3C!-- Face --%3E%3Ccircle cx='38' cy='52' r='6' fill='%23212121'/%3E%3Ccircle cx='62' cy='52' r='6' fill='%23212121'/%3E%3C!-- Eye Highlights --%3E%3Ccircle cx='35' cy='49' r='2.5' fill='%23FFF'/%3E%3Ccircle cx='59' cy='49' r='2.5' fill='%23FFF'/%3E%3C!-- Smile (Mouth) --%3E%3Cpath d='M42 62 Q50 70 58 62' stroke='%23212121' stroke-width='3' fill='none' stroke-linecap='round'/%3E%3C!-- Cheeks --%3E%3Ccircle cx='28' cy='60' r='5' fill='%23FF7043' opacity='0.5'/%3E%3Ccircle cx='72' cy='60' r='5' fill='%23FF7043' opacity='0.5'/%3E%3C/svg%3E") !important;
-    background-size: contain !important;
-    background-repeat: no-repeat !important;
-}
-
-/* Mod + Member: Add Pineapple & Padding */
-yt-live-chat-text-message-renderer[author-type="moderator"]:has(yt-live-chat-author-badge-renderer[type="member"]) yt-live-chat-author-chip {
-    padding: 3px 15px 3px 46px !important;
-}
-
-yt-live-chat-text-message-renderer[author-type="moderator"]:has(yt-live-chat-author-badge-renderer[type="member"]) yt-live-chat-author-chip::before {
-    content: "" !important;
-    display: block !important;
-    position: absolute !important;
-    top: -12px !important;
-    left: -8px !important;
-    width: 32px !important;
-    height: 32px !important;
-    z-index: 1001 !important;
-    filter: drop-shadow(1px 2px 2px rgba(0, 0, 0, 0.3)) !important;
-    transform: rotate(-10deg) !important;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3C!-- Leaves --%3E%3Cpath d='M50 28 C45 10 35 10 30 20' stroke='%234CAF50' stroke-width='5' stroke-linecap='round' fill='none'/%3E%3Cpath d='M50 28 C55 10 65 10 70 20' stroke='%234CAF50' stroke-width='5' stroke-linecap='round' fill='none'/%3E%3Cpath d='M50 28 L50 5' stroke='%23388E3C' stroke-width='5' stroke-linecap='round' fill='none'/%3E%3C!-- Body --%3E%3Crect x='20' y='28' width='60' height='65' rx='30' ry='30' fill='%23FFCA28'/%3E%3C!-- Pattern (Subtle) --%3E%3Cpath d='M20 45 L80 45 M20 65 L80 65 M35 28 L35 93 M65 28 L65 93' stroke='%23FF6F00' stroke-width='2' opacity='0.15'/%3E%3C!-- Face --%3E%3Ccircle cx='38' cy='52' r='6' fill='%23212121'/%3E%3Ccircle cx='62' cy='52' r='6' fill='%23212121'/%3E%3C!-- Eye Highlights --%3E%3Ccircle cx='35' cy='49' r='2.5' fill='%23FFF'/%3E%3Ccircle cx='59' cy='49' r='2.5' fill='%23FFF'/%3E%3C!-- Smile (Mouth) --%3E%3Cpath d='M42 62 Q50 70 58 62' stroke='%23212121' stroke-width='3' fill='none' stroke-linecap='round'/%3E%3C!-- Cheeks --%3E%3Ccircle cx='28' cy='60' r='5' fill='%23FF7043' opacity='0.5'/%3E%3Ccircle cx='72' cy='60' r='5' fill='%23FF7043' opacity='0.5'/%3E%3C/svg%3E") !important;
-    background-size: contain !important;
-    background-repeat: no-repeat !important;
-}
-
-/* SUPER OWNER STYLE - PINEAPPLE KING */
-yt-live-chat-text-message-renderer[author-type="owner"] yt-live-chat-author-chip {
-    /* Glowing Border */
-    border: 3px solid #FFD700 !important;
-    box-shadow: 0 0 15px rgba(255, 215, 0, 0.6), 0 0 5px rgba(255, 160, 0, 0.8) !important;
-
-    /* Revert to "Old" Pineapple Effect (Diamond Gradient) */
-    background:
-        repeating-linear-gradient(60deg, transparent 0px, transparent 6px, rgba(230, 81, 0, 0.15) 6px, rgba(230, 81, 0, 0.15) 8px),
-        repeating-linear-gradient(-60deg, transparent 0px, transparent 6px, rgba(230, 81, 0, 0.15) 6px, rgba(230, 81, 0, 0.15) 8px),
-        linear-gradient(135deg, #FFA000 0%, #E65100 100%) !important;
-
-    /* Padding to fit side pineapples  */
-    padding: 3px 35px 3px 50px !important;
-    position: relative !important;
-    overflow: visible !important;
-    margin-bottom: 5px !important;
-    margin-left: 10px !important;
-}
-
-/* Left Pineapple and Right Pineapple */
-yt-live-chat-text-message-renderer[author-type="owner"] yt-live-chat-author-chip::before {
-    content: "" !important;
-    display: block !important;
-    position: absolute !important;
-    top: -15px !important;
-    left: -12px !important;
-    width: 35px !important;
-    height: 35px !important;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3C!-- Leaves --%3E%3Cpath d='M50 28 C45 10 35 10 30 20' stroke='%234CAF50' stroke-width='5' stroke-linecap='round' fill='none'/%3E%3Cpath d='M50 28 C55 10 65 10 70 20' stroke='%234CAF50' stroke-width='5' stroke-linecap='round' fill='none'/%3E%3Cpath d='M50 28 L50 5' stroke='%23388E3C' stroke-width='5' stroke-linecap='round' fill='none'/%3E%3C!-- Body --%3E%3Crect x='20' y='28' width='60' height='65' rx='30' ry='30' fill='%23FFCA28'/%3E%3C!-- Pattern (Subtle) --%3E%3Cpath d='M20 45 L80 45 M20 65 L80 65 M35 28 L35 93 M65 28 L65 93' stroke='%23FF6F00' stroke-width='2' opacity='0.15'/%3E%3C!-- Face --%3E%3Ccircle cx='38' cy='52' r='6' fill='%23212121'/%3E%3Ccircle cx='62' cy='52' r='6' fill='%23212121'/%3E%3C!-- Eye Highlights --%3E%3Ccircle cx='35' cy='49' r='2.5' fill='%23FFF'/%3E%3Ccircle cx='59' cy='49' r='2.5' fill='%23FFF'/%3E%3C!-- Smile (Mouth) --%3E%3Cpath d='M42 62 Q50 70 58 62' stroke='%23212121' stroke-width='3' fill='none' stroke-linecap='round'/%3E%3C!-- Cheeks --%3E%3Ccircle cx='28' cy='60' r='5' fill='%23FF7043' opacity='0.5'/%3E%3Ccircle cx='72' cy='60' r='5' fill='%23FF7043' opacity='0.5'/%3E%3C/svg%3E") !important;
-    background-size: contain !important;
-    background-repeat: no-repeat !important;
-    transform: rotate(-15deg) !important;
-    z-index: 1002 !important;
-    filter: drop-shadow(0 2px 3px rgba(0, 0, 0, 0.3)) !important;
-}
-
-yt-live-chat-text-message-renderer[author-type="owner"] yt-live-chat-author-chip::after {
-    content: "" !important;
-    display: block !important;
-    position: absolute !important;
-    top: -15px !important;
-    right: -12px !important;
-    width: 35px !important;
-    height: 35px !important;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3C!-- Leaves --%3E%3Cpath d='M50 28 C45 10 35 10 30 20' stroke='%234CAF50' stroke-width='5' stroke-linecap='round' fill='none'/%3E%3Cpath d='M50 28 C55 10 65 10 70 20' stroke='%234CAF50' stroke-width='5' stroke-linecap='round' fill='none'/%3E%3Cpath d='M50 28 L50 5' stroke='%23388E3C' stroke-width='5' stroke-linecap='round' fill='none'/%3E%3C!-- Body --%3E%3Crect x='20' y='28' width='60' height='65' rx='30' ry='30' fill='%23FFCA28'/%3E%3C!-- Pattern (Subtle) --%3E%3Cpath d='M20 45 L80 45 M20 65 L80 65 M35 28 L35 93 M65 28 L65 93' stroke='%23FF6F00' stroke-width='2' opacity='0.15'/%3E%3C!-- Face --%3E%3Ccircle cx='38' cy='52' r='6' fill='%23212121'/%3E%3Ccircle cx='62' cy='52' r='6' fill='%23212121'/%3E%3C!-- Eye Highlights --%3E%3Ccircle cx='35' cy='49' r='2.5' fill='%23FFF'/%3E%3Ccircle cx='59' cy='49' r='2.5' fill='%23FFF'/%3E%3C!-- Smile (Mouth) --%3E%3Cpath d='M42 62 Q50 70 58 62' stroke='%23212121' stroke-width='3' fill='none' stroke-linecap='round'/%3E%3C!-- Cheeks --%3E%3Ccircle cx='28' cy='60' r='5' fill='%23FF7043' opacity='0.5'/%3E%3Ccircle cx='72' cy='60' r='5' fill='%23FF7043' opacity='0.5'/%3E%3C/svg%3E") !important;
-    background-size: contain !important;
-    background-repeat: no-repeat !important;
-    transform: rotate(15deg) !important;
-    z-index: 1002 !important;
-    filter: drop-shadow(0 2px 3px rgba(0, 0, 0, 0.3)) !important;
-}
-
-yt-live-chat-text-message-renderer #author-name {
-    background: transparent !important;
-    border: none !important;
-    box-shadow: none !important;
-    padding: 0 !important;
-    margin: 0 !important;
-    position: static !important;
-    color: #FFFFFF !important;
-    font-family: "Nunito", "Noto Sans", sans-serif !important;
-    font-weight: 900 !important;
-    font-size: 20px !important;
-    line-height: 26px !important;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4) !important;
-}
-
-yt-live-chat-text-message-renderer #author-name::after {
-    display: none !important;
-}
-
-yt-live-chat-text-message-renderer #author-badges {
-    display: inline-flex !important;
-    vertical-align: middle !important;
-    margin-left: 2px !important;
-}
-
-yt-live-chat-text-message-renderer #author-badges img {
-    width: 28px !important;
-    height: 28px !important;
-    /* Phong cách coin/medal */
-    background: linear-gradient(135deg, #FFC107 0%, #FF8F00 100%) !important;
-    border: 2px solid #FFFFFF !important;
-    border-radius: 50% !important;
-    padding: 3px !important;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3) !important;
-    margin-left: 2px !important;
-}
-
-yt-live-chat-text-message-renderer[author-type="moderator"] #author-badges img {
-    content: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGhlaWdodD0iMjRweCIgdmlld0JveD0iMCAwIDI0IDI0IiB3aWR0aD0iMjRweCIgZmlsbD0iI0ZGRkZGRiI+PHBhdGggZD0iTTEyIDFMMyA1djZjMCA1LjU1IDMuODQgMTAuNzQgOSAxMiA1LjE2LTEuMjYgOS02LjQ1IDktMTJWNWwtOS00em0tMiAxNmwtNC00IDEuNDEtMS40MUwxMCAxNC4xN2w2LjU5LTYuNTlMMTggOWwtOCA4eiIvPjwvc3ZnPg==") !important;
-    width: 28px !important;
-    height: 28px !important;
-    filter: drop-shadow(0 0 4px rgba(0, 0, 0, 0.4)) !important;
-}
-
-yt-live-chat-text-message-renderer[author-type="member"] #author-badges img {
-    width: 28px !important;
-    height: 28px !important;
-    filter: drop-shadow(0 0 4px rgba(255, 255, 255, 0.8)) !important;
-}
-
-/* =========================================================================
-   CUSTOM BUTTON (TOP CHAT / FAN) - PINEAPPLE STYLE
-   ========================================================================= */
-yt-live-chat-text-message-renderer .ytSpecButtonViewModelHost {
-    display: inline-block !important;
-    vertical-align: middle !important;
-    margin-left: 8px !important;
-}
-
-yt-live-chat-text-message-renderer .ytSpecButtonViewModelHost button,
-yt-live-chat-text-message-renderer .ytSpecButtonViewModelHost .yt-spec-button-shape-next__button-shape-impl {
-    /* Pineapple Gradient (Gold -> Orange) */
-    background: linear-gradient(135deg, #FFC107 0%, #FF8F00 100%) !important;
-    border: 2px solid #FFFFFF !important;
-    border-radius: 20px !important;
-    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.25) !important;
-    padding: 4px 12px !important;
-    height: auto !important;
-    min-height: 28px !important;
-    display: inline-flex !important;
-    align-items: center !important;
-    gap: 6px !important;
-}
-
-/* Text Styling */
-yt-live-chat-text-message-renderer .ytSpecButtonViewModelHost .yt-spec-button-shape-next__button-text-content {
-    color: #FFFFFF !important;
-    font-family: "Nunito", "Noto Sans", sans-serif !important;
-    font-weight: 800 !important;
-    font-size: 14px !important;
-    text-transform: uppercase !important;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4) !important;
-    letter-spacing: 0.5px !important;
-}
-
-/* Crown Icon Styling */
-yt-live-chat-text-message-renderer .ytSpecButtonViewModelHost yt-icon,
-yt-live-chat-text-message-renderer .ytSpecButtonViewModelHost .yt-spec-button-shape-next__icon {
-    width: 18px !important;
-    height: 18px !important;
-    color: #FFFFFF !important;
-    filter: drop-shadow(1px 1px 2px rgba(0, 0, 0, 0.4)) !important;
-}
-
-/* =========================================================================
-   3. SUPER CHAT & TICKER
-   ========================================================================= */
-yt-live-chat-paid-message-renderer {
-    /* Use default YT variables for background */
-    background-color: var(--yt-live-chat-paid-message-background-color, #1565C0) !important;
-    border: none !important;
-    border-radius: 4px !important;
-    margin: 10px !important;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3) !important;
-    border-radius: 22px !important;
-    position: relative !important;
-    overflow: visible !important;
-    padding: 0 !important;
-    display: flex !important;
-    flex-direction: column !important;
-
-    /* Dồn dập hơn */
-    animation: superChatPop 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.4) !important;
-
-    /* CẬP NHẬT: Khung to cố định theo chiều rộng chat (Full Width) */
-    width: auto !important;
-    max-width: 100% !important;
-}
-
-@keyframes superChatPop {
-    0% {
-        transform: scale(0.8) translateY(20px);
-        opacity: 0;
+    body {
+        overflow: hidden !important;
+        background-color: rgba(0, 0, 0, 0);
     }
 
-    50% {
-        transform: scale(1.1);
-        opacity: 1;
+
+    yt-live-chat-renderer {
+        background: transparent !important;
+        border: none !important;
+        margin: 0 !important;
+        padding: 5px !important;
+        box-shadow: none !important;
+        position: relative !important;
+        overflow: hidden !important;
     }
 
-    100% {
-        transform: scale(1) translateY(0);
-        opacity: 1;
-    }
-}
 
-yt-live-chat-paid-message-renderer::after {
-    display: none !important;
-}
-
-yt-live-chat-paid-message-renderer #header {
-    background-color: var(--yt-live-chat-paid-message-header-background-color, #0D47A1) !important;
-    border-bottom: none !important;
-    border-radius: 22px 22px 0 0 !important;
-    /* Fix avatar overlap: Increase left padding */
-    padding: 10px 10px 10px 60px !important;
-    min-height: unset !important;
-    align-items: center !important;
-    position: relative !important;
-    z-index: 3 !important;
-    margin-right: 0 !important;
-}
-
-yt-live-chat-paid-message-renderer #content {
-    padding: 8px 15px 12px 15px !important;
-    z-index: 3 !important;
-    border-radius: 0 0 22px 22px !important;
-    overflow: visible !important;
-}
-
-yt-live-chat-paid-message-renderer #author-name {
-    color: #FFFFFF !important;
-    font-family: "Nunito", "Noto Sans", sans-serif !important;
-    font-weight: 900 !important;
-    font-size: 20px !important;
-    line-height: 26px !important;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4) !important;
-    white-space: nowrap !important;
-}
-
-yt-live-chat-paid-message-renderer #purchase-amount,
-yt-live-chat-paid-message-renderer #purchase-amount-chip {
-    color: #FFFFFF !important;
-    font-family: "Nunito", "Noto Sans", sans-serif !important;
-    font-weight: 900 !important;
-    font-size: 22px !important;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4) !important;
-}
-
-yt-live-chat-paid-message-renderer #message {
-
-    color: #F0F0F0 !important;
-    font-family: "Nunito", "Noto Sans", sans-serif !important;
-    font-size: 26px !important;
-    line-height: 1.4 !important;
-    font-weight: 900 !important;
-
-    /* Viền chữ đen mỏng (Thin Black Stroke) */
-    -webkit-text-stroke: 0.8px #000000 !important;
-    text-shadow: none !important;
-    paint-order: stroke fill;
-
-    white-space: normal !important;
-    overflow-wrap: anywhere !important;
-    word-break: break-word !important;
-}
-
-yt-live-chat-paid-message-renderer #timestamp {
-    display: none !important;
-}
-
-yt-live-chat-paid-message-renderer #creator-heart-button,
-yt-live-chat-paid-message-renderer #reply-button,
-yt-live-chat-paid-message-renderer yt-live-chat-paid-message-footer-renderer {
-    display: none !important;
-}
-
-/* Legacy Paid */
-yt-live-chat-legacy-paid-message-renderer {
-    background-color: #E8F5E9 !important;
-    background: #E8F5E9 !important;
-    background-image: none !important;
-    border: 3px solid #2E7D32 !important;
-    border-radius: 22px !important;
-    margin: 28px 10px 6px 6px !important;
-    box-shadow: 4px 4px 0px rgba(46, 125, 50, 0.25) !important;
-    position: relative !important;
-    overflow: visible !important;
-    padding: 10px 15px !important;
-    animation: superChatPop 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
-    width: fit-content !important;
-    min-width: 295px !important;
-    /* Kéo dài tương ứng (+45px) */
-}
-
-yt-live-chat-legacy-paid-message-renderer::after {
-    display: none !important;
-}
-
-yt-live-chat-legacy-paid-message-renderer #event-text,
-yt-live-chat-legacy-paid-message-renderer #detail-text {
-    color: #1B5E20 !important;
-    font-family: "Nunito", sans-serif !important;
-    font-weight: 800 !important;
-    font-size: 20px !important;
-    text-shadow: -1px -1px 0 #FFF, 1px 1px 0 #FFF !important;
-    white-space: normal !important;
-    overflow-wrap: anywhere !important;
-    word-break: break-word !important;
-}
-
-/* Ticker - BỎ/ẨN THEO YÊU CẦU */
-yt-live-chat-ticker-renderer {
-    display: none !important;
-}
-
-yt-live-chat-ticker-renderer::after {
-    content: "" !important;
-    position: absolute !important;
-    top: 4px !important;
-    left: 4px !important;
-    right: 4px !important;
-    bottom: 4px !important;
-    /* Stitching Effect */
-    border: 2px dashed #E65100 !important;
-    border-radius: 14px !important;
-    pointer-events: none !important;
-    z-index: 0 !important;
-}
-
-yt-live-chat-ticker-renderer #items {
-    position: relative !important;
-    z-index: 1 !important;
-    display: flex !important;
-    flex-wrap: nowrap !important;
-    gap: 8px !important;
-    overflow-x: auto !important;
-    overflow-y: visible !important;
-    padding: 2px 0 !important;
-    scrollbar-width: none !important;
-    min-height: 52px !important;
-    align-items: center !important;
-}
-
-yt-live-chat-ticker-renderer #items::-webkit-scrollbar {
-    display: none !important;
-}
-
-yt-live-chat-ticker-paid-message-item-renderer {
-    border-radius: 28px !important;
-    margin: 0 4px !important;
-    overflow: visible !important;
-    height: 52px !important;
-    min-height: 52px !important;
-    min-width: 140px !important;
-    flex-shrink: 0 !important;
-    animation: tickerPopIn 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55) !important;
-}
-
-@keyframes tickerPopIn {
-    0% {
-        transform: scale(0) rotate(-20deg);
-        opacity: 0;
+    yt-live-chat-banner-renderer {
+        display: block !important;
+        margin-top: 70px !important;
+        margin-bottom: 30px !important;
+        margin-left: 10px !important;
+        margin-right: 10px !important;
+        position: relative !important;
+        z-index: 9999 !important;
+        box-shadow: none !important;
+        background: transparent !important;
+        overflow: visible !important;
+        height: auto !important;
+        min-height: unset !important;
+        animation: none !important;
+        opacity: 1 !important;
     }
 
-    50% {
-        transform: scale(1.2) rotate(10deg);
+    yt-live-chat-banner-renderer>div {
+        background: transparent !important;
+        box-shadow: none !important;
     }
 
-    70% {
-        transform: scale(0.9) rotate(-5deg);
+    yt-live-chat-banner-renderer #banner {
+
+        border-radius: 20px !important;
+        box-shadow: 0 8px 30px rgba(255, 143, 0, 0.2), 0 4px 10px rgba(0, 0, 0, 0.1) !important;
+
+
+        background:
+            linear-gradient(135deg, rgba(230, 81, 0, 0.08) 25%, transparent 25%, transparent 50%, rgba(230, 81, 0, 0.08) 50%, rgba(230, 81, 0, 0.08) 75%, transparent 75%, transparent 100%),
+            linear-gradient(45deg, rgba(230, 81, 0, 0.08) 25%, transparent 25%, transparent 50%, rgba(230, 81, 0, 0.08) 50%, rgba(230, 81, 0, 0.08) 75%, transparent 75%, transparent 100%),
+            #FFF9C4 !important;
+        background-size: 20px 20px !important;
+        background-position: 0 0 !important;
+
+
+        border: 4px solid #FFCA28 !important;
+
+
+        position: relative !important;
+        overflow: visible !important;
+        contain: none !important;
+        clip-path: none !important;
+        padding: 15px 20px 20px 20px !important;
+        min-height: unset !important;
+        height: auto !important;
+        width: fit-content !important;
+        max-width: 95% !important;
+
+        min-width: 345px !important;
     }
 
-    100% {
-        transform: scale(1) rotate(0deg);
-        opacity: 1;
+    yt-live-chat-banner-renderer #banner::after {
+        content: "" !important;
+        position: absolute !important;
+        top: 5px !important;
+        left: 5px !important;
+        right: 5px !important;
+        bottom: 5px !important;
+
+        border: 2px dashed #E65100 !important;
+
+        border-radius: 15px !important;
+        pointer-events: none !important;
+        z-index: 0 !important;
+        opacity: 0.6 !important;
     }
-}
 
-yt-live-chat-ticker-paid-message-item-renderer #container {
-    border-radius: 28px !important;
-    padding: 5px 14px 5px 8px !important;
-    height: 50px !important;
-    min-height: 50px !important;
-    min-width: 130px !important;
-    display: flex !important;
-    align-items: center !important;
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.4), inset 0 1px 3px rgba(255, 255, 255, 0.3) !important;
-    overflow: visible !important;
-}
+    yt-live-chat-banner-renderer #header {
+        display: flex !important;
+        background: transparent !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        border: none !important;
+        overflow: visible !important;
+        align-items: center !important;
+        min-height: unset !important;
+    }
 
-yt-live-chat-ticker-paid-message-item-renderer #author-photo img {
-    width: 36px !important;
-    height: 36px !important;
-    border-radius: 50% !important;
-    border: 2px solid rgba(255, 255, 255, 0.9) !important;
-}
+    yt-live-chat-banner-renderer #contents {
+        background: transparent !important;
+        padding: 0 !important;
+        margin-top: 10px !important;
+        overflow: visible !important;
+    }
 
-yt-live-chat-ticker-paid-message-item-renderer #content {
-    display: flex !important;
-    flex-direction: row !important;
-    align-items: center !important;
-    justify-content: flex-start !important;
-    gap: 8px !important;
-    padding-left: 8px !important;
-    min-width: 80px !important;
-    overflow: visible !important;
-}
+    yt-live-chat-banner-renderer #author-photo {
+        width: 50px !important;
+        height: 50px !important;
+        border-radius: 50% !important;
+        border: 3px solid #FF8F00 !important;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2) !important;
+        overflow: hidden !important;
+        margin-right: 15px !important;
+        position: relative !important;
+        z-index: 2 !important;
+        flex-shrink: 0 !important;
+    }
 
-yt-live-chat-ticker-paid-message-item-renderer #author-name {
-    color: #ffffff !important;
-    font-family: "Nunito", sans-serif !important;
-    font-weight: 700 !important;
-    font-size: 17px !important;
-    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.9) !important;
-    max-width: 120px !important;
-    overflow: hidden !important;
-    text-overflow: ellipsis !important;
-    white-space: nowrap !important;
-}
+    yt-live-chat-banner-renderer #author-photo img {
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover !important;
+    }
 
-yt-live-chat-ticker-paid-message-item-renderer #purchase-amount {
-    color: #FFD700 !important;
-    font-family: "Nunito", sans-serif !important;
-    font-weight: 900 !important;
-    font-size: 20px !important;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 1) !important;
-}
 
-yt-live-chat-ticker-sponsor-item-renderer {
-    animation: tickerPopIn 0.6s ease-out !important;
-    border-radius: 28px !important;
-    margin: 0 4px !important;
-    height: 52px !important;
-}
+    yt-live-chat-banner-renderer #author-name {
+        color: #FFFFFF !important;
+        font-family: "Nunito", "Noto Sans", sans-serif !important;
+        font-weight: 900 !important;
+        font-size: 26px !important;
+        line-height: 1.1 !important;
+        position: absolute !important;
+        top: -50px !important;
+        left: 0px !important;
+        z-index: 99999 !important;
+        padding: 8px 25px !important;
+        border-radius: 25px !important;
+        border: 3px solid #FFFFFF !important;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25) !important;
+        white-space: nowrap !important;
+        background: linear-gradient(135deg, #FF8F00 0%, #E65100 100%) !important;
+    }
 
-yt-live-chat-ticker-sponsor-item-renderer #container {
-    border-radius: 28px !important;
-    padding: 5px 14px 5px 8px !important;
-    height: 50px !important;
-    display: flex !important;
-    align-items: center !important;
-}
+    yt-live-chat-banner-renderer #text {
+        color: #3E2000 !important;
+        font-family: "Nunito", "Noto Sans", sans-serif !important;
+        font-size: 24px !important;
+        line-height: 1.4 !important;
+        font-weight: 800 !important;
+        text-shadow: -1px -1px 0 #FFF, 1px -1px 0 #FFF, -1px 1px 0 #FFF, 1px 1px 0 #FFF !important;
+        position: relative !important;
+        z-index: 2 !important;
+        display: block !important;
+        overflow: visible !important;
+        white-space: normal !important;
+        overflow-wrap: anywhere !important;
+        word-break: break-word !important;
+        opacity: 1 !important;
+    }
 
-/* UTILITIES */
-yt-live-chat-item-list-renderer {
-    padding-top: 40px !important;
-}
 
-yt-live-chat-item-list-renderer #items {
-    overflow: hidden !important;
-    padding-top: 10px !important;
-    padding-bottom: 15px !important;
-}
+    yt-live-chat-banner-renderer #menu-button,
+    yt-live-chat-banner-renderer yt-icon,
+    yt-live-chat-banner-renderer #action-button,
+    yt-live-chat-banner-renderer #menu {
+        display: none !important;
+    }
 
-yt-live-chat-item-list-renderer #item-scroller {
-    overflow-y: hidden !important;
-    overflow-x: hidden !important;
-}
 
-yt-live-chat-text-message-renderer #timestamp {
-    color: rgba(100, 80, 50, 0.8) !important;
-    font-family: "Nunito", sans-serif;
-    font-size: 17px !important;
-    font-weight: 600 !important;
-}
 
-/* ẨN DẤU 3 CHẤM (MENU) */
-yt-live-chat-text-message-renderer #menu,
-yt-live-chat-paid-message-renderer #menu,
-#menu {
-    display: none !important;
-}
+    yt-live-chat-text-message-renderer,
+    yt-live-chat-text-message-renderer[is-highlighted] {
+        background: transparent !important;
+        border: none !important;
+        border-radius: 0 !important;
+        margin: 10px 10px 4px 6px !important;
+        padding: 4px !important;
+        box-shadow: none !important;
+        position: relative !important;
+        overflow: visible !important;
+        contain: none !important;
+        clip-path: none !important;
+        z-index: 1 !important;
+        /* iOS-style blur fade in - Optimized */
+        animation: iosIntro26 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards !important;
+        transform-origin: left center !important;
+        transition: none !important;
+        will-change: transform, opacity, filter !important;
 
-/* Ẩn rác */
-yt-live-chat-header-renderer,
-yt-live-chat-message-input-renderer,
-yt-live-chat-mode-change-message-renderer,
-yt-live-chat-viewer-engagement-message-renderer,
-yt-live-chat-restricted-participation-renderer,
-yt-live-chat-banner-manager,
-yt-live-chat-action-panel-renderer,
-yt-live-chat-renderer #action-panel,
-yt-live-chat-renderer #panels,
-yt-live-chat-renderer #input-panel,
-#picker-buttons,
-yt-live-chat-ninja-message-renderer,
-yt-reaction-control-panel-overlay,
-yt-reaction-control-panel-view-model {
-    display: none !important;
-    height: 0 !important;
-    visibility: hidden !important;
-}
+        width: fit-content !important;
+        max-width: 95% !important;
 
-a {
-    text-decoration: none !important;
-    color: #1565C0 !important;
-    font-weight: 700 !important;
-}
+        display: flex !important;
+        clear: both !important;
+    }
 
-/* =========================================================================
-   4. MEMBERSHIP & GIFT (JOIN/TẶNG GÓI)
-   ========================================================================= */
+    yt-live-chat-text-message-renderer::after {
+        display: none !important;
+    }
 
-/* CHUNG CHO MEMBERSHIP & GIFT */
-yt-live-chat-membership-item-renderer,
-ytd-sponsorships-live-chat-gift-purchase-announcement-renderer,
-ytd-sponsorships-live-chat-gift-redemption-announcement-renderer {
-    /* Hoạ tiết lưới đan chéo (giống Message thường) nhưng tông Xanh lá */
-    background:
-        repeating-linear-gradient(60deg, transparent 0px, transparent 8px, rgba(46, 125, 50, 0.08) 8px, rgba(46, 125, 50, 0.08) 10px),
-        repeating-linear-gradient(-60deg, transparent 0px, transparent 8px, rgba(46, 125, 50, 0.08) 8px, rgba(46, 125, 50, 0.08) 10px),
-        #E8F5E9 !important;
+    /* Animation Keyframes: Blur + Scale + Fade */
+    @keyframes fadeInBlur {
+        0% {
+            opacity: 0;
+            filter: blur(10px);
+            transform: translateY(20px) scale(0.9);
+        }
 
-    border: 3px solid #00C853 !important;
-    /* Xanh lá tươi */
-    border-radius: 22px !important;
-    margin: 38px 10px 6px 6px !important;
-    box-shadow: 4px 4px 15px rgba(0, 200, 83, 0.3) !important;
-    position: relative !important;
-    overflow: visible !important;
-    padding: 0 !important;
-    display: flex !important;
-    flex-direction: column !important;
-    animation: superChatPop 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
-    width: fit-content !important;
-    min-width: 295px !important;
-}
+        100% {
+            opacity: 1;
+            filter: blur(0);
+            transform: translateY(0) scale(1);
+        }
+    }
 
-/* Hiệu ứng khâu (Stitching) - Màu trắng đồng bộ */
-yt-live-chat-membership-item-renderer::after,
-ytd-sponsorships-live-chat-gift-purchase-announcement-renderer::after,
-ytd-sponsorships-live-chat-gift-redemption-announcement-renderer::after {
-    content: "" !important;
-    position: absolute !important;
-    top: 5px !important;
-    left: 5px !important;
-    right: 5px !important;
-    bottom: 5px !important;
-    border: 2px dashed #FFFFFF !important;
-    /* Chỉ trắng */
-    border-radius: 16px !important;
-    pointer-events: none !important;
-    z-index: 2 !important;
-    opacity: 0.8 !important;
-    filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.2)) !important;
-}
+    /* Animation: iOS 26 Style - Extended Blur without Push */
+    @keyframes iosIntro26 {
+        0% {
+            opacity: 0;
+            transform: scale(0.92) translateY(8px);
+        }
 
-/* HEADER (Phần trên chứa tên) */
-yt-live-chat-membership-item-renderer #header,
-ytd-sponsorships-live-chat-gift-purchase-announcement-renderer #header,
-ytd-sponsorships-live-chat-gift-redemption-announcement-renderer #header {
-    background: rgba(0, 200, 83, 0.15) !important;
-    border-bottom: 2px dashed rgba(255, 255, 255, 0.5) !important;
-    border-radius: 19px 19px 0 0 !important;
-    padding: 8px 15px 5px 15px !important;
-    min-height: unset !important;
-    align-items: center !important;
-    position: relative !important;
-    z-index: 3 !important;
-}
+        /* Phase 1: Blur Fade */
+        45% {
+            opacity: 0;
+            transform: scale(0.96) translateY(4px);
+        }
 
-/* CONTENT (Phần dưới chứa message) */
-yt-live-chat-membership-item-renderer #content,
-ytd-sponsorships-live-chat-gift-purchase-announcement-renderer #content,
-ytd-sponsorships-live-chat-gift-redemption-announcement-renderer #content {
-    padding: 8px 15px 12px 15px !important;
-    z-index: 3 !important;
-    border-radius: 0 0 19px 19px !important;
-    overflow: visible !important;
-}
+        /* Phase 2: Extended Blur Transition */
+        75% {
+            opacity: 0.5;
+            transform: scale(0.98) translateY(2px);
+        }
 
-/* TÊN NGƯỜI DÙNG */
-yt-live-chat-membership-item-renderer #author-name,
-ytd-sponsorships-live-chat-gift-purchase-announcement-renderer #author-name,
-ytd-sponsorships-live-chat-gift-redemption-announcement-renderer #author-name {
-    color: #FFFFFF !important;
-    /* Trắng */
-    font-family: "Nunito", "Noto Sans", sans-serif !important;
-    font-weight: 900 !important;
-    font-size: 20px !important;
+        /* Phase 3: Final Reveal */
+        100% {
+            opacity: 1;
+            transform: scale(1) translateY(0);
+        }
+    }
 
-    /* Viền chữ đậm */
-    -webkit-text-stroke: 1.2px #1B5E20 !important;
-    text-shadow: 2px 2px 0 #1B5E20 !important;
-}
 
-/* TEXT MEMBERSHIP (Cập nhật: Trắng viền Xanh đậm cho dễ đọc) */
-yt-live-chat-membership-item-renderer #header-subtext,
-yt-live-chat-membership-item-renderer #header-primary-text,
-ytd-sponsorships-live-chat-gift-purchase-announcement-renderer #header-primary-text,
-ytd-sponsorships-live-chat-gift-redemption-announcement-renderer #message {
-    color: #FFFFFF !important;
-    font-family: "Nunito", sans-serif !important;
-    font-size: 20px !important;
-    /* Tăng size chút cho dễ đọc */
-    font-weight: 900 !important;
 
-    /* Viền chữ (Stroke) giúp nổi trên nền xanh */
-    -webkit-text-stroke: 1.2px #1B5E20 !important;
-    text-shadow: 2px 2px 0 #1B5E20 !important;
+    yt-live-chat-text-message-renderer #content {
+        position: relative !important;
+        z-index: 1 !important;
+        margin-top: -4px !important;
+    }
 
-    white-space: normal !important;
-    overflow-wrap: anywhere !important;
-}
 
-/* HEADER CỤ THỂ CHO PHẦN TẶNG QUÀ (Gift Header) */
-ytd-sponsorships-live-chat-header-renderer {
-    background: transparent !important;
-    box-shadow: none !important;
-    padding: 0 !important;
-    margin: 0 !important;
-    display: flex !important;
-    align-items: center !important;
-}
 
-/* Header Text (Gift) */
-ytd-sponsorships-live-chat-header-renderer #primary-text {
-    color: #FFFFFF !important;
-    font-weight: 900 !important;
-    font-size: 18px !important;
-    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3) !important;
-}
+    yt-live-chat-text-message-renderer #author-photo,
+    yt-live-chat-paid-message-renderer #author-photo,
+    yt-live-chat-legacy-paid-message-renderer #author-photo {
+        width: 24px !important;
+        height: 24px !important;
+        border-radius: 50% !important;
+        border: 2px solid rgba(255, 255, 255, 0.9) !important;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3) !important;
+        overflow: hidden !important;
+        animation: none !important;
+        z-index: 1000 !important;
 
-/* Avatar trong Membership */
-yt-live-chat-membership-item-renderer #author-photo,
-ytd-sponsorships-live-chat-gift-purchase-announcement-renderer #author-photo,
-ytd-sponsorships-live-chat-gift-redemption-announcement-renderer #author-photo {
-    width: 40px !important;
-    height: 40px !important;
-    border-radius: 50% !important;
-    border: 2px solid #FFFFFF !important;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2) !important;
-    margin-right: 10px !important;
-}
+
+        position: absolute !important;
+        top: 4px !important;
+
+
+        left: 12px !important;
+        margin: 0 !important;
+    }
+
+
+    yt-live-chat-text-message-renderer[author-type="member"] #author-photo,
+    yt-live-chat-text-message-renderer[author-type="moderator"]:has(yt-live-chat-author-badge-renderer[type="member"]) #author-photo {
+        left: 25px !important;
+    }
+
+    yt-live-chat-text-message-renderer[author-type="member"]:has(img[alt="Hội viên mới"]) #author-photo,
+    yt-live-chat-text-message-renderer[author-type="moderator"]:has(img[alt="Hội viên mới"]) #author-photo {
+        left: 12px !important;
+    }
+
+    yt-live-chat-text-message-renderer[author-type="owner"] #author-photo {
+        left: 35px !important;
+    }
+
+    yt-live-chat-text-message-renderer #author-photo img,
+    yt-live-chat-paid-message-renderer #author-photo img {
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover !important;
+    }
+
+
+    yt-live-chat-text-message-renderer #message {
+        color: #FFFFFF !important;
+        display: inline !important;
+
+        font-family: "Nunito", sans-serif !important;
+        font-size: 28px !important;
+        line-height: 1.3 !important;
+        font-weight: 800 !important;
+
+        vertical-align: middle !important;
+
+
+
+        paint-order: stroke fill !important;
+        -webkit-text-stroke: 4.6px #000000 !important;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8) !important;
+
+        white-space: normal !important;
+        overflow-wrap: anywhere !important;
+        word-break: break-word !important;
+    }
+
+    yt-live-chat-text-message-renderer #message img,
+    yt-live-chat-paid-message-renderer #message img {
+        display: inline-block !important;
+        vertical-align: middle !important;
+        max-width: 100% !important;
+        height: auto !important;
+    }
+
+
+    yt-live-chat-text-message-renderer yt-live-chat-author-chip {
+        display: inline-flex !important;
+        align-items: center !important;
+        gap: 5px !important;
+        position: relative !important;
+        top: 0 !important;
+        margin-left: 0 !important;
+        z-index: 999 !important;
+        margin-bottom: 2px !important;
+
+
+        padding: 3px 15px 3px 34px !important;
+
+        border-radius: 20px !important;
+        border: 2.5px solid rgba(255, 255, 255, 0.9) !important;
+        box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3) !important;
+        white-space: nowrap !important;
+
+
+        background:
+            repeating-linear-gradient(60deg, transparent 0px, transparent 6px, rgba(230, 81, 0, 0.15) 6px, rgba(230, 81, 0, 0.15) 8px),
+            repeating-linear-gradient(-60deg, transparent 0px, transparent 6px, rgba(230, 81, 0, 0.15) 6px, rgba(230, 81, 0, 0.15) 8px),
+            linear-gradient(135deg, #FFC107 0%, #FF8F00 100%) !important;
+
+        width: max-content !important;
+        vertical-align: middle !important;
+        margin-right: 8px !important;
+
+    }
+
+
+    yt-live-chat-text-message-renderer yt-live-chat-author-chip::before {
+        display: none !important;
+    }
+
+    yt-live-chat-text-message-renderer[author-type="moderator"] yt-live-chat-author-chip {
+        background:
+            repeating-linear-gradient(60deg, transparent 0px, transparent 6px, rgba(21, 101, 192, 0.15) 6px, rgba(21, 101, 192, 0.15) 8px),
+            repeating-linear-gradient(-60deg, transparent 0px, transparent 6px, rgba(21, 101, 192, 0.15) 6px, rgba(21, 101, 192, 0.15) 8px),
+            linear-gradient(135deg, #42A5F5 0%, #1565C0 100%) !important;
+        border-color: #1565C0 !important;
+    }
+
+    yt-live-chat-text-message-renderer[author-type="member"] yt-live-chat-author-chip {
+        padding: 3px 15px 3px 46px !important;
+        background:
+            repeating-linear-gradient(60deg, transparent 0px, transparent 6px, rgba(46, 125, 50, 0.15) 6px, rgba(46, 125, 50, 0.15) 8px),
+            repeating-linear-gradient(-60deg, transparent 0px, transparent 6px, rgba(46, 125, 50, 0.15) 6px, rgba(46, 125, 50, 0.15) 8px),
+            linear-gradient(135deg, #66BB6A 0%, #2E7D32 100%) !important;
+        border-color: #2E7D32 !important;
+    }
+
+
+    yt-live-chat-text-message-renderer[author-type="member"] yt-live-chat-author-chip::before {
+        content: "" !important;
+        display: block !important;
+        position: absolute !important;
+        top: -12px !important;
+        left: -8px !important;
+        width: 32px !important;
+        height: 32px !important;
+        z-index: 1001 !important;
+        filter: drop-shadow(1px 2px 2px rgba(0, 0, 0, 0.3)) !important;
+        transform: rotate(-10deg) !important;
+
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3C!-- Leaves --%3E%3Cpath d='M50 28 C45 10 35 10 30 20' stroke='%234CAF50' stroke-width='5' stroke-linecap='round' fill='none'/%3E%3Cpath d='M50 28 C55 10 65 10 70 20' stroke='%234CAF50' stroke-width='5' stroke-linecap='round' fill='none'/%3E%3Cpath d='M50 28 L50 5' stroke='%23388E3C' stroke-width='5' stroke-linecap='round' fill='none'/%3E%3C!-- Body --%3E%3Crect x='20' y='28' width='60' height='65' rx='30' ry='30' fill='%23FFCA28'/%3E%3C!-- Pattern (Subtle) --%3E%3Cpath d='M20 45 L80 45 M20 65 L80 45 M20 65 L80 65 M35 28 L35 93 M65 28 L65 93' stroke='%23FF6F00' stroke-width='2' opacity='0.15'/%3E%3C!-- Face --%3E%3Ccircle cx='38' cy='52' r='6' fill='%23212121'/%3E%3Ccircle cx='62' cy='52' r='6' fill='%23212121'/%3E%3C!-- Eye Highlights --%3E%3Ccircle cx='35' cy='49' r='2.5' fill='%23FFF'/%3E%3Ccircle cx='59' cy='49' r='2.5' fill='%23FFF'/%3E%3C!-- Smile (Mouth) --%3E%3Cpath d='M42 62 Q50 70 58 62' stroke='%23212121' stroke-width='3' fill='none' stroke-linecap='round'/%3E%3C!-- Cheeks --%3E%3Ccircle cx='28' cy='60' r='5' fill='%23FF7043' opacity='0.5'/%3E%3Ccircle cx='72' cy='60' r='5' fill='%23FF7043' opacity='0.5'/%3E%3C/svg%3E") !important;
+        background-size: contain !important;
+        background-repeat: no-repeat !important;
+    }
+
+    /* Hide Pineapple for New Members */
+    yt-live-chat-text-message-renderer[author-type="member"]:has(img[alt="Hội viên mới"]) yt-live-chat-author-chip::before {
+        display: none !important;
+    }
+
+    yt-live-chat-text-message-renderer[author-type="member"]:has(img[alt="Hội viên mới"]) yt-live-chat-author-chip {
+        padding: 3px 15px 3px 34px !important;
+    }
+
+
+    yt-live-chat-text-message-renderer[author-type="moderator"]:has(yt-live-chat-author-badge-renderer[type="member"]) yt-live-chat-author-chip {
+        padding: 3px 15px 3px 46px !important;
+    }
+
+    yt-live-chat-text-message-renderer[author-type="moderator"]:has(yt-live-chat-author-badge-renderer[type="member"]) yt-live-chat-author-chip::before {
+        content: "" !important;
+        display: block !important;
+        position: absolute !important;
+        top: -12px !important;
+        left: -8px !important;
+        width: 32px !important;
+        height: 32px !important;
+        z-index: 1001 !important;
+        filter: drop-shadow(1px 2px 2px rgba(0, 0, 0, 0.3)) !important;
+        transform: rotate(-10deg) !important;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3C!-- Leaves --%3E%3Cpath d='M50 28 C45 10 35 10 30 20' stroke='%234CAF50' stroke-width='5' stroke-linecap='round' fill='none'/%3E%3Cpath d='M50 28 C55 10 65 10 70 20' stroke='%234CAF50' stroke-width='5' stroke-linecap='round' fill='none'/%3E%3Cpath d='M50 28 L50 5' stroke='%23388E3C' stroke-width='5' stroke-linecap='round' fill='none'/%3E%3C!-- Body --%3E%3Crect x='20' y='28' width='60' height='65' rx='30' ry='30' fill='%23FFCA28'/%3E%3C!-- Pattern (Subtle) --%3E%3Cpath d='M20 45 L80 45 M20 65 L80 45 M20 65 L80 65 M35 28 L35 93 M65 28 L65 93' stroke='%23FF6F00' stroke-width='2' opacity='0.15'/%3E%3C!-- Face --%3E%3Ccircle cx='38' cy='52' r='6' fill='%23212121'/%3E%3Ccircle cx='62' cy='52' r='6' fill='%23212121'/%3E%3C!-- Eye Highlights --%3E%3Ccircle cx='35' cy='49' r='2.5' fill='%23FFF'/%3E%3Ccircle cx='59' cy='49' r='2.5' fill='%23FFF'/%3E%3C!-- Smile (Mouth) --%3E%3Cpath d='M42 62 Q50 70 58 62' stroke='%23212121' stroke-width='3' fill='none' stroke-linecap='round'/%3E%3C!-- Cheeks --%3E%3Ccircle cx='28' cy='60' r='5' fill='%23FF7043' opacity='0.5'/%3E%3Ccircle cx='72' cy='60' r='5' fill='%23FF7043' opacity='0.5'/%3E%3C/svg%3E") !important;
+        background-size: contain !important;
+        background-repeat: no-repeat !important;
+    }
+
+    /* Hide Pineapple for Moderator-New Members */
+    yt-live-chat-text-message-renderer[author-type="moderator"]:has(img[alt="Hội viên mới"]) yt-live-chat-author-chip::before {
+        display: none !important;
+    }
+
+    yt-live-chat-text-message-renderer[author-type="moderator"]:has(img[alt="Hội viên mới"]) yt-live-chat-author-chip {
+        padding: 3px 15px 3px 34px !important;
+    }
+
+
+    yt-live-chat-text-message-renderer[author-type="owner"] yt-live-chat-author-chip {
+
+        border: 3px solid #FFD700 !important;
+        box-shadow: 0 0 15px rgba(255, 215, 0, 0.6), 0 0 5px rgba(255, 160, 0, 0.8) !important;
+
+
+        background:
+            repeating-linear-gradient(60deg, transparent 0px, transparent 6px, rgba(230, 81, 0, 0.15) 6px, rgba(230, 81, 0, 0.15) 8px),
+            repeating-linear-gradient(-60deg, transparent 0px, transparent 6px, rgba(230, 81, 0, 0.15) 6px, rgba(230, 81, 0, 0.15) 8px),
+            linear-gradient(135deg, #FFA000 0%, #E65100 100%) !important;
+
+
+        padding: 3px 35px 3px 50px !important;
+        position: relative !important;
+        overflow: visible !important;
+        margin-bottom: 5px !important;
+        margin-left: 10px !important;
+    }
+
+
+    yt-live-chat-text-message-renderer[author-type="owner"] yt-live-chat-author-chip::before {
+        content: "" !important;
+        display: block !important;
+        position: absolute !important;
+        top: -15px !important;
+        left: -12px !important;
+        width: 35px !important;
+        height: 35px !important;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3C!-- Leaves --%3E%3Cpath d='M50 28 C45 10 35 10 30 20' stroke='%234CAF50' stroke-width='5' stroke-linecap='round' fill='none'/%3E%3Cpath d='M50 28 C55 10 65 10 70 20' stroke='%234CAF50' stroke-width='5' stroke-linecap='round' fill='none'/%3E%3Cpath d='M50 28 L50 5' stroke='%23388E3C' stroke-width='5' stroke-linecap='round' fill='none'/%3E%3C!-- Body --%3E%3Crect x='20' y='28' width='60' height='65' rx='30' ry='30' fill='%23FFCA28'/%3E%3C!-- Pattern (Subtle) --%3E%3Cpath d='M20 45 L80 45 M20 65 L80 65 M35 28 L35 93 M65 28 L65 93' stroke='%23FF6F00' stroke-width='2' opacity='0.15'/%3E%3C!-- Face --%3E%3Ccircle cx='38' cy='52' r='6' fill='%23212121'/%3E%3Ccircle cx='62' cy='52' r='6' fill='%23212121'/%3E%3C!-- Eye Highlights --%3E%3Ccircle cx='35' cy='49' r='2.5' fill='%23FFF'/%3E%3Ccircle cx='59' cy='49' r='2.5' fill='%23FFF'/%3E%3C!-- Smile (Mouth) --%3E%3Cpath d='M42 62 Q50 70 58 62' stroke='%23212121' stroke-width='3' fill='none' stroke-linecap='round'/%3E%3C!-- Cheeks --%3E%3Ccircle cx='28' cy='60' r='5' fill='%23FF7043' opacity='0.5'/%3E%3Ccircle cx='72' cy='60' r='5' fill='%23FF7043' opacity='0.5'/%3E%3C/svg%3E") !important;
+        background-size: contain !important;
+        background-repeat: no-repeat !important;
+        transform: rotate(-15deg) !important;
+        z-index: 1002 !important;
+        filter: drop-shadow(0 2px 3px rgba(0, 0, 0, 0.3)) !important;
+    }
+
+    yt-live-chat-text-message-renderer[author-type="owner"] yt-live-chat-author-chip::after {
+        content: "" !important;
+        display: block !important;
+        position: absolute !important;
+        top: -15px !important;
+        right: -12px !important;
+        width: 35px !important;
+        height: 35px !important;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3C!-- Leaves --%3E%3Cpath d='M50 28 C45 10 35 10 30 20' stroke='%234CAF50' stroke-width='5' stroke-linecap='round' fill='none'/%3E%3Cpath d='M50 28 C55 10 65 10 70 20' stroke='%234CAF50' stroke-width='5' stroke-linecap='round' fill='none'/%3E%3Cpath d='M50 28 L50 5' stroke='%23388E3C' stroke-width='5' stroke-linecap='round' fill='none'/%3E%3C!-- Body --%3E%3Crect x='20' y='28' width='60' height='65' rx='30' ry='30' fill='%23FFCA28'/%3E%3C!-- Pattern (Subtle) --%3E%3Cpath d='M20 45 L80 45 M20 65 L80 65 M35 28 L35 93 M65 28 L65 93' stroke='%23FF6F00' stroke-width='2' opacity='0.15'/%3E%3C!-- Face --%3E%3Ccircle cx='38' cy='52' r='6' fill='%23212121'/%3E%3Ccircle cx='62' cy='52' r='6' fill='%23212121'/%3E%3C!-- Eye Highlights --%3E%3Ccircle cx='35' cy='49' r='2.5' fill='%23FFF'/%3E%3Ccircle cx='59' cy='49' r='2.5' fill='%23FFF'/%3E%3C!-- Smile (Mouth) --%3E%3Cpath d='M42 62 Q50 70 58 62' stroke='%23212121' stroke-width='3' fill='none' stroke-linecap='round'/%3E%3C!-- Cheeks --%3E%3Ccircle cx='28' cy='60' r='5' fill='%23FF7043' opacity='0.5'/%3E%3Ccircle cx='72' cy='60' r='5' fill='%23FF7043' opacity='0.5'/%3E%3C/svg%3E") !important;
+        background-size: contain !important;
+        background-repeat: no-repeat !important;
+        transform: rotate(15deg) !important;
+        z-index: 1002 !important;
+        filter: drop-shadow(0 2px 3px rgba(0, 0, 0, 0.3)) !important;
+    }
+
+    yt-live-chat-text-message-renderer #author-name {
+        background: transparent !important;
+        border: none !important;
+        box-shadow: none !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        position: static !important;
+        color: #FFFFFF !important;
+        font-family: "Nunito", "Noto Sans", sans-serif !important;
+        font-weight: 900 !important;
+        font-size: 20px !important;
+        line-height: 26px !important;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4) !important;
+    }
+
+    yt-live-chat-text-message-renderer #author-name::after {
+        display: none !important;
+    }
+
+    yt-live-chat-text-message-renderer #author-badges {
+        display: inline-flex !important;
+        vertical-align: middle !important;
+        margin-left: 2px !important;
+    }
+
+    yt-live-chat-text-message-renderer #author-badges img {
+        width: 28px !important;
+        height: 28px !important;
+
+        background: linear-gradient(135deg, #FFC107 0%, #FF8F00 100%) !important;
+        border: 2px solid #FFFFFF !important;
+        border-radius: 50% !important;
+        padding: 3px !important;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3) !important;
+        margin-left: 2px !important;
+    }
+
+    yt-live-chat-text-message-renderer[author-type="moderator"] #author-badges img {
+        content: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGhlaWdodD0iMjRweCIgdmlld0JveD0iMCAwIDI0IDI0IiB3aWR0aD0iMjRweCIgZmlsbD0iI0ZGRkZGRiI+PHBhdGggZD0iTTEyIDFMMyA1djZjMCA1LjU1IDMuODQgMTAuNzQgOSAxMiA1LjE2LTEuMjYgOS02LjQ1IDktMTJWNWwtOS00em0tMiAxNmwtNC00IDEuNDEtMS40MUwxMCAxNC4xN2w2LjU5LTYuNTlMMTggOWwtOCA4eiIvPjwvc3ZnPg==") !important;
+        width: 28px !important;
+        height: 28px !important;
+        filter: drop-shadow(0 0 4px rgba(0, 0, 0, 0.4)) !important;
+    }
+
+    yt-live-chat-text-message-renderer[author-type="member"] #author-badges img {
+        width: 28px !important;
+        height: 28px !important;
+        filter: drop-shadow(0 0 4px rgba(255, 255, 255, 0.8)) !important;
+    }
+
+    /* Top Chat Badges - Different colors for #1, #2, #3 */
+
+    /* Top Chat #1 - Gold */
+    yt-live-chat-text-message-renderer #author-badges img[alt*="#1"],
+    yt-live-chat-text-message-renderer #author-badges img[src*="top_1"],
+    yt-live-chat-text-message-renderer #author-badges img[aria-label*="top fan #1"],
+    yt-live-chat-text-message-renderer:has([aria-label*="top fan #1"]) #author-badges img:not([src*="moderator"]),
+    yt-live-chat-paid-message-renderer #author-badges img[alt*="#1"],
+    yt-live-chat-paid-message-renderer #author-badges img[src*="top_1"],
+    yt-live-chat-paid-message-renderer #author-badges img[aria-label*="top fan #1"],
+    yt-live-chat-paid-message-renderer:has([aria-label*="top fan #1"]) #author-badges img:not([src*="moderator"]) {
+        background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%) !important;
+        border: 2px solid #FFD700 !important;
+        box-shadow: 0 0 10px rgba(255, 215, 0, 0.6), 0 2px 4px rgba(0, 0, 0, 0.3) !important;
+        filter: drop-shadow(0 0 6px rgba(255, 215, 0, 0.8)) !important;
+    }
+
+    /* Top Chat #2 - Silver */
+    yt-live-chat-text-message-renderer #author-badges img[alt*="#2"],
+    yt-live-chat-text-message-renderer #author-badges img[src*="top_2"],
+    yt-live-chat-text-message-renderer #author-badges img[aria-label*="top fan #2"],
+    yt-live-chat-text-message-renderer:has([aria-label*="top fan #2"]) #author-badges img:not([src*="moderator"]),
+    yt-live-chat-paid-message-renderer #author-badges img[alt*="#2"],
+    yt-live-chat-paid-message-renderer #author-badges img[src*="top_2"],
+    yt-live-chat-paid-message-renderer #author-badges img[aria-label*="top fan #2"],
+    yt-live-chat-paid-message-renderer:has([aria-label*="top fan #2"]) #author-badges img:not([src*="moderator"]) {
+        background: linear-gradient(135deg, #E8E8E8 0%, #C0C0C0 100%) !important;
+        border: 2px solid #C0C0C0 !important;
+        box-shadow: 0 0 8px rgba(192, 192, 192, 0.6), 0 2px 4px rgba(0, 0, 0, 0.3) !important;
+        filter: drop-shadow(0 0 5px rgba(192, 192, 192, 0.8)) !important;
+    }
+
+    /* Top Chat #3 - Bronze */
+    yt-live-chat-text-message-renderer #author-badges img[alt*="#3"],
+    yt-live-chat-text-message-renderer #author-badges img[src*="top_3"],
+    yt-live-chat-text-message-renderer #author-badges img[aria-label*="top fan #3"],
+    yt-live-chat-text-message-renderer:has([aria-label*="top fan #3"]) #author-badges img:not([src*="moderator"]),
+    yt-live-chat-paid-message-renderer #author-badges img[alt*="#3"],
+    yt-live-chat-paid-message-renderer #author-badges img[src*="top_3"],
+    yt-live-chat-paid-message-renderer #author-badges img[aria-label*="top fan #3"],
+    yt-live-chat-paid-message-renderer:has([aria-label*="top fan #3"]) #author-badges img:not([src*="moderator"]) {
+        background: linear-gradient(135deg, #CD7F32 0%, #8B4513 100%) !important;
+        border: 2px solid #CD7F32 !important;
+        box-shadow: 0 0 8px rgba(205, 127, 50, 0.6), 0 2px 4px rgba(0, 0, 0, 0.3) !important;
+        filter: drop-shadow(0 0 5px rgba(205, 127, 50, 0.8)) !important;
+    }
+
+
+
+    yt-live-chat-text-message-renderer .ytSpecButtonViewModelHost {
+        display: inline-block !important;
+        vertical-align: middle !important;
+        margin-left: 8px !important;
+    }
+
+    yt-live-chat-text-message-renderer .ytSpecButtonViewModelHost button,
+    yt-live-chat-text-message-renderer .ytSpecButtonViewModelHost .yt-spec-button-shape-next__button-shape-impl {
+
+        background: linear-gradient(135deg, #FFC107 0%, #FF8F00 100%) !important;
+        border: 2px solid #FFFFFF !important;
+        border-radius: 20px !important;
+        box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.25) !important;
+        padding: 4px 12px !important;
+        height: auto !important;
+        min-height: 28px !important;
+        display: inline-flex !important;
+        align-items: center !important;
+        gap: 6px !important;
+    }
+
+
+    yt-live-chat-text-message-renderer .ytSpecButtonViewModelHost .yt-spec-button-shape-next__button-text-content {
+        color: #FFFFFF !important;
+        font-family: "Nunito", "Noto Sans", sans-serif !important;
+        font-weight: 800 !important;
+        font-size: 14px !important;
+        text-transform: uppercase !important;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4) !important;
+        letter-spacing: 0.5px !important;
+    }
+
+
+    yt-live-chat-text-message-renderer .ytSpecButtonViewModelHost yt-icon,
+    yt-live-chat-text-message-renderer .ytSpecButtonViewModelHost .yt-spec-button-shape-next__icon {
+        width: 18px !important;
+        height: 18px !important;
+        color: #FFFFFF !important;
+        filter: drop-shadow(1px 1px 2px rgba(0, 0, 0, 0.4)) !important;
+    }
+
+    /* Superchat Reply Button - Soft Colors */
+    yt-live-chat-text-message-renderer button.yt-spec-button-shape-next--tonal,
+    yt-live-chat-text-message-renderer .yt-spec-button-shape-next--tonal {
+        background: linear-gradient(135deg, #81C784 0%, #66BB6A 100%) !important;
+        border: 2px solid #66BB6A !important;
+        border-radius: 20px !important;
+        box-shadow: 0 2px 6px rgba(102, 187, 106, 0.4), 2px 2px 6px rgba(0, 0, 0, 0.25) !important;
+        padding: 4px 12px !important;
+        height: auto !important;
+        min-height: 28px !important;
+    }
+
+    yt-live-chat-text-message-renderer .yt-spec-button-shape-next--tonal .yt-spec-button-shape-next__button-text-content {
+        color: #FFFFFF !important;
+        font-family: "Nunito Sans", "Nunito", sans-serif !important;
+        font-weight: 900 !important;
+        font-size: 15px !important;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5) !important;
+        -webkit-text-stroke: 1.5px #1B5E20 !important;
+        paint-order: stroke fill !important;
+    }
+
+    yt-live-chat-text-message-renderer .yt-spec-button-shape-next--tonal .yt-spec-button-shape-next__icon {
+        width: 20px !important;
+        height: 20px !important;
+        color: #FFFFFF !important;
+        filter: drop-shadow(1px 1px 2px rgba(0, 0, 0, 0.5)) !important;
+    }
+
+
+
+    /* Top Fan Button #1 - Gold */
+    yt-live-chat-text-message-renderer .ytSpecButtonViewModelHost button[aria-label="#1"],
+    yt-live-chat-text-message-renderer .ytSpecButtonViewModelHost .yt-spec-button-shape-next[aria-label="#1"] {
+        background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%) !important;
+        border: 2px solid #FFD700 !important;
+        box-shadow: 0 0 10px rgba(255, 215, 0, 0.6), 2px 2px 6px rgba(0, 0, 0, 0.25) !important;
+    }
+
+    yt-live-chat-text-message-renderer .ytSpecButtonViewModelHost button[aria-label="#1"] .yt-spec-button-shape-next__button-text-content,
+    yt-live-chat-text-message-renderer .ytSpecButtonViewModelHost .yt-spec-button-shape-next[aria-label="#1"] .yt-spec-button-shape-next__button-text-content {
+        color: #8B4513 !important;
+        /* Dark brown for contrast on gold */
+        font-family: "Nunito Sans", "Nunito", sans-serif !important;
+        font-weight: 900 !important;
+        font-size: 16px !important;
+        text-shadow: 0 1px 2px rgba(255, 215, 0, 0.5) !important;
+    }
+
+    /* Top Fan Button #2 - Silver */
+    yt-live-chat-text-message-renderer .ytSpecButtonViewModelHost button[aria-label="#2"],
+    yt-live-chat-text-message-renderer .ytSpecButtonViewModelHost .yt-spec-button-shape-next[aria-label="#2"] {
+        background: linear-gradient(135deg, #E8E8E8 0%, #C0C0C0 100%) !important;
+        border: 2px solid #C0C0C0 !important;
+        box-shadow: 0 0 8px rgba(192, 192, 192, 0.6), 2px 2px 6px rgba(0, 0, 0, 0.25) !important;
+    }
+
+    yt-live-chat-text-message-renderer .ytSpecButtonViewModelHost button[aria-label="#2"] .yt-spec-button-shape-next__button-text-content,
+    yt-live-chat-text-message-renderer .ytSpecButtonViewModelHost .yt-spec-button-shape-next[aria-label="#2"] .yt-spec-button-shape-next__button-text-content {
+        color: #2C2C2C !important;
+        /* Dark gray for contrast on silver */
+        font-family: "Nunito Sans", "Nunito", sans-serif !important;
+        font-weight: 900 !important;
+        font-size: 16px !important;
+        text-shadow: 0 1px 2px rgba(255, 255, 255, 0.5) !important;
+    }
+
+    /* Top Fan Button #3 - Bronze */
+    yt-live-chat-text-message-renderer .ytSpecButtonViewModelHost button[aria-label="#3"],
+    yt-live-chat-text-message-renderer .ytSpecButtonViewModelHost .yt-spec-button-shape-next[aria-label="#3"] {
+        background: linear-gradient(135deg, #CD7F32 0%, #8B4513 100%) !important;
+        border: 2px solid #CD7F32 !important;
+        box-shadow: 0 0 8px rgba(205, 127, 50, 0.6), 2px 2px 6px rgba(0, 0, 0, 0.25) !important;
+    }
+
+    yt-live-chat-text-message-renderer .ytSpecButtonViewModelHost button[aria-label="#3"] .yt-spec-button-shape-next__button-text-content,
+    yt-live-chat-text-message-renderer .ytSpecButtonViewModelHost .yt-spec-button-shape-next[aria-label="#3"] .yt-spec-button-shape-next__button-text-content {
+        color: #FFFFFF !important;
+        /* White for contrast on bronze */
+        font-family: "Nunito Sans", "Nunito", sans-serif !important;
+        font-weight: 900 !important;
+        font-size: 16px !important;
+        text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6) !important;
+    }
+
+    /* Crown Icon Colors */
+    /* #1 Gold Crown */
+    yt-live-chat-text-message-renderer .ytSpecButtonViewModelHost button[aria-label="#1"] .yt-spec-button-shape-next__icon,
+    yt-live-chat-text-message-renderer .ytSpecButtonViewModelHost .yt-spec-button-shape-next[aria-label="#1"] .yt-spec-button-shape-next__icon {
+        color: #8B4513 !important;
+        /* Dark brown to match text */
+        width: 22px !important;
+        height: 22px !important;
+        filter: drop-shadow(0 1px 2px rgba(255, 215, 0, 0.6)) !important;
+    }
+
+    /* #2 Silver Crown */
+    yt-live-chat-text-message-renderer .ytSpecButtonViewModelHost button[aria-label="#2"] .yt-spec-button-shape-next__icon,
+    yt-live-chat-text-message-renderer .ytSpecButtonViewModelHost .yt-spec-button-shape-next[aria-label="#2"] .yt-spec-button-shape-next__icon {
+        color: #2C2C2C !important;
+        /* Dark gray to match text */
+        width: 22px !important;
+        height: 22px !important;
+        filter: drop-shadow(0 1px 2px rgba(255, 255, 255, 0.6)) !important;
+    }
+
+    /* #3 Bronze Crown */
+    yt-live-chat-text-message-renderer .ytSpecButtonViewModelHost button[aria-label="#3"] .yt-spec-button-shape-next__icon,
+    yt-live-chat-text-message-renderer .ytSpecButtonViewModelHost .yt-spec-button-shape-next[aria-label="#3"] .yt-spec-button-shape-next__icon {
+        color: #FFFFFF !important;
+        /* White to match text */
+        width: 22px !important;
+        height: 22px !important;
+        filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.6)) !important;
+    }
+
+
+
+
+    yt-live-chat-paid-message-renderer {
+
+        background-color: var(--yt-live-chat-paid-message-background-color, #1565C0) !important;
+
+        /* Hiệu ứng nổi khối 3D - 3D Block Floating Effect */
+        border: 5px solid rgba(0, 0, 0, 0.8) !important;
+        border-radius: 32px !important;
+        margin: 10px !important;
+
+        /* Box shadow nhiều lớp tạo chiều sâu 3D - Layered shadows for 3D depth (reduced 30%) */
+        box-shadow:
+            /* Shadow chính - Main shadow */
+            6px 6px 0px rgba(0, 0, 0, 0.9),
+            /* Shadow thứ 2 - Second layer */
+            8px 8px 0px rgba(0, 0, 0, 0.7),
+            /* Shadow thứ 3 - Third layer */
+            11px 11px 0px rgba(0, 0, 0, 0.5),
+            /* Shadow thứ 4 - Fourth layer */
+            14px 14px 0px rgba(0, 0, 0, 0.3),
+            /* Glow effect */
+            0 0 15px rgba(255, 255, 255, 0.2) !important;
+
+        /* Transform 3D */
+        transform: perspective(1000px) rotateX(2deg) rotateY(-2deg) translateZ(20px) !important;
+        transform-style: preserve-3d !important;
+
+        position: relative !important;
+        overflow: visible !important;
+        padding: 0 !important;
+        display: flex !important;
+        flex-direction: column !important;
+
+
+        animation: superChatBlock3D 1.2s cubic-bezier(0.68, -0.55, 0.27, 1.55) forwards !important;
+
+        /* Transition để hỗ trợ hover effect */
+        transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1),
+            box-shadow 0.3s cubic-bezier(0.34, 1.56, 0.64, 1) !important;
+
+
+        width: auto !important;
+        max-width: 100% !important;
+    }
+
+    /* Animation 3D Block - Hiệu ứng khối 3D bay vào MẠNH MẼ */
+    @keyframes superChatBlock3D {
+        0% {
+            transform: perspective(1000px) rotateX(90deg) rotateY(-90deg) rotateZ(45deg) translateZ(500px) translateY(200px) scale(0);
+            opacity: 0;
+            filter: blur(20px) brightness(2);
+            box-shadow:
+                0px 0px 0px rgba(0, 0, 0, 0),
+                0px 0px 0px rgba(0, 0, 0, 0),
+                0px 0px 0px rgba(0, 0, 0, 0),
+                0px 0px 0px rgba(0, 0, 0, 0),
+                0 0 100px rgba(255, 255, 255, 0.8);
+        }
+
+        /* IMPACT moment */
+        30% {
+            transform: perspective(1000px) rotateX(-15deg) rotateY(15deg) rotateZ(-10deg) translateZ(40px) translateY(-30px) scale(1.3);
+            opacity: 1;
+            filter: blur(2px) brightness(1.3);
+            box-shadow:
+                10px 10px 0px rgba(0, 0, 0, 1),
+                17px 17px 0px rgba(0, 0, 0, 0.9),
+                24px 24px 0px rgba(0, 0, 0, 0.7),
+                31px 31px 0px rgba(0, 0, 0, 0.5),
+                0 0 28px rgba(255, 255, 255, 0.5);
+        }
+
+        /* Bounce back */
+        50% {
+            transform: perspective(1000px) rotateX(10deg) rotateY(-10deg) rotateZ(5deg) translateZ(10px) translateY(20px) scale(0.85);
+            filter: blur(0) brightness(1);
+            box-shadow:
+                4px 4px 0px rgba(0, 0, 0, 0.9),
+                7px 7px 0px rgba(0, 0, 0, 0.7),
+                10px 10px 0px rgba(0, 0, 0, 0.5),
+                12px 12px 0px rgba(0, 0, 0, 0.3),
+                0 0 17px rgba(255, 255, 255, 0.3);
+        }
+
+        /* Second bounce */
+        65% {
+            transform: perspective(1000px) rotateX(-8deg) rotateY(8deg) rotateZ(-3deg) translateZ(25px) translateY(-15px) scale(1.08);
+            box-shadow:
+                7px 7px 0px rgba(0, 0, 0, 0.95),
+                11px 11px 0px rgba(0, 0, 0, 0.8),
+                15px 15px 0px rgba(0, 0, 0, 0.6),
+                19px 19px 0px rgba(0, 0, 0, 0.4),
+                0 0 21px rgba(255, 255, 255, 0.3);
+        }
+
+        /* Settle down */
+        80% {
+            transform: perspective(1000px) rotateX(4deg) rotateY(-4deg) rotateZ(1deg) translateZ(18px) translateY(5px) scale(0.96);
+            box-shadow:
+                5px 5px 0px rgba(0, 0, 0, 0.9),
+                8px 8px 0px rgba(0, 0, 0, 0.7),
+                10px 10px 0px rgba(0, 0, 0, 0.5),
+                13px 13px 0px rgba(0, 0, 0, 0.3),
+                0 0 15px rgba(255, 255, 255, 0.25);
+        }
+
+        /* Final wobble */
+        90% {
+            transform: perspective(1000px) rotateX(-2deg) rotateY(2deg) rotateZ(-0.5deg) translateZ(22px) translateY(-3px) scale(1.02);
+        }
+
+        /* Rest position */
+        100% {
+            transform: perspective(1000px) rotateX(2deg) rotateY(-2deg) rotateZ(0deg) translateZ(20px) translateY(0) scale(1);
+            opacity: 1;
+            filter: blur(0) brightness(1);
+            box-shadow:
+                6px 6px 0px rgba(0, 0, 0, 0.9),
+                8px 8px 0px rgba(0, 0, 0, 0.7),
+                11px 11px 0px rgba(0, 0, 0, 0.5),
+                14px 14px 0px rgba(0, 0, 0, 0.3),
+                0 0 15px rgba(255, 255, 255, 0.2);
+        }
+    }
+
+    @keyframes superChatPop {
+        0% {
+            transform: scale(0.7) translateY(30px);
+            opacity: 0;
+        }
+
+        60% {
+            transform: scale(1.15);
+            opacity: 1;
+        }
+
+        80% {
+            transform: scale(0.95);
+        }
+
+        100% {
+            transform: scale(1) translateY(0);
+            opacity: 1;
+        }
+    }
+
+    yt-live-chat-paid-message-renderer::after {
+        display: none !important;
+    }
+
+    /* Ẩn avatar của superchat - Hide superchat avatar */
+    yt-live-chat-paid-message-renderer #author-photo,
+    yt-live-chat-paid-message-renderer #author-photo img {
+        display: none !important;
+    }
+
+
+
+    yt-live-chat-paid-message-renderer #header {
+        background-color: transparent !important;
+        border-bottom: none !important;
+        border-radius: 32px 32px 0 0 !important;
+
+        padding: 5px 10px !important;
+        min-height: unset !important;
+
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+
+        position: relative !important;
+        z-index: 3 !important;
+        margin-right: 0 !important;
+    }
+
+    yt-live-chat-paid-message-renderer #content {
+        padding: 8px 15px 12px 15px !important;
+        z-index: 3 !important;
+        border-radius: 0 0 32px 32px !important;
+        overflow: visible !important;
+    }
+
+    yt-live-chat-paid-message-renderer #author-name {
+        color: #FFFFFF !important;
+        font-family: "Nunito", "Noto Sans", sans-serif !important;
+        font-weight: 900 !important;
+        font-size: 20px !important;
+        line-height: 26px !important;
+        /* text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4) !important; */
+        -webkit-text-stroke: 4.6px #000000 !important;
+        paint-order: stroke fill !important;
+        white-space: nowrap !important;
+    }
+
+    /* Pineapple for Super Chat Members */
+    yt-live-chat-paid-message-renderer:has(yt-live-chat-author-badge-renderer[type="member"]) #author-name {
+        position: relative !important;
+        margin-left: 20px !important;
+        overflow: visible !important;
+    }
+
+    yt-live-chat-paid-message-renderer:has(yt-live-chat-author-badge-renderer[type="member"]) #author-name::before {
+        content: "" !important;
+        display: block !important;
+        position: absolute !important;
+        top: -10px !important;
+        left: -32px !important;
+        width: 36px !important;
+        height: 36px !important;
+        z-index: 1001 !important;
+        filter: drop-shadow(1px 2px 2px rgba(0, 0, 0, 0.3)) !important;
+        transform: rotate(-10deg) !important;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3C!-- Leaves --%3E%3Cpath d='M50 28 C45 10 35 10 30 20' stroke='%234CAF50' stroke-width='5' stroke-linecap='round' fill='none'/%3E%3Cpath d='M50 28 C55 10 65 10 70 20' stroke='%234CAF50' stroke-width='5' stroke-linecap='round' fill='none'/%3E%3Cpath d='M50 28 L50 5' stroke='%23388E3C' stroke-width='5' stroke-linecap='round' fill='none'/%3E%3C!-- Body --%3E%3Crect x='20' y='28' width='60' height='65' rx='30' ry='30' fill='%23FFCA28'/%3E%3C!-- Pattern (Subtle) --%3E%3Cpath d='M20 45 L80 45 M20 65 L80 45 M20 65 L80 65 M35 28 L35 93 M65 28 L65 93' stroke='%23FF6F00' stroke-width='2' opacity='0.15'/%3E%3C!-- Face --%3E%3Ccircle cx='38' cy='52' r='6' fill='%23212121'/%3E%3Ccircle cx='62' cy='52' r='6' fill='%23212121'/%3E%3C!-- Eye Highlights --%3E%3Ccircle cx='35' cy='49' r='2.5' fill='%23FFF'/%3E%3Ccircle cx='59' cy='49' r='2.5' fill='%23FFF'/%3E%3C!-- Smile (Mouth) --%3E%3Cpath d='M42 62 Q50 70 58 62' stroke='%23212121' stroke-width='3' fill='none' stroke-linecap='round'/%3E%3C!-- Cheeks --%3E%3Ccircle cx='28' cy='60' r='5' fill='%23FF7043' opacity='0.5'/%3E%3Ccircle cx='72' cy='60' r='5' fill='%23FF7043' opacity='0.5'/%3E%3C/svg%3E") !important;
+        background-size: contain !important;
+        background-repeat: no-repeat !important;
+    }
+
+    /* Hide Pineapple for New Members in Super Chat */
+    yt-live-chat-paid-message-renderer:has(yt-live-chat-author-badge-renderer[type="member"]):has(img[alt="Hội viên mới"]) #author-name::before {
+        display: none !important;
+    }
+
+    /* Reset margin for New Members in Super Chat */
+    yt-live-chat-paid-message-renderer:has(yt-live-chat-author-badge-renderer[type="member"]):has(img[alt="Hội viên mới"]) #author-name {
+        margin-left: 0 !important;
+    }
+
+    yt-live-chat-paid-message-renderer #purchase-amount,
+    yt-live-chat-paid-message-renderer #purchase-amount-chip {
+        color: #FFFFFF !important;
+        font-family: "Nunito", "Noto Sans", sans-serif !important;
+        font-weight: 900 !important;
+        font-size: 22px !important;
+        -webkit-text-stroke: 4.6px #000000 !important;
+        paint-order: stroke fill !important;
+    }
+
+    yt-live-chat-paid-message-renderer #message {
+
+        color: #FFFFFF !important;
+        font-family: "Nunito", "Noto Sans", sans-serif !important;
+        font-size: 26px !important;
+        line-height: 1.4 !important;
+        font-weight: 900 !important;
+
+
+        -webkit-text-stroke: 4.6px #000000 !important;
+        text-shadow: none !important;
+        paint-order: stroke fill !important;
+
+        white-space: normal !important;
+        overflow-wrap: anywhere !important;
+        word-break: break-word !important;
+    }
+
+    yt-live-chat-paid-message-renderer #timestamp {
+        display: none !important;
+    }
+
+    yt-live-chat-paid-message-renderer #creator-heart-button,
+    yt-live-chat-paid-message-renderer #reply-button,
+    yt-live-chat-paid-message-renderer yt-live-chat-paid-message-footer-renderer {
+        display: none !important;
+    }
+
+
+    yt-live-chat-legacy-paid-message-renderer {
+        background-color: #E3F2FD !important;
+        background: linear-gradient(135deg, #E3F2FD 0%, #BBDEFB 100%) !important;
+        background-image: none !important;
+        border: 3px solid #42A5F5 !important;
+        border-radius: 22px !important;
+        margin: 28px 10px 6px 6px !important;
+        box-shadow: 4px 4px 0px rgba(66, 165, 245, 0.25) !important;
+        position: relative !important;
+        overflow: visible !important;
+        padding: 10px 15px !important;
+        animation: superChatPop 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
+        width: fit-content !important;
+        min-width: 295px !important;
+
+    }
+
+    yt-live-chat-legacy-paid-message-renderer::after {
+        display: none !important;
+    }
+
+    yt-live-chat-legacy-paid-message-renderer #event-text,
+    yt-live-chat-legacy-paid-message-renderer #detail-text {
+        color: #0D47A1 !important;
+        font-family: "Nunito", sans-serif !important;
+        font-weight: 800 !important;
+        font-size: 20px !important;
+        text-shadow: -1px -1px 0 #FFF, 1px 1px 0 #FFF !important;
+        white-space: normal !important;
+        overflow-wrap: anywhere !important;
+        word-break: break-word !important;
+    }
+
+    /* @Mention Styling - Removed to match regular links */
+
+    /* @Mention text patterns - Removed */
+
+    /* Regular Hyperlinks - Blue color for non-mention links */
+    yt-live-chat-text-message-renderer #message a {
+        color: #42A5F5 !important;
+        font-family: "Nunito Sans", "Nunito", sans-serif !important;
+        font-weight: 700 !important;
+        text-decoration: underline !important;
+        -webkit-text-stroke: 2px #000000 !important;
+        paint-order: stroke fill !important;
+        text-shadow: none !important;
+    }
+
+    yt-live-chat-text-message-renderer #message a:hover {
+        color: #1E88E5 !important;
+        text-decoration: underline !important;
+    }
+
+
+
+
+    yt-live-chat-ticker-renderer {
+        display: none !important;
+    }
+
+    yt-live-chat-ticker-renderer::after {
+        content: "" !important;
+        position: absolute !important;
+        top: 4px !important;
+        left: 4px !important;
+        right: 4px !important;
+        bottom: 4px !important;
+
+        border: 2px dashed #E65100 !important;
+        border-radius: 14px !important;
+        pointer-events: none !important;
+        z-index: 0 !important;
+    }
+
+    yt-live-chat-ticker-renderer #items {
+        position: relative !important;
+        z-index: 1 !important;
+        display: flex !important;
+        flex-wrap: nowrap !important;
+        gap: 8px !important;
+        overflow-x: auto !important;
+        overflow-y: visible !important;
+        padding: 2px 0 !important;
+        scrollbar-width: none !important;
+        min-height: 52px !important;
+        align-items: center !important;
+    }
+
+    yt-live-chat-ticker-renderer #items::-webkit-scrollbar {
+        display: none !important;
+    }
+
+    yt-live-chat-ticker-paid-message-item-renderer {
+        border-radius: 28px !important;
+        margin: 0 4px !important;
+        overflow: visible !important;
+        height: 52px !important;
+        min-height: 52px !important;
+        min-width: 140px !important;
+        flex-shrink: 0 !important;
+        animation: tickerPopIn 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55) !important;
+    }
+
+    @keyframes tickerPopIn {
+        0% {
+            transform: scale(0) rotate(-20deg);
+            opacity: 0;
+        }
+
+        50% {
+            transform: scale(1.2) rotate(10deg);
+        }
+
+        70% {
+            transform: scale(0.9) rotate(-5deg);
+        }
+
+        100% {
+            transform: scale(1) rotate(0deg);
+            opacity: 1;
+        }
+    }
+
+    yt-live-chat-ticker-paid-message-item-renderer #container {
+        border-radius: 28px !important;
+        padding: 5px 14px 5px 8px !important;
+        height: 50px !important;
+        min-height: 50px !important;
+        min-width: 130px !important;
+        display: flex !important;
+        align-items: center !important;
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.4), inset 0 1px 3px rgba(255, 255, 255, 0.3) !important;
+        overflow: visible !important;
+    }
+
+    yt-live-chat-ticker-paid-message-item-renderer #author-photo img {
+        width: 36px !important;
+        height: 36px !important;
+        border-radius: 50% !important;
+        border: 2px solid rgba(255, 255, 255, 0.9) !important;
+    }
+
+    yt-live-chat-ticker-paid-message-item-renderer #content {
+        display: flex !important;
+        flex-direction: row !important;
+        align-items: center !important;
+        justify-content: flex-start !important;
+        gap: 8px !important;
+        padding-left: 8px !important;
+        min-width: 80px !important;
+        overflow: visible !important;
+    }
+
+    yt-live-chat-ticker-paid-message-item-renderer #author-name {
+        color: #ffffff !important;
+        font-family: "Nunito", sans-serif !important;
+        font-weight: 700 !important;
+        font-size: 17px !important;
+        text-shadow: 0 1px 3px rgba(0, 0, 0, 0.9) !important;
+        max-width: 120px !important;
+        overflow: hidden !important;
+        text-overflow: ellipsis !important;
+        white-space: nowrap !important;
+    }
+
+    yt-live-chat-ticker-paid-message-item-renderer #purchase-amount {
+        color: #FFD700 !important;
+        font-family: "Nunito", sans-serif !important;
+        font-weight: 900 !important;
+        font-size: 20px !important;
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 1) !important;
+    }
+
+    yt-live-chat-ticker-sponsor-item-renderer {
+        animation: tickerPopIn 0.6s ease-out !important;
+        border-radius: 28px !important;
+        margin: 0 4px !important;
+        height: 52px !important;
+    }
+
+    yt-live-chat-ticker-sponsor-item-renderer #container {
+        border-radius: 28px !important;
+        padding: 5px 14px 5px 8px !important;
+        height: 50px !important;
+        display: flex !important;
+        align-items: center !important;
+    }
+
+
+    yt-live-chat-item-list-renderer {
+        padding-top: 40px !important;
+    }
+
+    yt-live-chat-item-list-renderer #items {
+        overflow: hidden !important;
+        padding-top: 10px !important;
+        padding-bottom: 40px !important;
+        /* Increased to prevent cutoff */
+    }
+
+    yt-live-chat-item-list-renderer #item-scroller {
+        overflow-y: hidden !important;
+        overflow-x: hidden !important;
+    }
+
+    yt-live-chat-text-message-renderer #timestamp {
+        color: rgba(100, 80, 50, 0.8) !important;
+        font-family: "Nunito", sans-serif;
+        font-size: 17px !important;
+        font-weight: 600 !important;
+    }
+
+
+    yt-live-chat-text-message-renderer #menu,
+    yt-live-chat-paid-message-renderer #menu,
+    #menu {
+        display: none !important;
+    }
+
+
+    yt-live-chat-header-renderer,
+    yt-live-chat-message-input-renderer,
+    yt-live-chat-mode-change-message-renderer,
+    yt-live-chat-viewer-engagement-message-renderer,
+    yt-live-chat-restricted-participation-renderer,
+    yt-live-chat-banner-manager,
+    yt-live-chat-action-panel-renderer,
+    yt-live-chat-renderer #action-panel,
+    yt-live-chat-renderer #panels,
+    yt-live-chat-renderer #input-panel,
+    #picker-buttons,
+    yt-live-chat-ninja-message-renderer,
+    yt-reaction-control-panel-overlay,
+    yt-reaction-control-panel-view-model {
+        display: none !important;
+        height: 0 !important;
+        visibility: hidden !important;
+    }
+
+    a {
+        text-decoration: none !important;
+        color: #64B5F6 !important;
+        font-weight: 700 !important;
+    }
+
+
+
+
+    yt-live-chat-membership-item-renderer,
+    ytd-sponsorships-live-chat-gift-purchase-announcement-renderer,
+    ytd-sponsorships-live-chat-gift-redemption-announcement-renderer {
+
+        background:
+            repeating-linear-gradient(60deg, transparent 0px, transparent 8px, rgba(46, 125, 50, 0.08) 8px, rgba(46, 125, 50, 0.08) 10px),
+            repeating-linear-gradient(-60deg, transparent 0px, transparent 8px, rgba(46, 125, 50, 0.08) 8px, rgba(46, 125, 50, 0.08) 10px),
+            #E8F5E9 !important;
+
+        border: 3px solid #00C853 !important;
+
+        border-radius: 22px !important;
+        margin: 38px 10px 6px 6px !important;
+        box-shadow: 4px 4px 15px rgba(0, 200, 83, 0.3) !important;
+        position: relative !important;
+        overflow: visible !important;
+        padding: 0 !important;
+        display: flex !important;
+        flex-direction: column !important;
+
+        animation: fadeInBlur 0.6s cubic-bezier(0.23, 1, 0.32, 1) forwards !important;
+
+        width: fit-content !important;
+        min-width: 295px !important;
+    }
+
+    /* Membership Pineapple Decoration (Generic) */
+    yt-live-chat-membership-item-renderer::before {
+        content: "" !important;
+        position: absolute !important;
+        top: -20px !important;
+        right: -15px !important;
+        width: 45px !important;
+        height: 45px !important;
+        transform: rotate(15deg) !important;
+        z-index: 10 !important;
+        filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.2)) !important;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3C!-- Pineapple --%3E%3Cpath d='M50 20 C45 5 35 5 30 15' stroke='%234CAF50' stroke-width='4' fill='none'/%3E%3Cpath d='M50 20 C55 5 65 5 70 15' stroke='%234CAF50' stroke-width='4' fill='none'/%3E%3Cpath d='M50 20 L50 2' stroke='%23388E3C' stroke-width='4' fill='none'/%3E%3Crect x='25' y='20' width='50' height='60' rx='25' ry='25' fill='%23FFD54F'/%3E%3Cpath d='M25 40 L75 40 M25 60 L75 60 M40 20 L40 80 M60 20 L60 80' stroke='%23FFA000' stroke-width='1.5' opacity='0.3'/%3E%3Ccircle cx='40' cy='45' r='4' fill='%23212121'/%3E%3Ccircle cx='60' cy='45' r='4' fill='%23212121'/%3E%3Cpath d='M42 55 Q50 62 58 55' stroke='%23212121' stroke-width='2.5' fill='none' stroke-linecap='round'/%3E%3Ccircle cx='32' cy='52' r='3' fill='%23FFAB91' opacity='0.6'/%3E%3Ccircle cx='68' cy='52' r='3' fill='%23FFAB91' opacity='0.6'/%3E%3C/svg%3E") !important;
+        background-size: contain !important;
+        background-repeat: no-repeat !important;
+    }
+
+    /* Try to target Milestone messages roughly by structure or just general decoration */
+    /* Since strict differentiation is hard, we apply one style. */
+    /* Just in case, if empty content (New Member sometimes), maybe smaller pineapple? */
+    yt-live-chat-membership-item-renderer:has(#content:empty)::before {
+        /* Different pineapple for just join? */
+        transform: rotate(-10deg) !important;
+        right: auto !important;
+        left: -10px !important;
+    }
+
+
+    yt-live-chat-membership-item-renderer::after,
+    ytd-sponsorships-live-chat-gift-purchase-announcement-renderer::after,
+    ytd-sponsorships-live-chat-gift-redemption-announcement-renderer::after {
+        content: "" !important;
+        position: absolute !important;
+        top: 5px !important;
+        left: 5px !important;
+        right: 5px !important;
+        bottom: 5px !important;
+        border: 2px dashed #FFFFFF !important;
+
+        border-radius: 16px !important;
+        pointer-events: none !important;
+        z-index: 2 !important;
+        opacity: 0.8 !important;
+        filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.2)) !important;
+    }
+
+
+
+    yt-live-chat-membership-item-renderer #header,
+    ytd-sponsorships-live-chat-gift-purchase-announcement-renderer #header,
+    ytd-sponsorships-live-chat-gift-redemption-announcement-renderer #header {
+        background: rgba(0, 200, 83, 0.15) !important;
+        border-bottom: none !important;
+        border-radius: 19px 19px 0 0 !important;
+        padding: 8px 15px 5px 15px !important;
+        min-height: unset !important;
+        align-items: center !important;
+        position: relative !important;
+        z-index: 3 !important;
+    }
+
+
+    yt-live-chat-membership-item-renderer #content,
+    ytd-sponsorships-live-chat-gift-purchase-announcement-renderer #content,
+    ytd-sponsorships-live-chat-gift-redemption-announcement-renderer #content {
+        padding: 8px 15px 12px 15px !important;
+        z-index: 3 !important;
+        border-radius: 0 0 19px 19px !important;
+        overflow: visible !important;
+    }
+
+
+
+    yt-live-chat-membership-item-renderer #author-name,
+    ytd-sponsorships-live-chat-gift-purchase-announcement-renderer #author-name,
+    ytd-sponsorships-live-chat-gift-redemption-announcement-renderer #author-name {
+        color: #1B5E20 !important;
+        font-family: "Nunito", "Noto Sans", sans-serif !important;
+        font-weight: 900 !important;
+        font-size: 20px !important;
+
+        /* Ensure text is dark green similar to content. */
+        text-shadow: none !important;
+        -webkit-text-stroke: 0px !important;
+    }
+
+
+    yt-live-chat-membership-item-renderer #header-subtext,
+    yt-live-chat-membership-item-renderer #header-primary-text,
+    ytd-sponsorships-live-chat-gift-purchase-announcement-renderer #header-primary-text,
+    ytd-sponsorships-live-chat-gift-redemption-announcement-renderer #message {
+        color: #1B5E20 !important;
+        font-family: "Nunito", sans-serif !important;
+        font-size: 20px !important;
+        font-weight: 900 !important;
+
+        -webkit-text-stroke: 0px !important;
+        text-shadow: none !important;
+
+        white-space: normal !important;
+        overflow-wrap: anywhere !important;
+    }
+
+
+    ytd-sponsorships-live-chat-header-renderer {
+        background: transparent !important;
+        box-shadow: none !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        display: flex !important;
+        align-items: center !important;
+    }
+
+
+    ytd-sponsorships-live-chat-header-renderer #primary-text {
+        color: #1B5E20 !important;
+        font-weight: 900 !important;
+        font-size: 18px !important;
+        text-shadow: none !important;
+    }
+
+
+    yt-live-chat-membership-item-renderer #author-photo,
+    ytd-sponsorships-live-chat-gift-purchase-announcement-renderer #author-photo,
+    ytd-sponsorships-live-chat-gift-redemption-announcement-renderer #author-photo {
+        width: 40px !important;
+        height: 40px !important;
+        border-radius: 50% !important;
+        border: 2px solid #FFFFFF !important;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2) !important;
+        margin-right: 10px !important;
+    }
