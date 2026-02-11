@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Super Chat Column Layout</title>
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700;800;900&display=swap"
+        rel="stylesheet">
+
+    <!-- Link CSS -->
+    <link rel="stylesheet" href="css3.css">
+
+    <style>
+        body {
+            background-color: #1a1a1a;
+            padding: 50px;
+            font-family: 'Nunito Sans', sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+
+        /* Mock container */
+        #chat-container {
+            width: 400px;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        /* Force display block for custom elements in this test */
+        yt-live-chat-paid-message-renderer {
+            display: block;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1 style="color: white; margin-bottom: 30px;">Tester: Super Chat Column Layout</h1>
+
+    <div id="chat-container">
+
+        <!-- Case 1: Standard Super Chat -->
+        <yt-live-chat-paid-message-renderer class="style-scope yt-live-chat-item-list-renderer"
+            style="--yt-live-chat-paid-message-background-color: #1565C0;">
+            <div id="card" class="style-scope yt-live-chat-paid-message-renderer">
+                <div id="header" class="style-scope yt-live-chat-paid-message-renderer">
+
+                    <div id="author-photo" class="style-scope yt-live-chat-paid-message-renderer">
+                        <img src="https://ui-avatars.com/api/?name=User&background=random" width="40" height="40">
+                    </div>
+
+                    <div id="header-content" class="style-scope yt-live-chat-paid-message-renderer">
+                        <div id="header-content-primary-column" class="style-scope yt-live-chat-paid-message-renderer">
+
+                            <div id="author-name-chip" class="style-scope yt-live-chat-paid-message-renderer">
+                                <yt-live-chat-author-chip class="style-scope yt-live-chat-paid-message-renderer">
+                                    <span id="author-name" dir="auto" class="style-scope yt-live-chat-author-chip">
+                                        @wow-2810
+                                    </span>
+                                </yt-live-chat-author-chip>
+                            </div>
+
+                            <div id="purchase-amount-column" class="style-scope yt-live-chat-paid-message-renderer">
+                                <div id="purchase-amount" class="style-scope yt-live-chat-paid-message-renderer">
+                                    <yt-formatted-string class="style-scope yt-live-chat-paid-message-renderer">
+                                        20.000&nbsp;₫
+                                    </yt-formatted-string>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+
+                <div id="content" class="style-scope yt-live-chat-paid-message-renderer">
+                    <div id="message" dir="auto" class="style-scope yt-live-chat-paid-message-renderer">
+                        Test layout: Tên ở trên, tiền ở dưới, căn giữa.
+                    </div>
+                </div>
+            </div>
+        </yt-live-chat-paid-message-renderer>
+
+
+        <!-- Case 2: High Value Super Chat (Magenta) -->
+        <yt-live-chat-paid-message-renderer class="style-scope yt-live-chat-item-list-renderer"
+            style="--yt-live-chat-paid-message-background-color: #E91E63;">
+            <div id="card" class="style-scope yt-live-chat-paid-message-renderer">
+                <div id="header" class="style-scope yt-live-chat-paid-message-renderer">
+
+                    <div id="author-photo" class="style-scope yt-live-chat-paid-message-renderer">
+                        <img src="https://ui-avatars.com/api/?name=Rich&background=E91E63" width="40" height="40">
+                    </div>
+
+                    <div id="header-content" class="style-scope yt-live-chat-paid-message-renderer">
+                        <div id="header-content-primary-column" class="style-scope yt-live-chat-paid-message-renderer">
+
+                            <div id="author-name-chip" class="style-scope yt-live-chat-paid-message-renderer">
+                                <yt-live-chat-author-chip class="style-scope yt-live-chat-paid-message-renderer">
+                                    <span id="author-name" dir="auto" class="style-scope yt-live-chat-author-chip">
+                                        Đại Gia Mới Nổi
+                                    </span>
+                                </yt-live-chat-author-chip>
+                            </div>
+
+                            <div id="purchase-amount-column" class="style-scope yt-live-chat-paid-message-renderer">
+                                <div id="purchase-amount" class="style-scope yt-live-chat-paid-message-renderer">
+                                    <yt-formatted-string class="style-scope yt-live-chat-paid-message-renderer">
+                                        500.000&nbsp;₫
+                                    </yt-formatted-string>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+
+                <div id="content" class="style-scope yt-live-chat-paid-message-renderer">
+                    <div id="message" dir="auto" class="style-scope yt-live-chat-paid-message-renderer">
+                        Check xem tiền có to và rõ không? Shadow có đẹp không?
+                    </div>
+                </div>
+            </div>
+        </yt-live-chat-paid-message-renderer>
+
+    </div>
+
+</body>
+
+</html>

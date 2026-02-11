@@ -1,6 +1,7 @@
         @import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;600;700&display=swap");
         @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap");
         @import url("https://fonts.googleapis.com/css2?family=Itim&family=Mali:wght@400;700&family=Patrick+Hand&display=swap");
+        @import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@700&display=swap');
 
 
         body {
@@ -185,7 +186,7 @@
             clip-path: none !important;
             z-index: 1 !important;
             /* iOS-style blur fade in - Optimized */
-            animation: iosIntro26 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards !important;
+            animation: iosIntro26 0.15s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards !important;
             transform-origin: left center !important;
             transition: none !important;
             will-change: transform, opacity, filter !important;
@@ -280,7 +281,9 @@
         }
 
         yt-live-chat-text-message-renderer[author-type="member"]:has(img[alt="Hội viên mới"]) #author-photo,
-        yt-live-chat-text-message-renderer[author-type="moderator"]:has(img[alt="Hội viên mới"]) #author-photo {
+        yt-live-chat-text-message-renderer[author-type="member"]:has(img[alt="New member"]) #author-photo,
+        yt-live-chat-text-message-renderer[author-type="moderator"]:has(img[alt="Hội viên mới"]) #author-photo,
+        yt-live-chat-text-message-renderer[author-type="moderator"]:has(img[alt="New member"]) #author-photo {
             left: 12px !important;
         }
 
@@ -399,11 +402,13 @@
         }
 
         /* Hide Pineapple for New Members */
-        yt-live-chat-text-message-renderer[author-type="member"]:has(img[alt="Hội viên mới"]) yt-live-chat-author-chip::before {
+        yt-live-chat-text-message-renderer[author-type="member"]:has(img[alt="Hội viên mới"]) yt-live-chat-author-chip::before,
+        yt-live-chat-text-message-renderer[author-type="member"]:has(img[alt="New member"]) yt-live-chat-author-chip::before {
             display: none !important;
         }
 
-        yt-live-chat-text-message-renderer[author-type="member"]:has(img[alt="Hội viên mới"]) yt-live-chat-author-chip {
+        yt-live-chat-text-message-renderer[author-type="member"]:has(img[alt="Hội viên mới"]) yt-live-chat-author-chip,
+        yt-live-chat-text-message-renderer[author-type="member"]:has(img[alt="New member"]) yt-live-chat-author-chip {
             padding: 3px 15px 3px 34px !important;
         }
 
@@ -429,11 +434,13 @@
         }
 
         /* Hide Pineapple for Moderator-New Members */
-        yt-live-chat-text-message-renderer[author-type="moderator"]:has(img[alt="Hội viên mới"]) yt-live-chat-author-chip::before {
+        yt-live-chat-text-message-renderer[author-type="moderator"]:has(img[alt="Hội viên mới"]) yt-live-chat-author-chip::before,
+        yt-live-chat-text-message-renderer[author-type="moderator"]:has(img[alt="New member"]) yt-live-chat-author-chip::before {
             display: none !important;
         }
 
-        yt-live-chat-text-message-renderer[author-type="moderator"]:has(img[alt="Hội viên mới"]) yt-live-chat-author-chip {
+        yt-live-chat-text-message-renderer[author-type="moderator"]:has(img[alt="Hội viên mới"]) yt-live-chat-author-chip,
+        yt-live-chat-text-message-renderer[author-type="moderator"]:has(img[alt="New member"]) yt-live-chat-author-chip {
             padding: 3px 15px 3px 34px !important;
         }
 
@@ -663,14 +670,20 @@
 
         /* Top Fan Button #1 - Gold */
         yt-live-chat-text-message-renderer .ytSpecButtonViewModelHost button[aria-label="#1"],
-        yt-live-chat-text-message-renderer .ytSpecButtonViewModelHost .yt-spec-button-shape-next[aria-label="#1"] {
+        yt-live-chat-text-message-renderer .ytSpecButtonViewModelHost .yt-spec-button-shape-next[aria-label="#1"],
+        yt-live-chat-paid-message-renderer .ytSpecButtonViewModelHost button[aria-label="#1"],
+        yt-live-chat-paid-message-renderer .ytSpecButtonViewModelHost .yt-spec-button-shape-next[aria-label="#1"],
+        yt-live-chat-paid-message-renderer button[aria-label="#1"] {
             background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%) !important;
             border: 2px solid #FFD700 !important;
             box-shadow: 0 0 10px rgba(255, 215, 0, 0.6), 2px 2px 6px rgba(0, 0, 0, 0.25) !important;
         }
 
         yt-live-chat-text-message-renderer .ytSpecButtonViewModelHost button[aria-label="#1"] .yt-spec-button-shape-next__button-text-content,
-        yt-live-chat-text-message-renderer .ytSpecButtonViewModelHost .yt-spec-button-shape-next[aria-label="#1"] .yt-spec-button-shape-next__button-text-content {
+        yt-live-chat-text-message-renderer .ytSpecButtonViewModelHost .yt-spec-button-shape-next[aria-label="#1"] .yt-spec-button-shape-next__button-text-content,
+        yt-live-chat-paid-message-renderer .ytSpecButtonViewModelHost button[aria-label="#1"] .yt-spec-button-shape-next__button-text-content,
+        yt-live-chat-paid-message-renderer .ytSpecButtonViewModelHost .yt-spec-button-shape-next[aria-label="#1"] .yt-spec-button-shape-next__button-text-content,
+        yt-live-chat-paid-message-renderer button[aria-label="#1"] .yt-spec-button-shape-next__button-text-content {
             color: #8B4513 !important;
             /* Dark brown for contrast on gold */
             font-family: "Nunito Sans", "Nunito", sans-serif !important;
@@ -681,14 +694,20 @@
 
         /* Top Fan Button #2 - Silver */
         yt-live-chat-text-message-renderer .ytSpecButtonViewModelHost button[aria-label="#2"],
-        yt-live-chat-text-message-renderer .ytSpecButtonViewModelHost .yt-spec-button-shape-next[aria-label="#2"] {
+        yt-live-chat-text-message-renderer .ytSpecButtonViewModelHost .yt-spec-button-shape-next[aria-label="#2"],
+        yt-live-chat-paid-message-renderer .ytSpecButtonViewModelHost button[aria-label="#2"],
+        yt-live-chat-paid-message-renderer .ytSpecButtonViewModelHost .yt-spec-button-shape-next[aria-label="#2"],
+        yt-live-chat-paid-message-renderer button[aria-label="#2"] {
             background: linear-gradient(135deg, #E8E8E8 0%, #C0C0C0 100%) !important;
             border: 2px solid #C0C0C0 !important;
             box-shadow: 0 0 8px rgba(192, 192, 192, 0.6), 2px 2px 6px rgba(0, 0, 0, 0.25) !important;
         }
 
         yt-live-chat-text-message-renderer .ytSpecButtonViewModelHost button[aria-label="#2"] .yt-spec-button-shape-next__button-text-content,
-        yt-live-chat-text-message-renderer .ytSpecButtonViewModelHost .yt-spec-button-shape-next[aria-label="#2"] .yt-spec-button-shape-next__button-text-content {
+        yt-live-chat-text-message-renderer .ytSpecButtonViewModelHost .yt-spec-button-shape-next[aria-label="#2"] .yt-spec-button-shape-next__button-text-content,
+        yt-live-chat-paid-message-renderer .ytSpecButtonViewModelHost button[aria-label="#2"] .yt-spec-button-shape-next__button-text-content,
+        yt-live-chat-paid-message-renderer .ytSpecButtonViewModelHost .yt-spec-button-shape-next[aria-label="#2"] .yt-spec-button-shape-next__button-text-content,
+        yt-live-chat-paid-message-renderer button[aria-label="#2"] .yt-spec-button-shape-next__button-text-content {
             color: #2C2C2C !important;
             /* Dark gray for contrast on silver */
             font-family: "Nunito Sans", "Nunito", sans-serif !important;
@@ -699,14 +718,20 @@
 
         /* Top Fan Button #3 - Bronze */
         yt-live-chat-text-message-renderer .ytSpecButtonViewModelHost button[aria-label="#3"],
-        yt-live-chat-text-message-renderer .ytSpecButtonViewModelHost .yt-spec-button-shape-next[aria-label="#3"] {
+        yt-live-chat-text-message-renderer .ytSpecButtonViewModelHost .yt-spec-button-shape-next[aria-label="#3"],
+        yt-live-chat-paid-message-renderer .ytSpecButtonViewModelHost button[aria-label="#3"],
+        yt-live-chat-paid-message-renderer .ytSpecButtonViewModelHost .yt-spec-button-shape-next[aria-label="#3"],
+        yt-live-chat-paid-message-renderer button[aria-label="#3"] {
             background: linear-gradient(135deg, #CD7F32 0%, #8B4513 100%) !important;
             border: 2px solid #CD7F32 !important;
             box-shadow: 0 0 8px rgba(205, 127, 50, 0.6), 2px 2px 6px rgba(0, 0, 0, 0.25) !important;
         }
 
         yt-live-chat-text-message-renderer .ytSpecButtonViewModelHost button[aria-label="#3"] .yt-spec-button-shape-next__button-text-content,
-        yt-live-chat-text-message-renderer .ytSpecButtonViewModelHost .yt-spec-button-shape-next[aria-label="#3"] .yt-spec-button-shape-next__button-text-content {
+        yt-live-chat-text-message-renderer .ytSpecButtonViewModelHost .yt-spec-button-shape-next[aria-label="#3"] .yt-spec-button-shape-next__button-text-content,
+        yt-live-chat-paid-message-renderer .ytSpecButtonViewModelHost button[aria-label="#3"] .yt-spec-button-shape-next__button-text-content,
+        yt-live-chat-paid-message-renderer .ytSpecButtonViewModelHost .yt-spec-button-shape-next[aria-label="#3"] .yt-spec-button-shape-next__button-text-content,
+        yt-live-chat-paid-message-renderer button[aria-label="#3"] .yt-spec-button-shape-next__button-text-content {
             color: #FFFFFF !important;
             /* White for contrast on bronze */
             font-family: "Nunito Sans", "Nunito", sans-serif !important;
@@ -718,7 +743,10 @@
         /* Crown Icon Colors */
         /* #1 Gold Crown */
         yt-live-chat-text-message-renderer .ytSpecButtonViewModelHost button[aria-label="#1"] .yt-spec-button-shape-next__icon,
-        yt-live-chat-text-message-renderer .ytSpecButtonViewModelHost .yt-spec-button-shape-next[aria-label="#1"] .yt-spec-button-shape-next__icon {
+        yt-live-chat-text-message-renderer .ytSpecButtonViewModelHost .yt-spec-button-shape-next[aria-label="#1"] .yt-spec-button-shape-next__icon,
+        yt-live-chat-paid-message-renderer .ytSpecButtonViewModelHost button[aria-label="#1"] .yt-spec-button-shape-next__icon,
+        yt-live-chat-paid-message-renderer .ytSpecButtonViewModelHost .yt-spec-button-shape-next[aria-label="#1"] .yt-spec-button-shape-next__icon,
+        yt-live-chat-paid-message-renderer button[aria-label="#1"] .yt-spec-button-shape-next__icon {
             color: #8B4513 !important;
             /* Dark brown to match text */
             width: 22px !important;
@@ -728,7 +756,10 @@
 
         /* #2 Silver Crown */
         yt-live-chat-text-message-renderer .ytSpecButtonViewModelHost button[aria-label="#2"] .yt-spec-button-shape-next__icon,
-        yt-live-chat-text-message-renderer .ytSpecButtonViewModelHost .yt-spec-button-shape-next[aria-label="#2"] .yt-spec-button-shape-next__icon {
+        yt-live-chat-text-message-renderer .ytSpecButtonViewModelHost .yt-spec-button-shape-next[aria-label="#2"] .yt-spec-button-shape-next__icon,
+        yt-live-chat-paid-message-renderer .ytSpecButtonViewModelHost button[aria-label="#2"] .yt-spec-button-shape-next__icon,
+        yt-live-chat-paid-message-renderer .ytSpecButtonViewModelHost .yt-spec-button-shape-next[aria-label="#2"] .yt-spec-button-shape-next__icon,
+        yt-live-chat-paid-message-renderer button[aria-label="#2"] .yt-spec-button-shape-next__icon {
             color: #2C2C2C !important;
             /* Dark gray to match text */
             width: 22px !important;
@@ -738,7 +769,10 @@
 
         /* #3 Bronze Crown */
         yt-live-chat-text-message-renderer .ytSpecButtonViewModelHost button[aria-label="#3"] .yt-spec-button-shape-next__icon,
-        yt-live-chat-text-message-renderer .ytSpecButtonViewModelHost .yt-spec-button-shape-next[aria-label="#3"] .yt-spec-button-shape-next__icon {
+        yt-live-chat-text-message-renderer .ytSpecButtonViewModelHost .yt-spec-button-shape-next[aria-label="#3"] .yt-spec-button-shape-next__icon,
+        yt-live-chat-paid-message-renderer .ytSpecButtonViewModelHost button[aria-label="#3"] .yt-spec-button-shape-next__icon,
+        yt-live-chat-paid-message-renderer .ytSpecButtonViewModelHost .yt-spec-button-shape-next[aria-label="#3"] .yt-spec-button-shape-next__icon,
+        yt-live-chat-paid-message-renderer button[aria-label="#3"] .yt-spec-button-shape-next__icon {
             color: #FFFFFF !important;
             /* White to match text */
             width: 22px !important;
@@ -753,27 +787,28 @@
 
             background-color: var(--yt-live-chat-paid-message-background-color, #1565C0) !important;
 
-            /* Hiệu ứng nổi khối 3D - 3D Block Floating Effect */
-            border: 5px solid rgba(0, 0, 0, 0.8) !important;
+            /* Hiệu ứng nổi khối 3D - 3D Block Floating Effect (Subtle) */
+            border: 2px solid rgba(0, 0, 0, 0.8) !important;
             border-radius: 32px !important;
-            margin: 10px !important;
 
-            /* Box shadow nhiều lớp tạo chiều sâu 3D - Layered shadows for 3D depth (reduced 30%) */
+            /* Tăng margin để tránh bị cắt viền và hiệu ứng (như dứa) - Increased margin to prevent clipping */
+            margin: 20px 20px 20px 45px !important;
+
+            /* Box shadow stepped for smooth 3D corners - Tạo bóng đổ khối liền mạch */
             box-shadow:
-                /* Shadow chính - Main shadow */
-                6px 6px 0px rgba(0, 0, 0, 0.9),
-                /* Shadow thứ 2 - Second layer */
-                8px 8px 0px rgba(0, 0, 0, 0.7),
-                /* Shadow thứ 3 - Third layer */
-                11px 11px 0px rgba(0, 0, 0, 0.5),
-                /* Shadow thứ 4 - Fourth layer */
-                14px 14px 0px rgba(0, 0, 0, 0.3),
-                /* Glow effect */
-                0 0 15px rgba(255, 255, 255, 0.2) !important;
+                1px 1px 0px rgba(0, 0, 0, 0.6),
+                2px 2px 0px rgba(0, 0, 0, 0.6),
+                3px 3px 0px rgba(0, 0, 0, 0.6),
+                4px 4px 0px rgba(0, 0, 0, 0.6),
+                5px 5px 0px rgba(0, 0, 0, 0.6),
+                6px 6px 0px rgba(0, 0, 0, 0.6),
+                /* Glow effect nhẹ */
+                0 0 10px rgba(255, 255, 255, 0.1) !important;
 
             /* Transform 3D */
-            transform: perspective(1000px) rotateX(2deg) rotateY(-2deg) translateZ(20px) !important;
-            transform-style: preserve-3d !important;
+            /* Removed rigid 3D transform to allow smooth bounce */
+            /* transform: perspective(1000px) rotateX(2deg) rotateY(-2deg) translateZ(20px) !important; */
+            /* transform-style: preserve-3d !important; */
 
             position: relative !important;
             overflow: visible !important;
@@ -782,7 +817,7 @@
             flex-direction: column !important;
 
 
-            animation: superChatBlock3D 1.2s cubic-bezier(0.68, -0.55, 0.27, 1.55) forwards !important;
+            animation: superChatBounce 0.8s cubic-bezier(0.215, 0.61, 0.355, 1) forwards !important;
 
             /* Transition để hỗ trợ hover effect */
             transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1),
@@ -793,83 +828,29 @@
             max-width: 100% !important;
         }
 
-        /* Animation 3D Block - Hiệu ứng khối 3D bay vào MẠNH MẼ */
-        @keyframes superChatBlock3D {
+        /* Animation Bounce - Hiệu ứng nảy */
+        @keyframes superChatBounce {
             0% {
-                transform: perspective(1000px) rotateX(90deg) rotateY(-90deg) rotateZ(45deg) translateZ(500px) translateY(200px) scale(0);
                 opacity: 0;
-                filter: blur(20px) brightness(2);
-                box-shadow:
-                    0px 0px 0px rgba(0, 0, 0, 0),
-                    0px 0px 0px rgba(0, 0, 0, 0),
-                    0px 0px 0px rgba(0, 0, 0, 0),
-                    0px 0px 0px rgba(0, 0, 0, 0),
-                    0 0 100px rgba(255, 255, 255, 0.8);
+                transform: translate3d(0, 100%, 0) scale(0.3);
             }
 
-            /* IMPACT moment */
-            30% {
-                transform: perspective(1000px) rotateX(-15deg) rotateY(15deg) rotateZ(-10deg) translateZ(40px) translateY(-30px) scale(1.3);
+            40% {
                 opacity: 1;
-                filter: blur(2px) brightness(1.3);
-                box-shadow:
-                    10px 10px 0px rgba(0, 0, 0, 1),
-                    17px 17px 0px rgba(0, 0, 0, 0.9),
-                    24px 24px 0px rgba(0, 0, 0, 0.7),
-                    31px 31px 0px rgba(0, 0, 0, 0.5),
-                    0 0 28px rgba(255, 255, 255, 0.5);
+                transform: translate3d(0, -20px, 0) scale(1.05);
             }
 
-            /* Bounce back */
-            50% {
-                transform: perspective(1000px) rotateX(10deg) rotateY(-10deg) rotateZ(5deg) translateZ(10px) translateY(20px) scale(0.85);
-                filter: blur(0) brightness(1);
-                box-shadow:
-                    4px 4px 0px rgba(0, 0, 0, 0.9),
-                    7px 7px 0px rgba(0, 0, 0, 0.7),
-                    10px 10px 0px rgba(0, 0, 0, 0.5),
-                    12px 12px 0px rgba(0, 0, 0, 0.3),
-                    0 0 17px rgba(255, 255, 255, 0.3);
+            60% {
+                transform: translate3d(0, 10px, 0) scale(0.95);
             }
 
-            /* Second bounce */
-            65% {
-                transform: perspective(1000px) rotateX(-8deg) rotateY(8deg) rotateZ(-3deg) translateZ(25px) translateY(-15px) scale(1.08);
-                box-shadow:
-                    7px 7px 0px rgba(0, 0, 0, 0.95),
-                    11px 11px 0px rgba(0, 0, 0, 0.8),
-                    15px 15px 0px rgba(0, 0, 0, 0.6),
-                    19px 19px 0px rgba(0, 0, 0, 0.4),
-                    0 0 21px rgba(255, 255, 255, 0.3);
-            }
-
-            /* Settle down */
             80% {
-                transform: perspective(1000px) rotateX(4deg) rotateY(-4deg) rotateZ(1deg) translateZ(18px) translateY(5px) scale(0.96);
-                box-shadow:
-                    5px 5px 0px rgba(0, 0, 0, 0.9),
-                    8px 8px 0px rgba(0, 0, 0, 0.7),
-                    10px 10px 0px rgba(0, 0, 0, 0.5),
-                    13px 13px 0px rgba(0, 0, 0, 0.3),
-                    0 0 15px rgba(255, 255, 255, 0.25);
+                transform: translate3d(0, -5px, 0) scale(1.02);
             }
 
-            /* Final wobble */
-            90% {
-                transform: perspective(1000px) rotateX(-2deg) rotateY(2deg) rotateZ(-0.5deg) translateZ(22px) translateY(-3px) scale(1.02);
-            }
-
-            /* Rest position */
             100% {
-                transform: perspective(1000px) rotateX(2deg) rotateY(-2deg) rotateZ(0deg) translateZ(20px) translateY(0) scale(1);
                 opacity: 1;
-                filter: blur(0) brightness(1);
-                box-shadow:
-                    6px 6px 0px rgba(0, 0, 0, 0.9),
-                    8px 8px 0px rgba(0, 0, 0, 0.7),
-                    11px 11px 0px rgba(0, 0, 0, 0.5),
-                    14px 14px 0px rgba(0, 0, 0, 0.3),
-                    0 0 15px rgba(255, 255, 255, 0.2);
+                transform: translate3d(0, 0, 0) scale(1);
             }
         }
 
@@ -918,10 +899,39 @@
             flex-direction: column !important;
             align-items: center !important;
             justify-content: center !important;
+            gap: 4px !important;
 
             position: relative !important;
             z-index: 3 !important;
             margin-right: 0 !important;
+        }
+
+        /* Updated layout based on actual DOM structure */
+        yt-live-chat-paid-message-renderer #header-content-primary-column {
+            display: flex !important;
+            flex-direction: column !important;
+            align-items: center !important;
+            justify-content: center !important;
+            width: 100% !important;
+            gap: 2px !important;
+        }
+
+        /* Center Author Name Chip */
+        yt-live-chat-paid-message-renderer #author-name-chip {
+            display: flex !important;
+            justify-content: center !important;
+            align-items: center !important;
+            width: 100% !important;
+            margin-bottom: 2px !important;
+        }
+
+        /* Center Purchase Amount Column */
+        yt-live-chat-paid-message-renderer #purchase-amount-column {
+            display: flex !important;
+            justify-content: center !important;
+            align-items: center !important;
+            width: 100% !important;
+            margin-top: 0 !important;
         }
 
         yt-live-chat-paid-message-renderer #content {
@@ -967,23 +977,37 @@
         }
 
         /* Hide Pineapple for New Members in Super Chat */
-        yt-live-chat-paid-message-renderer:has(yt-live-chat-author-badge-renderer[type="member"]):has(img[alt="Hội viên mới"]) #author-name::before {
+        yt-live-chat-paid-message-renderer:has(yt-live-chat-author-badge-renderer[type="member"]):has(img[alt="Hội viên mới"]) #author-name::before,
+        yt-live-chat-paid-message-renderer:has(yt-live-chat-author-badge-renderer[type="member"]):has(img[alt="New member"]) #author-name::before {
             display: none !important;
         }
 
         /* Reset margin for New Members in Super Chat */
-        yt-live-chat-paid-message-renderer:has(yt-live-chat-author-badge-renderer[type="member"]):has(img[alt="Hội viên mới"]) #author-name {
+        yt-live-chat-paid-message-renderer:has(yt-live-chat-author-badge-renderer[type="member"]):has(img[alt="Hội viên mới"]) #author-name,
+        yt-live-chat-paid-message-renderer:has(yt-live-chat-author-badge-renderer[type="member"]):has(img[alt="New member"]) #author-name {
             margin-left: 0 !important;
         }
 
         yt-live-chat-paid-message-renderer #purchase-amount,
-        yt-live-chat-paid-message-renderer #purchase-amount-chip {
+        yt-live-chat-paid-message-renderer #purchase-amount-chip,
+        yt-live-chat-paid-message-renderer #purchase-amount yt-formatted-string,
+        yt-live-chat-paid-message-renderer #purchase-amount-chip yt-formatted-string {
             color: #FFFFFF !important;
             font-family: "Nunito", "Noto Sans", sans-serif !important;
+            /* Match author-name font */
             font-weight: 900 !important;
-            font-size: 22px !important;
+            font-size: 20px !important;
+            /* Match author-name size */
+            line-height: 26px !important;
+
+            /* Viền chữ đen đậm giống author-name */
             -webkit-text-stroke: 4.6px #000000 !important;
+            text-shadow: none !important;
+
             paint-order: stroke fill !important;
+            letter-spacing: 0 !important;
+            z-index: 2 !important;
+            display: inline-block !important;
         }
 
         yt-live-chat-paid-message-renderer #message {
@@ -1054,18 +1078,18 @@
 
         /* Regular Hyperlinks - Blue color for non-mention links */
         yt-live-chat-text-message-renderer #message a {
-            color: #42A5F5 !important;
+            color: #00E5FF !important;
             font-family: "Nunito Sans", "Nunito", sans-serif !important;
             font-weight: 700 !important;
-            text-decoration: underline !important;
+            text-decoration: none !important;
             -webkit-text-stroke: 2px #000000 !important;
             paint-order: stroke fill !important;
             text-shadow: none !important;
         }
 
         yt-live-chat-text-message-renderer #message a:hover {
-            color: #1E88E5 !important;
-            text-decoration: underline !important;
+            color: #84FFFF !important;
+            text-decoration: none !important;
         }
 
 
@@ -1411,12 +1435,21 @@
 
 
         yt-live-chat-membership-item-renderer #author-photo,
-        ytd-sponsorships-live-chat-gift-purchase-announcement-renderer #author-photo,
-        ytd-sponsorships-live-chat-gift-redemption-announcement-renderer #author-photo {
+        ytd-sponsorships-live-chat-gift-purchase-announcement-renderer #author-photo {
             width: 40px !important;
             height: 40px !important;
             border-radius: 50% !important;
             border: 2px solid #FFFFFF !important;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2) !important;
             margin-right: 10px !important;
+        }
+
+        /* Hide avatar for gift redemption announcements */
+        ytd-sponsorships-live-chat-gift-redemption-announcement-renderer #author-photo,
+        ytd-sponsorships-live-chat-gift-redemption-announcement-renderer #author-photo img {
+            display: none !important;
+            width: 0 !important;
+            height: 0 !important;
+            margin: 0 !important;
+            border: none !important;
         }
