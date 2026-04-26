@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>One Donate Overlay</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Nunito+Sans:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css3.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            background: transparent !important;
+            overflow: hidden !important;
+            font-family: 'Nunito Sans', 'Nunito', sans-serif;
+            min-height: 100vh;
+            display: flex;
+            align-items: flex-end;
+            justify-content: flex-start;
+            padding: 20px 20px 80px 45px;
+        }
+        .donate-container {
+            width: 420px;
+            max-width: 95vw;
+        }
+        .donate-card {
+            display: none;
+            background-color: var(--donate-bg, #1565C0);
+            border: 2px solid rgba(0, 0, 0, 0.8);
+            border-radius: 32px;
+            padding: 0;
+            box-shadow: 1px 1px 0 rgba(0,0,0,.6), 2px 2px 0 rgba(0,0,0,.6),
+                3px 3px 0 rgba(0,0,0,.6), 4px 4px 0 rgba(0,0,0,.6),
+                5px 5px 0 rgba(0,0,0,.6), 6px 6px 0 rgba(0,0,0,.6),
+                0 0 10px rgba(255,255,255,.1);
+            animation: donateSlideIn 0.6s cubic-bezier(0.215, 0.61, 0.355, 1) forwards;
+            overflow: hidden;
+        }
+        .donate-card.visible { display: block !important; }
+        .donate-card.exit { animation: donateSlideOut 0.4s ease-in forwards; }
+        @keyframes donateSlideIn {
+            0% { opacity: 0; transform: translateY(100%) scale(0.9); }
+            100% { opacity: 1; transform: translateY(0) scale(1); }
+        }
+        @keyframes donateSlideOut {
+            0% { opacity: 1; transform: translateY(0); }
+            100% { opacity: 0; transform: translateY(-30px); }
+        }
+        .donate-header {
+            padding: 12px 16px 8px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 4px;
+        }
+        .donate-platform {
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            padding: 2px 10px;
+            border-radius: 12px;
+            background: rgba(255,255,255,0.25);
+        }
+        .donate-platform.zypage { background: #FF6B35; }
+        .donate-platform.wescan { background: #00C853; }
+        .donate-platform.youtube { background: #E62117; }
+        .donate-name {
+            color: #fff;
+            font-weight: 900;
+            font-size: 18px;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+        }
+        .donate-amount {
+            color: #fff;
+            font-weight: 900;
+            font-size: 22px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+        .donate-message {
+            color: rgba(255,255,255,0.95);
+            font-size: 15px;
+            font-weight: 600;
+            padding: 10px 16px 14px;
+            line-height: 1.4;
+            word-break: break-word;
+        }
+        .donate-message:empty { display: none; }
+        .queue-indicator {
+            position: fixed;
+            bottom: 10px;
+            left: 10px;
+            background: rgba(0,0,0,0.5);
+            color: #fff;
+            padding: 4px 10px;
+            border-radius: 8px;
+            font-size: 12px;
+            opacity: 0.7;
+        }
+        .status-disconnected {
+            position: fixed;
+            top: 10px;
+            left: 10px;
+            background: rgba(200,0,0,0.8);
+            color: #fff;
+            padding: 6px 12px;
+            border-radius: 8px;
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+    <div class="donate-container">
+        <div id="donate-card" class="donate-card"></div>
+    </div>
+    <div id="queue-indicator" class="queue-indicator" style="display:none"></div>
+    <div id="status-disconnected" class="status-disconnected" style="display:none">Đang kết nối...</div>
+
+    <script>
+        const CONFIG = {
+            serverUrl: 'http://localhost:3847',
+            displayDuration: 8000,
+            reconnectInterval: 3000
+        };
+
+        const urlParams = new URLSearchParams(window.location.search);
+        const serverUrl = urlParams.get('server') || CONFIG.serverUrl;
+        const displayDuration = parseInt(urlParams.get('duration') || CONFIG.displayDuration, 10);
+
+        let queue = [];
+        let isShowing = false;
+        let eventSource = null;
+
+        const PLATFORM_COLORS = {
+            zypage: '#FF6B35',
+            wescan: '#00C853',
+            youtube: '#E62117'
+        };
+
+        function formatAmount(amount, currency = '₫') {
+            if (typeof amount === 'number') {
+                return amount.toLocaleString('vi-VN') + ' ' + currency;
+            }
+            return (amount || '0') + ' ' + currency;
+        }
+
+        function createCardHTML(donate) {
+            const platform = (donate.platform || 'youtube').toLowerCase();
+            const color = PLATFORM_COLORS[platform] || '#1565C0';
+            const platformLabel = { zypage: 'Zypage', wescan: 'Wescan', youtube: 'YouTube' }[platform] || platform;
+            const message = (donate.message || '').trim();
+            return `
+                <div class="donate-header">
+                    <span class="donate-platform ${platform}">${platformLabel}</span>
+                    <span class="donate-name">${escapeHtml(donate.donorName || donate.name || 'Ẩn danh')}</span>
+                    <span class="donate-amount">${formatAmount(donate.amount, donate.currency || '₫')}</span>
+                </div>
+                ${message ? `<div class="donate-message">${escapeHtml(message)}</div>` : ''}
+            `;
+        }
+
+        function escapeHtml(text) {
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
+        }
+
+        function showDonate(donate) {
+            const card = document.getElementById('donate-card');
+            card.style.setProperty('--donate-bg', PLATFORM_COLORS[(donate.platform || 'youtube').toLowerCase()] || '#1565C0');
+            card.innerHTML = createCardHTML(donate);
+            card.classList.remove('exit');
+            card.classList.add('visible');
+            isShowing = true;
+            updateQueueIndicator();
+        }
+
+        function hideDonate() {
+            const card = document.getElementById('donate-card');
+            card.classList.add('exit');
+            setTimeout(() => {
+                card.classList.remove('visible', 'exit');
+                isShowing = false;
+                processQueue();
+            }, 400);
+        }
+
+        function processQueue() {
+            if (isShowing || queue.length === 0) return;
+            const next = queue.shift();
+            showDonate(next);
+            setTimeout(hideDonate, displayDuration);
+        }
+
+        function addToQueue(donate) {
+            queue.push(donate);
+            if (!isShowing) processQueue();
+            else updateQueueIndicator();
+        }
+
+        function updateQueueIndicator() {
+            const el = document.getElementById('queue-indicator');
+            if (queue.length > 0 || isShowing) {
+                el.style.display = 'block';
+                const count = queue.length + (isShowing ? 1 : 0);
+                el.textContent = count > 1 ? `Hàng chờ: ${count} donate` : '';
+            } else {
+                el.style.display = 'none';
+            }
+        }
+
+        function connect() {
+            if (eventSource) eventSource.close();
+            document.getElementById('status-disconnected').style.display = 'block';
+            eventSource = new EventSource(serverUrl + '/stream');
+            eventSource.onopen = () => {
+                document.getElementById('status-disconnected').style.display = 'none';
+            };
+            eventSource.onmessage = (e) => {
+                try {
+                    const donate = JSON.parse(e.data);
+                    addToQueue(donate);
+                } catch (err) {
+                    console.error('Parse error:', err);
+                }
+            };
+            eventSource.onerror = () => {
+                eventSource.close();
+                document.getElementById('status-disconnected').style.display = 'block';
+                document.getElementById('status-disconnected').textContent = 'Mất kết nối. Đang thử lại...';
+                setTimeout(connect, CONFIG.reconnectInterval);
+            };
+        }
+
+        connect();
+    </script>
+</body>
+</html>

@@ -1,0 +1,13 @@
+{
+  "name": "one-donate",
+  "version": "1.0.0",
+  "description": "Hệ thống One Donate - gộp donate Zypage, Wescan, YouTube với queue",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "node -e \"require('http').get('http://localhost:3847/', console.log)\""
+  },
+  "keywords": ["donate", "stream", "overlay", "zypage", "wescan", "youtube"],
+  "author": "",
+  "license": "MIT"
+}
