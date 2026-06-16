@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>YouTube Live Chat Popout Test</title>
+    <!-- Link our styling sheet -->
+    <link rel="stylesheet" href="css.css">
+    
+    <style>
+        /* Force custom elements to block display for local simulation */
+        yt-live-chat-app,
+        yt-live-chat-renderer,
+        yt-live-chat-item-list-renderer,
+        #items,
+        yt-live-chat-text-message-renderer,
+        yt-live-chat-paid-message-renderer,
+        yt-live-chat-ticker-renderer,
+        yt-live-chat-ticker-paid-message-item-renderer,
+        yt-live-chat-author-chip,
+        yt-live-chat-author-badge-renderer {
+            display: block;
+        }
+
+        body {
+            background-color: #0b0f19;
+            padding: 30px;
+            display: flex;
+            justify-content: center;
+        }
+
+        yt-live-chat-renderer {
+            width: 450px;
+            height: 700px;
+            background: #041A0E !important; /* Matches our forest background */
+            border-radius: 16px;
+            box-shadow: 0 12px 40px rgba(0,0,0,0.6);
+            padding: 10px !important;
+            overflow: hidden !important;
+        }
+    </style>
+</head>
+<body class="style-scope ytd-app" dark="">
+    <yt-live-chat-app>
+        <yt-live-chat-renderer id="chat" class="style-scope yt-live-chat-app" has-ticker="">
+            
+            <!-- Ticker simulation -->
+            <yt-live-chat-ticker-renderer id="ticker" class="style-scope yt-live-chat-renderer">
+                <div id="container" class="style-scope yt-live-chat-ticker-renderer">
+                    <div id="items" class="style-scope yt-live-chat-ticker-renderer" style="display: flex; gap: 8px; margin-bottom: 15px;">
+                        <yt-live-chat-ticker-paid-message-item-renderer class="style-scope yt-live-chat-ticker-renderer">
+                            <div id="container" style="background-color: #031F12; display: flex; align-items: center; border-radius: 20px; padding: 4px 12px;">
+                                <div id="author-photo" style="width: 24px; height: 24px; border-radius: 50%; overflow: hidden; margin-right: 6px;">
+                                    <img src="https://yt3.googleusercontent.com/Ttgy6rr2oUDq8vp47r-tUeNzgnQ8YT2hPSLDE_dkay6C-c5lU-RxLK29qAU1p6VpsMdzoVe9LQ=s64-k-nd" style="width:100%; height:100%;">
+                                </div>
+                                <div id="text" style="color: #fbbf24; font-weight: bold; font-size: 13px;">đ50.000</div>
+                            </div>
+                        </yt-live-chat-ticker-paid-message-item-renderer>
+                    </div>
+                </div>
+            </yt-live-chat-ticker-renderer>
+
+            <!-- Chat messages list -->
+            <yt-live-chat-item-list-renderer class="style-scope yt-live-chat-renderer">
+                <div id="container" class="style-scope yt-live-chat-item-list-renderer">
+                    <div id="items" class="style-scope yt-live-chat-item-list-renderer" role="list">
+                        
+                        <!-- 1. Normal User Message -->
+                        <yt-live-chat-text-message-renderer class="style-scope yt-live-chat-item-list-renderer">
+                            <div id="author-photo"><img src="https://yt3.googleusercontent.com/_dpDna9tL1QCQTbvYywctOA9Xvy5DZphdn7EIvHcLd9CtcIV43oD8cGPKi9jyWtUJTgpdTgH42U=s64-k-nd"></div>
+                            <div id="content">
+                                <yt-live-chat-author-chip>
+                                    <span id="author-name">@Thành Viên Thường</span>
+                                </yt-live-chat-author-chip>
+                                <span id="message">Chào cả nhà, chúc Dứa livestream vui vẻ! 🍃</span>
+                            </div>
+                        </yt-live-chat-text-message-renderer>
+
+                        <!-- 2. Moderator Message -->
+                        <yt-live-chat-text-message-renderer author-type="moderator" class="style-scope yt-live-chat-item-list-renderer">
+                            <div id="author-photo"><img src="https://yt3.googleusercontent.com/Ttgy6rr2oUDq8vp47r-tUeNzgnQ8YT2hPSLDE_dkay6C-c5lU-RxLK29qAU1p6VpsMdzoVe9LQ=s64-k-nd"></div>
+                            <div id="content">
+                                <yt-live-chat-author-chip>
+                                    <span id="author-name">@Quản Trị Viên</span>
+                                </yt-live-chat-author-chip>
+                                <span id="message">Mọi người thả tim cổ vũ cho Dứa nha! 🛡️💚</span>
+                            </div>
+                        </yt-live-chat-text-message-renderer>
+
+                        <!-- 3. Member Tier 1 (New Member) -->
+                        <yt-live-chat-text-message-renderer author-type="member" class="style-scope yt-live-chat-item-list-renderer">
+                            <div id="author-photo"><img src="https://yt3.googleusercontent.com/2GTPUHO1EM2l-D5Bfuzxc_UvWmfVXZtBylHf_bmd02CFSCGM6z_a_Bd3TFNHdtql6HPrIA3S=s64-k-nd"></div>
+                            <div id="content">
+                                <span id="chat-badges">
+                                    <yt-live-chat-author-badge-renderer type="member">
+                                        <img src="https://yt3.googleusercontent.com/_dpDna9tL1QCQTbvYywctOA9Xvy5DZphdn7EIvHcLd9CtcIV43oD8cGPKi9jyWtUJTgpdTgH42U=s64-k-nd" alt="Hội viên mới">
+                                    </yt-live-chat-author-badge-renderer>
+                                </span>
+                                <yt-live-chat-author-chip>
+                                    <span id="author-name">@Hội Viên Mới</span>
+                                </yt-live-chat-author-chip>
+                                <span id="message">Vừa đăng ký hội viên xong nè! 🍍✨</span>
+                            </div>
+                        </yt-live-chat-text-message-renderer>
+
+                        <!-- 3.1. Member 1 Month ("1 tháng") -->
+                        <yt-live-chat-text-message-renderer author-type="member" class="style-scope yt-live-chat-item-list-renderer">
+                            <div id="author-photo"><img src="https://yt3.googleusercontent.com/2GTPUHO1EM2l-D5Bfuzxc_UvWmfVXZtBylHf_bmd02CFSCGM6z_a_Bd3TFNHdtql6HPrIA3S=s64-k-nd"></div>
+                            <div id="content">
+                                <span id="chat-badges">
+                                    <yt-live-chat-author-badge-renderer type="member">
+                                        <img src="https://yt3.googleusercontent.com/_dpDna9tL1QCQTbvYywctOA9Xvy5DZphdn7EIvHcLd9CtcIV43oD8cGPKi9jyWtUJTgpdTgH42U=s64-k-nd" alt="1 tháng">
+                                    </yt-live-chat-author-badge-renderer>
+                                </span>
+                                <yt-live-chat-author-chip>
+                                    <span id="author-name">@Hội Viên 1 Tháng</span>
+                                </yt-live-chat-author-chip>
+                                <span id="message">Tôi là hội viên 1 tháng (màu xanh dứa non)! 🍍💚</span>
+                            </div>
+                        </yt-live-chat-text-message-renderer>
+
+                        <!-- 4. Member Tier 2 (2 Months) -->
+                        <yt-live-chat-text-message-renderer author-type="member" class="style-scope yt-live-chat-item-list-renderer">
+                            <div id="author-photo"><img src="https://yt3.googleusercontent.com/SqlEzIx7yEmd85A621B7kdK4zlK2D7xMNeA20714gh5r019cEibVJNycM-AvqCRzC2fvwVKMwVo=s64-k-nd"></div>
+                            <div id="content">
+                                <span id="chat-badges">
+                                    <yt-live-chat-author-badge-renderer type="member">
+                                        <img src="https://yt3.googleusercontent.com/Ttgy6rr2oUDq8vp47r-tUeNzgnQ8YT2hPSLDE_dkay6C-c5lU-RxLK29qAU1p6VpsMdzoVe9LQ=s64-k-nd" alt="2 tháng">
+                                    </yt-live-chat-author-badge-renderer>
+                                </span>
+                                <yt-live-chat-author-chip>
+                                    <span id="author-name">@Hội Viên 2 Tháng</span>
+                                </yt-live-chat-author-chip>
+                                <span id="message">Quả dứa xanh đọt chuối nha! 💚🍍</span>
+                            </div>
+                        </yt-live-chat-text-message-renderer>
+
+                        <!-- 5. Member Tier 3 Message (6 Months - Pineapple Badge Overlap) -->
+                        <yt-live-chat-text-message-renderer author-type="member" class="style-scope yt-live-chat-item-list-renderer">
+                            <div id="author-photo"><img src="https://yt3.googleusercontent.com/SqlEzIx7yEmd85A621B7kdK4zlK2D7xMNeA20714gh5r019cEibVJNycM-AvqCRzC2fvwVKMwVo=s64-k-nd"></div>
+                            <div id="content">
+                                <span id="chat-badges">
+                                    <yt-live-chat-author-badge-renderer type="member">
+                                        <img src="https://yt3.googleusercontent.com/Ttgy6rr2oUDq8vp47r-tUeNzgnQ8YT2hPSLDE_dkay6C-c5lU-RxLK29qAU1p6VpsMdzoVe9LQ=s64-k-nd" alt="6 month">
+                                    </yt-live-chat-author-badge-renderer>
+                                </span>
+                                <yt-live-chat-author-chip>
+                                    <span id="author-name">@Hội Viên 6 Tháng</span>
+                                </yt-live-chat-author-chip>
+                                <span id="message">Quả dứa vàng rực rất đẹp nha! 💛🍍</span>
+                            </div>
+                        </yt-live-chat-text-message-renderer>
+
+                        <!-- 6. Member Tier 4 Message (12 Months) -->
+                        <yt-live-chat-text-message-renderer author-type="member" class="style-scope yt-live-chat-item-list-renderer">
+                            <div id="author-photo"><img src="https://yt3.googleusercontent.com/SqlEzIx7yEmd85A621B7kdK4zlK2D7xMNeA20714gh5r019cEibVJNycM-AvqCRzC2fvwVKMwVo=s64-k-nd"></div>
+                            <div id="content">
+                                <span id="chat-badges">
+                                    <yt-live-chat-author-badge-renderer type="member">
+                                        <img src="https://yt3.googleusercontent.com/Ttgy6rr2oUDq8vp47r-tUeNzgnQ8YT2hPSLDE_dkay6C-c5lU-RxLK29qAU1p6VpsMdzoVe9LQ=s64-k-nd" alt="1 year">
+                                    </yt-live-chat-author-badge-renderer>
+                                </span>
+                                <yt-live-chat-author-chip>
+                                    <span id="author-name">@Hội Viên 1 Năm</span>
+                                </yt-live-chat-author-chip>
+                                <span id="message">Quả dứa cam mật ong ngọt lịm! 🧡🍍</span>
+                            </div>
+                        </yt-live-chat-text-message-renderer>
+
+                        <!-- 7. Member Tier 5 Message (24 Months) -->
+                        <yt-live-chat-text-message-renderer author-type="member" class="style-scope yt-live-chat-item-list-renderer">
+                            <div id="author-photo"><img src="https://yt3.googleusercontent.com/SqlEzIx7yEmd85A621B7kdK4zlK2D7xMNeA20714gh5r019cEibVJNycM-AvqCRzC2fvwVKMwVo=s64-k-nd"></div>
+                            <div id="content">
+                                <span id="chat-badges">
+                                    <yt-live-chat-author-badge-renderer type="member">
+                                        <img src="https://yt3.googleusercontent.com/Ttgy6rr2oUDq8vp47r-tUeNzgnQ8YT2hPSLDE_dkay6C-c5lU-RxLK29qAU1p6VpsMdzoVe9LQ=s64-k-nd" alt="2 year">
+                                    </yt-live-chat-author-badge-renderer>
+                                </span>
+                                <yt-live-chat-author-chip>
+                                    <span id="author-name">@Hội Viên 2 Năm</span>
+                                </yt-live-chat-author-chip>
+                                <span id="message">Quả dứa đỏ caramelized ngọt ngào! ❤️🍍</span>
+                            </div>
+                        </yt-live-chat-text-message-renderer>
+
+                        <!-- 8. Moderator + Member Tier 1 -->
+                        <yt-live-chat-text-message-renderer author-type="moderator" class="style-scope yt-live-chat-item-list-renderer">
+                            <div id="author-photo"><img src="https://yt3.googleusercontent.com/Ttgy6rr2oUDq8vp47r-tUeNzgnQ8YT2hPSLDE_dkay6C-c5lU-RxLK29qAU1p6VpsMdzoVe9LQ=s64-k-nd"></div>
+                            <div id="content">
+                                <span id="chat-badges">
+                                    <yt-live-chat-author-badge-renderer type="member">
+                                        <img src="https://yt3.googleusercontent.com/_dpDna9tL1QCQTbvYywctOA9Xvy5DZphdn7EIvHcLd9CtcIV43oD8cGPKi9jyWtUJTgpdTgH42U=s64-k-nd" alt="Hội viên mới">
+                                    </yt-live-chat-author-badge-renderer>
+                                </span>
+                                <yt-live-chat-author-chip>
+                                    <span id="author-name">@Mod Hội Viên Mới</span>
+                                </yt-live-chat-author-chip>
+                                <span id="message">Mod + HV Mới: Xanh mầm non + khiên bảo vệ! 🛡️💚</span>
+                            </div>
+                        </yt-live-chat-text-message-renderer>
+
+                        <!-- 9. Moderator + Member Tier 3 -->
+                        <yt-live-chat-text-message-renderer author-type="moderator" class="style-scope yt-live-chat-item-list-renderer">
+                            <div id="author-photo"><img src="https://yt3.googleusercontent.com/Ttgy6rr2oUDq8vp47r-tUeNzgnQ8YT2hPSLDE_dkay6C-c5lU-RxLK29qAU1p6VpsMdzoVe9LQ=s64-k-nd"></div>
+                            <div id="content">
+                                <span id="chat-badges">
+                                    <yt-live-chat-author-badge-renderer type="member">
+                                        <img src="https://yt3.googleusercontent.com/Ttgy6rr2oUDq8vp47r-tUeNzgnQ8YT2hPSLDE_dkay6C-c5lU-RxLK29qAU1p6VpsMdzoVe9LQ=s64-k-nd" alt="6 month">
+                                    </yt-live-chat-author-badge-renderer>
+                                </span>
+                                <yt-live-chat-author-chip>
+                                    <span id="author-name">@Mod Hội Viên 6 Tháng</span>
+                                </yt-live-chat-author-chip>
+                                <span id="message">Mod + HV 6T: Vàng rực chín tới + khiên bảo vệ! 🛡️💛</span>
+                            </div>
+                        </yt-live-chat-text-message-renderer>
+
+                        <!-- 10. Moderator + Member Tier 5 -->
+                        <yt-live-chat-text-message-renderer author-type="moderator" class="style-scope yt-live-chat-item-list-renderer">
+                            <div id="author-photo"><img src="https://yt3.googleusercontent.com/Ttgy6rr2oUDq8vp47r-tUeNzgnQ8YT2hPSLDE_dkay6C-c5lU-RxLK29qAU1p6VpsMdzoVe9LQ=s64-k-nd"></div>
+                            <div id="content">
+                                <span id="chat-badges">
+                                    <yt-live-chat-author-badge-renderer type="member">
+                                        <img src="https://yt3.googleusercontent.com/Ttgy6rr2oUDq8vp47r-tUeNzgnQ8YT2hPSLDE_dkay6C-c5lU-RxLK29qAU1p6VpsMdzoVe9LQ=s64-k-nd" alt="2 year">
+                                    </yt-live-chat-author-badge-renderer>
+                                </span>
+                                <yt-live-chat-author-chip>
+                                    <span id="author-name">@Mod Hội Viên 2 Năm</span>
+                                </yt-live-chat-author-chip>
+                                <span id="message">Mod + HV 2 Năm: Đỏ caramelized + khiên bảo vệ! 🛡️❤️</span>
+                            </div>
+                        </yt-live-chat-text-message-renderer>
+
+                        <!-- 11. Super Chat (Paid Message) -->
+                        <yt-live-chat-paid-message-renderer class="style-scope yt-live-chat-item-list-renderer">
+                            <div id="card" class="style-scope yt-live-chat-paid-message-renderer">
+                                <div id="header" class="style-scope yt-live-chat-paid-message-renderer">
+                                    <div id="author-photo" class="style-scope yt-live-chat-paid-message-renderer">
+                                        <img src="https://yt3.googleusercontent.com/Ttgy6rr2oUDq8vp47r-tUeNzgnQ8YT2hPSLDE_dkay6C-c5lU-RxLK29qAU1p6VpsMdzoVe9LQ=s64-k-nd">
+                                    </div>
+                                    <div id="header-content" class="style-scope yt-live-chat-paid-message-renderer">
+                                        <div id="header-content-primary-column" class="style-scope yt-live-chat-paid-message-renderer">
+                                            <div id="author-name-chip" class="style-scope yt-live-chat-paid-message-renderer">
+                                                <span id="author-name" class="style-scope yt-live-chat-paid-message-renderer">@Đại Gia Quất Dứa</span>
+                                            </div>
+                                            <div id="purchase-amount-column" class="style-scope yt-live-chat-paid-message-renderer">
+                                                <span id="purchase-amount" class="style-scope yt-live-chat-paid-message-renderer">đ500.000</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="content" class="style-scope yt-live-chat-paid-message-renderer">
+                                    <span id="message" class="style-scope yt-live-chat-paid-message-renderer">Super Chat này đã được tối ưu tuyệt đẹp chuẩn Rừng Thiêng! 🌲✨👑</span>
+                                </div>
+                            </div>
+                        </yt-live-chat-paid-message-renderer>
+
+                        <!-- 12. Membership Welcome Card (Milestone) -->
+                        <yt-live-chat-membership-item-renderer class="style-scope yt-live-chat-item-list-renderer">
+                            <div id="card" class="style-scope yt-live-chat-membership-item-renderer">
+                                <div id="header" class="style-scope yt-live-chat-membership-item-renderer">
+                                    <div id="author-photo" class="style-scope yt-live-chat-membership-item-renderer">
+                                        <img src="https://yt3.googleusercontent.com/Ttgy6rr2oUDq8vp47r-tUeNzgnQ8YT2hPSLDE_dkay6C-c5lU-RxLK29qAU1p6VpsMdzoVe9LQ=s64-k-nd">
+                                    </div>
+                                    <div id="header-content" class="style-scope yt-live-chat-membership-item-renderer">
+                                        <div id="header-text" class="style-scope yt-live-chat-membership-item-renderer">
+                                            <span id="author-name" class="style-scope yt-live-chat-membership-item-renderer">ObitoUchiha-jd5is</span>
+                                            <span id="chat-badges" class="style-scope yt-live-chat-membership-item-renderer">
+                                                <yt-live-chat-author-badge-renderer class="style-scope yt-live-chat-membership-item-renderer">
+                                                    <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16'><circle cx='8' cy='8' r='8' fill='green'/><polygon points='8,2 10,7 15,7 11,10 13,15 8,12 3,15 5,10 1,7 6,7' fill='white'/></svg>" class="style-scope yt-live-chat-author-badge-renderer" alt="Hội viên trong 3 tháng">
+                                                </yt-live-chat-author-badge-renderer>
+                                            </span>
+                                        </div>
+                                        <div id="header-subtext" class="style-scope yt-live-chat-membership-item-renderer">Hội viên trong 3 tháng</div>
+                                    </div>
+                                </div>
+                                <div id="content" class="style-scope yt-live-chat-membership-item-renderer">
+                                    <span id="message" class="style-scope yt-live-chat-membership-item-renderer">sao mờ mờ v sinii</span>
+                                </div>
+                            </div>
+                        </yt-live-chat-membership-item-renderer>
+
+                    </div>
+                </div>
+            </yt-live-chat-item-list-renderer>
+        </yt-live-chat-renderer>
+    </yt-live-chat-app>
+</body>
+</html>

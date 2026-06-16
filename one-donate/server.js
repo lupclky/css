@@ -12,7 +12,7 @@ const path = require('path');
 
 const PORT = process.env.PORT || 3847;
 const OVERLAY_PATH = path.join(__dirname, 'donate-overlay.html');
-const CSS3_PATH = path.join(__dirname, '..', 'css3.css');
+const CSS3_PATH = path.join(__dirname, '..', 'css.css');
 const queue = [];
 const clients = new Set();
 
@@ -175,7 +175,7 @@ const server = http.createServer((req, res) => {
     try {
       const html = fs.readFileSync(OVERLAY_PATH, 'utf8')
         .replace('http://localhost:3847', `http://localhost:${PORT}`)
-        .replace(/href="\.\.\/css3\.css"/, `href="http://localhost:${PORT}/css3.css"`);
+        .replace(/href="\.\.\/css3\.css"/, `href="http://localhost:${PORT}/css.css"`);
       res.writeHead(200, { 'Content-Type': 'text/html; charset=utf-8' });
       res.end(html);
     } catch (e) {
@@ -186,7 +186,7 @@ const server = http.createServer((req, res) => {
   }
 
   // CSS3 (overlay dùng khi load qua /overlay)
-  if (path === '/css3.css') {
+  if (path === '/css.css') {
     try {
       const css = fs.readFileSync(CSS3_PATH, 'utf8');
       res.writeHead(200, { 'Content-Type': 'text/css' });

@@ -1,0 +1,1046 @@
+/*
+ * =================================================================
+ * Pinky Theme - Kawaii Chat Style
+ * YouTube Live Chat CSS
+ * Version: 1.0.0
+ *
+ * ✓ Personal and commercial streaming use allowed
+ * ✓ Modification allowed (credit doodlekuma.com)
+ *
+ * Source: https://doodlekuma.com
+ * Contact: https://x.com/DoodleBear_Kuma
+ *
+ * Features:
+ * - Round blob body design with radial gradient
+ * - Eyes + Blush inside body
+ * - Oval mouth for messages
+ * - Red feet at bottom
+ * - Cloud cards for Super Chat/Membership
+ * =================================================================
+ */
+
+/* ==========================================
+   Google Fonts - Language-specific Rounded Fonts
+   ========================================== */
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@300;400;500;700&family=LXGW+WenKai+Mono+TC:wght@300;400;700&family=Gugi&family=Quicksand:wght@300;400;500;700&display=swap');
+
+/* ==========================================
+   CSS Variables - Pinky Color Palette
+   ========================================== */
+:root {
+  /* ========== ADJUSTABLE PARAMETERS ========== */
+  /* Body Shape */
+  --pinky-body-radius: 30px;         /* 50% = round blob, 30px = rounded rect */
+  --pinky-body-padding-top: 30px;
+  --pinky-body-padding-side: 30px;
+  --pinky-body-padding-bottom: 25px;
+
+  /* Message Gap */
+  --pinky-message-gap: 10px;
+
+  /* Eyes */
+  --pinky-eye-size: 6px;
+  --pinky-eye-height: 10px;
+  --pinky-eye-gap: 14px;
+  --pinky-eye-top: 16px;
+
+  /* Mouth */
+  --pinky-mouth-radius: 25px;        /* 50% = oval, 15px = rounded rect */
+  --pinky-mouth-margin-top: 8px;
+  --pinky-mouth-margin-bottom: 8px;
+  --pinky-mouth-margin-horizontal: 20px;
+  --pinky-mouth-padding-top: 15px;
+  --pinky-mouth-padding-bottom: 15px;
+  --pinky-mouth-padding-side: 20px;
+
+  /* Font Size */
+  --pinky-name-font-size: 14px;
+  --pinky-message-font-size: 18px;
+
+  /* ========== COLOR PALETTE ========== */
+  /* Pinky Body Colors */
+  --pinky-pink: #FFB7C5;
+  --pinky-pink-light: #FFD1DC;
+  --pinky-pink-dark: #FFAAB8;
+  --pinky-pink-shadow: #FF9DAD;
+  --pinky-skin: #FFC9D7;
+
+  /* Pinky Mouth Colors */
+  --pinky-mouth-color: #C41E3A;
+  --pinky-mouth-light: #E85A71;
+  --pinky-mouth-dark: #8B0000;
+  --pinky-mouth-text-color: #FFFFFF;
+  --pinky-mouth-outer-shadow: rgba(0, 0, 0, 0.1);
+  --pinky-mouth-inner-shadow: rgba(0, 0, 0, 0.4);
+  --pinky-mouth-inner-shadow-dark: rgba(139, 0, 0, 0.5);
+
+  /* Feature Colors */
+  --pinky-dark-pink: #FF69B4;
+  --dream-star-yellow: #FFE135;
+  --warp-star-orange: #FFA500;
+  --sky-blue: #87CEEB;
+
+  /* ========== ROLE THEME COLORS ========== */
+  /* Owner - Golden Star Theme (customize these!) */
+  --pinky-owner-light: #FFF5B0;
+  --pinky-owner-color: #FFE135;
+  --pinky-owner-dark: #FFEB66;
+  --pinky-owner-shadow: #FFE54D;
+
+  /* Moderator - Sky Blue Theme (customize these!) */
+  --pinky-moderator-light: #B0E0FF;
+  --pinky-moderator-color: #87CEEB;
+  --pinky-moderator-dark: #9DD5F0;
+  --pinky-moderator-shadow: #8ACEF0;
+
+  /* Base Colors */
+  --cloud-white: #FFFFFF;
+  --cloud-shadow: #FFE4EC;
+  --night-purple: #2D1B4E;
+  --pinky-eye-color: #1a1a2e;
+
+  /* Legacy aliases for compatibility */
+  --pinky-eye: var(--pinky-eye-color);
+  --pinky-mouth: var(--pinky-mouth-color);
+
+  /* Cloud SVG for decorations (hosted on R2 CDN) */
+  --pinky-cloud-svg: url("https://r2.doodlekuma.com/themes/pinky/clouds.svg");
+}
+
+/* ==========================================
+   Base Styles - Transparent Background
+   ========================================== */
+body {
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, 0);
+}
+
+yt-live-chat-renderer {
+  background-color: transparent !important;
+}
+
+/* ==========================================
+   Animation Keyframes
+   ========================================== */
+@keyframes pinky-bounce-in {
+  0% {
+    opacity: 0;
+    transform: scale(0.8) translateY(15px);
+  }
+  50% {
+    transform: scale(1.05) translateY(-5px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+@keyframes pinky-inhale {
+  0%, 100% {
+    transform: scaleX(1);
+  }
+  50% {
+    transform: scaleX(1.02);
+  }
+}
+
+@keyframes star-twinkle {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+@keyframes cloud-float {
+  0%, 100% {
+    transform: translateY(0) translateX(0);
+  }
+  50% {
+    transform: translateY(-3px) translateX(2px);
+  }
+}
+
+@keyframes blink {
+  0%, 90%, 100% { transform: scaleY(1); }
+  95% { transform: scaleY(0.1); }
+}
+
+@keyframes mouth-open {
+  0% {
+    transform: scale(0.3);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* ==========================================
+   Hide Unnecessary Elements
+   ========================================== */
+yt-live-chat-header-renderer,
+yt-live-chat-message-input-renderer,
+yt-live-chat-moderation-message-renderer,
+yt-live-chat-banner-manager,
+yt-live-chat-ticker-renderer,
+yt-live-chat-viewer-engagement-message-renderer,
+yt-live-chat-mode-change-message-renderer,
+yt-live-chat-restricted-participation-renderer,
+yt-live-chat-action-panel-renderer,
+yt-live-chat-renderer #action-panel,
+yt-reaction-control-panel-overlay,
+yt-reaction-control-panel-overlay-view-model,
+yt-reaction-control-panel-view-model,
+/* Hide bottom panel (login prompt, public message notice) */
+yt-live-chat-renderer #panel-pages,
+yt-live-chat-renderer #input-panel,
+yt-live-chat-renderer #picker-buttons,
+yt-live-chat-renderer #bottom-panel,
+yt-live-chat-ninja-message-renderer,
+yt-live-chat-renderer yt-live-chat-message-input-renderer,
+yt-live-chat-renderer #chat-messages > #contents > #input-panel,
+yt-live-chat-renderer [slot="input-panel"],
+iron-dropdown,
+tp-yt-iron-dropdown,
+/* Hide action buttons (pin, delete, etc.) */
+#action-buttons,
+yt-live-chat-paid-message-renderer #action-buttons,
+yt-live-chat-text-message-renderer #action-buttons {
+  display: none !important;
+}
+
+/* Hide Scrollbar */
+yt-live-chat-item-list-renderer #items,
+yt-live-chat-item-list-renderer #item-scroller {
+  overflow: hidden !important;
+}
+
+/* Hide Deleted Messages */
+yt-live-chat-text-message-renderer[is-deleted],
+yt-live-chat-legacy-paid-message-renderer[is-deleted] {
+  display: none !important;
+}
+
+/* Hide Original Badges */
+yt-live-chat-text-message-renderer #author-badges {
+  display: none !important;
+}
+
+/* Hide timestamp for cleaner look */
+yt-live-chat-text-message-renderer #timestamp {
+  display: none !important;
+}
+
+/* ==========================================
+   OBS Browser Source Compatibility Fixes
+   ========================================== */
+/* Force overflow visible for transform-based overlaps */
+yt-live-chat-text-message-renderer,
+yt-live-chat-text-message-renderer #content,
+yt-live-chat-text-message-renderer yt-live-chat-author-chip {
+  overflow: visible !important;
+}
+
+/* Hide unnecessary YouTube elements */
+yt-live-chat-text-message-renderer #deleted-state,
+yt-live-chat-text-message-renderer #show-original,
+yt-live-chat-text-message-renderer #before-content-buttons,
+yt-live-chat-text-message-renderer #chat-badges,
+yt-live-chat-text-message-renderer #prepend-chat-badges,
+yt-live-chat-text-message-renderer #chip-badges {
+  display: none !important;
+}
+
+/* Comprehensive margin/padding resets */
+yt-live-chat-text-message-renderer yt-live-chat-author-chip,
+yt-live-chat-text-message-renderer #author-name {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* ==========================================
+   PINKY DESIGN - Message Container
+   Round blob body design
+   ========================================== */
+yt-live-chat-text-message-renderer {
+  position: relative !important;
+  display: flex !important;
+  align-items: stretch !important;
+  background: radial-gradient(
+    ellipse 80% 60% at 50% 30%,
+    var(--pinky-pink-light) 0%,
+    var(--pinky-pink) 50%,
+    var(--pinky-pink-dark) 100%
+  ) !important;
+  border: 3px solid var(--pinky-pink-dark) !important;
+  border-radius: var(--pinky-body-radius) !important;
+  margin: 20px 15px var(--pinky-message-gap) 15px !important;
+  padding: var(--pinky-body-padding-top) var(--pinky-body-padding-side) var(--pinky-body-padding-bottom) var(--pinky-body-padding-side) !important;
+  box-shadow:
+    /* Bottom shadow for 3D effect */
+    0 6px 0 var(--pinky-pink-shadow),
+    0 0 20px rgba(255, 183, 197, 0.5),
+    /* Inner highlight for roundness */
+    inset 5px -5px 15px rgba(255, 255, 255, 0.4),
+    inset -3px 3px 10px rgba(255, 145, 164, 0.3) !important;
+  animation: pinky-bounce-in 300ms ease-out !important;
+  min-height: 80px !important;
+  min-width: 120px !important;
+  overflow: visible !important;
+}
+
+yt-live-chat-text-message-renderer[is-highlighted] {
+  background: radial-gradient(
+    ellipse 80% 60% at 50% 30%,
+    var(--pinky-pink-light) 0%,
+    var(--pinky-pink) 50%,
+    var(--pinky-pink-dark) 100%
+  ) !important;
+}
+
+/* ==========================================
+   PINKY EYES - Using ::before (with blink animation)
+   ========================================== */
+yt-live-chat-text-message-renderer::before {
+  content: "" !important;
+  position: absolute !important;
+  top: var(--pinky-eye-top) !important;
+  left: 50% !important;
+  margin-left: calc(var(--pinky-eye-gap) / -2) !important;
+  width: var(--pinky-eye-size) !important;
+  height: var(--pinky-eye-height) !important;
+  background: var(--pinky-eye) !important;
+  border-radius: 50% !important;
+  box-shadow:
+    /* Right eye - gap between eyes */
+    var(--pinky-eye-gap) 0 0 0 var(--pinky-eye) !important;
+  z-index: 10 !important;
+  animation: blink 4s ease-in-out infinite !important;
+}
+
+/* ==========================================
+   Hide Original Author Photo
+   (Pinky design replaces it)
+   ========================================== */
+yt-live-chat-text-message-renderer #author-photo {
+  display: none !important;
+}
+
+/* ==========================================
+   Content Container - Vertical Layout (Centered)
+   ========================================== */
+yt-live-chat-text-message-renderer #content {
+  flex: 1 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  background: transparent !important;
+  padding: 0 !important;
+  overflow: visible !important;
+  text-align: center !important;
+}
+
+/* ==========================================
+   Author Name - Small, centered below eyes
+   ========================================== */
+yt-live-chat-text-message-renderer #author-name {
+  color: var(--night-purple) !important;
+  font-family: 'M PLUS Rounded 1c', 'LXGW WenKai Mono TC', 'Gugi', sans-serif !important;
+  font-weight: 600 !important;
+  font-size: var(--pinky-name-font-size) !important;
+  line-height: 14px !important;
+  margin-bottom: 5px !important;
+  text-align: center !important;
+}
+
+yt-live-chat-text-message-renderer #author-name::after {
+  content: none !important;
+}
+
+/* ==========================================
+   PINKY MOUTH - Oval-shaped Message Area
+   Full width by default, use margin to adjust size
+   ========================================== */
+yt-live-chat-text-message-renderer #message {
+  display: block !important;
+  align-self: stretch !important;
+  width: auto !important;
+  margin: var(--pinky-mouth-margin-top) var(--pinky-mouth-margin-horizontal) var(--pinky-mouth-margin-bottom) var(--pinky-mouth-margin-horizontal) !important;
+  padding: var(--pinky-mouth-padding-top) var(--pinky-mouth-padding-side) var(--pinky-mouth-padding-bottom) var(--pinky-mouth-padding-side) !important;
+  background: radial-gradient(
+    ellipse 100% 80% at 50% 40%,
+    var(--pinky-mouth-light) 0%,
+    var(--pinky-mouth) 60%,
+    var(--pinky-mouth-dark) 100%
+  ) !important;
+  border-radius: var(--pinky-mouth-radius) !important;
+  box-shadow:
+    inset 0 4px 8px var(--pinky-mouth-inner-shadow),
+    inset 0 -3px 6px var(--pinky-mouth-inner-shadow-dark),
+    0 2px 4px var(--pinky-mouth-outer-shadow) !important;
+  animation:
+    mouth-open 0.4s ease-out,
+    pinky-inhale 2s ease-in-out infinite 0.4s !important;
+}
+
+/* Owner - Golden Body with Star */
+yt-live-chat-text-message-renderer[author-type="owner"] {
+  background: radial-gradient(
+    ellipse 80% 60% at 50% 30%,
+    var(--pinky-owner-light) 0%,
+    var(--pinky-owner-color) 50%,
+    var(--pinky-owner-dark) 100%
+  ) !important;
+  border-color: var(--pinky-owner-dark) !important;
+  box-shadow:
+    0 6px 0 var(--pinky-owner-shadow),
+    0 0 20px rgba(255, 225, 53, 0.5),
+    inset 5px -5px 15px rgba(255, 255, 255, 0.4),
+    inset -3px 3px 10px rgba(212, 184, 0, 0.3) !important;
+}
+
+yt-live-chat-text-message-renderer[author-type="owner"] #author-name {
+  color: var(--night-purple) !important;
+}
+
+yt-live-chat-text-message-renderer[author-type="owner"] #author-name::before {
+  content: "\2605 " !important;
+}
+
+/* Moderator - Sky Blue Body */
+yt-live-chat-text-message-renderer[author-type="moderator"] {
+  background: radial-gradient(
+    ellipse 80% 60% at 50% 30%,
+    var(--pinky-moderator-light) 0%,
+    var(--pinky-moderator-color) 50%,
+    var(--pinky-moderator-dark) 100%
+  ) !important;
+  border-color: var(--pinky-moderator-dark) !important;
+  box-shadow:
+    0 6px 0 var(--pinky-moderator-shadow),
+    0 0 20px rgba(135, 206, 235, 0.5),
+    inset 5px -5px 15px rgba(255, 255, 255, 0.4),
+    inset -3px 3px 10px rgba(93, 173, 226, 0.3) !important;
+}
+
+yt-live-chat-text-message-renderer[author-type="moderator"] #author-name {
+  color: var(--night-purple) !important;
+}
+
+yt-live-chat-text-message-renderer[author-type="moderator"] #author-name::before {
+  content: "\2692 " !important;
+}
+
+/* Member - Hot Pink with Heart (default Pinky color) */
+yt-live-chat-text-message-renderer[author-type="member"] #author-name {
+  color: var(--pinky-dark-pink) !important;
+}
+
+yt-live-chat-text-message-renderer[author-type="member"] #author-name::before {
+  content: "\2665 " !important;
+}
+
+/* ==========================================
+   Message Text Inside Mouth
+   ========================================== */
+yt-live-chat-text-message-renderer #message *,
+yt-live-chat-text-message-renderer #message {
+  color: var(--pinky-mouth-text-color) !important;
+  font-family: 'M PLUS Rounded 1c', 'LXGW WenKai Mono TC', 'Gugi', sans-serif !important;
+  font-weight: 500 !important;
+  font-size: var(--pinky-message-font-size) !important;
+  line-height: 1.4 !important;
+  letter-spacing: 0.3px !important;
+  word-break: break-all !important;
+}
+
+/* Links */
+yt-live-chat-text-message-renderer a {
+  text-decoration: none !important;
+  color: var(--dream-star-yellow) !important;
+}
+
+/* ==========================================
+   SUPER CHAT - Cloud Card Style
+   Uses YouTube price color variables
+   ========================================== */
+yt-live-chat-paid-message-renderer {
+  position: relative !important;
+  margin: 25px 15px 25px 15px !important;
+  padding-top: 18px !important;
+  padding-bottom: 18px !important;
+  border-radius: 30px !important;
+  background: linear-gradient(
+    180deg,
+    var(--cloud-white) 0%,
+    #F8F8FF 60%,
+    var(--yt-live-chat-paid-message-primary-color, var(--cloud-shadow)) 100%
+  ) !important;
+  border: 3px solid var(--yt-live-chat-paid-message-primary-color, var(--pinky-pink)) !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08) !important;
+  overflow: visible !important;
+  animation: pinky-bounce-in 300ms ease-out, cloud-float 4s ease-in-out infinite !important;
+}
+
+/* Large fluffy cloud - top left */
+yt-live-chat-paid-message-renderer::before {
+  content: "" !important;
+  position: absolute !important;
+  top: -20px !important;
+  left: -15px !important;
+  width: 90px !important;
+  height: 45px !important;
+  background-image: var(--pinky-cloud-svg) !important;
+  background-size: contain !important;
+  background-repeat: no-repeat !important;
+  z-index: 10 !important;
+  opacity: 0.95 !important;
+  pointer-events: none !important;
+}
+
+/* Small cloud - bottom right */
+yt-live-chat-paid-message-renderer::after {
+  content: "" !important;
+  position: absolute !important;
+  bottom: -15px !important;
+  right: -10px !important;
+  width: 55px !important;
+  height: 28px !important;
+  background-image: var(--pinky-cloud-svg) !important;
+  background-size: contain !important;
+  background-repeat: no-repeat !important;
+  transform: scaleX(-1) !important;
+  z-index: 10 !important;
+  opacity: 0.85 !important;
+  pointer-events: none !important;
+}
+
+/* Super Chat Card wrapper - ensure full layout */
+yt-live-chat-paid-message-renderer #card {
+  display: block !important;
+  background: transparent !important;
+}
+
+/* Reset nested wrapper elements - remove YouTube's native background colors */
+yt-live-chat-paid-message-renderer #header-content-primary-column {
+  display: flex !important;
+  flex-direction: column !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+yt-live-chat-paid-message-renderer #single-line {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  gap: 8px !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+yt-live-chat-paid-message-renderer #author-name-chip,
+yt-live-chat-paid-message-renderer #purchase-amount-column {
+  display: contents !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+/* Reset YouTube's native background on header-content */
+yt-live-chat-paid-message-renderer #header-content {
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+yt-live-chat-paid-message-renderer #header {
+  padding: 15px 20px 10px 20px !important;
+  border-radius: 27px 27px 0 0 !important;
+  display: flex !important;
+  align-items: center !important;
+  background: transparent !important;
+}
+
+yt-live-chat-paid-message-renderer #author-photo,
+yt-live-chat-paid-message-renderer yt-img-shadow {
+  display: inline-block !important;
+  width: 36px !important;
+  height: 36px !important;
+  border-radius: 50% !important;
+  border: 3px solid var(--pinky-pink) !important;
+  margin-right: 12px !important;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1) !important;
+  overflow: hidden !important;
+  flex-shrink: 0 !important;
+}
+
+yt-live-chat-paid-message-renderer #author-photo img,
+yt-live-chat-paid-message-renderer yt-img-shadow img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  border-radius: 50% !important;
+}
+
+yt-live-chat-paid-message-renderer #author-name,
+yt-live-chat-paid-message-renderer #author-name * {
+  color: var(--night-purple) !important;
+  font-family: 'M PLUS Rounded 1c', 'LXGW WenKai Mono TC', 'Gugi', sans-serif !important;
+  font-weight: 700 !important;
+  font-size: var(--pinky-message-font-size) !important;
+  text-shadow: none !important;
+}
+
+/* Super Chat Amount - inline with author name in header */
+yt-live-chat-paid-message-renderer #purchase-amount {
+  display: inline-block !important;
+  color: var(--yt-live-chat-paid-message-primary-color, var(--pinky-dark-pink)) !important;
+  font-family: 'M PLUS Rounded 1c', 'LXGW WenKai Mono TC', 'Gugi', sans-serif !important;
+  font-weight: 700 !important;
+  font-size: 14px !important;
+  text-shadow: none !important;
+  background: transparent !important;
+}
+
+yt-live-chat-paid-message-renderer #content {
+  padding: 10px 20px 15px 20px !important;
+  border-radius: 0 0 27px 27px !important;
+  background: transparent !important;
+}
+
+yt-live-chat-paid-message-renderer #message,
+yt-live-chat-paid-message-renderer #message * {
+  color: var(--night-purple) !important;
+  font-family: 'M PLUS Rounded 1c', 'LXGW WenKai Mono TC', 'Gugi', sans-serif !important;
+  font-weight: 500 !important;
+  font-size: var(--pinky-message-font-size) !important;
+  text-shadow: none !important;
+}
+
+/* ==========================================
+   LEGACY PAID MESSAGE (Sponsor/Member Join)
+   Cloud Card Style - Special golden accent
+   ========================================== */
+yt-live-chat-legacy-paid-message-renderer {
+  position: relative !important;
+  display: block !important;
+  background: linear-gradient(
+    180deg,
+    var(--cloud-white) 0%,
+    #FFFAF0 60%,
+    #FFF8DC 100%
+  ) !important;
+  border: 3px solid var(--dream-star-yellow) !important;
+  border-radius: 30px !important;
+  margin: 25px 15px 25px 15px !important;
+  padding: 25px 20px !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08) !important;
+  animation: pinky-bounce-in 300ms ease-out, cloud-float 4s ease-in-out infinite !important;
+  overflow: visible !important;
+}
+
+/* Large cloud - top left */
+yt-live-chat-legacy-paid-message-renderer::before {
+  content: "" !important;
+  position: absolute !important;
+  top: -18px !important;
+  left: -12px !important;
+  width: 85px !important;
+  height: 42px !important;
+  background-image: var(--pinky-cloud-svg) !important;
+  background-size: contain !important;
+  background-repeat: no-repeat !important;
+  z-index: 10 !important;
+  opacity: 0.95 !important;
+  pointer-events: none !important;
+}
+
+/* Small cloud - bottom right */
+yt-live-chat-legacy-paid-message-renderer::after {
+  content: "" !important;
+  position: absolute !important;
+  bottom: -12px !important;
+  right: -8px !important;
+  width: 50px !important;
+  height: 25px !important;
+  background-image: var(--pinky-cloud-svg) !important;
+  background-size: contain !important;
+  background-repeat: no-repeat !important;
+  transform: scaleX(-1) !important;
+  z-index: 10 !important;
+  opacity: 0.85 !important;
+  pointer-events: none !important;
+}
+
+yt-live-chat-legacy-paid-message-renderer #author-photo {
+  display: none !important;
+}
+
+/* Content container */
+yt-live-chat-legacy-paid-message-renderer #content {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  background: transparent !important;
+  padding: 5px !important;
+}
+
+/* Event text - golden title */
+yt-live-chat-legacy-paid-message-renderer #event-text,
+yt-live-chat-legacy-paid-message-renderer #event-text * {
+  color: var(--warp-star-orange) !important;
+  font-family: 'M PLUS Rounded 1c', 'LXGW WenKai Mono TC', 'Gugi', sans-serif !important;
+  font-weight: 700 !important;
+  font-size: var(--pinky-message-font-size) !important;
+  text-align: center !important;
+  text-shadow: none !important;
+  margin-bottom: 8px !important;
+}
+
+/* Detail text */
+yt-live-chat-legacy-paid-message-renderer #detail-text,
+yt-live-chat-legacy-paid-message-renderer #detail-text * {
+  color: var(--night-purple) !important;
+  font-family: 'M PLUS Rounded 1c', 'LXGW WenKai Mono TC', 'Gugi', sans-serif !important;
+  font-weight: 500 !important;
+  font-size: var(--pinky-message-font-size) !important;
+  text-align: center !important;
+  text-shadow: none !important;
+  background: transparent !important;
+  padding: 0 !important;
+  box-shadow: none !important;
+}
+
+/* ==========================================
+   CLOUD DECORATION (Optional)
+   Add floating cloud as background decoration
+   Uncomment below to enable
+   ========================================== */
+yt-live-chat-item-list-renderer {
+  position: relative !important;
+}
+
+/* Uncomment to add floating cloud decoration:
+yt-live-chat-item-list-renderer::before {
+  content: "" !important;
+  position: fixed !important;
+  top: 20px !important;
+  right: 10px !important;
+  width: 80px !important;
+  height: 40px !important;
+  background-image: var(--pinky-cloud-svg) !important;
+  background-size: contain !important;
+  background-repeat: no-repeat !important;
+  opacity: 0.6 !important;
+  animation: cloud-float 4s ease-in-out infinite !important;
+  z-index: 1 !important;
+  pointer-events: none !important;
+}
+*/
+
+/* ==========================================
+   Global Text Styles Override
+   ========================================== */
+yt-live-chat-renderer * {
+  font-family: 'M PLUS Rounded 1c', 'LXGW WenKai Mono TC', 'Gugi', sans-serif !important;
+}
+
+/* ==========================================
+   Author Chip Background (if visible)
+   ========================================== */
+yt-live-chat-author-chip #author-name {
+  background-color: transparent !important;
+}
+
+/* ==========================================
+   Ticker (Hidden but styled)
+   ========================================== */
+yt-live-chat-ticker-renderer {
+  background-color: transparent !important;
+  box-shadow: none !important;
+}
+
+/* ==========================================
+   MEMBERSHIP MESSAGE
+   Cloud-themed celebration style
+   ========================================== */
+yt-live-chat-membership-item-renderer {
+  position: relative !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-align: center !important;
+
+  /* Cloud-like gradient background */
+  background: linear-gradient(
+    180deg,
+    var(--cloud-white) 0%,
+    #FFF0F5 40%,
+    #FFE4EC 100%
+  ) !important;
+  border: 3px solid var(--pinky-pink) !important;
+  border-radius: 30px !important;
+  padding: 25px 30px !important;
+  margin: 15px 10px !important;
+
+  /* Soft shadow */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08) !important;
+
+  /* Animation */
+  animation: pinky-bounce-in 300ms ease-out, cloud-float 4s ease-in-out infinite !important;
+
+  min-height: 80px !important;
+  overflow: visible !important;
+}
+
+/* Hide avatar in membership */
+yt-live-chat-membership-item-renderer #author-photo,
+yt-live-chat-membership-item-renderer yt-img-shadow {
+  display: none !important;
+}
+
+/* Content container */
+yt-live-chat-membership-item-renderer #content {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  gap: 6px !important;
+  z-index: 2 !important;
+}
+
+/* Author name - pink text */
+yt-live-chat-membership-item-renderer #author-name {
+  color: var(--night-purple) !important;
+  font-family: 'M PLUS Rounded 1c', 'LXGW WenKai Mono TC', 'Gugi', sans-serif !important;
+  font-weight: 700 !important;
+  font-size: var(--pinky-name-font-size) !important;
+  text-shadow: none !important;
+}
+
+/* Subtext - welcome message */
+yt-live-chat-membership-item-renderer #header-subtext {
+  color: var(--pinky-dark-pink) !important;
+  font-family: 'M PLUS Rounded 1c', 'LXGW WenKai Mono TC', 'Gugi', sans-serif !important;
+  font-weight: 500 !important;
+  font-size: calc(var(--pinky-message-font-size) * 0.9) !important;
+  text-shadow: none !important;
+}
+
+/* Cloud SVG decoration - top left */
+yt-live-chat-membership-item-renderer::before {
+  content: "" !important;
+  position: absolute !important;
+  top: -15px !important;
+  left: -10px !important;
+  width: 65px !important;
+  height: 32px !important;
+  background-image: var(--pinky-cloud-svg) !important;
+  background-size: contain !important;
+  background-repeat: no-repeat !important;
+  z-index: 10 !important;
+  opacity: 0.95 !important;
+  pointer-events: none !important;
+}
+
+/* Cloud SVG decoration - bottom right */
+yt-live-chat-membership-item-renderer::after {
+  content: "" !important;
+  position: absolute !important;
+  bottom: -12px !important;
+  right: -8px !important;
+  width: 55px !important;
+  height: 28px !important;
+  background-image: var(--pinky-cloud-svg) !important;
+  background-size: contain !important;
+  background-repeat: no-repeat !important;
+  transform: scaleX(-1) !important;
+  z-index: 10 !important;
+  opacity: 0.9 !important;
+  pointer-events: none !important;
+}
+
+
+
+/* Social Stream Ninja dock DOM */
+/* Social Stream Ninja sample overlay/featured DOM support */
+#message-list-wrapper,
+#output,
+#items.social-stream-output {
+  font-family: "M PLUS Rounded 1c", "Quicksand", sans-serif;
+}
+
+#chat-container {
+  max-width: none;
+  padding: 0 !important;
+  background: transparent !important;
+}
+
+:is(.highlight-chat, .message) .message-content-wrapper,
+:is(.highlight-chat, .message) .message-text-meta {
+  display: contents;
+}
+
+:is(.highlight-chat, .message) .message-text-meta > div:first-child {
+  grid-area: name;
+  display: inline-flex;
+  align-items: center;
+  min-width: 0;
+  max-width: 100%;
+}
+
+:is(.highlight-chat, .message) .avatar-wrapper {
+  padding: 0 !important;
+  background: transparent !important;
+  background-image: none !important;
+}
+
+:is(.highlight-chat, .message) .name {
+  color: inherit;
+  font: inherit;
+  line-height: inherit;
+  text-shadow: inherit;
+}
+
+:is(.highlight-chat, .message) .avatar.hl-profile-pic {
+  background-position: center;
+  background-size: cover;
+}
+
+:is(.highlight-chat, .message) {
+  position: relative;
+  display: grid;
+  grid-template-columns: 44px minmax(0, 1fr);
+  grid-template-areas:
+    "avatar name"
+    "avatar message";
+  gap: 8px 12px;
+  max-width: min(100%, 460px);
+  max-height: none !important;
+  margin: 12px 0 !important;
+  padding: var(--pinky-body-padding-top) var(--pinky-body-padding-side) var(--pinky-body-padding-bottom) !important;
+  border: 0 !important;
+  border-radius: var(--pinky-body-radius) !important;
+  background: radial-gradient(circle at 30% 20%, var(--pinky-pink-light), var(--pinky-pink)) !important;
+  box-shadow: 0 8px 0 var(--pinky-pink-shadow) !important;
+  color: inherit !important;
+  filter: none !important;
+  overflow: visible !important;
+  animation: pinky-bounce-in 0.35s ease-out both;
+}
+
+:is(.highlight-chat, .message).hidden {
+  overflow: hidden !important;
+}
+
+:is(.highlight-chat, .message) .queueid,
+:is(.highlight-chat, .message) .sourcetype,
+:is(.highlight-chat, .message) .source-icon,
+:is(.highlight-chat, .message) .hl-source-type,
+:is(.highlight-chat, .message) .time-arrived {
+  display: none !important;
+}
+
+:is(.highlight-chat, .message)::before,
+:is(.highlight-chat, .message)::after {
+  content: "";
+  position: absolute;
+  top: var(--pinky-eye-top);
+  width: var(--pinky-eye-size);
+  height: var(--pinky-eye-height);
+  border-radius: 999px;
+  background: var(--pinky-eye-color);
+  animation: blink 4s infinite;
+}
+
+:is(.highlight-chat, .message)::before {
+  left: calc(50% - var(--pinky-eye-gap));
+}
+
+:is(.highlight-chat, .message)::after {
+  left: calc(50% + var(--pinky-eye-gap));
+}
+
+:is(.highlight-chat, .message) .hl-img,
+:is(.highlight-chat, .message) .avatar-wrapper,
+:is(.highlight-chat, .message) > .hl-profile-pic {
+  grid-area: avatar;
+  width: 44px;
+  height: 44px;
+  align-self: center;
+}
+
+:is(.highlight-chat, .message) .hl-img .hl-profile-pic,
+:is(.highlight-chat, .message) .avatar-wrapper .avatar {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--cloud-white);
+}
+
+:is(.highlight-chat, .message) > .hl-profile-pic {
+  border: 3px solid var(--cloud-white);
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+:is(.highlight-chat, .message) :is(.hl-name, .name-bg) {
+  grid-area: name;
+  color: var(--night-purple);
+  font-size: var(--pinky-name-font-size);
+  font-weight: 700;
+}
+
+:is(.highlight-chat, .message) :is(.hl-message, .text) {
+  grid-area: message;
+  padding: var(--pinky-mouth-padding-top) var(--pinky-mouth-padding-side) var(--pinky-mouth-padding-bottom);
+  border-radius: var(--pinky-mouth-radius);
+  background: radial-gradient(circle at 50% 30%, var(--pinky-mouth-light), var(--pinky-mouth-color));
+  color: var(--pinky-mouth-text-color);
+  font-size: var(--pinky-message-font-size);
+  line-height: 1.35;
+  box-shadow: inset 0 4px 8px var(--pinky-mouth-inner-shadow);
+  overflow-wrap: anywhere;
+  animation: mouth-open 0.35s ease-out both;
+}
+
+:is(.highlight-chat, .message).mod {
+  background: radial-gradient(circle at 30% 20%, var(--pinky-moderator-light), var(--pinky-moderator-color)) !important;
+}
+
+:is(.highlight-chat, .message).member,
+:is(.highlight-chat, .message).donation {
+  background: radial-gradient(circle at 30% 20%, var(--pinky-owner-light), var(--pinky-owner-color)) !important;
+}
+
+:is(.highlight-chat, .message) .hl-badges {
+  display: inline-flex;
+  gap: 4px;
+  margin-right: 6px;
+}
+
+:is(.highlight-chat, .message) :is(.hl-name, .name-bg) > .hl-badge {
+  margin-right: 4px;
+}
+
+:is(.highlight-chat, .message) .hl-badge {
+  height: 1em;
+  width: auto;
+}
+
+:is(.highlight-chat, .message) .textbadge,
+:is(.highlight-chat, .message) .donationAmount,
+:is(.highlight-chat, .message) :is(.membership, .membership-status) {
+  display: inline-block;
+  margin-left: 6px;
+  padding: 2px 7px;
+  border-radius: 999px;
+  background: var(--cloud-white);
+  color: var(--night-purple);
+  font-size: 0.7em;
+  font-weight: 700;
+}

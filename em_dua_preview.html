@@ -1,0 +1,1103 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Em Dứa - Cute Fantasy Chat Overlay Preview 🍍✨</title>
+    
+    <!-- Google Fonts for Cute, Playful & Ultra-readable Text -->
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700;800&family=Quicksand:wght@500;700&family=Nunito:wght@700;800;900&display=swap" rel="stylesheet">
+    
+    <style>
+        /* =========================================================================
+        1. DESIGN SYSTEM & CUSTOM PROPERTIES (VARIABLES)
+        ========================================================================= */
+        :root {
+            /* Fonts */
+            --font-display: 'Baloo 2', cursive;
+            --font-sub: 'Quicksand', sans-serif;
+            --font-body: 'Nunito', sans-serif;
+            
+            /* Custom Colors for 'Em Dứa' Theme */
+            /* 1. Normal Chip (Fresh Green / Sprout) */
+            --bg-normal: linear-gradient(135deg, #F1F8E9 0%, #DCEDC8 50%, #C5E1A5 100%);
+            --border-normal: #AEDB85;
+            --text-normal: #33691E;
+            --glow-normal: rgba(139, 195, 74, 0.4);
+            
+            /* 2. Member Chip (Sweet Pink Purple / Heart) */
+            --bg-member: linear-gradient(135deg, #FFF0F5 0%, #FBC4D7 50%, #F7A8C4 100%);
+            --border-member: #FF94B8;
+            --text-member: #880E4F;
+            --glow-member: rgba(244, 143, 177, 0.5);
+            
+            /* 3. Mod Chip (Teal Ice Blue / Shield) */
+            --bg-mod: linear-gradient(135deg, #E0F7FA 0%, #B2EBF2 50%, #80DEEA 100%);
+            --border-mod: #4DD0E1;
+            --text-mod: #006064;
+            --glow-mod: rgba(128, 222, 234, 0.5);
+            
+            /* 4. Mod + Member (Rainbow Pineapple Gold Crown) */
+            --bg-vip: linear-gradient(135deg, #FFE082 0%, #A5D6A7 25%, #80DEEA 50%, #B39DDB 75%, #F48FB1 100%);
+            --border-vip: #FFB300;
+            --text-vip: #4A2700; /* Deep gold/chocolate for extreme readability */
+            --glow-vip: rgba(255, 179, 0, 0.6);
+            
+            /* Background Fantasy */
+            --bg-forest: linear-gradient(135deg, #05140d 0%, #0d2818 50%, #051c0f 100%);
+            --bg-green-screen: #00FF00; /* Chroma key green screen for OBS testing */
+            
+            /* Leaf Vein Tileable Pattern SVG (Encoded beautifully as URI) */
+            --leaf-vein-svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='40' viewBox='0 0 100 40'%3E%3Cpath d='M0,20 Q50,22 100,20' stroke='rgba(255,255,255,0.22)' stroke-width='1.5' fill='none' stroke-dasharray='3 3'/%3E%3Cpath d='M10,20 Q18,10 25,8 M30,20 Q38,10 45,8 M50,20 Q58,10 65,8 M70,20 Q78,10 85,8' stroke='rgba(255,255,255,0.15)' stroke-width='1' fill='none'/%3E%3Cpath d='M15,20 Q23,30 30,32 M35,20 Q43,30 50,32 M55,20 Q63,30 70,32 M75,20 Q83,30 90,32' stroke='rgba(255,255,255,0.15)' stroke-width='1' fill='none'/%3E%3Ccircle cx='12' cy='7' r='1.5' fill='rgba(255,255,255,0.3)'/%3E%3Ccircle cx='48' cy='33' r='1' fill='rgba(255,255,255,0.4)'/%3E%3Ccircle cx='62' cy='7' r='1.2' fill='rgba(255,255,255,0.3)'/%3E%3Ccircle cx='85' cy='31' r='1' fill='rgba(255,255,255,0.2)'/%3E%3C/svg%3E");
+
+            /* Beanstalk & Stem SVGs for Cute Beanstalk Chat */
+            --beanstalk-svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 80 120'%3E%3Cpath d='M30 -20 Q50 20, 30 60 T30 140 T30 180' stroke='%2305140d' stroke-width='24' fill='none' opacity='0.4' filter='blur%282px%29'/%3E%3Cpath d='M35 -20 C 55 20, 15 60, 35 100 C 55 140, 15 180, 35 220' stroke='%231b5e20' stroke-width='14' stroke-linecap='round' fill='none'/%3E%3Cpath d='M45 -20 C 25 20, 65 60, 45 100 C 25 140, 65 180, 45 220' stroke='%232e7d32' stroke-width='12' stroke-linecap='round' fill='none'/%3E%3Cpath d='M35 -20 C 55 20, 15 60, 35 100 C 55 140, 15 180, 35 220' stroke='%234caf50' stroke-width='6' stroke-linecap='round' fill='none'/%3E%3Cpath d='M35 -20 C 55 20, 15 60, 35 100 C 55 140, 15 180, 35 220' stroke='%2381c784' stroke-width='3' stroke-linecap='round' fill='none'/%3E%3Cpath d='M45 -20 C 25 20, 65 60, 45 100 C 25 140, 65 180, 45 220' stroke='%23a5d6a7' stroke-width='4' stroke-linecap='round' fill='none' stroke-dasharray='12 8'/%3E%3Cpath d='M40 30 C 55 20, 65 30, 50 45 Z' fill='%2381c784' stroke='%231b5e20' stroke-width='1.5'/%3E%3Cpath d='M40 30 Q 48 34 50 45' stroke='%231b5e20' stroke-width='1'/%3E%3Cpath d='M30 110 C 10 100, 5 115, 18 125 Z' fill='%2381c784' stroke='%231b5e20' stroke-width='1.5'/%3E%3Cpath d='M30 110 Q 20 114 18 125' stroke='%231b5e20' stroke-width='1'/%3E%3Ccircle cx='50' cy='60' r='1.5' fill='%23ffd54f' opacity='0.8'/%3E%3Ccircle cx='20' cy='140' r='1.2' fill='%23fff' opacity='0.9'/%3E%3Ccircle cx='35' cy='10' r='1.8' fill='%23ffd54f' opacity='0.75'/%3E%3C/svg%3E");
+            --stem-svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 80 30'%3E%3Cpath d='M 0 16 C 30 16, 50 10, 80 10' stroke='%2305140d' stroke-width='6' stroke-linecap='round' fill='none' opacity='0.4'/%3E%3Cpath d='M 0 16 C 30 16, 50 10, 80 10' stroke='%232e7d32' stroke-width='4' stroke-linecap='round' fill='none'/%3E%3Cpath d='M 0 16 C 30 16, 50 10, 80 10' stroke='%234caf50' stroke-width='2' stroke-linecap='round' fill='none'/%3E%3Cpath d='M 40 13 Q 45 4, 52 6 T 53 15 T 46 13' stroke='%2381c784' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+        }
+
+        /* Reset & Layout */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: var(--font-body);
+            background: var(--bg-forest);
+            color: #E2F3E8;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            overflow-x: hidden;
+            position: relative;
+            transition: background 0.4s ease;
+        }
+
+        /* Sparkle & Firefly background layer */
+        .magic-layer {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            overflow: hidden;
+            z-index: 0;
+        }
+
+        .firefly {
+            position: absolute;
+            width: 6px;
+            height: 6px;
+            background: #AEEA00;
+            border-radius: 50%;
+            box-shadow: 0 0 10px #AEEA00, 0 0 20px #76FF03;
+            opacity: 0;
+            animation: float-firefly 8s infinite ease-in-out;
+        }
+
+        /* Firefly locations & delay styling */
+        .firefly:nth-child(1)  { left: 10%; top: 20%; animation-delay: 0s; width: 5px; height: 5px; }
+        .firefly:nth-child(2)  { left: 25%; top: 75%; animation-delay: 1.5s; width: 7px; height: 7px; }
+        .firefly:nth-child(3)  { left: 80%; top: 15%; animation-delay: 3s; width: 4px; height: 4px; }
+        .firefly:nth-child(4)  { left: 65%; top: 60%; animation-delay: 4.5s; width: 6px; height: 6px; }
+        .firefly:nth-child(5)  { left: 45%; top: 30%; animation-delay: 6s; width: 5px; height: 5px; }
+        .firefly:nth-child(6)  { left: 88%; top: 80%; animation-delay: 2.2s; width: 8px; height: 8px; }
+        .firefly:nth-child(7)  { left: 15%; top: 50%; animation-delay: 5s; width: 5px; height: 5px; }
+        .firefly:nth-child(8)  { left: 55%; top: 85%; animation-delay: 0.8s; width: 6px; height: 6px; }
+
+        @keyframes float-firefly {
+            0% {
+                transform: translateY(0) translateX(0) scale(0.8);
+                opacity: 0;
+            }
+            30% {
+                opacity: 0.8;
+                transform: translateY(-30px) translateX(20px) scale(1.1);
+            }
+            70% {
+                opacity: 0.8;
+                transform: translateY(-70px) translateX(-15px) scale(1);
+            }
+            100% {
+                transform: translateY(-110px) translateX(10px) scale(0.8);
+                opacity: 0;
+            }
+        }
+
+        /* =========================================================================
+        2. INTERACTIVE CONTROLS (GLASS PANEL)
+        ========================================================================= */
+        .header-panel {
+            width: 90%;
+            max-width: 900px;
+            background: rgba(13, 38, 24, 0.7);
+            border: 2px solid rgba(165, 214, 167, 0.2);
+            backdrop-filter: blur(16px);
+            border-radius: 24px;
+            padding: 24px;
+            margin-top: 30px;
+            margin-bottom: 25px;
+            z-index: 10;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4), inset 0 2px 4px rgba(255, 255, 255, 0.05);
+            text-align: center;
+        }
+
+        .header-panel h1 {
+            font-family: var(--font-display);
+            font-size: 32px;
+            color: #FFF;
+            margin-bottom: 8px;
+            text-shadow: 0 2px 10px rgba(255, 215, 0, 0.4);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .header-panel p {
+            font-family: var(--font-sub);
+            font-size: 15px;
+            color: #A5D6A7;
+            margin-bottom: 20px;
+        }
+
+        .controls {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            justify-content: center;
+        }
+
+        .btn {
+            background: rgba(255, 255, 255, 0.08);
+            border: 1.5px solid rgba(255, 255, 255, 0.15);
+            color: #FFF;
+            padding: 10px 20px;
+            font-family: var(--font-sub);
+            font-size: 14px;
+            font-weight: 700;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn:hover {
+            background: rgba(165, 214, 167, 0.25);
+            border-color: #A5D6A7;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(165, 214, 167, 0.2);
+        }
+
+        .btn:active {
+            transform: translateY(0);
+        }
+
+        .btn.active {
+            background: linear-gradient(135deg, #7CB342 0%, #558B2F 100%);
+            border-color: #C5E1A5;
+            box-shadow: 0 4px 15px rgba(124, 179, 66, 0.4);
+        }
+
+        /* =========================================================================
+        3. LIVESTREAM CHAT CONTAINER (GLASSBOX)
+        ========================================================================= */
+        .chat-overlay-preview {
+            width: 90%;
+            max-width: 900px;
+            background: rgba(5, 20, 13, 0.45);
+            border: 2px solid rgba(139, 195, 74, 0.15);
+            backdrop-filter: blur(12px);
+            border-radius: 32px;
+            padding: 30px 25px 30px 25px;
+            margin-bottom: 50px;
+            z-index: 10;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+            position: relative !important;
+            overflow: visible !important;
+        }
+
+        .chat-overlay-preview::before {
+            content: "" !important;
+            position: absolute !important;
+            top: 25px !important;
+            bottom: 25px !important;
+            left: 20px !important;
+            width: 55px !important;
+            background-image: var(--beanstalk-svg) !important;
+            background-repeat: repeat-y !important;
+            background-size: 100% auto !important;
+            z-index: 5 !important;
+            pointer-events: none !important;
+        }
+
+        /* ===== INDIVIDUAL CHAT ITEM (YT MESSAGE RENDERER SIMULATION) ===== */
+        .yt-chat-message {
+            display: flex;
+            align-items: flex-start;
+            position: relative;
+            background: rgba(13, 38, 24, 0.4);
+            border: 1.5px solid rgba(255, 255, 255, 0.05);
+            padding: 12px 18px 12px 12px;
+            border-radius: 24px;
+            gap: 16px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+            transition: all 0.3s ease;
+            overflow: visible;
+            margin-left: 70px !important;
+        }
+
+        /* The connecting stem for the preview page messages */
+        .yt-chat-message::after {
+            content: "" !important;
+            position: absolute !important;
+            left: -78px !important;
+            width: 83px !important;
+            height: 30px !important;
+            top: 20px !important;
+            background-image: var(--stem-svg) !important;
+            background-repeat: no-repeat !important;
+            background-size: 100% 100% !important;
+            z-index: 100 !important;
+            pointer-events: none !important;
+            opacity: 1 !important;
+            transform: none !important;
+        }
+
+        .yt-chat-message:hover {
+            background: rgba(13, 38, 24, 0.6);
+            border-color: rgba(165, 214, 167, 0.15);
+            transform: scale(1.01) translateY(-1px);
+        }
+
+        /* Cute Sparkles Floating Decor around Chat Items */
+        .yt-chat-message::before {
+            content: "✨";
+            position: absolute;
+            font-size: 14px;
+            opacity: 0;
+            pointer-events: none;
+            transition: all 0.3s ease;
+        }
+        .yt-chat-message:nth-child(odd)::before {
+            right: -10px; top: -8px;
+        }
+        .yt-chat-message:nth-child(even)::before {
+            left: -12px; bottom: -8px;
+        }
+        .yt-chat-message:hover::before {
+            opacity: 0.85;
+            transform: scale(1.2) rotate(15deg);
+        }
+
+        /* Avatar Container & Glowing ring */
+        .author-photo-wrapper {
+            position: relative;
+            flex-shrink: 0;
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            z-index: 2;
+        }
+
+        .author-photo-wrapper img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            border: 2px solid rgba(255, 255, 255, 0.9);
+            object-fit: cover;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Glowing back-ring for Avatar */
+        .avatar-glow {
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #C5E1A5, #80DEEA);
+            z-index: 1;
+            opacity: 0.6;
+            animation: pulse-avatar 3s infinite alternate;
+        }
+
+        @keyframes pulse-avatar {
+            0% { transform: scale(1); filter: blur(2px); }
+            100% { transform: scale(1.08); filter: blur(4px); }
+        }
+
+        /* Chat content wrapper */
+        .chat-content {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            flex-grow: 1;
+        }
+
+        /* Header containing the CHIP and USERNAME */
+        .author-header {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        /* =========================================================================
+        4. PREMIUM "EM DỨA" CHIP NAME STYLING (PILL SHAPE WITH SPECIAL VEIN EFFECTS)
+        ========================================================================= */
+        .yt-author-chip {
+            display: inline-flex;
+            align-items: center;
+            padding: 5px 14px 5px 10px; /* Cute pill padding */
+            border-radius: 99px; /* Absolute pill shape */
+            position: relative;
+            overflow: hidden; /* Important to clip vein and sweep reflections */
+            gap: 6px;
+            border: 2.5px solid rgba(255, 255, 255, 0.85); /* Solid glowing cream borders */
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            user-select: none;
+        }
+
+        /* Gel glass cover shadow effect */
+        .yt-author-chip::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to bottom, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0) 50%, rgba(0, 0, 0, 0.05) 100%);
+            z-index: 2;
+            pointer-events: none;
+            border-radius: inherit;
+        }
+
+        /* Glowing active shadow on hover */
+        .yt-author-chip:hover {
+            transform: translateY(-2px) scale(1.03);
+        }
+
+        /* ===== Leaf Veins Floating Overlays ===== */
+        .vein-texture {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 200%; /* Wider to scroll infinitely */
+            height: 100%;
+            background-image: var(--leaf-vein-svg);
+            background-size: 100px 100%;
+            background-repeat: repeat-x;
+            opacity: 0.9;
+            mix-blend-mode: overlay;
+            pointer-events: none;
+            z-index: 1;
+            border-radius: inherit;
+            animation: drift-veins 14s linear infinite;
+        }
+
+        @keyframes drift-veins {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-100px); } /* Perfect tile loop shift */
+        }
+
+        /* ===== Shimmer Light Sweep Effect ===== */
+        .shine-sweep {
+            position: absolute;
+            top: 0;
+            left: -150%;
+            width: 80px;
+            height: 100%;
+            background: linear-gradient(
+                90deg,
+                rgba(255, 255, 255, 0) 0%,
+                rgba(255, 255, 255, 0.5) 45%,
+                rgba(255, 255, 255, 0.7) 50%,
+                rgba(255, 255, 255, 0.5) 55%,
+                rgba(255, 255, 255, 0) 100%
+            );
+            transform: skewX(-25deg);
+            z-index: 2;
+            pointer-events: none;
+            animation: sweep-shine 6s infinite ease-in-out;
+        }
+
+        @keyframes sweep-shine {
+            0% { left: -150%; }
+            15% { left: 150%; }
+            100% { left: 150%; }
+        }
+
+        /* Decorative tiny sparkles inside the chip */
+        .chip-sparkles {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            pointer-events: none;
+            z-index: 1;
+            background-image: radial-gradient(circle, rgba(255,255,255,0.7) 1px, transparent 1px);
+            background-size: 12px 12px;
+            opacity: 0.65;
+            mix-blend-mode: color-dodge;
+        }
+
+        /* Badge Icon container */
+        .chip-badge-icon {
+            width: 20px;
+            height: 20px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            z-index: 3;
+            filter: drop-shadow(0 1.5px 2px rgba(0, 0, 0, 0.2));
+            animation: wiggle-icon 4s infinite ease-in-out;
+        }
+
+        @keyframes wiggle-icon {
+            0%, 100% { transform: rotate(0deg) scale(1); }
+            50% { transform: rotate(8deg) scale(1.08); }
+        }
+
+        .chip-badge-icon svg {
+            width: 100%;
+            height: 100%;
+        }
+
+        /* Chip Text label styling */
+        .chip-label {
+            font-family: var(--font-display);
+            font-size: 14px;
+            font-weight: 800;
+            letter-spacing: 0.5px;
+            position: relative;
+            z-index: 3;
+            text-shadow: 0 1px 2px rgba(255, 255, 255, 0.4);
+        }
+
+        /* =========================================================================
+        5. COLOR THEMES SPECIFICS (4 ROLES)
+        ========================================================================= */
+        
+        /* --- A. THƯỜNG (Normal - Sprout Green) --- */
+        .yt-author-chip.role-normal {
+            background: var(--bg-normal);
+            border-color: var(--border-normal);
+            box-shadow: 0 4px 10px var(--glow-normal), inset 0 2px 4px rgba(255, 255, 255, 0.8);
+        }
+        .yt-author-chip.role-normal .chip-label {
+            color: var(--text-normal);
+        }
+
+        /* --- B. HỘI VIÊN (Member - Pastel Heart Pink) --- */
+        .yt-author-chip.role-member {
+            background: var(--bg-member);
+            border-color: var(--border-member);
+            box-shadow: 0 4px 12px var(--glow-member), inset 0 2px 4px rgba(255, 255, 255, 0.8);
+        }
+        .yt-author-chip.role-member .chip-label {
+            color: var(--text-member);
+            text-shadow: 0 1px 2px rgba(255, 255, 255, 0.5);
+        }
+        /* Heart pulse animation on the badge */
+        .yt-author-chip.role-member .chip-badge-icon {
+            animation: pulse-heart 1.5s infinite ease-in-out;
+        }
+        @keyframes pulse-heart {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.15); }
+        }
+
+        /* --- C. MOD (Moderator - Cyan Mint Shield) --- */
+        .yt-author-chip.role-mod {
+            background: var(--bg-mod);
+            border-color: var(--border-mod);
+            box-shadow: 0 4px 12px var(--glow-mod), inset 0 2px 4px rgba(255, 255, 255, 0.8);
+        }
+        .yt-author-chip.role-mod .chip-label {
+            color: var(--text-mod);
+        }
+
+        /* --- D. MOD + HỘI VIÊN (VIP Crown Pineapple Gradient) --- */
+        .yt-author-chip.role-vip {
+            background: var(--bg-vip);
+            border-color: #FFF; /* Cream white border to stand out against gold gradient */
+            box-shadow: 0 6px 15px var(--glow-vip), 0 0 10px rgba(244, 143, 177, 0.4), inset 0 2px 4px rgba(255, 255, 255, 0.9);
+            animation: pulse-glow-vip 4s infinite alternate;
+        }
+        .yt-author-chip.role-vip .chip-label {
+            color: var(--text-vip);
+            text-shadow: 0 1px 3px rgba(255, 255, 255, 0.7);
+        }
+        
+        /* Crown jewel hover/pulse effect */
+        @keyframes pulse-glow-vip {
+            0% { box-shadow: 0 4px 12px var(--glow-vip), inset 0 2px 4px rgba(255, 255, 255, 0.9); }
+            100% { box-shadow: 0 8px 20px var(--glow-vip), 0 0 15px rgba(244, 143, 177, 0.6), inset 0 2px 4px rgba(255, 255, 255, 0.9); }
+        }
+
+        /* =========================================================================
+        6. READABILITY OPTIMIZATION (USERNAME & MESSAGES)
+        ========================================================================= */
+        .username {
+            font-family: var(--font-sub);
+            font-size: 16px;
+            font-weight: 700;
+            color: #FFF;
+            /* Multi-layered shadow to ensure readability on any screen background */
+            text-shadow: 
+                -1px -1px 0 #071D12,  
+                 1px -1px 0 #071D12,
+                -1px  1px 0 #071D12,
+                 1px  1px 0 #071D12,
+                 0px  2px 4px rgba(0, 0, 0, 0.8);
+            letter-spacing: 0.3px;
+        }
+
+        /* Color username matching user's role theme subtly */
+        .yt-chat-message[data-role="normal"] .username   { color: #E8F5E9; }
+        .yt-chat-message[data-role="member"] .username   { color: #FCE4EC; }
+        .yt-chat-message[data-role="mod"] .username      { color: #E0F7FA; }
+        .yt-chat-message[data-role="vip"] .username      { color: #FFF8E1; }
+
+        .chat-message-text {
+            font-family: var(--font-body);
+            font-size: 17px;
+            line-height: 1.5;
+            font-weight: 700;
+            color: #E2F3E8;
+            letter-spacing: 0.1px;
+            /* Excellent shadows for OBS overlays (makes text stand out on moving live content) */
+            text-shadow: 
+                -1.5px -1.5px 0 #071D12,  
+                 1.5px -1.5px 0 #071D12,
+                -1.5px  1.5px 0 #071D12,
+                 1.5px  1.5px 0 #071D12,
+                 0px 3px 5px rgba(0, 0, 0, 0.9),
+                 0px 0px 8px rgba(7, 29, 18, 0.8);
+            word-wrap: break-word;
+            word-break: break-word;
+        }
+
+        /* Custom style for Emotes/Images inside messages */
+        .emoji {
+            display: inline-block;
+            vertical-align: middle;
+            height: 24px;
+            margin-top: -3px;
+            margin-left: 2px;
+            margin-right: 2px;
+            animation: emote-bounce 2s infinite ease-in-out;
+        }
+        @keyframes emote-bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-4px); }
+        }
+
+        /* =========================================================================
+        7. UTILITY CLASSES (FOR TOGGLING PREVIEW ACTIONS)
+        ========================================================================= */
+        
+        /* Green Screen toggle active */
+        .green-screen-active {
+            background: var(--bg-green-screen) !important;
+        }
+        .green-screen-active .header-panel {
+            background: rgba(0, 0, 0, 0.85);
+            border-color: rgba(255, 255, 255, 0.2);
+        }
+        .green-screen-active .chat-overlay-preview {
+            background: rgba(0, 0, 0, 0.55);
+            border-color: rgba(255, 255, 255, 0.1);
+        }
+
+        /* Animation Pause Toggle */
+        .animations-paused .vein-texture {
+            animation-play-state: paused !important;
+        }
+        .animations-paused .shine-sweep {
+            animation: none !important;
+        }
+        .animations-paused .chip-badge-icon {
+            animation: none !important;
+        }
+        .animations-paused .avatar-glow {
+            animation: none !important;
+        }
+        .animations-paused .firefly {
+            animation: none !important;
+            opacity: 0 !important;
+        }
+        .animations-paused .emoji {
+            animation: none !important;
+        }
+
+        /* Big size toggle */
+        .scale-large .yt-author-chip {
+            padding: 8px 18px 8px 14px;
+            border-width: 3px;
+        }
+        .scale-large .chip-badge-icon {
+            width: 24px;
+            height: 24px;
+        }
+        .scale-large .chip-label {
+            font-size: 16px;
+        }
+        .scale-large .username {
+            font-size: 19px;
+        }
+        .scale-large .chat-message-text {
+            font-size: 20px;
+        }
+        .scale-large .author-photo-wrapper {
+            width: 56px;
+            height: 56px;
+        }
+
+        /* Floating tiny floral decorations around container */
+        .forest-deco {
+            position: absolute;
+            pointer-events: none;
+            opacity: 0.75;
+            z-index: 1;
+            filter: drop-shadow(0 2px 5px rgba(0,0,0,0.3));
+            animation: sway-leaf 6s infinite ease-in-out;
+        }
+        .forest-deco.deco-leaf-1 {
+            top: 15%; left: 3%; width: 50px;
+            transform-origin: top left;
+        }
+        .forest-deco.deco-leaf-2 {
+            bottom: 10%; right: 3%; width: 60px;
+            transform-origin: bottom right;
+            animation-delay: -3s;
+        }
+        .forest-deco.deco-flower-1 {
+            top: 45%; right: 4%; width: 40px;
+            animation: float-flower 8s infinite alternate ease-in-out;
+        }
+
+        @keyframes sway-leaf {
+            0%, 100% { transform: rotate(0deg); }
+            50% { transform: rotate(8deg) translateY(3px); }
+        }
+        @keyframes float-flower {
+            0% { transform: translateY(0) rotate(0deg); }
+            100% { transform: translateY(-15px) rotate(15deg); }
+        }
+
+        /* Simple notification toast */
+        .toast {
+            position: fixed;
+            bottom: 20px;
+            background: rgba(13, 38, 24, 0.95);
+            border: 2px solid #A5D6A7;
+            color: #FFF;
+            padding: 12px 24px;
+            border-radius: 12px;
+            font-family: var(--font-sub);
+            font-size: 14px;
+            font-weight: 700;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+            transform: translateY(100px);
+            opacity: 0;
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            z-index: 9999;
+        }
+        .toast.show {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Magic background elements -->
+    <div class="magic-layer">
+        <div class="firefly"></div>
+        <div class="firefly"></div>
+        <div class="firefly"></div>
+        <div class="firefly"></div>
+        <div class="firefly"></div>
+        <div class="firefly"></div>
+        <div class="firefly"></div>
+        <div class="firefly"></div>
+    </div>
+
+    <!-- Decorative cute SVGs hanging on side -->
+    <!-- Green Leaf Left Top -->
+    <svg class="forest-deco deco-leaf-1" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M10 10 C30 30 20 60 70 80 C80 50 60 20 10 10 Z" fill="#4CAF50" fill-opacity="0.3" stroke="#81C784" stroke-width="3" stroke-linecap="round"/>
+        <path d="M10 10 Q40 40 70 80" stroke="#81C784" stroke-width="2"/>
+    </svg>
+    <!-- Green Leaf Right Bottom -->
+    <svg class="forest-deco deco-leaf-2" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M90 90 C70 70 80 40 30 20 C20 50 40 80 90 90 Z" fill="#81C784" fill-opacity="0.25" stroke="#A5D6A7" stroke-width="3" stroke-linecap="round"/>
+        <path d="M90 90 Q60 60 30 20" stroke="#A5D6A7" stroke-width="2"/>
+    </svg>
+    <!-- Cute Pink Flower Right Top -->
+    <svg class="forest-deco deco-flower-1" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="50" cy="50" r="12" fill="#FFE082" stroke="#FFB300" stroke-width="2"/>
+        <path d="M50 38 C40 20 60 20 50 38 Z" fill="#F48FB1" stroke="#F06292" stroke-width="1.5"/>
+        <path d="M50 62 C40 80 60 80 50 62 Z" fill="#F48FB1" stroke="#F06292" stroke-width="1.5"/>
+        <path d="M38 50 C20 40 20 60 38 50 Z" fill="#F48FB1" stroke="#F06292" stroke-width="1.5"/>
+        <path d="M62 50 C80 40 80 60 62 50 Z" fill="#F48FB1" stroke="#F06292" stroke-width="1.5"/>
+    </svg>
+
+    <!-- =========================================================================
+    A. HEADER CONTROL BOX
+    ========================================================================= -->
+    <div class="header-panel">
+        <h1>🍍 Bộ Chip Name Livestream "Em Dứa" Cute Fantasy 🍍</h1>
+        <p>Hệ thống Name Chip siêu đáng yêu cho chat overlay livestream OBS. Hãy thử các nút điều khiển phía dưới nhé!</p>
+        
+        <div class="controls">
+            <button class="btn" id="btn-greenscreen" onclick="toggleGreenScreen()">
+                🟢 Green Screen (OBS Key)
+            </button>
+            <button class="btn" id="btn-scale" onclick="toggleScale()">
+                🔎 Phóng To Chip (Large Size)
+            </button>
+            <button class="btn" id="btn-animations" onclick="toggleAnimations()">
+                ❄️ Dừng Hiệu Ứng (Freeze)
+            </button>
+            <button class="btn" id="btn-copy-css" onclick="copyCSSCode()">
+                📋 Copy Bộ CSS Mẫu
+            </button>
+        </div>
+    </div>
+
+    <!-- =========================================================================
+    B. CHAT BOX PREVIEW STREAM CONTAINER
+    ========================================================================= -->
+    <div class="chat-overlay-preview" id="chatbox">
+
+        <!-- 1. CHIP THƯỜNG (NORMAL VIEWER) -->
+        <div class="yt-chat-message" data-role="normal">
+            <div class="author-photo-wrapper">
+                <img src="https://ui-avatars.com/api/?name=Th%C6%B0%E1%BB%9Dng&background=E8F5E9&color=2E7D32&bold=true" alt="Avatar">
+                <div class="avatar-glow" style="background: linear-gradient(135deg, #DCEDC8, #C5E1A5);"></div>
+            </div>
+            <div class="chat-content">
+                <div class="author-header">
+                    <!-- Chip Name Pill -->
+                    <div class="yt-author-chip role-normal">
+                        <!-- Drifting leaf vein pattern overlay -->
+                        <div class="vein-texture"></div>
+                        <!-- Little sparkle glow dots inside -->
+                        <div class="chip-sparkles"></div>
+                        <!-- Shine reflection sweep line -->
+                        <div class="shine-sweep"></div>
+                        
+                        <!-- Leaf Sprout Icon -->
+                        <span class="chip-badge-icon">
+                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 21v-8M12 13c-2.5 0-5-1.5-6-3.5 1-1.5 3-2 5-1 1 1.5 1 4.5 1 4.5zm0 0c2.5 0 5-1.5 6-3.5-1-1.5-3-2-5-1-1 1.5-1 4.5-1 4.5z" fill="#81C784" stroke="#33691E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </span>
+                        
+                        <!-- Text Role Label -->
+                        <span class="chip-label">Thường</span>
+                    </div>
+                    <!-- Username -->
+                    <span class="username">Mầm Nhỏ Cute</span>
+                </div>
+                <!-- Chat Message Text -->
+                <div class="chat-message-text">Giao diện này nhìn cưng xỉu luôn á! Nền rừng fantasy rất ảo diệu 💚🌲</div>
+            </div>
+        </div>
+
+        <!-- 2. CHIP HỘI VIÊN (MEMBER - PINK HEART) -->
+        <div class="yt-chat-message" data-role="member">
+            <div class="author-photo-wrapper">
+                <img src="https://ui-avatars.com/api/?name=H%E1%BB%99i+Vi%C3%AAn&background=FCE4EC&color=C2185B&bold=true" alt="Avatar">
+                <div class="avatar-glow" style="background: linear-gradient(135deg, #F8BBD0, #F48FB1);"></div>
+            </div>
+            <div class="chat-content">
+                <div class="author-header">
+                    <!-- Chip Name Pill -->
+                    <div class="yt-author-chip role-member">
+                        <!-- Drifting leaf vein pattern overlay -->
+                        <div class="vein-texture"></div>
+                        <!-- Little sparkle glow dots inside -->
+                        <div class="chip-sparkles"></div>
+                        <!-- Shine reflection sweep line -->
+                        <div class="shine-sweep"></div>
+                        
+                        <!-- Heart Icon -->
+                        <span class="chip-badge-icon">
+                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" fill="#FF4081" stroke="#880E4F" stroke-width="1.8" stroke-linejoin="round"/>
+                            </svg>
+                        </span>
+                        
+                        <!-- Text Role Label -->
+                        <span class="chip-label">Hội Viên</span>
+                    </div>
+                    <!-- Username -->
+                    <span class="username">Bé Dâu Tây Ngọt</span>
+                </div>
+                <!-- Chat Message Text -->
+                <div class="chat-message-text">Dứa ơi có nghe bé gọi không? Chip hồng lấp lánh xinh ghê <img class="emoji" src="https://fonts.gstatic.com/s/e/notoemoji/latest/1f353/512.webp" alt="🍓"> <img class="emoji" src="https://fonts.gstatic.com/s/e/notoemoji/latest/2728/512.webp" alt="✨"></div>
+            </div>
+        </div>
+
+        <!-- 3. CHIP MOD (MODERATOR - CYAN ICE SHIELD) -->
+        <div class="yt-chat-message" data-role="mod">
+            <div class="author-photo-wrapper">
+                <img src="https://ui-avatars.com/api/?name=Mod&background=E0F7FA&color=006064&bold=true" alt="Avatar">
+                <div class="avatar-glow" style="background: linear-gradient(135deg, #B2EBF2, #80DEEA);"></div>
+            </div>
+            <div class="chat-content">
+                <div class="author-header">
+                    <!-- Chip Name Pill -->
+                    <div class="yt-author-chip role-mod">
+                        <!-- Drifting leaf vein pattern overlay -->
+                        <div class="vein-texture"></div>
+                        <!-- Little sparkle glow dots inside -->
+                        <div class="chip-sparkles"></div>
+                        <!-- Shine reflection sweep line -->
+                        <div class="shine-sweep"></div>
+                        
+                        <!-- Shield Icon -->
+                        <span class="chip-badge-icon">
+                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" fill="#00BCD4" stroke="#006064" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M9 11l2 2 4-4" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </span>
+                        
+                        <!-- Text Role Label -->
+                        <span class="chip-label">Mod</span>
+                    </div>
+                    <!-- Username -->
+                    <span class="username">Hộ Vệ Rừng Xanh</span>
+                </div>
+                <!-- Chat Message Text -->
+                <div class="chat-message-text">Kênh chat đang chạy rất mượt nhé mọi người! Mọi người tương tác lịch sự nha <img class="emoji" src="https://fonts.gstatic.com/s/e/notoemoji/latest/1f6e1_fe0f/512.webp" alt="🛡️"></div>
+            </div>
+        </div>
+
+        <!-- 4. CHIP MOD + HỘI VIÊN (ROYAL CROWN PINEAPPLE GOLD GRADIENT) -->
+        <div class="yt-chat-message" data-role="vip">
+            <div class="author-photo-wrapper">
+                <img src="https://ui-avatars.com/api/?name=VIP&background=FFF8E1&color=FF6F00&bold=true" alt="Avatar">
+                <div class="avatar-glow" style="background: linear-gradient(135deg, #FFE082, #FFCA28);"></div>
+            </div>
+            <div class="chat-content">
+                <div class="author-header">
+                    <!-- Chip Name Pill -->
+                    <div class="yt-author-chip role-vip">
+                        <!-- Drifting leaf vein pattern overlay -->
+                        <div class="vein-texture"></div>
+                        <!-- Little sparkle glow dots inside -->
+                        <div class="chip-sparkles"></div>
+                        <!-- Shine reflection sweep line -->
+                        <div class="shine-sweep"></div>
+                        
+                        <!-- Special Crown Pineapple Icon -->
+                        <span class="chip-badge-icon">
+                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 1.5c.3 1.5 1.2 2.2 2 2.5-.3-1.5-1.2-2.2-2-2.5z" fill="#2E7D32"/>
+                                <path d="M12 1.5c-.3 1.5-1.2 2.2-2 2.5.3-1.5 1.2-2.2 2-2.5z" fill="#2E7D32"/>
+                                <path d="M12 1c0 2 0 3 0 3" stroke="#1B5E20" stroke-width="1"/>
+                                <rect x="7.5" y="4.5" width="9" height="11" rx="4.5" fill="#FFCA28" stroke="#E65100" stroke-width="1.5"/>
+                                <path d="M6 13.5l3-2 3 2 3-2 3 2v4.5H6v-4.5z" fill="#FFD54F" stroke="#E65100" stroke-width="1"/>
+                                <circle cx="12" cy="16" r="1.5" fill="#FF1744"/>
+                                <circle cx="10" cy="8.5" r="0.8" fill="#3E2723"/>
+                                <circle cx="14" cy="8.5" r="0.8" fill="#3E2723"/>
+                                <path d="M11.5 10q.5.5 1 0" stroke="#3E2723" stroke-width="0.8" fill="none" stroke-linecap="round"/>
+                            </svg>
+                        </span>
+                        
+                        <!-- Text Role Label -->
+                        <span class="chip-label">Dứa Vực Thẳm</span>
+                    </div>
+                    <!-- Username -->
+                    <span class="username">Vua Dứa Fantasy</span>
+                </div>
+                <!-- Chat Message Text -->
+                <div class="chat-message-text">Chào cả nhà yêu của Dứa! Hôm nay chúng ta đi săn quái rừng phép thuật nào! 👑🍍🌱</div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Notification Toast -->
+    <div class="toast" id="toast">Đã copy bộ CSS mẫu thành công! 🍍✨</div>
+
+    <!-- JavaScript Controls -->
+    <script>
+        // Toggle Green Screen for OBS Chroma-key testing
+        function toggleGreenScreen() {
+            const body = document.body;
+            const btn = document.getElementById('btn-greenscreen');
+            body.classList.toggle('green-screen-active');
+            
+            if (body.classList.contains('green-screen-active')) {
+                btn.classList.add('active');
+                showToast("Đã bật Green Screen (Chroma-key) cho OBS testing! 🟢");
+            } else {
+                btn.classList.remove('active');
+                showToast("Đã chuyển về hình nền Rừng Ma Thuật 🌲✨");
+            }
+        }
+
+        // Toggle Large Scale sizing
+        function toggleScale() {
+            const chatbox = document.getElementById('chatbox');
+            const btn = document.getElementById('btn-scale');
+            chatbox.classList.toggle('scale-large');
+            
+            if (chatbox.classList.contains('scale-large')) {
+                btn.classList.add('active');
+                showToast("Đã tăng kích thước Name Chip lên cỡ Lớn (Large)!");
+            } else {
+                btn.classList.remove('active');
+                showToast("Đã khôi phục kích thước Tiêu chuẩn!");
+            }
+        }
+
+        // Toggle Animations (Freeze) for low-end machines
+        function toggleAnimations() {
+            const body = document.body;
+            const btn = document.getElementById('btn-animations');
+            body.classList.toggle('animations-paused');
+            
+            if (body.classList.contains('animations-paused')) {
+                btn.classList.add('active');
+                btn.innerHTML = "▶️ Chạy Hiệu Ứng";
+                showToast("Đã tạm dừng chuyển động (Tiết kiệm CPU/GPU) ❄️");
+            } else {
+                btn.classList.remove('active');
+                btn.innerHTML = "❄️ Dừng Hiệu Ứng (Freeze)";
+                showToast("Đã bật lại các chuyển động lung linh ✨");
+            }
+        }
+
+        // Simple toast indicator
+        function showToast(message) {
+            const toast = document.getElementById('toast');
+            toast.innerText = message;
+            toast.classList.add('show');
+            setTimeout(() => {
+                toast.classList.remove('show');
+            }, 3000);
+        }
+
+        // Helper to copy CSS code to clipboard for user
+        function copyCSSCode() {
+            const cssSample = `
+/* ==========================================
+ * "EM DỨA" LIVESTREAM CHIP STYLING FOR OBS
+ * ========================================== */
+
+/* Font & Leaf Veins Variable */
+:root {
+    --font-cute: 'Baloo 2', 'Quicksand', 'Nunito', sans-serif;
+    --leaf-veins: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='40' viewBox='0 0 100 40'%3E%3Cpath d='M0,20 Q50,22 100,20' stroke='rgba(255,255,255,0.22)' stroke-width='1.5' fill='none' stroke-dasharray='3 3'/%3E%3Cpath d='M10,20 Q18,10 25,8 M30,20 Q38,10 45,8 M50,20 Q58,10 65,8 M70,20 Q78,10 85,8' stroke='rgba(255,255,255,0.15)' stroke-width='1' fill='none'/%3E%3Cpath d='M15,20 Q23,30 30,32 M35,20 Q43,30 50,32 M55,20 Q63,30 70,32 M75,20 Q83,30 90,32' stroke='rgba(255,255,255,0.15)' stroke-width='1' fill='none'/%3E%3Ccircle cx='12' cy='7' r='1.5' fill='rgba(255,255,255,0.3)'/%3E%3Ccircle cx='48' cy='33' r='1' fill='rgba(255,255,255,0.4)'/%3E%3Ccircle cx='62' cy='7' r='1.2' fill='rgba(255,255,255,0.3)'/%3E%3Ccircle cx='85' cy='31' r='1' fill='rgba(255,255,255,0.2)'/%3E%3C/svg%3E");
+}
+
+/* Base Author Chip Styling */
+yt-live-chat-author-chip {
+    display: inline-flex !important;
+    align-items: center !important;
+    padding: 5px 14px 5px 10px !important;
+    border-radius: 99px !important;
+    position: relative !important;
+    overflow: hidden !important;
+    gap: 6px !important;
+    border: 2.5px solid rgba(255, 255, 255, 0.85) !important;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15), inset 0 2px 4px rgba(255, 255, 255, 0.6) !important;
+}
+
+/* Drifting leaf vein overlay */
+yt-live-chat-author-chip::before {
+    content: '' !important;
+    position: absolute !important;
+    top: 0 !important; left: 0 !important;
+    width: 200% !important; height: 100% !important;
+    background-image: var(--leaf-veins) !important;
+    background-size: 100px 100% !important;
+    background-repeat: repeat-x !important;
+    opacity: 0.9 !important;
+    mix-blend-mode: overlay !important;
+    z-index: 1 !important;
+    animation: drift-veins 14s linear infinite !important;
+}
+
+/* Light sweep shine reflection */
+yt-live-chat-author-chip::after {
+    content: '' !important;
+    position: absolute !important;
+    top: 0 !important; left: -150% !important;
+    width: 80px !important; height: 100% !important;
+    background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.6) 50%, rgba(255,255,255,0) 100%) !important;
+    transform: skewX(-25deg) !important;
+    z-index: 2 !important;
+    animation: sweep-shine 6s infinite ease-in-out !important;
+}
+
+/* Keyframes animations */
+@keyframes drift-veins {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-100px); }
+}
+@keyframes sweep-shine {
+    0% { left: -150%; }
+    15% { left: 150%; }
+    100% { left: 150%; }
+}
+
+/* Role Specific Coloring Examples */
+/* 1. Normal: Green tone */
+yt-live-chat-author-chip[author-type=""] {
+    background: linear-gradient(135deg, #F1F8E9 0%, #C5E1A5 100%) !important;
+    border-color: #AEDB85 !important;
+    color: #33691E !important;
+}
+
+/* 2. Member: Sweet Pink tone */
+yt-live-chat-author-chip[author-type="member"] {
+    background: linear-gradient(135deg, #FFF0F5 0%, #F7A8C4 100%) !important;
+    border-color: #FF94B8 !important;
+    color: #880E4F !important;
+}
+
+/* 3. Moderator: Cyan Ice blue tone */
+yt-live-chat-author-chip[author-type="moderator"] {
+    background: linear-gradient(135deg, #E0F7FA 0%, #80DEEA 100%) !important;
+    border-color: #4DD0E1 !important;
+    color: #006064 !important;
+}
+
+/* 4. Owner / Premium Gold Crown */
+yt-live-chat-author-chip[author-type="owner"] {
+    background: linear-gradient(135deg, #FFE082 0%, #80DEEA 50%, #F48FB1 100%) !important;
+    border-color: #FFF !important;
+    color: #4A2700 !important;
+}`;
+            navigator.clipboard.writeText(cssSample).then(() => {
+                showToast("📋 Đã copy code CSS tùy chỉnh vào Clipboard!");
+            }).catch(err => {
+                console.error("Lỗi copy clipboard: ", err);
+                showToast("❌ Không thể tự động copy! Vui lòng mở DevTools xem code.");
+            });
+        }
+    </script>
+</body>
+</html>

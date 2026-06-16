@@ -8,13 +8,12 @@
                     @import url("https://fonts.googleapis.com/css2?family=Gochi+Hand&display=swap");
                     @import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@700&display=swap');
                     @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@500;600;700&display=swap');
-
+                    @import url("https://fonts.googleapis.com/css2?family=Cormorant:wght@500;600;700&family=Spectral:wght@500;600;700;800&display=swap");
 
                     body {
                         overflow: hidden !important;
                         background-color: rgba(0, 0, 0, 0);
                     }
-
 
                     yt-live-chat-renderer {
                         background: transparent !important;
@@ -30,10 +29,6 @@
                         --notice-width: min(760px, calc(100vw - 40px));
                         --notice-half: 380px;
                     }
-
-
-
-
 
                     /* Startup WOW splash for OBS (about 3s) */
                     yt-live-chat-renderer::after {
@@ -66,7 +61,6 @@
                     }
 
                     /* Startup greeting panel (show after 3s loading) */
-
 
                     @keyframes wowStartupSplash {
                         0% {
@@ -261,8 +255,6 @@
                             filter: blur(5px);
                         }
                     }
-
-
 
                     @keyframes startupNoticeCounterRoll {
                         0% {
@@ -485,8 +477,6 @@
                         }
                     }
 
-
-
                     yt-live-chat-banner-renderer {
                         display: block !important;
                         margin-top: 70px !important;
@@ -514,17 +504,14 @@
                         border-radius: 20px !important;
                         box-shadow: 0 8px 30px rgba(255, 143, 0, 0.2), 0 4px 10px rgba(0, 0, 0, 0.1) !important;
 
-
                         background:
-                            linear-gradient(135deg, rgba(230, 81, 0, 0.08) 25%, transparent 25%, transparent 50%, rgba(230, 81, 0, 0.08) 50%, rgba(230, 81, 0, 0.08) 75%, transparent 75%, transparent 100%),
-                            linear-gradient(45deg, rgba(230, 81, 0, 0.08) 25%, transparent 25%, transparent 50%, rgba(230, 81, 0, 0.08) 50%, rgba(230, 81, 0, 0.08) 75%, transparent 75%, transparent 100%),
-                            #FFF9C4 !important;
+                            linear-gradient(135deg, rgba(171, 71, 188, 0.12) 25%, transparent 25%, transparent 50%, rgba(171, 71, 188, 0.12) 50%, rgba(171, 71, 188, 0.12) 75%, transparent 75%, transparent 100%),
+                            linear-gradient(45deg, rgba(171, 71, 188, 0.12) 25%, transparent 25%, transparent 50%, rgba(171, 71, 188, 0.12) 50%, rgba(171, 71, 188, 0.12) 75%, transparent 75%, transparent 100%),
+                            linear-gradient(135deg, #2D1B69 0%, #1A0A3E 100%) !important;
                         background-size: 20px 20px !important;
                         background-position: 0 0 !important;
 
-
-                        border: 4px solid #FFCA28 !important;
-
+                        border: 4px solid #7C4DFF !important;
 
                         position: relative !important;
                         overflow: visible !important;
@@ -547,7 +534,7 @@
                         right: 5px !important;
                         bottom: 5px !important;
 
-                        border: 2px dashed #E65100 !important;
+                        border: 2px dashed #B388FF !important;
 
                         border-radius: 15px !important;
                         pointer-events: none !important;
@@ -577,7 +564,7 @@
                         width: 50px !important;
                         height: 50px !important;
                         border-radius: 50% !important;
-                        border: 3px solid #FF8F00 !important;
+                        border: 3px solid #B388FF !important;
                         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2) !important;
                         overflow: hidden !important;
                         margin-right: 15px !important;
@@ -592,9 +579,8 @@
                         object-fit: cover !important;
                     }
 
-
                     yt-live-chat-banner-renderer #author-name {
-                        color: #3E2723 !important;
+                        color: #FFFFFF !important;
                         font-family: "Quicksand", "Baloo 2", "Itim", "Nunito", "Noto Sans", sans-serif !important;
                         font-weight: 700 !important;
                         font-size: 23px !important;
@@ -605,20 +591,20 @@
                         z-index: 99999 !important;
                         padding: 8px 22px !important;
                         border-radius: 14px !important;
-                        border: 3px solid #3E2723 !important;
-                        box-shadow: 4px 4px 0 #3E2723 !important;
+                        border: 3px solid #311B92 !important;
+                        box-shadow: 4px 4px 0 #1A0A3E !important;
                         white-space: nowrap !important;
-                        background: #FFD54F !important;
+                        background: #7C4DFF !important;
                         text-shadow: none !important;
                     }
 
                     yt-live-chat-banner-renderer #text {
-                        color: #3E2000 !important;
+                        color: #F0E6FF !important;
                         font-family: "Quicksand", "Nunito", "Noto Sans", sans-serif !important;
                         font-size: 21px !important;
                         line-height: 1.4 !important;
                         font-weight: 800 !important;
-                        text-shadow: -1px -1px 0 #FFF, 1px -1px 0 #FFF, -1px 1px 0 #FFF, 1px 1px 0 #FFF !important;
+                        text-shadow: -1px -1px 0 #0D0528, 1px -1px 0 #0D0528, -1px 1px 0 #0D0528, 1px 1px 0 #0D0528 !important;
                         position: relative !important;
                         z-index: 2 !important;
                         display: block !important;
@@ -629,7 +615,6 @@
                         opacity: 1 !important;
                     }
 
-
                     yt-live-chat-banner-renderer #menu-button,
                     yt-live-chat-banner-renderer yt-icon,
                     yt-live-chat-banner-renderer #action-button,
@@ -637,23 +622,28 @@
                         display: none !important;
                     }
 
-
-
                     yt-live-chat-text-message-renderer,
                     yt-live-chat-text-message-renderer[is-highlighted] {
-                        background: transparent !important;
-                        border: none !important;
-                        border-radius: 0 !important;
-                        margin: 10px 10px 4px 6px !important;
-                        padding: 4px !important;
-                        box-shadow: none !important;
+                        background-color: rgba(13, 38, 24, 0.42) !important;
+                        background-image: 
+                            url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' fill='none'%3E%3Cpath d='M10 90 C 30 70, 20 30, 80 15 C 60 50, 40 80, 10 90 Z' fill='%2381C784' fill-opacity='0.95' stroke='%232E7D32' stroke-width='3' stroke-linecap='round'/%3E%3Cpath d='M10 90 Q40 60 80 15' stroke='%232E7D32' stroke-width='2.5' stroke-linecap='round'/%3E%3Cpath d='M30 70 Q45 55 50 58 M45 55 Q58 42 62 45 M60 40 Q70 30 72 32 M25 75 Q15 65 18 62 M40 60 Q28 48 30 45 M55 45 Q42 33 44 30' stroke='%23E8F5E9' stroke-width='1.5' stroke-linecap='round'/%3E%3C/svg%3E"),
+                            url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' fill='none'%3E%3Cg transform='translate%2850,50%29'%3E%3Cpath d='M0 0 C-15 -35 15 -35 0 0' fill='%23F48FB1' stroke='%23C2185B' stroke-width='2' transform='rotate%280%29'/%3E%3Cpath d='M0 0 C-15 -35 15 -35 0 0' fill='%23F48FB1' stroke='%23C2185B' stroke-width='2' transform='rotate%2872%29'/%3E%3Cpath d='M0 0 C-15 -35 15 -35 0 0' fill='%23F48FB1' stroke='%23C2185B' stroke-width='2' transform='rotate%28144%29'/%3E%3Cpath d='M0 0 C-15 -35 15 -35 0 0' fill='%23F48FB1' stroke='%23C2185B' stroke-width='2' transform='rotate%28216%29'/%3E%3Cpath d='M0 0 C-15 -35 15 -35 0 0' fill='%23F48FB1' stroke='%23C2185B' stroke-width='2' transform='rotate%28288%29'/%3E%3Ccircle cx='0' cy='0' r='12' fill='%23FFD54F' stroke='%23F57C00' stroke-width='2'/%3E%3Ccircle cx='0' cy='0' r='5' fill='%23FFF' opacity='0.6'/%3E%3C/g%3E%3C/svg%3E"),
+                            linear-gradient(to right, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0)) !important;
+                        background-position: left -12px bottom -12px, right -10px top -10px, 0 0 !important;
+                        background-size: 55px 55px, 48px 48px, auto !important;
+                        background-repeat: no-repeat, no-repeat, no-repeat !important;
+                        border: 1.5px solid rgba(139, 195, 74, 0.18) !important;
+                        border-radius: 18px !important;
+                        margin: 10px 10px 6px 6px !important;
+                        padding: 8px 18px 8px 16px !important;
+                        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25) !important;
                         position: relative !important;
                         overflow: visible !important;
                         contain: none !important;
                         clip-path: none !important;
                         z-index: 1 !important;
                         /* Natural conversation-style intro */
-                        animation: chatFlowIn 0.34s cubic-bezier(0.2, 0.85, 0.28, 1) forwards !important;
+                        animation: chatFlowIn 0.34s cubic-bezier(0.2, 0.85, 0.28, 1) forwards, breeze-sway 6s infinite ease-in-out !important;
                         transform-origin: left center !important;
                         transition: none !important;
                         will-change: transform, opacity, filter !important;
@@ -706,8 +696,6 @@
                         }
                     }
 
-
-
                     yt-live-chat-text-message-renderer #content {
                         position: relative !important;
                         z-index: 1 !important;
@@ -715,30 +703,11 @@
                         display: block !important;
                     }
 
-
-
                     yt-live-chat-text-message-renderer #author-photo,
                     yt-live-chat-paid-message-renderer #author-photo,
                     yt-live-chat-legacy-paid-message-renderer #author-photo {
-                        width: 24px !important;
-                        height: 24px !important;
-                        border-radius: 50% !important;
-                        border: 2px solid rgba(255, 255, 255, 0.9) !important;
-                        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3) !important;
-                        overflow: hidden !important;
-                        animation: none !important;
-                        z-index: 1000 !important;
-
-
-                        position: absolute !important;
-                        top: 9px !important;
-
-
-
-                        left: 12px !important;
-                        margin: 0 !important;
+                        display: none !important;
                     }
-
 
                     yt-live-chat-text-message-renderer[author-type="member"] #author-photo {
                         left: 28px !important;
@@ -779,9 +748,8 @@
                         margin: 0 !important;
                     }
 
-
                     yt-live-chat-text-message-renderer #message {
-                        color: #F6F2FF !important;
+                        color: #F0E6FF !important;
                         display: inline !important;
                         margin-left: 6px !important;
 
@@ -793,17 +761,15 @@
 
                         vertical-align: middle !important;
 
-
-
                         text-shadow:
-                            -2px -2px 0 #111028,
-                            2px -2px 0 #111028,
-                            -2px 2px 0 #111028,
-                            2px 2px 0 #111028,
-                            -3px 0px 0 #111028,
-                            3px 0px 0 #111028,
-                            0px -3px 0 #111028,
-                            0px 3px 0 #111028,
+                            -2px -2px 0 #0D0528,
+                            2px -2px 0 #0D0528,
+                            -2px 2px 0 #0D0528,
+                            2px 2px 0 #0D0528,
+                            -3px 0px 0 #0D0528,
+                            3px 0px 0 #0D0528,
+                            0px -3px 0 #0D0528,
+                            0px 3px 0 #0D0528,
                             0 2px 0 rgba(8, 6, 22, 0.96),
                             2px 3px 0 rgba(8, 6, 22, 0.86),
                             0 0 6px rgba(86, 160, 255, 0.22) !important;
@@ -822,316 +788,284 @@
                         width: auto !important;
                     }
 
-
                     yt-live-chat-text-message-renderer yt-live-chat-author-chip {
                         display: inline-flex !important;
                         align-items: center !important;
-                        gap: 5px !important;
+                        gap: 6px !important;
                         position: relative !important;
                         top: 0 !important;
                         margin-left: 0 !important;
                         z-index: 999 !important;
                         margin-bottom: 2px !important;
-                        padding: 4px 15px 4px 34px !important;
-                        border-radius: 14px !important;
-                        border: 3px solid #2A2458 !important;
-                        box-shadow:
-                            0 1px 0 rgba(255, 255, 255, 0.22) inset,
-                            0 -1px 0 rgba(8, 6, 22, 0.28) inset,
-                            2px 2px 0 #19153a !important;
+                        padding: 4px 14px !important; /* Khoảng trống đối xứng khi bỏ Sprout Icon */
+                        border-radius: 20px 4px 20px 4px !important; /* Thiết kế hình chiếc lá độc đáo, khác biệt */
+                        border: 2.5px solid rgba(255, 255, 255, 0.85) !important;
+                        box-shadow: 0 4px 10px rgba(139, 195, 74, 0.35), inset 0 2px 4px rgba(255, 255, 255, 0.6) !important;
                         white-space: nowrap !important;
-                        background-color: #A3B5FF !important;
-                        background-image:
-                            linear-gradient(165deg, rgba(255, 255, 255, 0.38) 0 24%, rgba(255, 255, 255, 0) 26% 100%),
-                            linear-gradient(115deg, rgba(255, 255, 255, 0.16) 0 36%, rgba(255, 255, 255, 0) 38% 100%) !important;
-                        animation: none !important;
-                        width: max-content !important;
                         vertical-align: middle !important;
                         margin-right: 8px !important;
+                        width: max-content !important;
+                        overflow: hidden !important; /* Đảm bảo hiệu ứng trôi và quét sáng không tràn */
+
+                        /* Variable definitions inside element scope */
+                        --font-mystical: 'Cormorant', 'Spectral', serif;
+                        --leaf-veins: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='40' viewBox='0 0 100 40'%3E%3Cpath d='M0,20 Q50,22 100,20' stroke='rgba(255,255,255,0.22)' stroke-width='1.5' fill='none' stroke-dasharray='3 3'/%3E%3Cpath d='M10,20 Q18,10 25,8 M30,20 Q38,10 45,8 M50,20 Q58,10 65,8 M70,20 Q78,10 85,8' stroke='rgba(255,255,255,0.15)' stroke-width='1' fill='none'/%3E%3Cpath d='M15,20 Q23,30 30,32 M35,20 Q43,30 50,32 M55,20 Q63,30 70,32 M75,20 Q83,30 90,32' stroke='rgba(255,255,255,0.15)' stroke-width='1' fill='none'/%3E%3Ccircle cx='12' cy='7' r='1.5' fill='rgba(255,255,255,0.3)'/%3E%3Ccircle cx='48' cy='33' r='1' fill='rgba(255,255,255,0.4)'/%3E%3Ccircle cx='62' cy='7' r='1.2' fill='rgba(255,255,255,0.3)'/%3E%3Ccircle cx='85' cy='31' r='1' fill='rgba(255,255,255,0.2)'/%3E%3C/svg%3E");
+                        --leaf-shadows: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 40' fill='none'%3E%3Cfilter id='blur'%3E%3CfeGaussianBlur stdDeviation='1.2'%3E%3C/feGaussianBlur%3E%3C/filter%3E%3Cg filter='url%28%23blur%29' opacity='0.22' fill='%23000'%3E%3Cpath d='M0,0 C12,0 15,12 8,10 C3,8 0,15 0,0 Z'/%3E%3Cpath d='M0,0 C0,12 12,15 10,8 C8,3 15,0 0,0 Z'/%3E%3Cpath d='M100,0 C88,0 85,12 92,10 C97,8 100,15 100,0 Z'/%3E%3Cpath d='M100,0 C100,12 88,15 90,8 C92,3 85,0 100,0 Z'/%3E%3Cpath d='M0,40 C12,40 15,28 8,30 C3,32 0,25 0,40 Z'/%3E%3Cpath d='M0,40 C0,28 12,25 10,32 C8,37 15,40 0,40 Z'/%3E%3Cpath d='M100,40 C88,40 85,28 92,30 C97,32 100,25 100,40 Z'/%3E%3Cpath d='M100,40 C100,28 88,25 90,32 C92,37 85,40 100,40 Z'/%3E%3C/g%3E%3C/svg%3E");
+                        --icon-sprout: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='M12 21v-8M12 13c-2.5 0-5-1.5-6-3.5 1-1.5 3-2 5-1 1 1.5 1 4.5 1 4.5zm0 0c2.5 0 5-1.5 6-3.5-1-1.5-3-2-5-1-1 1.5-1 4.5-1 4.5z' fill='%2381C784' stroke='%2333691E' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+                        --icon-heart: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z' fill='%23FF4081' stroke='%23880E4F' stroke-width='1.8' stroke-linejoin='round'/%3E%3C/svg%3E");
+                        --icon-shield: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z' fill='%2300BCD4' stroke='%23006064' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M9 11l2 2 4-4' stroke='%23FFFFFF' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+                        --icon-pineapple: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='M12 1.5c.3 1.5 1.2 2.2 2 2.5-.3-1.5-1.2-2.2-2-2.5z' fill='%232E7D32'/%3E%3Cpath d='M12 1.5c-.3 1.5-1.2 2.2-2 2.5.3-1.5 1.2-2.2 2-2.5z' fill='%232E7D32'/%3E%3Cpath d='M12 1c0 2 0 3 0 3' stroke='%231B5E20' stroke-width='1'/%3E%3Crect x='7.5' y='4.5' width='9' height='11' rx='4.5' fill='%23FFCA28' stroke='%23E65100' stroke-width='1.5'/%3E%3Cpath d='M6 13.5l3-2 3 2 3-2 3 2v4.5H6v-4.5z' fill='%23FFD54F' stroke='%23E65100' stroke-width='1'/%3E%3Ccircle cx='12' cy='16' r='1.5' fill='%23FF1744'/%3E%3Ccircle cx='10' cy='8.5' r='0.8' fill='%233E2723'/%3E%3Ccircle cx='14' cy='8.5' r='0.8' fill='%233E2723'/%3E%3Cpath d='M11.5 10q.5.5 1 0' stroke='%233E2723' stroke-width='0.8' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+
+                        /* 1. Base gradient background (No Sprout Icon, With Leaf Shadows) */
+                        background-color: #C5E1A5 !important;
+                        background-image: 
+                            var(--leaf-shadows),
+                            linear-gradient(135deg, #F1F8E9 0%, #C5E1A5 100%) !important;
+                        background-position: center, 0 0 !important;
+                        background-size: 100% 100%, auto !important;
+                        background-repeat: no-repeat, no-repeat !important;
+                        transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
+                        animation: shimmer-mystical-normal 4s infinite ease-in-out !important;
                     }
 
-                    /* Ẩn @ bằng text-indent + overflow:hidden — clip @ ra ngoài trái
-                    KHÔNG dùng ::first-letter vì nó ăn cả ký tự Po(@) + chữ cái đầu cùng lúc */
+                    /* Hiển thị tên đầy đủ không bị che khuất bên trái */
                     yt-live-chat-author-chip #author-name {
                         display: inline-block !important;
                         vertical-align: middle !important;
-                        line-height: 1 !important;
-                        overflow: hidden !important;
-                        text-indent: -1em !important;
+                        line-height: 1.1 !important;
+                        overflow: visible !important;
+                        text-indent: 0 !important;
                         font-size: 19px !important;
-                        font-weight: 900 !important;
+                        font-weight: 800 !important;
                         letter-spacing: 0.02em !important;
+                        color: #33691E !important;
+                        text-shadow: 0 1px 2px rgba(255, 255, 255, 0.4) !important;
+                        font-family: var(--font-mystical), 'Cormorant', 'Spectral', serif !important;
                     }
 
-                    /* Star sparkle SVG – 4-point star used as background-image */
-                    yt-live-chat-text-message-renderer[author-type*="member"] yt-live-chat-author-chip::after,
-                    yt-live-chat-text-message-renderer[author-type="moderator"]:has(yt-live-chat-author-badge-renderer[type="member"]) yt-live-chat-author-chip::after,
-                    yt-live-chat-text-message-renderer[author-type="owner"] yt-live-chat-author-chip::after {
+                    /* Vân lá tạo hiệu ứng bóng phủ chính xác 1/2 chip name bên trái */
+                    yt-live-chat-text-message-renderer yt-live-chat-author-chip::before {
                         content: "" !important;
                         position: absolute !important;
-                        inset: 0 !important;
-                        border-radius: inherit !important;
+                        top: 0 !important;
+                        bottom: 0 !important;
+                        left: 0 !important;
+                        width: 50% !important; /* Bao phủ 1/2 chip name */
+                        border-radius: 20px 0 0 4px !important; /* Khớp hình dạng chiếc lá */
                         pointer-events: none !important;
-                        overflow: hidden !important;
-                        background-repeat: no-repeat !important;
-                        background-image:
-                            url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M10 0 L11.5 8.5 L20 10 L11.5 11.5 L10 20 L8.5 11.5 L0 10 L8.5 8.5Z' fill='white'/%3E%3C/svg%3E"),
-                            url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M10 0 L11.5 8.5 L20 10 L11.5 11.5 L10 20 L8.5 11.5 L0 10 L8.5 8.5Z' fill='white'/%3E%3C/svg%3E"),
-                            url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M10 0 L11.5 8.5 L20 10 L11.5 11.5 L10 20 L8.5 11.5 L0 10 L8.5 8.5Z' fill='white'/%3E%3C/svg%3E"),
-                            url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M10 0 L11.5 8.5 L20 10 L11.5 11.5 L10 20 L8.5 11.5 L0 10 L8.5 8.5Z' fill='white'/%3E%3C/svg%3E"),
-                            url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M10 0 L11.5 8.5 L20 10 L11.5 11.5 L10 20 L8.5 11.5 L0 10 L8.5 8.5Z' fill='white'/%3E%3C/svg%3E"),
-                            url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M10 0 L11.5 8.5 L20 10 L11.5 11.5 L10 20 L8.5 11.5 L0 10 L8.5 8.5Z' fill='white'/%3E%3C/svg%3E"),
-                            url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M10 0 L11.5 8.5 L20 10 L11.5 11.5 L10 20 L8.5 11.5 L0 10 L8.5 8.5Z' fill='white'/%3E%3C/svg%3E"),
-                            url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M10 0 L11.5 8.5 L20 10 L11.5 11.5 L10 20 L8.5 11.5 L0 10 L8.5 8.5Z' fill='white'/%3E%3C/svg%3E"),
-                            url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M10 0 L11.5 8.5 L20 10 L11.5 11.5 L10 20 L8.5 11.5 L0 10 L8.5 8.5Z' fill='white'/%3E%3C/svg%3E"),
-                            url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M10 0 L11.5 8.5 L20 10 L11.5 11.5 L10 20 L8.5 11.5 L0 10 L8.5 8.5Z' fill='white'/%3E%3C/svg%3E"),
-                            url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M10 0 L11.5 8.5 L20 10 L11.5 11.5 L10 20 L8.5 11.5 L0 10 L8.5 8.5Z' fill='white'/%3E%3C/svg%3E"),
-                            url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M10 0 L11.5 8.5 L20 10 L11.5 11.5 L10 20 L8.5 11.5 L0 10 L8.5 8.5Z' fill='white'/%3E%3C/svg%3E"),
-                            url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M10 0 L11.5 8.5 L20 10 L11.5 11.5 L10 20 L8.5 11.5 L0 10 L8.5 8.5Z' fill='white'/%3E%3C/svg%3E"),
-                            url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M10 0 L11.5 8.5 L20 10 L11.5 11.5 L10 20 L8.5 11.5 L0 10 L8.5 8.5Z' fill='white'/%3E%3C/svg%3E"),
-                            url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M10 0 L11.5 8.5 L20 10 L11.5 11.5 L10 20 L8.5 11.5 L0 10 L8.5 8.5Z' fill='white'/%3E%3C/svg%3E"),
-                            url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M10 0 L11.5 8.5 L20 10 L11.5 11.5 L10 20 L8.5 11.5 L0 10 L8.5 8.5Z' fill='white'/%3E%3C/svg%3E"),
-                            url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M10 0 L11.5 8.5 L20 10 L11.5 11.5 L10 20 L8.5 11.5 L0 10 L8.5 8.5Z' fill='white'/%3E%3C/svg%3E"),
-                            url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M10 0 L11.5 8.5 L20 10 L11.5 11.5 L10 20 L8.5 11.5 L0 10 L8.5 8.5Z' fill='white'/%3E%3C/svg%3E"),
-                            url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M10 0 L11.5 8.5 L20 10 L11.5 11.5 L10 20 L8.5 11.5 L0 10 L8.5 8.5Z' fill='white'/%3E%3C/svg%3E"),
-                            url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M10 0 L11.5 8.5 L20 10 L11.5 11.5 L10 20 L8.5 11.5 L0 10 L8.5 8.5Z' fill='white'/%3E%3C/svg%3E") !important;
-                        background-position:
-                            /* Top strip — gap và y ngẫy ngô để tự nhiên hơn */
-                            3% 15%, 11% 10%, 22% 20%, 31% 12%, 45% 18%,
-                            55% 10%, 67% 22%, 76% 13%, 87% 18%, 95% 11%,
-                            /* Bottom strip — cũng không đều */
-                            6% 88%, 17% 80%, 26% 88%, 38% 80%, 47% 88%,
-                            60% 80%, 70% 90%, 82% 80%, 90% 88%, 97% 82%;
-                        animation:
-                            chipStarGroupA 40s step-end infinite,
-                            chipStarFade 8s ease-in-out infinite !important;
-                        z-index: 2 !important;
+                        z-index: 1 !important;
+                        background-image: var(--leaf-veins) !important;
+                        background-size: 100px 100% !important;
+                        background-repeat: repeat-x !important;
+                        opacity: 0.28 !important; /* Tạo bóng mờ */
+                        mix-blend-mode: multiply !important; /* Hòa trộn nhân màu huyền bí */
+                        animation: drift-veins 16s linear infinite !important;
                     }
 
-                    /* De-sync: row offset — QUAN TRỌNG: cả 2 animation cùng giá trị delay */
-                    yt-live-chat-text-message-renderer:nth-of-type(2n) yt-live-chat-author-chip::after {
-                        animation-delay: -2s, -2s !important;
-                    }
-
-                    yt-live-chat-text-message-renderer:nth-of-type(3n) yt-live-chat-author-chip::after {
-                        animation-delay: -4s, -4s !important;
-                    }
-
-                    yt-live-chat-text-message-renderer:nth-of-type(5n) yt-live-chat-author-chip::after {
-                        animation-delay: -1.2s, -1.2s !important;
-                    }
-
-                    /* ::before — đối pha 4s (nửa chu kỳ 8s): khi ::after fade-out thì ::before đang fade-in */
-                    yt-live-chat-text-message-renderer[author-type*="member"] yt-live-chat-author-chip::before,
-                    yt-live-chat-text-message-renderer[author-type="moderator"]:has(yt-live-chat-author-badge-renderer[type="member"]) yt-live-chat-author-chip::before,
-                    yt-live-chat-text-message-renderer[author-type="owner"] yt-live-chat-author-chip::before {
+                    /* Sweeping shine light reflection using ::after */
+                    yt-live-chat-text-message-renderer yt-live-chat-author-chip::after {
                         content: "" !important;
                         position: absolute !important;
-                        inset: 0 !important;
-                        border-radius: inherit !important;
-                        pointer-events: none !important;
-                        overflow: hidden !important;
-                        background-repeat: no-repeat !important;
-                        background-image:
-                            url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M10 0 L11.5 8.5 L20 10 L11.5 11.5 L10 20 L8.5 11.5 L0 10 L8.5 8.5Z' fill='white'/%3E%3C/svg%3E"),
-                            url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M10 0 L11.5 8.5 L20 10 L11.5 11.5 L10 20 L8.5 11.5 L0 10 L8.5 8.5Z' fill='white'/%3E%3C/svg%3E"),
-                            url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M10 0 L11.5 8.5 L20 10 L11.5 11.5 L10 20 L8.5 11.5 L0 10 L8.5 8.5Z' fill='white'/%3E%3C/svg%3E"),
-                            url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M10 0 L11.5 8.5 L20 10 L11.5 11.5 L10 20 L8.5 11.5 L0 10 L8.5 8.5Z' fill='white'/%3E%3C/svg%3E"),
-                            url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M10 0 L11.5 8.5 L20 10 L11.5 11.5 L10 20 L8.5 11.5 L0 10 L8.5 8.5Z' fill='white'/%3E%3C/svg%3E"),
-                            url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M10 0 L11.5 8.5 L20 10 L11.5 11.5 L10 20 L8.5 11.5 L0 10 L8.5 8.5Z' fill='white'/%3E%3C/svg%3E"),
-                            url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M10 0 L11.5 8.5 L20 10 L11.5 11.5 L10 20 L8.5 11.5 L0 10 L8.5 8.5Z' fill='white'/%3E%3C/svg%3E"),
-                            url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M10 0 L11.5 8.5 L20 10 L11.5 11.5 L10 20 L8.5 11.5 L0 10 L8.5 8.5Z' fill='white'/%3E%3C/svg%3E"),
-                            url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M10 0 L11.5 8.5 L20 10 L11.5 11.5 L10 20 L8.5 11.5 L0 10 L8.5 8.5Z' fill='white'/%3E%3C/svg%3E"),
-                            url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M10 0 L11.5 8.5 L20 10 L11.5 11.5 L10 20 L8.5 11.5 L0 10 L8.5 8.5Z' fill='white'/%3E%3C/svg%3E"),
-                            url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M10 0 L11.5 8.5 L20 10 L11.5 11.5 L10 20 L8.5 11.5 L0 10 L8.5 8.5Z' fill='white'/%3E%3C/svg%3E"),
-                            url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M10 0 L11.5 8.5 L20 10 L11.5 11.5 L10 20 L8.5 11.5 L0 10 L8.5 8.5Z' fill='white'/%3E%3C/svg%3E"),
-                            url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M10 0 L11.5 8.5 L20 10 L11.5 11.5 L10 20 L8.5 11.5 L0 10 L8.5 8.5Z' fill='white'/%3E%3C/svg%3E"),
-                            url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M10 0 L11.5 8.5 L20 10 L11.5 11.5 L10 20 L8.5 11.5 L0 10 L8.5 8.5Z' fill='white'/%3E%3C/svg%3E"),
-                            url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M10 0 L11.5 8.5 L20 10 L11.5 11.5 L10 20 L8.5 11.5 L0 10 L8.5 8.5Z' fill='white'/%3E%3C/svg%3E"),
-                            url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M10 0 L11.5 8.5 L20 10 L11.5 11.5 L10 20 L8.5 11.5 L0 10 L8.5 8.5Z' fill='white'/%3E%3C/svg%3E"),
-                            url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M10 0 L11.5 8.5 L20 10 L11.5 11.5 L10 20 L8.5 11.5 L0 10 L8.5 8.5Z' fill='white'/%3E%3C/svg%3E"),
-                            url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M10 0 L11.5 8.5 L20 10 L11.5 11.5 L10 20 L8.5 11.5 L0 10 L8.5 8.5Z' fill='white'/%3E%3C/svg%3E"),
-                            url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M10 0 L11.5 8.5 L20 10 L11.5 11.5 L10 20 L8.5 11.5 L0 10 L8.5 8.5Z' fill='white'/%3E%3C/svg%3E"),
-                            url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M10 0 L11.5 8.5 L20 10 L11.5 11.5 L10 20 L8.5 11.5 L0 10 L8.5 8.5Z' fill='white'/%3E%3C/svg%3E") !important;
-                        background-position:
-                            /* Top strip — gap và y ngẫu nhiên để tự nhiên hơn */
-                            3% 15%, 11% 10%, 22% 20%, 31% 12%, 45% 18%,
-                            55% 10%, 67% 22%, 76% 13%, 87% 18%, 95% 11%,
-                            /* Bottom strip — cũng không đều */
-                            6% 88%, 17% 80%, 26% 88%, 38% 80%, 47% 88%,
-                            60% 80%, 70% 90%, 82% 80%, 90% 88%, 97% 82%;
-                        animation:
-                            chipStarGroupB 40s step-end infinite,
-                            chipStarFade 8s ease-in-out infinite !important;
-                        animation-delay: -4s, -4s !important;
+                        top: 0 !important;
+                        left: -150% !important;
+                        width: 80px !important;
+                        height: 100% !important;
+                        background: linear-gradient(
+                            90deg,
+                            rgba(255, 255, 255, 0) 0%,
+                            rgba(255, 255, 255, 0.5) 45%,
+                            rgba(255, 255, 255, 0.7) 50%,
+                            rgba(255, 255, 255, 0.5) 55%,
+                            rgba(255, 255, 255, 0) 100%
+                        ) !important;
+                        transform: skewX(-25deg) !important;
                         z-index: 2 !important;
+                        pointer-events: none !important;
+                        animation: sweep-shine 6s infinite ease-in-out !important;
                     }
 
-                    /* De-sync ::before: base -4s + row offset */
-                    yt-live-chat-text-message-renderer:nth-of-type(2n) yt-live-chat-author-chip::before {
-                        animation-delay: -6s, -6s !important;
-                        /* -4 + -2 */
+                    @keyframes drift-veins {
+                        0% { background-position: 0px 0; }
+                        100% { background-position: -100px 0; }
                     }
 
-                    yt-live-chat-text-message-renderer:nth-of-type(3n) yt-live-chat-author-chip::before {
-                        animation-delay: -8s, -8s !important;
-                        /* -4 + -4 */
+                    @keyframes sweep-shine {
+                        0% { left: -150%; }
+                        15% { left: 150%; }
+                        100% { left: 150%; }
                     }
 
-                    yt-live-chat-text-message-renderer:nth-of-type(5n) yt-live-chat-author-chip::before {
-                        animation-delay: -5.2s, -5.2s !important;
-                        /* -4 + -1.2 */
-                    }
-
-                    /* chipStarGroupA: ::after — nhóm A,C,E,G,I (50s, 10s/nhóm) */
-                    @keyframes chipStarGroupA {
+                    @keyframes shimmer-mystical-normal {
                         0% {
-                            background-size: 5px 5px, 0 0, 4px 4px, 0 0, 3px 3px, 0 0, 5px 5px, 0 0, 0 0, 4px 4px, 0 0, 0 0, 4px 4px, 0 0, 0 0, 3px 3px, 0 0, 0 0, 3px 3px, 0 0;
+                            box-shadow: 0 4px 10px rgba(139, 195, 74, 0.4), 0 0 6px rgba(200, 230, 201, 0.2), inset 0 2px 4px rgba(255, 255, 255, 0.6);
                         }
-
-                        /* A */
-                        20% {
-                            background-size: 5px 5px, 4px 4px, 0 0, 0 0, 0 0, 6px 6px, 0 0, 0 0, 3px 3px, 0 0, 0 0, 4px 4px, 0 0, 0 0, 5px 5px, 0 0, 0 0, 5px 5px, 0 0, 6px 6px;
+                        33% {
+                            box-shadow: 0 6px 15px rgba(76, 175, 80, 0.6), 0 0 12px rgba(220, 237, 200, 0.5), inset 0 2px 4px rgba(255, 255, 255, 0.8);
                         }
-
-                        /* C */
-                        40% {
-                            background-size: 5px 5px, 0 0, 0 0, 0 0, 3px 3px, 0 0, 0 0, 4px 4px, 0 0, 0 0, 6px 6px, 0 0, 0 0, 3px 3px, 0 0, 0 0, 4px 4px, 5px 5px, 3px 3px, 0 0;
+                        66% {
+                            box-shadow: 0 5px 12px rgba(129, 199, 132, 0.45), 0 0 8px rgba(76, 175, 80, 0.3), inset 0 2px 4px rgba(255, 255, 255, 0.6);
                         }
-
-                        /* E */
-                        60% {
-                            background-size: 0 0, 0 0, 0 0, 5px 5px, 3px 3px, 0 0, 5px 5px, 0 0, 0 0, 4px 4px, 6px 6px, 0 0, 0 0, 3px 3px, 0 0, 0 0, 4px 4px, 5px 5px, 0 0, 0 0;
-                        }
-
-                        /* G */
-                        80% {
-                            background-size: 0 0, 0 0, 4px 4px, 0 0, 0 0, 6px 6px, 5px 5px, 0 0, 0 0, 0 0, 6px 6px, 0 0, 0 0, 3px 3px, 5px 5px, 0 0, 0 0, 5px 5px, 0 0, 6px 6px;
-                        }
-
-                        /* I */
-                    }
-
-                    /* chipStarGroupB: ::before — nhóm B,D,F,H,J (50s, 10s/nhóm), offset 5s */
-                    @keyframes chipStarGroupB {
-                        0% {
-                            background-size: 0 0, 4px 4px, 0 0, 5px 5px, 0 0, 6px 6px, 0 0, 4px 4px, 0 0, 0 0, 6px 6px, 0 0, 0 0, 3px 3px, 0 0, 0 0, 4px 4px, 0 0, 0 0, 6px 6px;
-                        }
-
-                        /* B */
-                        20% {
-                            background-size: 0 0, 0 0, 4px 4px, 5px 5px, 0 0, 0 0, 5px 5px, 0 0, 0 0, 4px 4px, 0 0, 0 0, 4px 4px, 0 0, 0 0, 3px 3px, 0 0, 0 0, 3px 3px, 6px 6px;
-                        }
-
-                        /* D */
-                        40% {
-                            background-size: 0 0, 4px 4px, 4px 4px, 0 0, 0 0, 6px 6px, 0 0, 0 0, 3px 3px, 0 0, 0 0, 4px 4px, 0 0, 0 0, 5px 5px, 3px 3px, 0 0, 0 0, 0 0, 6px 6px;
-                        }
-
-                        /* F */
-                        60% {
-                            background-size: 5px 5px, 4px 4px, 0 0, 0 0, 0 0, 0 0, 0 0, 4px 4px, 3px 3px, 0 0, 0 0, 4px 4px, 4px 4px, 0 0, 0 0, 3px 3px, 0 0, 0 0, 3px 3px, 0 0;
-                        }
-
-                        /* H */
-                        80% {
-                            background-size: 0 0, 0 0, 0 0, 5px 5px, 3px 3px, 0 0, 0 0, 4px 4px, 0 0, 4px 4px, 0 0, 4px 4px, 4px 4px, 0 0, 0 0, 0 0, 4px 4px, 0 0, 3px 3px, 0 0;
-                        }
-
-                        /* J */
-                    }
-
-                    /* chipStarFade: ease-in-out 8s — 3s fade-in / 2s hiển thị / 3s fade-out
-                    37.5% = 3s/8s, 62.5% = 5s/8s */
-                    @keyframes chipStarFade {
-                        0% {
-                            opacity: 0;
-                        }
-
-                        25% {
-                            opacity: 1;
-                        }
-
-                        43.75% {
-                            opacity: 1;
-                        }
-
-                        68.75% {
-                            opacity: 0;
-                        }
-
                         100% {
-                            opacity: 0;
+                            box-shadow: 0 4px 10px rgba(139, 195, 74, 0.4), 0 0 6px rgba(200, 230, 201, 0.2), inset 0 2px 4px rgba(255, 255, 255, 0.6);
                         }
                     }
 
+                    @keyframes shimmer-mystical-member {
+                        0% {
+                            box-shadow: 0 4px 12px rgba(244, 143, 177, 0.5), 0 0 6px rgba(244, 143, 177, 0.2), inset 0 2px 4px rgba(255, 255, 255, 0.7);
+                        }
+                        33% {
+                            box-shadow: 0 7px 18px rgba(233, 30, 99, 0.65), 0 0 14px rgba(225, 190, 231, 0.6), inset 0 2px 4px rgba(255, 255, 255, 0.9);
+                        }
+                        66% {
+                            box-shadow: 0 5px 14px rgba(186, 104, 200, 0.5), 0 0 10px rgba(244, 143, 177, 0.4), inset 0 2px 4px rgba(255, 255, 255, 0.8);
+                        }
+                        100% {
+                            box-shadow: 0 4px 12px rgba(244, 143, 177, 0.5), 0 0 6px rgba(244, 143, 177, 0.2), inset 0 2px 4px rgba(255, 255, 255, 0.7);
+                        }
+                    }
+
+                    @keyframes shimmer-mystical-mod {
+                        0% {
+                            box-shadow: 0 4px 12px rgba(128, 222, 234, 0.5), 0 0 6px rgba(128, 222, 234, 0.2), inset 0 2px 4px rgba(255, 255, 255, 0.7);
+                        }
+                        33% {
+                            box-shadow: 0 7px 18px rgba(0, 188, 212, 0.65), 0 0 14px rgba(178, 235, 242, 0.6), inset 0 2px 4px rgba(255, 255, 255, 0.9);
+                        }
+                        66% {
+                            box-shadow: 0 5px 14px rgba(77, 208, 225, 0.5), 0 0 10px rgba(0, 188, 212, 0.4), inset 0 2px 4px rgba(255, 255, 255, 0.8);
+                        }
+                        100% {
+                            box-shadow: 0 4px 12px rgba(128, 222, 234, 0.5), 0 0 6px rgba(128, 222, 234, 0.2), inset 0 2px 4px rgba(255, 255, 255, 0.7);
+                        }
+                    }
+
+                    @keyframes shimmer-mystical-vip {
+                        0% {
+                            box-shadow: 0 5px 15px rgba(255, 179, 0, 0.55), 0 0 8px rgba(244, 143, 177, 0.3), inset 0 2px 4px rgba(255, 255, 255, 0.8);
+                        }
+                        33% {
+                            box-shadow: 0 9px 24px rgba(255, 215, 0, 0.75), 0 0 16px rgba(244, 143, 177, 0.6), 0 0 8px rgba(128, 222, 234, 0.4), inset 0 2px 4px rgba(255, 255, 255, 0.95);
+                        }
+                        66% {
+                            box-shadow: 0 6px 18px rgba(244, 143, 177, 0.65), 0 0 12px rgba(128, 222, 234, 0.45), 0 0 6px rgba(255, 179, 0, 0.4), inset 0 2px 4px rgba(255, 255, 255, 0.85);
+                        }
+                        100% {
+                            box-shadow: 0 5px 15px rgba(255, 179, 0, 0.55), 0 0 8px rgba(244, 143, 177, 0.3), inset 0 2px 4px rgba(255, 255, 255, 0.8);
+                        }
+                    }
+
+                    @keyframes breeze-sway {
+                        0% {
+                            background-position: left -5px top 0px, left -12px bottom -12px, right -10px top -10px, 0 0;
+                        }
+                        50% {
+                            background-position: left -3px top 0px, left -9px bottom -14px, right -7px top -8px, 0 0;
+                        }
+                        100% {
+                            background-position: left -5px top 0px, left -12px bottom -12px, right -10px top -10px, 0 0;
+                        }
+                    }
+
+                    /* --- MODERATOR CHIP STYLE --- */
                     yt-live-chat-text-message-renderer[author-type="moderator"] yt-live-chat-author-chip {
-                        background-color: #61B9FF !important;
+                        background-color: #80DEEA !important;
                         background-image:
-                            linear-gradient(165deg, rgba(255, 255, 255, 0.4) 0 24%, rgba(255, 255, 255, 0) 26% 100%),
-                            linear-gradient(115deg, rgba(255, 255, 255, 0.18) 0 36%, rgba(255, 255, 255, 0) 38% 100%) !important;
-                        background-repeat: no-repeat !important;
-                        border-color: #1C3A7A !important;
-                        padding: 4px 15px 4px 39px !important;
-                        box-shadow:
-                            0 1px 0 rgba(255, 255, 255, 0.22) inset,
-                            0 -1px 0 rgba(8, 6, 22, 0.28) inset,
-                            2px 2px 0 #142a5d !important;
-                        animation: none !important;
+                            var(--leaf-shadows),
+                            var(--icon-shield),
+                            linear-gradient(135deg, #E0F7FA 0%, #80DEEA 100%) !important;
+                        background-repeat: no-repeat, no-repeat, no-repeat !important;
+                        background-position: center, left 8px center, 0 0 !important;
+                        background-size: 100% 100%, 20px 20px, auto !important;
+                        border-color: #4DD0E1 !important;
+                        padding: 4px 14px 4px 34px !important;
+                        box-shadow: 0 4px 12px rgba(128, 222, 234, 0.5), inset 0 2px 4px rgba(255, 255, 255, 0.8) !important;
+                        animation: shimmer-mystical-mod 4s infinite ease-in-out !important;
                     }
 
+                    yt-live-chat-text-message-renderer[author-type="moderator"] yt-live-chat-author-chip #author-name {
+                        color: #006064 !important;
+                        text-shadow: 0 1px 2px rgba(255, 255, 255, 0.4) !important;
+                    }
+
+                    /* --- MEMBER CHIP STYLE --- */
                     yt-live-chat-text-message-renderer[author-type="member"] yt-live-chat-author-chip {
-                        padding: 4px 15px 4px 50px !important;
-                        background-color: #20A77D !important;
+                        padding: 4px 15px 4px 34px !important; /* Thay đổi từ 50px sang 34px khi bỏ avatar */
+                        background-color: #F7A8C4 !important;
                         background-image:
-                            linear-gradient(165deg, rgba(255, 255, 255, 0.4) 0 24%, rgba(255, 255, 255, 0) 26% 100%),
-                            linear-gradient(115deg, rgba(255, 255, 255, 0.18) 0 36%, rgba(255, 255, 255, 0) 38% 100%) !important;
-                        background-repeat: no-repeat !important;
-                        border-color: #0E4733 !important;
-                        box-shadow:
-                            0 1px 0 rgba(255, 255, 255, 0.22) inset,
-                            0 -1px 0 rgba(8, 6, 22, 0.24) inset,
-                            2px 2px 0 #083323 !important;
-                        animation: none !important;
+                            var(--leaf-shadows),
+                            linear-gradient(135deg, #FFF0F5 0%, #F7A8C4 100%) !important;
+                        background-position: center, 0 0 !important;
+                        background-size: 100% 100%, auto !important;
+                        background-repeat: no-repeat, no-repeat !important;
+                        border-color: #FF94B8 !important;
+                        box-shadow: 0 4px 12px rgba(244, 143, 177, 0.5), inset 0 2px 4px rgba(255, 255, 255, 0.8) !important;
+                        animation: shimmer-mystical-member 4s infinite ease-in-out !important;
                     }
 
+                    yt-live-chat-text-message-renderer[author-type="member"] yt-live-chat-author-chip #author-name {
+                        color: #880E4F !important;
+                        text-shadow: 0 1px 2px rgba(255, 255, 255, 0.5) !important;
+                    }
+
+                    /* New member (Hội viên mới) - Không có quả dứa absolute bên trái, thay bằng Trái tim inline SVG background */
                     yt-live-chat-text-message-renderer[author-type="member"]:not(:has(yt-live-chat-author-badge-renderer[type="moderator"])):has(img[alt="Hội viên mới"]) yt-live-chat-author-chip,
-                    yt-live-chat-text-message-renderer[author-type="member"]:not(:has(yt-live-chat-author-badge-renderer[type="moderator"])):has(img[alt="New member"]) yt-live-chat-author-chip {
-                        padding: 4px 15px 4px 34px !important;
+                    yt-live-chat-text-message-renderer[author-type="member"]:not(:has(yt-live-chat-author-badge-renderer[type="moderator"])):has(img[alt="New member"]) yt-live-chat-author-chip,
+                    yt-live-chat-text-message-renderer[author-type="member"]:not(:has(yt-live-chat-author-badge-renderer[type="moderator"])):has(yt-live-chat-author-badge-renderer[aria-label*="Hội viên mới"]) yt-live-chat-author-chip,
+                    yt-live-chat-text-message-renderer[author-type="member"]:not(:has(yt-live-chat-author-badge-renderer[type="moderator"])):has(yt-live-chat-author-badge-renderer[aria-label*="New member"]) yt-live-chat-author-chip {
+                        padding: 4px 14px 4px 34px !important;
+                        background-image:
+                            var(--leaf-shadows),
+                            var(--icon-heart),
+                            linear-gradient(135deg, #FFF0F5 0%, #F7A8C4 100%) !important;
+                        background-repeat: no-repeat, no-repeat, no-repeat !important;
+                        background-position: center, left 8px center, 0 0 !important;
+                        background-size: 100% 100%, 20px 20px, auto !important;
                     }
 
-                    yt-live-chat-text-message-renderer[author-type="member"]:has(yt-live-chat-author-badge-renderer[type="moderator"]):has(img[alt="Hội viên mới"]) yt-live-chat-author-chip,
-                    yt-live-chat-text-message-renderer[author-type="member"]:has(yt-live-chat-author-badge-renderer[type="moderator"]):has(img[alt="New member"]) yt-live-chat-author-chip {
-                        padding: 4px 15px 4px 38px !important;
-                    }
-
-
+                    /* --- MODERATOR + MEMBER (VIP COMBINATION) --- */
                     yt-live-chat-text-message-renderer[author-type*="moderator"][author-type*="member"] yt-live-chat-author-chip,
                     yt-live-chat-text-message-renderer[author-type*="moderator"]:has(yt-live-chat-author-badge-renderer[type="member"]) yt-live-chat-author-chip,
                     yt-live-chat-text-message-renderer[author-type*="member"]:has(yt-live-chat-author-badge-renderer[type="moderator"]) yt-live-chat-author-chip {
-                        padding: 4px 15px 4px 54px !important;
-                        background-color: #3B82F6 !important;
-                        border-color: #1D4ED8 !important;
-                        box-shadow:
-                            0 1px 0 rgba(255, 255, 255, 0.3) inset,
-                            0 -1px 0 rgba(30, 58, 138, 0.4) inset,
-                            2px 2px 0 #1E3A8A !important;
+                        padding: 4px 15px 4px 34px !important; /* Thay đổi từ 54px sang 34px khi bỏ avatar */
+                        background-color: #B39DDB !important;
+                        background-image:
+                            var(--leaf-shadows),
+                            linear-gradient(135deg, #FFE082 0%, #A5D6A7 25%, #80DEEA 50%, #B39DDB 75%, #F48FB1 100%) !important;
+                        background-position: center, 0 0 !important;
+                        background-size: 100% 100%, auto !important;
+                        background-repeat: no-repeat, no-repeat !important;
+                        border-color: #FFF !important; /* Viền trắng ngọc nổi bật */
+                        box-shadow: 0 6px 15px rgba(255, 179, 0, 0.6), 0 0 10px rgba(244, 143, 177, 0.4), inset 0 2px 4px rgba(255, 255, 255, 0.9) !important;
+                        animation: shimmer-mystical-vip 5s infinite ease-in-out !important;
                     }
 
+                    yt-live-chat-text-message-renderer[author-type*="moderator"][author-type*="member"] yt-live-chat-author-chip #author-name,
+                    yt-live-chat-text-message-renderer[author-type*="moderator"]:has(yt-live-chat-author-badge-renderer[type="member"]) yt-live-chat-author-chip #author-name,
+                    yt-live-chat-text-message-renderer[author-type*="member"]:has(yt-live-chat-author-badge-renderer[type="moderator"]) yt-live-chat-author-chip #author-name {
+                        color: #4A2700 !important;
+                        text-shadow: 0 1px 3px rgba(255, 255, 255, 0.7) !important;
+                    }
 
-                    /* Use real monthly membership badge at pineapple position */
+                    /* Glow filter cho star pseudo-elements — Giữ tương thích */
+                    yt-live-chat-text-message-renderer[author-type="member"] yt-live-chat-author-chip::before,
+                    yt-live-chat-text-message-renderer[author-type="moderator"]:has(yt-live-chat-author-badge-renderer[type="member"]) yt-live-chat-author-chip::before {
+                        filter: drop-shadow(0 0 3px rgba(244, 143, 177, 0.75)) !important;
+                    }
+
+                    /* Use real monthly membership badge at pineapple position (Absolute over the left edge) */
                     yt-live-chat-text-message-renderer[author-type="member"] yt-live-chat-author-chip #chat-badges,
                     yt-live-chat-text-message-renderer[author-type="member"] yt-live-chat-author-chip #author-badges,
                     yt-live-chat-text-message-renderer[author-type="moderator"]:has(yt-live-chat-author-badge-renderer[type="member"]) yt-live-chat-author-chip #chat-badges,
                     yt-live-chat-text-message-renderer[author-type="moderator"]:has(yt-live-chat-author-badge-renderer[type="member"]) yt-live-chat-author-chip #author-badges {
                         position: absolute !important;
-                        left: -10px !important;
+                        left: -8px !important; /* Dịch nhẹ quả dứa đè lên viền trái */
                         top: -9px !important;
                         margin: 0 !important;
                         z-index: 1002 !important;
                         filter: none !important;
                         pointer-events: none !important;
-                        transform: rotate(-12deg) !important;
+                        transform: rotate(-10deg) !important;
                     }
 
                     yt-live-chat-text-message-renderer[author-type="member"] yt-live-chat-author-chip #chat-badges img,
@@ -1146,17 +1080,13 @@
                         background: transparent !important;
                         box-shadow: none !important;
                         object-fit: contain !important;
-
-                        /* Tối ưu độ nét và chiều sâu cho ảnh badge - Optimized sharpness and depth */
                         image-rendering: -webkit-optimize-contrast !important;
                         image-rendering: auto !important;
-                        filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.45)) contrast(1.05) saturate(1.05) !important;
-
-                        /* Chống mờ khi xoay/scale */
+                        filter: drop-shadow(0 2px 3px rgba(0, 0, 0, 0.35)) contrast(1.05) saturate(1.05) !important;
                         will-change: transform !important;
                         transform: translateZ(0) !important;
                         backface-visibility: hidden !important;
-                        /* Mặc định cho hội viên (tháng 1 / không xác định) */
+                        /* Quả dứa mặc định của Em Dứa (tháng 1) */
                         content: url("https://yt3.googleusercontent.com/_dpDna9tL1QCQTbvYywctOA9Xvy5DZphdn7EIvHcLd9CtcIV43oD8cGPKi9jyWtUJTgpdTgH42U=s64-k-nd") !important;
                     }
 
@@ -1184,37 +1114,7 @@
                         content: url("https://yt3.googleusercontent.com/2GTPUHO1EM2l-D5Bfuzxc_UvWmfVXZtBylHf_bmd02CFSCGM6z_a_Bd3TFNHdtql6HPrIA3S=s64-k-nd") !important;
                     }
 
-                    /* New member badge: less prominent than long-term member badge */
-                    yt-live-chat-text-message-renderer[author-type="member"]:has(img[alt="Hội viên mới"]) yt-live-chat-author-chip #chat-badges,
-                    yt-live-chat-text-message-renderer[author-type="member"]:has(img[alt="New member"]) yt-live-chat-author-chip #chat-badges,
-                    yt-live-chat-text-message-renderer[author-type="moderator"]:has(yt-live-chat-author-badge-renderer[type="member"]):has(img[alt="Hội viên mới"]) yt-live-chat-author-chip #chat-badges,
-                    yt-live-chat-text-message-renderer[author-type="moderator"]:has(yt-live-chat-author-badge-renderer[type="member"]):has(img[alt="New member"]) yt-live-chat-author-chip #chat-badges,
-                    yt-live-chat-text-message-renderer[author-type="member"]:has(yt-live-chat-author-badge-renderer[aria-label*="Hội viên mới"]) yt-live-chat-author-chip #chat-badges,
-                    yt-live-chat-text-message-renderer[author-type="member"]:has(yt-live-chat-author-badge-renderer[aria-label*="New member"]) yt-live-chat-author-chip #chat-badges,
-                    yt-live-chat-text-message-renderer[author-type="moderator"]:has(yt-live-chat-author-badge-renderer[type="member"]):has(yt-live-chat-author-badge-renderer[aria-label*="Hội viên mới"]) yt-live-chat-author-chip #chat-badges,
-                    yt-live-chat-text-message-renderer[author-type="moderator"]:has(yt-live-chat-author-badge-renderer[type="member"]):has(yt-live-chat-author-badge-renderer[aria-label*="New member"]) yt-live-chat-author-chip #chat-badges {
-                        left: -7px !important;
-                        top: -5px !important;
-                        transform: rotate(-4deg) !important;
-                        opacity: 0.68 !important;
-                    }
-
-                    yt-live-chat-text-message-renderer[author-type="member"]:has(img[alt="Hội viên mới"]) yt-live-chat-author-chip #chat-badges img,
-                    yt-live-chat-text-message-renderer[author-type="member"]:has(img[alt="New member"]) yt-live-chat-author-chip #chat-badges img,
-                    yt-live-chat-text-message-renderer[author-type="moderator"]:has(yt-live-chat-author-badge-renderer[type="member"]):has(img[alt="Hội viên mới"]) yt-live-chat-author-chip #chat-badges img,
-                    yt-live-chat-text-message-renderer[author-type="moderator"]:has(yt-live-chat-author-badge-renderer[type="member"]):has(img[alt="New member"]) yt-live-chat-author-chip #chat-badges img,
-                    yt-live-chat-text-message-renderer[author-type="member"]:has(yt-live-chat-author-badge-renderer[aria-label*="Hội viên mới"]) yt-live-chat-author-chip #chat-badges img,
-                    yt-live-chat-text-message-renderer[author-type="member"]:has(yt-live-chat-author-badge-renderer[aria-label*="New member"]) yt-live-chat-author-chip #chat-badges img,
-                    yt-live-chat-text-message-renderer[author-type="moderator"]:has(yt-live-chat-author-badge-renderer[type="member"]):has(yt-live-chat-author-badge-renderer[aria-label*="Hội viên mới"]) yt-live-chat-author-chip #chat-badges img,
-                    yt-live-chat-text-message-renderer[author-type="moderator"]:has(yt-live-chat-author-badge-renderer[type="member"]):has(yt-live-chat-author-badge-renderer[aria-label*="New member"]) yt-live-chat-author-chip #chat-badges img {
-                        width: 23px !important;
-                        height: 23px !important;
-                        filter: grayscale(22%) saturate(72%) brightness(0.93) !important;
-                        /* Trả lại icon mặc định cho hội viên mới */
-                        content: normal !important;
-                    }
-
-                    /* New member badge back to the right side of channel name */
+                    /* New member badge hide left side absolute */
                     yt-live-chat-text-message-renderer[author-type="member"]:has(img[alt="Hội viên mới"]) yt-live-chat-author-chip #chat-badges,
                     yt-live-chat-text-message-renderer[author-type="member"]:has(img[alt="New member"]) yt-live-chat-author-chip #chat-badges,
                     yt-live-chat-text-message-renderer[author-type="moderator"]:has(yt-live-chat-author-badge-renderer[type="member"]):has(img[alt="Hội viên mới"]) yt-live-chat-author-chip #chat-badges,
@@ -1257,10 +1157,9 @@
                         opacity: 1 !important;
                     }
 
-
                     yt-live-chat-text-message-renderer[author-type="moderator"]:has(img[alt="Hội viên mới"]) yt-live-chat-author-chip,
                     yt-live-chat-text-message-renderer[author-type="moderator"]:has(img[alt="New member"]) yt-live-chat-author-chip {
-                        padding: 4px 15px 4px 38px !important;
+                        padding: 4px 14px 4px 34px !important;
                     }
 
                     /* New member cases where label exists on badge renderer */
@@ -1278,16 +1177,15 @@
 
                     yt-live-chat-text-message-renderer[author-type="member"]:not(:has(yt-live-chat-author-badge-renderer[type="moderator"])):has(yt-live-chat-author-badge-renderer[aria-label*="Hội viên mới"]) yt-live-chat-author-chip,
                     yt-live-chat-text-message-renderer[author-type="member"]:not(:has(yt-live-chat-author-badge-renderer[type="moderator"])):has(yt-live-chat-author-badge-renderer[aria-label*="New member"]) yt-live-chat-author-chip {
-                        padding: 4px 15px 4px 34px !important;
+                        padding: 4px 14px 4px 34px !important;
                     }
 
                     yt-live-chat-text-message-renderer[author-type="member"]:has(yt-live-chat-author-badge-renderer[type="moderator"]):has(yt-live-chat-author-badge-renderer[aria-label*="Hội viên mới"]) yt-live-chat-author-chip,
                     yt-live-chat-text-message-renderer[author-type="member"]:has(yt-live-chat-author-badge-renderer[type="moderator"]):has(yt-live-chat-author-badge-renderer[aria-label*="New member"]) yt-live-chat-author-chip,
                     yt-live-chat-text-message-renderer[author-type="moderator"]:has(yt-live-chat-author-badge-renderer[aria-label*="Hội viên mới"]) yt-live-chat-author-chip,
                     yt-live-chat-text-message-renderer[author-type="moderator"]:has(yt-live-chat-author-badge-renderer[aria-label*="New member"]) yt-live-chat-author-chip {
-                        padding: 4px 15px 4px 38px !important;
+                        padding: 4px 14px 4px 34px !important;
                     }
-
 
                     /* 1. Đẩy ảnh đại diện chủ kênh ra xa mép trái */
                     yt-live-chat-text-message-renderer[author-type="owner"] #author-photo {
@@ -1296,563 +1194,33 @@
                         z-index: 100 !important;
                     }
 
-                    /* 2. Điều chỉnh khung cam của chủ kênh */
+                    /* 2. Điều chỉnh khung cam của chủ kênh (Không còn dứa, có hình chiếc lá + bóng lá) */
                     yt-live-chat-text-message-renderer[author-type="owner"] yt-live-chat-author-chip {
-                        border: 3px solid #FF6F00 !important;
-                        box-shadow:
-                            0 1px 0 rgba(255, 255, 255, 0.45) inset,
-                            0 -1px 0 rgba(0, 0, 0, 0.2) inset,
-                            2.5px 2.5px 0 #B35300 !important;
-                        background-color: #FFA000 !important;
-                        background-image:
-                            linear-gradient(165deg, rgba(255, 255, 255, 0.4) 0 24%, rgba(255, 255, 255, 0) 26% 100%),
-                            linear-gradient(115deg, rgba(255, 255, 255, 0.15) 0 36%, rgba(255, 255, 255, 0) 38% 100%) !important;
-                        /* Tăng padding trái để nhường chỗ cho avatar đã đẩy sang */
-                        padding: 4px 20px 4px 55px !important; 
+                        background-color: #FFE082 !important;
+                        background-image: 
+                            var(--leaf-shadows),
+                            linear-gradient(135deg, #FFE082 0%, #A5D6A7 25%, #80DEEA 50%, #B39DDB 75%, #F48FB1 100%) !important;
+                        background-position: center, 0 0 !important;
+                        background-size: 100% 100%, auto !important;
+                        background-repeat: no-repeat, no-repeat !important;
+                        border: 3.5px solid #FFD700 !important;
+                        box-shadow: 0 0 15px rgba(255, 215, 0, 0.6), 0 0 5px rgba(255, 160, 0, 0.8), inset 0 2px 4px rgba(255, 255, 255, 0.9) !important;
+                        padding: 4px 20px !important; /* Đối xứng khi bỏ Pineapple Icon */
                         position: relative !important;
-                        overflow: visible !important;
+                        overflow: hidden !important;
                         margin-bottom: 5px !important;
                         margin-left: 10px !important;
-                        border-radius: 14px !important;
-                        animation: none !important;
+                        border-radius: 20px 4px 20px 4px !important; /* Hình chiếc lá độc đáo đồng bộ */
+                        animation: shimmer-mystical-vip 5s infinite ease-in-out !important;
                     }
 
-
-
-
-
-
-
-                    @keyframes chipStarBlinkTeleport {
-                        0% {
-                            opacity: 0;
-                            background-position:
-                                0 0, 0 0, 0 0, 0 0, 0 0,
-                                0 0, 0 0, 0 0, 0 0, 0 0,
-                                0 0, 0 0, 0 0;
-                            background-size:
-                                auto, auto, auto, auto, auto,
-                                auto, auto, auto, auto, auto,
-                                auto, auto, auto;
-                        }
-
-                        10% {
-                            opacity: 0;
-                            background-position:
-                                0 0, 0 0, 0 0, 0 0, 0 0,
-                                0 0, 0 0, 0 0, 0 0, 0 0,
-                                0 0, 0 0, 0 0;
-                            background-size:
-                                auto, auto, auto, auto, auto,
-                                auto, auto, auto, auto, auto,
-                                auto, auto, auto;
-                        }
-
-                        24% {
-                            opacity: 1;
-                            background-position:
-                                0 0, 0 0, 0 0, 0 0, 0 0,
-                                0 0, 0 0, 0 0, 0 0, 0 0,
-                                0 0, 0 0, 0 0;
-                            background-size:
-                                auto, auto, auto, auto, auto,
-                                auto, auto, auto, auto, auto,
-                                auto, auto, auto;
-                        }
-
-                        42% {
-                            opacity: 1;
-                            background-position:
-                                0 0, 0 0, 0 0, 0 0, 0 0,
-                                0 0, 0 0, 0 0, 0 0, 0 0,
-                                0 0, 0 0, 0 0;
-                            background-size:
-                                auto, auto, auto, auto, auto,
-                                auto, auto, auto, auto, auto,
-                                auto, auto, auto;
-                        }
-
-                        52% {
-                            opacity: 0;
-                            background-position:
-                                0 0, 0 0, 0 0, 0 0, 0 0,
-                                0 0, 0 0, 0 0, 0 0, 0 0,
-                                0 0, 0 0, 0 0;
-                            background-size:
-                                0 0, 0 0, 0 0, 0 0, auto,
-                                auto, auto, auto, auto, auto,
-                                auto, auto, auto;
-                        }
-
-                        53% {
-                            opacity: 0;
-                            background-position:
-                                -5px 3px, 5px -3px, -3px 5px, 5px 3px, -5px -3px,
-                                3px 5px, -5px 0, 5px -5px, -3px 3px, 5px 0,
-                                -4px 4px, 4px -4px, 3px 5px;
-                            background-size:
-                                0 0, 0 0, 0 0, 0 0, auto,
-                                auto, auto, auto, auto, auto,
-                                auto, auto, auto;
-                        }
-
-                        62% {
-                            opacity: 0;
-                            background-position:
-                                -5px 3px, 5px -3px, -3px 5px, 5px 3px, -5px -3px,
-                                3px 5px, -5px 0, 5px -5px, -3px 3px, 5px 0,
-                                -4px 4px, 4px -4px, 3px 5px;
-                            background-size:
-                                auto, auto, auto, auto, auto,
-                                0 0, 0 0, 0 0, 0 0, 0 0,
-                                auto, auto, auto;
-                        }
-
-                        63% {
-                            opacity: 0;
-                            background-position:
-                                -5px 3px, 5px -3px, -3px 5px, 5px 3px, -2px -1px,
-                                1px 2px, -3px 1px, 4px -4px, -2px 2px, 4px 1px,
-                                -4px 4px, 4px -4px, 3px 5px;
-                            background-size:
-                                auto, auto, auto, auto, auto,
-                                0 0, 0 0, 0 0, 0 0, 0 0,
-                                auto, auto, auto;
-                        }
-
-                        73% {
-                            opacity: 0;
-                            background-position:
-                                -5px 3px, 5px -3px, -3px 5px, 5px 3px, -2px -1px,
-                                1px 2px, -3px 1px, 4px -4px, -2px 2px, 4px 1px,
-                                -4px 4px, 4px -4px, 3px 5px;
-                            background-size:
-                                auto, auto, auto, auto, auto,
-                                auto, auto, auto, auto, auto,
-                                0 0, 0 0, 0 0;
-                        }
-
-                        74% {
-                            opacity: 0;
-                            background-position:
-                                -5px 3px, 5px -3px, -3px 5px, 5px 3px, -2px -1px,
-                                1px 2px, -3px 1px, 4px -4px, -2px 2px, 4px 1px,
-                                -6px 6px, 6px -6px, 4px 6px;
-                            background-size:
-                                auto, auto, auto, auto, auto,
-                                auto, auto, auto, auto, auto,
-                                0 0, 0 0, 0 0;
-                        }
-
-                        82% {
-                            opacity: 0;
-                            background-position:
-                                -5px 3px, 5px -3px, -3px 5px, 5px 3px, -2px -1px,
-                                1px 2px, -3px 1px, 4px -4px, -2px 2px, 4px 1px,
-                                -6px 6px, 6px -6px, 4px 6px;
-                            background-size:
-                                auto, auto, auto, auto, auto,
-                                auto, auto, auto, auto, auto,
-                                auto, auto, auto;
-                        }
-
-                        84% {
-                            opacity: 1;
-                            background-position:
-                                -5px 3px, 5px -3px, -3px 5px, 5px 3px, -2px -1px,
-                                1px 2px, -3px 1px, 4px -4px, -2px 2px, 4px 1px,
-                                -6px 6px, 6px -6px, 4px 6px;
-                            background-size:
-                                auto, auto, auto, auto, auto,
-                                auto, auto, auto, auto, auto,
-                                auto, auto, auto;
-                        }
-
-                        94% {
-                            opacity: 1;
-                            background-position:
-                                -5px 3px, 5px -3px, -3px 5px, 5px 3px, -2px -1px,
-                                1px 2px, -3px 1px, 4px -4px, -2px 2px, 4px 1px,
-                                -6px 6px, 6px -6px, 4px 6px;
-                            background-size:
-                                auto, auto, auto, auto, auto,
-                                auto, auto, auto, auto, auto,
-                                auto, auto, auto;
-                        }
-
-                        100% {
-                            opacity: 0;
-                            background-position:
-                                -5px 3px, 5px -3px, -3px 5px, 5px 3px, -2px -1px,
-                                1px 2px, -3px 1px, 4px -4px, -2px 2px, 4px 1px,
-                                -6px 6px, 6px -6px, 4px 6px;
-                            background-size:
-                                auto, auto, auto, auto, auto,
-                                auto, auto, auto, auto, auto,
-                                auto, auto, auto;
-                        }
-
-                        /* loop seam teleport happens while fully hidden */
+                    yt-live-chat-text-message-renderer[author-type="owner"] yt-live-chat-author-chip #author-name {
+                        color: #4A2700 !important;
+                        text-shadow: 0 1px 3px rgba(255, 255, 255, 0.7) !important;
+                        font-family: var(--font-mystical), 'Cormorant', 'Spectral', serif !important;
                     }
 
-                    @keyframes chipStarBlinkTeleportOwner {
-                        0% {
-                            filter: saturate(1) brightness(0);
-                            background-position:
-                                0 0,
-                                0 0,
-                                0 0,
-                                0 0,
-                                0 0,
-                                0 0,
-                                0 0,
-                                0 0,
-                                0 0,
-                                0 0 !important;
-                        }
-
-                        10% {
-                            filter: saturate(1) brightness(0);
-                            background-position:
-                                0 0,
-                                0 0,
-                                0 0,
-                                0 0,
-                                0 0,
-                                0 0,
-                                0 0,
-                                0 0,
-                                0 0,
-                                0 0 !important;
-                        }
-
-                        24% {
-                            filter: saturate(1) brightness(1.02);
-                            background-position:
-                                0 0,
-                                0 0,
-                                0 0,
-                                0 0,
-                                0 0,
-                                0 0,
-                                0 0,
-                                0 0,
-                                0 0,
-                                0 0 !important;
-                        }
-
-                        42% {
-                            filter: saturate(1) brightness(1.02);
-                            background-position:
-                                0 0,
-                                0 0,
-                                0 0,
-                                0 0,
-                                0 0,
-                                0 0,
-                                0 0,
-                                0 0,
-                                0 0,
-                                0 0 !important;
-                        }
-
-                        52% {
-                            filter: saturate(1) brightness(0);
-                            background-position:
-                                0 0,
-                                0 0,
-                                0 0,
-                                0 0,
-                                0 0,
-                                0 0,
-                                0 0,
-                                0 0,
-                                0 0,
-                                0 0 !important;
-                        }
-
-                        53% {
-                            filter: saturate(1) brightness(0);
-                            background-position:
-                                0 0,
-                                0 0,
-                                -5px 3px,
-                                5px -3px,
-                                -3px 5px,
-                                5px 3px,
-                                -5px -3px,
-                                3px 5px,
-                                -5px 0,
-                                5px -5px,
-                                -4px 4px,
-                                4px -4px,
-                                3px 5px,
-                                -3px -5px !important;
-                        }
-
-                        72% {
-                            filter: saturate(1) brightness(0);
-                            background-position:
-                                0 0,
-                                0 0,
-                                -5px 3px,
-                                5px -3px,
-                                -3px 5px,
-                                5px 3px,
-                                -5px -3px,
-                                3px 5px,
-                                -5px 0,
-                                5px -5px,
-                                -4px 4px,
-                                4px -4px,
-                                3px 5px,
-                                -3px -5px !important;
-                        }
-
-                        84% {
-                            filter: saturate(1.03) brightness(1.02);
-                            background-position:
-                                0 0,
-                                0 0,
-                                -5px 3px,
-                                5px -3px,
-                                -3px 5px,
-                                5px 3px,
-                                -5px -3px,
-                                3px 5px,
-                                -5px 0,
-                                5px -5px,
-                                -4px 4px,
-                                4px -4px,
-                                3px 5px,
-                                -3px -5px !important;
-                        }
-
-                        94% {
-                            filter: saturate(1.03) brightness(1.02);
-                            background-position:
-                                0 0,
-                                0 0,
-                                -5px 3px,
-                                5px -3px,
-                                -3px 5px,
-                                5px 3px,
-                                -5px -3px,
-                                3px 5px,
-                                -5px 0,
-                                5px -5px,
-                                -4px 4px,
-                                4px -4px,
-                                3px 5px,
-                                -3px -5px !important;
-                        }
-
-                        100% {
-                            filter: saturate(1) brightness(0);
-                            background-position:
-                                0 0,
-                                0 0,
-                                -5px 3px,
-                                5px -3px,
-                                -3px 5px,
-                                5px 3px,
-                                -5px -3px,
-                                3px 5px,
-                                -5px 0,
-                                5px -5px,
-                                -4px 4px,
-                                4px -4px,
-                                3px 5px,
-                                -3px -5px !important;
-                        }
-                    }
-
-                    @keyframes chipStarTwinkleMod {
-                        0% {
-                            filter: saturate(1) brightness(0.96);
-                            background-position:
-                                0 0,
-                                0 0,
-                                0 0,
-                                0 0,
-                                0 0,
-                                0 0,
-                                0 0,
-                                0 0,
-                                0 0,
-                                0 0 !important;
-                        }
-
-                        18% {
-                            filter: saturate(1.06) brightness(1.08);
-                            background-position:
-                                0 0,
-                                0 0,
-                                1px 0,
-                                -1px 1px,
-                                0 -1px,
-                                1px 1px,
-                                -1px 0,
-                                0 1px,
-                                1px -1px,
-                                -1px 0 !important;
-                        }
-
-                        33% {
-                            filter: saturate(1.02) brightness(1);
-                            background-position:
-                                0 0,
-                                0 0,
-                                -1px 0,
-                                1px -1px,
-                                1px 1px,
-                                -1px 0,
-                                0 0,
-                                1px -1px,
-                                -1px 1px,
-                                0 -1px !important;
-                        }
-
-                        54% {
-                            filter: saturate(1.09) brightness(1.13);
-                            background-position:
-                                0 0,
-                                0 0,
-                                0 1px,
-                                -1px -1px,
-                                1px 0,
-                                0 -1px,
-                                1px 0,
-                                -1px 1px,
-                                0 -1px,
-                                1px 1px !important;
-                        }
-
-                        73% {
-                            filter: saturate(1.03) brightness(1.02);
-                            background-position:
-                                0 0,
-                                0 0,
-                                -1px -1px,
-                                0 1px,
-                                1px -1px,
-                                -1px 0,
-                                0 1px,
-                                1px 0,
-                                -1px 0,
-                                1px -1px !important;
-                        }
-
-                        100% {
-                            filter: saturate(1.12) brightness(1.17);
-                            background-position:
-                                0 0,
-                                0 0,
-                                1px 1px,
-                                -1px 0,
-                                0 -1px,
-                                1px 0,
-                                -1px 1px,
-                                0 -1px,
-                                1px 0,
-                                -1px 1px !important;
-                        }
-                    }
-
-                    @keyframes chipStarTwinkleMember {
-                        0% {
-                            filter: saturate(1) brightness(0.96);
-                            background-position:
-                                0 0,
-                                0 0,
-                                0 0,
-                                0 0,
-                                0 0,
-                                0 0,
-                                0 0,
-                                0 0,
-                                0 0,
-                                0 0 !important;
-                        }
-
-                        17% {
-                            filter: saturate(1.06) brightness(1.09);
-                            background-position:
-                                0 0,
-                                0 0,
-                                -1px 0,
-                                1px 1px,
-                                0 -1px,
-                                -1px 1px,
-                                1px 0,
-                                -1px 1px,
-                                1px -1px,
-                                0 1px !important;
-                        }
-
-                        36% {
-                            filter: saturate(1.02) brightness(1.01);
-                            background-position:
-                                0 0,
-                                0 0,
-                                1px -1px,
-                                0 1px,
-                                -1px 0,
-                                1px 0,
-                                -1px 1px,
-                                0 -1px,
-                                1px 1px,
-                                -1px 0 !important;
-                        }
-
-                        57% {
-                            filter: saturate(1.1) brightness(1.14);
-                            background-position:
-                                0 0,
-                                0 0,
-                                0 1px,
-                                -1px -1px,
-                                1px 0,
-                                0 -1px,
-                                1px -1px,
-                                -1px 0,
-                                0 1px,
-                                1px 0 !important;
-                        }
-
-                        78% {
-                            filter: saturate(1.03) brightness(1.02);
-                            background-position:
-                                0 0,
-                                0 0,
-                                -1px -1px,
-                                1px 0,
-                                0 1px,
-                                -1px 0,
-                                1px 1px,
-                                0 -1px,
-                                -1px 0,
-                                1px -1px !important;
-                        }
-
-                        100% {
-                            filter: saturate(1.12) brightness(1.17);
-                            background-position:
-                                0 0,
-                                0 0,
-                                1px 1px,
-                                -1px 0,
-                                0 -1px,
-                                1px 0,
-                                -1px 1px,
-                                0 -1px,
-                                1px 0,
-                                -1px 1px !important;
-                        }
-                    }
-
-
-
+                    /* Repurposed pulse-glow-vip to unified shimmer-mystical-vip */\n
 
                     yt-live-chat-text-message-renderer #author-name {
                         background: transparent !important;
@@ -1861,8 +1229,8 @@
                         padding: 0 !important;
                         margin: 0 !important;
                         position: static !important;
-                        color: #171335 !important;
-                        font-family: "Quicksand", "Baloo 2", "Itim", "Nunito", "Noto Sans", sans-serif !important;
+                        color: #2D1557 !important;
+                        font-family: 'Cormorant', 'Spectral', 'Noto Sans', serif !important;
                         font-weight: 700 !important;
                         font-size: 19px !important;
                         line-height: 26px !important;
@@ -1872,7 +1240,7 @@
 
                     /* Mod thường: chữ màu sậm chìm */
                     yt-live-chat-text-message-renderer[author-type="moderator"]:not(:has(yt-live-chat-author-badge-renderer[type="member"])) #author-name {
-                        color: #0D2D69 !important;
+                        color: #01579B !important;
                         text-shadow: none !important;
                     }
 
@@ -2010,8 +1378,6 @@
                         filter: none !important;
                     }
 
-
-
                     yt-live-chat-text-message-renderer .ytSpecButtonViewModelHost {
                         display: inline-block !important;
                         vertical-align: middle !important;
@@ -2036,7 +1402,6 @@
                         gap: 6px !important;
                     }
 
-
                     yt-live-chat-text-message-renderer .ytSpecButtonViewModelHost .yt-spec-button-shape-next__button-text-content {
                         color: #4E342E !important;
                         font-family: "Quicksand", "Baloo 2", "Itim", "Nunito", "Noto Sans", sans-serif !important;
@@ -2046,7 +1411,6 @@
                         text-shadow: none !important;
                         letter-spacing: 0.5px !important;
                     }
-
 
                     yt-live-chat-text-message-renderer .ytSpecButtonViewModelHost yt-icon,
                     yt-live-chat-text-message-renderer .ytSpecButtonViewModelHost .yt-spec-button-shape-next__icon {
@@ -2083,8 +1447,6 @@
                         color: #1B5E20 !important;
                         filter: none !important;
                     }
-
-
 
                     /* Top Fan Button #1 - Gold */
                     yt-live-chat-text-message-renderer .ytSpecButtonViewModelHost button[aria-label="#1"],
@@ -2287,49 +1649,34 @@
                         filter: drop-shadow(0 1px 0 rgba(46, 26, 18, 0.9)) !important;
                     }
 
-
-
-
                     yt-live-chat-paid-message-renderer {
-
-                        background-color: #2B2A74 !important;
+                        background-color: var(--yt-live-chat-paid-message-background-color, #1A0A3E) !important;
                         background-image:
-                            radial-gradient(circle at 11% 24%, rgba(255, 255, 255, 0.88) 0 1.1px, transparent 1.35px),
-                            radial-gradient(circle at 24% 72%, rgba(188, 225, 255, 0.66) 0 0.95px, transparent 1.2px),
-                            radial-gradient(circle at 43% 18%, rgba(255, 255, 255, 0.78) 0 1px, transparent 1.25px),
-                            radial-gradient(circle at 62% 78%, rgba(186, 210, 255, 0.58) 0 0.9px, transparent 1.15px),
-                            radial-gradient(circle at 82% 34%, rgba(255, 255, 255, 0.8) 0 1.05px, transparent 1.3px),
-                            radial-gradient(circle at 92% 68%, rgba(172, 203, 255, 0.56) 0 0.85px, transparent 1.1px),
-                            linear-gradient(155deg, rgba(171, 200, 255, 0.28) 0 28%, rgba(255, 255, 255, 0) 30% 100%) !important;
-                        background-repeat: no-repeat !important;
-
-                        border: 3px solid #2E3B88 !important;
+                            var(--leaf-veins),
+                            linear-gradient(135deg, rgba(255, 255, 255, 0.28) 0%, rgba(255, 255, 255, 0.05) 100%) !important;
+                        background-repeat: repeat-x, no-repeat !important;
+                        background-position: 0px 0px, 0 0 !important;
+                        background-size: 100px 100%, auto !important;
+                        
+                        border: 3.5px solid rgba(255, 255, 255, 0.85) !important; /* Glowing crystal border */
                         border-radius: 24px !important;
-
-                        /* Tăng margin để tránh bị cắt viền và hiệu ứng (như dứa) - Increased margin to prevent clipping */
                         margin: 20px 20px 20px 45px !important;
-
+                        
                         box-shadow:
-                            0 1px 0 rgba(255, 255, 255, 0.26) inset,
-                            0 -1px 0 rgba(12, 9, 36, 0.28) inset,
-                            3px 3px 0 rgba(20, 22, 70, 0.82) !important;
+                            0 1.5px 0 rgba(255, 255, 255, 0.35) inset,
+                            0 -1.5px 0 rgba(0, 0, 0, 0.15) inset,
+                            0 8px 25px rgba(0, 0, 0, 0.25),
+                            0 0 15px var(--yt-live-chat-paid-message-background-color) !important;
 
                         position: relative !important;
                         overflow: hidden !important;
                         padding: 0 !important;
                         display: flex !important;
                         flex-direction: column !important;
-
-
-                        animation:
-                            superChatBounce 0.62s cubic-bezier(0.2, 0.95, 0.22, 1) forwards,
-                            spacePanelStarTwinkle 14.2s linear infinite !important;
-
-                        /* Transition để hỗ trợ hover effect */
+                        animation: superChatBounce 0.62s cubic-bezier(0.2, 0.95, 0.22, 1) forwards !important;
+                        
                         transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1),
                             box-shadow 0.3s cubic-bezier(0.34, 1.56, 0.64, 1) !important;
-
-
                         width: auto !important;
                         max-width: 100% !important;
                     }
@@ -2384,107 +1731,11 @@
                         }
                     }
 
-                    /* Special Card Star Sparkle (Unified for Super Chat & Membership) */
-                    yt-live-chat-paid-message-renderer::before,
-                    yt-live-chat-paid-message-renderer::after,
-                    yt-live-chat-membership-item-renderer::before,
-                    yt-live-chat-membership-item-renderer::after,
-                    ytd-sponsorships-live-chat-gift-purchase-announcement-renderer::before,
-                    ytd-sponsorships-live-chat-gift-purchase-announcement-renderer::after,
-                    ytd-sponsorships-live-chat-gift-redemption-announcement-renderer::before,
-                    ytd-sponsorships-live-chat-gift-redemption-announcement-renderer::after {
-                        content: "" !important;
-                        position: absolute !important;
-                        inset: 0 !important;
-                        border-radius: inherit !important;
-                        pointer-events: none !important;
-                        overflow: hidden !important;
-                        display: block !important;
-                        background-repeat: no-repeat !important;
-                        z-index: 2 !important;
-                    }
-
-                    /* Group A Stars (::after) */
-                    yt-live-chat-paid-message-renderer::after,
-                    yt-live-chat-membership-item-renderer::after,
-                    ytd-sponsorships-live-chat-gift-purchase-announcement-renderer::after,
-                    ytd-sponsorships-live-chat-gift-redemption-announcement-renderer::after {
-                        background-image:
-                            url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M10 0 L11.5 8.5 L20 10 L11.5 11.5 L10 20 L8.5 11.5 L0 10 L8.5 8.5Z' fill='white'/%3E%3C/svg%3E"),
-                            url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M10 0 L11.5 8.5 L20 10 L11.5 11.5 L10 20 L8.5 11.5 L0 10 L8.5 8.5Z' fill='white'/%3E%3C/svg%3E"),
-                            url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M10 0 L11.5 8.5 L20 10 L11.5 11.5 L10 20 L8.5 11.5 L0 10 L8.5 8.5Z' fill='white'/%3E%3C/svg%3E"),
-                            url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M10 0 L11.5 8.5 L20 10 L11.5 11.5 L10 20 L8.5 11.5 L0 10 L8.5 8.5Z' fill='white'/%3E%3C/svg%3E"),
-                            url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M10 0 L11.5 8.5 L20 10 L11.5 11.5 L10 20 L8.5 11.5 L0 10 L8.5 8.5Z' fill='white'/%3E%3C/svg%3E"),
-                            url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M10 0 L11.5 8.5 L20 10 L11.5 11.5 L10 20 L8.5 11.5 L0 10 L8.5 8.5Z' fill='white'/%3E%3C/svg%3E"),
-                            url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M10 0 L11.5 8.5 L20 10 L11.5 11.5 L10 20 L8.5 11.5 L0 10 L8.5 8.5Z' fill='white'/%3E%3C/svg%3E"),
-                            url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M10 0 L11.5 8.5 L20 10 L11.5 11.5 L10 20 L8.5 11.5 L0 10 L8.5 8.5Z' fill='white'/%3E%3C/svg%3E"),
-                            url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M10 0 L11.5 8.5 L20 10 L11.5 11.5 L10 20 L8.5 11.5 L0 10 L8.5 8.5Z' fill='white'/%3E%3C/svg%3E"),
-                            url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M10 0 L11.5 8.5 L20 10 L11.5 11.5 L10 20 L8.5 11.5 L0 10 L8.5 8.5Z' fill='white'/%3E%3C/svg%3E"),
-                            url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M10 0 L11.5 8.5 L20 10 L11.5 11.5 L10 20 L8.5 11.5 L0 10 L8.5 8.5Z' fill='white'/%3E%3C/svg%3E"),
-                            url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M10 0 L11.5 8.5 L20 10 L11.5 11.5 L10 20 L8.5 11.5 L0 10 L8.5 8.5Z' fill='white'/%3E%3C/svg%3E"),
-                            url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M10 0 L11.5 8.5 L20 10 L11.5 11.5 L10 20 L8.5 11.5 L0 10 L8.5 8.5Z' fill='white'/%3E%3C/svg%3E"),
-                            url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M10 0 L11.5 8.5 L20 10 L11.5 11.5 L10 20 L8.5 11.5 L0 10 L8.5 8.5Z' fill='white'/%3E%3C/svg%3E"),
-                            url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M10 0 L11.5 8.5 L20 10 L11.5 11.5 L10 20 L8.5 11.5 L0 10 L8.5 8.5Z' fill='white'/%3E%3C/svg%3E"),
-                            url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M10 0 L11.5 8.5 L20 10 L11.5 11.5 L10 20 L8.5 11.5 L0 10 L8.5 8.5Z' fill='white'/%3E%3C/svg%3E"),
-                            url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M10 0 L11.5 8.5 L20 10 L11.5 11.5 L10 20 L8.5 11.5 L0 10 L8.5 8.5Z' fill='white'/%3E%3C/svg%3E"),
-                            url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M10 0 L11.5 8.5 L20 10 L11.5 11.5 L10 20 L8.5 11.5 L0 10 L8.5 8.5Z' fill='white'/%3E%3C/svg%3E"),
-                            url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M10 0 L11.5 8.5 L20 10 L11.5 11.5 L10 20 L8.5 11.5 L0 10 L8.5 8.5Z' fill='white'/%3E%3C/svg%3E"),
-                            url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M10 0 L11.5 8.5 L20 10 L11.5 11.5 L10 20 L8.5 11.5 L0 10 L8.5 8.5Z' fill='white'/%3E%3C/svg%3E") !important;
-                        background-position:
-                            5% 10%, 25% 15%, 45% 12%, 65% 18%, 85% 14%,
-                            15% 35%, 35% 40%, 55% 38%, 75% 42%, 95% 36%,
-                            10% 65%, 30% 60%, 50% 62%, 70% 58%, 90% 64%,
-                            20% 85%, 40% 90%, 60% 88%, 80% 92%, 100% 86%;
-                        animation:
-                            chipStarGroupA 40s step-end infinite,
-                            chipStarFade 8s ease-in-out infinite !important;
-                    }
-
-                    /* Group B Stars (::before) */
-                    yt-live-chat-paid-message-renderer::before,
-                    yt-live-chat-membership-item-renderer::before,
-                    ytd-sponsorships-live-chat-gift-purchase-announcement-renderer::before,
-                    ytd-sponsorships-live-chat-gift-redemption-announcement-renderer::before {
-                        background-image:
-                            url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M10 0 L11.5 8.5 L20 10 L11.5 11.5 L10 20 L8.5 11.5 L0 10 L8.5 8.5Z' fill='white'/%3E%3C/svg%3E"),
-                            url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M10 0 L11.5 8.5 L20 10 L11.5 11.5 L10 20 L8.5 11.5 L0 10 L8.5 8.5Z' fill='white'/%3E%3C/svg%3E"),
-                            url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M10 0 L11.5 8.5 L20 10 L11.5 11.5 L10 20 L8.5 11.5 L0 10 L8.5 8.5Z' fill='white'/%3E%3C/svg%3E"),
-                            url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M10 0 L11.5 8.5 L20 10 L11.5 11.5 L10 20 L8.5 11.5 L0 10 L8.5 8.5Z' fill='white'/%3E%3C/svg%3E"),
-                            url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M10 0 L11.5 8.5 L20 10 L11.5 11.5 L10 20 L8.5 11.5 L0 10 L8.5 8.5Z' fill='white'/%3E%3C/svg%3E"),
-                            url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M10 0 L11.5 8.5 L20 10 L11.5 11.5 L10 20 L8.5 11.5 L0 10 L8.5 8.5Z' fill='white'/%3E%3C/svg%3E"),
-                            url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M10 0 L11.5 8.5 L20 10 L11.5 11.5 L10 20 L8.5 11.5 L0 10 L8.5 8.5Z' fill='white'/%3E%3C/svg%3E"),
-                            url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M10 0 L11.5 8.5 L20 10 L11.5 11.5 L10 20 L8.5 11.5 L0 10 L8.5 8.5Z' fill='white'/%3E%3C/svg%3E"),
-                            url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M10 0 L11.5 8.5 L20 10 L11.5 11.5 L10 20 L8.5 11.5 L0 10 L8.5 8.5Z' fill='white'/%3E%3C/svg%3E"),
-                            url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M10 0 L11.5 8.5 L20 10 L11.5 11.5 L10 20 L8.5 11.5 L0 10 L8.5 8.5Z' fill='white'/%3E%3C/svg%3E"),
-                            url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M10 0 L11.5 8.5 L20 10 L11.5 11.5 L10 20 L8.5 11.5 L0 10 L8.5 8.5Z' fill='white'/%3E%3C/svg%3E"),
-                            url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M10 0 L11.5 8.5 L20 10 L11.5 11.5 L10 20 L8.5 11.5 L0 10 L8.5 8.5Z' fill='white'/%3E%3C/svg%3E"),
-                            url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M10 0 L11.5 8.5 L20 10 L11.5 11.5 L10 20 L8.5 11.5 L0 10 L8.5 8.5Z' fill='white'/%3E%3C/svg%3E"),
-                            url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M10 0 L11.5 8.5 L20 10 L11.5 11.5 L10 20 L8.5 11.5 L0 10 L8.5 8.5Z' fill='white'/%3E%3C/svg%3E"),
-                            url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M10 0 L11.5 8.5 L20 10 L11.5 11.5 L10 20 L8.5 11.5 L0 10 L8.5 8.5Z' fill='white'/%3E%3C/svg%3E"),
-                            url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M10 0 L11.5 8.5 L20 10 L11.5 11.5 L10 20 L8.5 11.5 L0 10 L8.5 8.5Z' fill='white'/%3E%3C/svg%3E"),
-                            url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M10 0 L11.5 8.5 L20 10 L11.5 11.5 L10 20 L8.5 11.5 L0 10 L8.5 8.5Z' fill='white'/%3E%3C/svg%3E"),
-                            url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M10 0 L11.5 8.5 L20 10 L11.5 11.5 L10 20 L8.5 11.5 L0 10 L8.5 8.5Z' fill='white'/%3E%3C/svg%3E"),
-                            url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M10 0 L11.5 8.5 L20 10 L11.5 11.5 L10 20 L8.5 11.5 L0 10 L8.5 8.5Z' fill='white'/%3E%3C/svg%3E"),
-                            url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M10 0 L11.5 8.5 L20 10 L11.5 11.5 L10 20 L8.5 11.5 L0 10 L8.5 8.5Z' fill='white'/%3E%3C/svg%3E") !important;
-                        background-position:
-                            15% 12%, 35% 8%, 55% 15%, 75% 10%, 95% 18%,
-                            5% 42%, 25% 38%, 45% 45%, 65% 40%, 85% 35%,
-                            20% 60%, 40% 68%, 60% 62%, 80% 65%, 100% 58%,
-                            10% 92%, 30% 88%, 50% 95%, 70% 85%, 90% 90%;
-                        animation:
-                            chipStarGroupB 40s step-end infinite,
-                            chipStarFade 8s ease-in-out infinite !important;
-                        animation-delay: -4s, -4s !important;
-                    }
-
-
                     /* Ẩn avatar của superchat - Hide superchat avatar */
                     yt-live-chat-paid-message-renderer #author-photo,
                     yt-live-chat-paid-message-renderer #author-photo img {
                         display: none !important;
                     }
-
-
 
                     yt-live-chat-paid-message-renderer #header {
                         background-color: transparent !important;
@@ -2624,7 +1875,6 @@
                         line-height: 1.4 !important;
                         font-weight: 700 !important;
 
-
                         text-shadow:
                             -2px -2px 0 #000000,
                             2px -2px 0 #000000,
@@ -2652,22 +1902,28 @@
                         display: none !important;
                     }
 
-
                     yt-live-chat-legacy-paid-message-renderer {
-                        background-color: #E3F2FD !important;
-                        background: linear-gradient(135deg, #E3F2FD 0%, #BBDEFB 100%) !important;
-                        background-image: none !important;
-                        border: 3px solid #42A5F5 !important;
+                        background-color: #C5E1A5 !important;
+                        background-image:
+                            var(--leaf-veins),
+                            linear-gradient(135deg, #F1F8E9 0%, #C5E1A5 100%) !important;
+                        background-repeat: repeat-x, no-repeat !important;
+                        background-position: 0px 0px, 0 0 !important;
+                        background-size: 100px 100%, auto !important;
+                        border: 3.5px solid #FFF !important; /* Elegant white border */
                         border-radius: 22px !important;
                         margin: 28px 10px 6px 6px !important;
-                        box-shadow: 4px 4px 0px rgba(66, 165, 245, 0.25) !important;
+                        box-shadow:
+                            0 1.5px 0 rgba(255, 255, 255, 0.45) inset,
+                            0 -1.5px 0 rgba(139, 195, 74, 0.2) inset,
+                            0 6px 15px rgba(139, 195, 74, 0.45),
+                            2px 2px 0 rgba(51, 105, 30, 0.25) !important;
                         position: relative !important;
-                        overflow: visible !important;
-                        padding: 10px 15px !important;
+                        overflow: hidden !important;
+                        padding: 12px 18px !important;
                         animation: superChatPop 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
                         width: fit-content !important;
                         min-width: 295px !important;
-
                     }
 
                     yt-live-chat-legacy-paid-message-renderer::after {
@@ -2676,11 +1932,11 @@
 
                     yt-live-chat-legacy-paid-message-renderer #event-text,
                     yt-live-chat-legacy-paid-message-renderer #detail-text {
-                        color: #0D47A1 !important;
-                        font-family: "Quicksand", "Nunito", sans-serif !important;
+                        color: #33691E !important; /* Deep forest green */
+                        font-family: var(--font-mystical), 'Cormorant', 'Spectral', serif !important;
                         font-weight: 800 !important;
                         font-size: 18px !important;
-                        text-shadow: -1px -1px 0 #FFF, 1px 1px 0 #FFF !important;
+                        text-shadow: 0 1px 2px rgba(255, 255, 255, 0.6) !important;
                         white-space: normal !important;
                         overflow-wrap: anywhere !important;
                         word-break: break-word !important;
@@ -2692,14 +1948,14 @@
 
                     /* Regular Hyperlinks - Spacegods Cosmic Style */
                     yt-live-chat-text-message-renderer #message a {
-                        color: #00F2FF !important;
-                        /* Electric Cyan */
+                        color: #B388FF !important;
+                        /* Cosmic Purple */
                         font-family: "Chakra Petch", sans-serif !important;
                         font-weight: 700 !important;
                         text-decoration: none !important;
-                        border-bottom: 2px dashed rgba(0, 242, 255, 0.6) !important;
+                        border-bottom: 2px dashed rgba(179, 136, 255, 0.6) !important;
                         text-shadow:
-                            0 0 10px rgba(0, 242, 255, 0.8),
+                            0 0 10px rgba(179, 136, 255, 0.8),
                             -1.5px -1.5px 0 #000,
                             1.5px -1.5px 0 #000,
                             -1.5px 1.5px 0 #000,
@@ -2708,7 +1964,7 @@
                     }
 
                     yt-live-chat-text-message-renderer #message a:hover {
-                        color: #84FFFF !important;
+                        color: #E1BEE7 !important;
                         text-decoration: none !important;
                     }
 
@@ -2731,9 +1987,9 @@
                         margin: 0 2px !important;
                         padding: 1px 10px !important;
                         border-radius: 999px !important;
-                        border: 2px solid #1A237E !important;
-                        background: #82B1FF !important;
-                        color: #0D1333 !important;
+                        border: 2px solid #6A1B9A !important;
+                        background: #CE93D8 !important;
+                        color: #1A0A3E !important;
                         font-family: "Quicksand", "Baloo 2", "Itim", "Nunito", "Noto Sans", sans-serif !important;
                         font-weight: 900 !important;
                         font-size: 15px !important;
@@ -2796,7 +2052,6 @@
                         color: #2B1B16 !important;
                         margin-left: 4px !important;
                     }
-
 
                     yt-live-chat-ticker-renderer {
                         display: none !important;
@@ -2930,7 +2185,6 @@
                         align-items: center !important;
                     }
 
-
                     yt-live-chat-item-list-renderer {
                         padding-top: 40px !important;
                     }
@@ -2948,19 +2202,17 @@
                     }
 
                     yt-live-chat-text-message-renderer #timestamp {
-                        color: rgba(100, 80, 50, 0.8) !important;
+                        color: rgba(179, 136, 255, 0.6) !important;
                         font-family: "Nunito", sans-serif;
                         font-size: 15px !important;
                         font-weight: 600 !important;
                     }
-
 
                     yt-live-chat-text-message-renderer #menu,
                     yt-live-chat-paid-message-renderer #menu,
                     #menu {
                         display: none !important;
                     }
-
 
                     yt-live-chat-header-renderer,
                     yt-live-chat-message-input-renderer,
@@ -2987,42 +2239,45 @@
                         font-weight: 700 !important;
                     }
 
-
-
-
                     yt-live-chat-membership-item-renderer,
                     ytd-sponsorships-live-chat-gift-purchase-announcement-renderer,
                     ytd-sponsorships-live-chat-gift-redemption-announcement-renderer {
-
-                        background-color: #0A0E27 !important;
+                        background-color: #F7A8C4 !important;
                         background-image:
-                            radial-gradient(circle at 11% 24%, rgba(255, 255, 255, 0.88) 0 1.1px, transparent 1.35px),
-                            radial-gradient(circle at 24% 72%, rgba(191, 239, 230, 0.68) 0 0.95px, transparent 1.2px),
-                            radial-gradient(circle at 43% 18%, rgba(255, 255, 255, 0.8) 0 1px, transparent 1.25px),
-                            radial-gradient(circle at 62% 78%, rgba(163, 230, 211, 0.56) 0 0.9px, transparent 1.15px),
-                            radial-gradient(circle at 82% 34%, rgba(255, 255, 255, 0.78) 0 1.05px, transparent 1.3px),
-                            radial-gradient(circle at 92% 68%, rgba(146, 215, 199, 0.54) 0 0.85px, transparent 1.1px),
-                            linear-gradient(155deg, rgba(167, 198, 255, 0.24) 0 28%, rgba(255, 255, 255, 0) 30% 100%) !important;
-                        background-repeat: no-repeat !important;
-                        border: 4px solid #141A46 !important;
+                            var(--leaf-veins),
+                            linear-gradient(135deg, #FFF0F5 0%, #FBC4D7 50%, #F7A8C4 100%) !important;
+                        background-repeat: repeat-x, no-repeat !important;
+                        background-position: 0px 0px, 0 0 !important;
+                        background-size: 100px 100%, auto !important;
+                        
+                        border: 3.5px solid #FFF !important; /* Elegant rounded cream border */
                         border-radius: 24px !important;
-                        margin: 38px 10px 8px 8px !important;
+                        margin: 20px 20px 20px 45px !important;
+                        
                         box-shadow:
-                            0 2px 0 rgba(255, 255, 255, 0.28) inset,
-                            0 -2px 0 rgba(7, 12, 38, 0.36) inset,
-                            5px 5px 0 #05081A !important;
+                            0 1.5px 0 rgba(255, 255, 255, 0.45) inset,
+                            0 -1.5px 0 rgba(244, 143, 177, 0.28) inset,
+                            0 8px 24px rgba(244, 143, 177, 0.45),
+                            2px 2px 0 rgba(136, 14, 79, 0.25) !important;
+                        
                         position: relative !important;
                         overflow: hidden !important;
                         padding: 0 !important;
                         display: flex !important;
                         flex-direction: column !important;
-
-                        animation:
-                            animePopIn 0.45s cubic-bezier(0.22, 1, 0.36, 1) forwards,
-                            spacePanelStarTwinkle 14.8s linear infinite !important;
-
+                        animation: animePopIn 0.45s cubic-bezier(0.22, 1, 0.36, 1) forwards, shimmer-mystical-member 4s infinite ease-in-out !important;
                         width: fit-content !important;
                         min-width: 295px !important;
+                        max-width: 95% !important;
+                    }
+
+                    yt-live-chat-membership-item-renderer #message,
+                    ytd-sponsorships-live-chat-gift-purchase-announcement-renderer #message {
+                        color: #4E0D29 !important;
+                        font-family: "Nunito", "Noto Sans", sans-serif !important;
+                        font-weight: 700 !important;
+                        font-size: 24px !important;
+                        text-shadow: 0 1px 2px rgba(255, 255, 255, 0.5) !important;
                     }
 
                     yt-live-chat-membership-item-renderer:nth-of-type(2n),
@@ -3034,7 +2289,6 @@
                     /* Membership Pineapple Decoration (Generic) */
                     /* Repurposed for unified sparkle block above */
 
-
                     /* Try to target Milestone messages roughly by structure or just general decoration */
                     /* Since strict differentiation is hard, we apply one style. */
                     /* Just in case, if empty content (New Member sometimes), maybe smaller pineapple? */
@@ -3045,16 +2299,12 @@
                         left: -10px !important;
                     }
 
-
                     /* Hidden via unified sparkle block above */
-
-
-
 
                     yt-live-chat-membership-item-renderer #header,
                     ytd-sponsorships-live-chat-gift-purchase-announcement-renderer #header,
                     ytd-sponsorships-live-chat-gift-redemption-announcement-renderer #header {
-                        background: rgba(167, 198, 255, 0.15) !important;
+                        background: rgba(255, 255, 255, 0.35) !important;
                         border-bottom: none !important;
                         border-radius: 20px 20px 0 0 !important;
                         padding: 8px 15px 5px 15px !important;
@@ -3064,53 +2314,36 @@
                         z-index: 3 !important;
                     }
 
-
                     yt-live-chat-membership-item-renderer #content,
                     ytd-sponsorships-live-chat-gift-purchase-announcement-renderer #content,
                     ytd-sponsorships-live-chat-gift-redemption-announcement-renderer #content {
+                        background: rgba(255, 255, 255, 0.15) !important;
                         padding: 8px 15px 12px 15px !important;
                         z-index: 3 !important;
                         border-radius: 0 0 20px 20px !important;
                         overflow: visible !important;
                     }
 
-
-
                     yt-live-chat-membership-item-renderer #author-name,
                     ytd-sponsorships-live-chat-gift-purchase-announcement-renderer #author-name,
                     ytd-sponsorships-live-chat-gift-redemption-announcement-renderer #author-name {
-                        color: #FFFFFF !important;
-                        font-family: "Quicksand", "Baloo 2", "Itim", "Nunito", "Noto Sans", sans-serif !important;
+                        color: #880E4F !important;
+                        font-family: var(--font-mystical), 'Cormorant', 'Spectral', serif !important;
                         font-weight: 800 !important;
                         font-size: 18px !important;
-                        text-shadow:
-                            -1.5px -1.5px 0 #000000,
-                            1.5px -1.5px 0 #000000,
-                            -1.5px 1.5px 0 #000000,
-                            1.5px 1.5px 0 #000000,
-                            2px 2px 0 rgba(0, 0, 0, 0.45) !important;
+                        text-shadow: 0 1px 2px rgba(255, 255, 255, 0.5) !important;
                     }
-
 
                     yt-live-chat-membership-item-renderer #header-subtext,
                     yt-live-chat-membership-item-renderer #header-primary-text,
                     ytd-sponsorships-live-chat-gift-purchase-announcement-renderer #header-primary-text,
                     ytd-sponsorships-live-chat-gift-redemption-announcement-renderer #message {
-                        color: #FFFFFF !important;
-                        font-family: "Quicksand", "Nunito", "Baloo 2", "Itim", "Patrick Hand", "Noto Sans", sans-serif !important;
-                        font-size: 18px !important;
-                        font-weight: 800 !important;
-                        text-shadow:
-                            -1.5px -1.5px 0 #000000,
-                            1.5px -1.5px 0 #000000,
-                            -1.5px 1.5px 0 #000000,
-                            1.5px 1.5px 0 #000000,
-                            2px 2px 0 rgba(0, 0, 0, 0.45) !important;
-
-                        white-space: normal !important;
-                        overflow-wrap: anywhere !important;
+                        color: #C2185B !important;
+                        font-family: "Quicksand", "Nunito", sans-serif !important;
+                        font-weight: 700 !important;
+                        font-size: 15px !important;
+                        text-shadow: 0 1px 1px rgba(255, 255, 255, 0.4) !important;
                     }
-
 
                     ytd-sponsorships-live-chat-header-renderer {
                         background: transparent !important;
@@ -3120,7 +2353,6 @@
                         display: flex !important;
                         align-items: center !important;
                     }
-
 
                     ytd-sponsorships-live-chat-header-renderer #primary-text {
                         color: #FFFFFF !important;
@@ -3150,15 +2382,9 @@
                             0 0 5px rgba(255, 255, 255, 0.1) !important;
                     }
 
-
                     yt-live-chat-membership-item-renderer #author-photo,
                     ytd-sponsorships-live-chat-gift-purchase-announcement-renderer #author-photo {
-                        width: 40px !important;
-                        height: 40px !important;
-                        border-radius: 50% !important;
-                        border: 2px solid #FFFFFF !important;
-                        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2) !important;
-                        margin-right: 10px !important;
+                        display: none !important;
                     }
 
                     /* Hide avatar for gift redemption announcements */
@@ -3183,7 +2409,7 @@
                         width: var(--notice-width) !important;
                         max-width: calc(100vw - 40px) !important;
                         height: 95px !important;
-                        background-color: #1B1B4D !important;
+                        background-color: #1A0A3E !important;
                         background-image:
                             radial-gradient(circle at 12% 28%, rgba(255, 255, 255, 0.85) 0 1.1px, transparent 1.35px),
                             radial-gradient(circle at 26% 68%, rgba(194, 227, 255, 0.62) 0 0.95px, transparent 1.2px),
@@ -3221,7 +2447,7 @@
                         line-height: 40px !important;
                         letter-spacing: 0.03em !important;
                         text-align: center !important;
-                        -webkit-text-stroke: 0.8px #10143A !important;
+                        -webkit-text-stroke: 0.8px #1A0A3E !important;
                         text-shadow: 0 2px 4px rgba(9, 7, 27, 0.8) !important;
                         z-index: 100006 !important;
                         /* Above countdown */
@@ -3362,4 +2588,95 @@
                     yt-live-chat-text-message-renderer:has(img[src*="k6eeXty5ve5rQ"]) yt-live-chat-author-chip::after {
                         display: none !important;
                         background: none !important;
+                    }
+
+                    /* ============================================================
+                       MAGIC BEANSTALK & LEAF CHIP CONNECTION SYSTEM
+                       ============================================================ */
+
+                    body {
+                        --beanstalk-svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 80 120'%3E%3Cpath d='M30 -20 Q50 20, 30 60 T30 140 T30 180' stroke='%2305140d' stroke-width='24' fill='none' opacity='0.4' filter='blur%282px%29'/%3E%3Cpath d='M35 -20 C 55 20, 15 60, 35 100 C 55 140, 15 180, 35 220' stroke='%231b5e20' stroke-width='14' stroke-linecap='round' fill='none'/%3E%3Cpath d='M45 -20 C 25 20, 65 60, 45 100 C 25 140, 65 180, 45 220' stroke='%232e7d32' stroke-width='12' stroke-linecap='round' fill='none'/%3E%3Cpath d='M35 -20 C 55 20, 15 60, 35 100 C 55 140, 15 180, 35 220' stroke='%234caf50' stroke-width='6' stroke-linecap='round' fill='none'/%3E%3Cpath d='M35 -20 C 55 20, 15 60, 35 100 C 55 140, 15 180, 35 220' stroke='%2381c784' stroke-width='3' stroke-linecap='round' fill='none'/%3E%3Cpath d='M45 -20 C 25 20, 65 60, 45 100 C 25 140, 65 180, 45 220' stroke='%23a5d6a7' stroke-width='4' stroke-linecap='round' fill='none' stroke-dasharray='12 8'/%3E%3Cpath d='M40 30 C 55 20, 65 30, 50 45 Z' fill='%2381c784' stroke='%231b5e20' stroke-width='1.5'/%3E%3Cpath d='M40 30 Q 48 34 50 45' stroke='%231b5e20' stroke-width='1'/%3E%3Cpath d='M30 110 C 10 100, 5 115, 18 125 Z' fill='%2381c784' stroke='%231b5e20' stroke-width='1.5'/%3E%3Cpath d='M30 110 Q 20 114 18 125' stroke='%231b5e20' stroke-width='1'/%3E%3Ccircle cx='50' cy='60' r='1.5' fill='%23ffd54f' opacity='0.8'/%3E%3Ccircle cx='20' cy='140' r='1.2' fill='%23fff' opacity='0.9'/%3E%3Ccircle cx='35' cy='10' r='1.8' fill='%23ffd54f' opacity='0.75'/%3E%3C/svg%3E");
+                        --stem-svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 80 30'%3E%3Cpath d='M 0 16 C 30 16, 50 10, 80 10' stroke='%2305140d' stroke-width='6' stroke-linecap='round' fill='none' opacity='0.4'/%3E%3Cpath d='M 0 16 C 30 16, 50 10, 80 10' stroke='%232e7d32' stroke-width='4' stroke-linecap='round' fill='none'/%3E%3Cpath d='M 0 16 C 30 16, 50 10, 80 10' stroke='%234caf50' stroke-width='2' stroke-linecap='round' fill='none'/%3E%3Cpath d='M 40 13 Q 45 4, 52 6 T 53 15 T 46 13' stroke='%2381c784' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+                    }
+
+                    /* Shift the chat list content to the right to make room for the beanstalk */
+                    yt-live-chat-item-list-renderer #items {
+                        margin-left: 70px !important;
+                        position: relative !important;
+                    }
+
+                    /* Make room for the scroller overlay/stems */
+                    yt-live-chat-item-list-renderer #item-scroller {
+                        overflow-y: hidden !important;
+                        overflow-x: visible !important;
+                    }
+                    yt-live-chat-item-list-renderer {
+                        overflow: visible !important;
+                    }
+
+                    /* The vertical Beanstalk on the left side of the chat list */
+                    yt-live-chat-item-list-renderer::before {
+                        content: "" !important;
+                        position: absolute !important;
+                        top: 0 !important;
+                        bottom: 0 !important;
+                        left: 10px !important;
+                        width: 55px !important;
+                        background-image: var(--beanstalk-svg) !important;
+                        background-repeat: repeat-y !important;
+                        background-size: 100% auto !important;
+                        z-index: 5 !important;
+                        pointer-events: none !important;
+                    }
+
+                    /* Ensure all types of chat renderers have visible overflow and correct left margin */
+                    yt-live-chat-text-message-renderer,
+                    yt-live-chat-paid-message-renderer,
+                    yt-live-chat-membership-item-renderer,
+                    ytd-sponsorships-live-chat-gift-purchase-announcement-renderer,
+                    ytd-sponsorships-live-chat-gift-redemption-announcement-renderer,
+                    yt-live-chat-legacy-paid-message-renderer {
+                        overflow: visible !important;
+                        contain: none !important;
+                        clip-path: none !important;
+                    }
+
+                    yt-live-chat-paid-message-renderer,
+                    yt-live-chat-membership-item-renderer,
+                    ytd-sponsorships-live-chat-gift-purchase-announcement-renderer,
+                    ytd-sponsorships-live-chat-gift-redemption-announcement-renderer,
+                    yt-live-chat-legacy-paid-message-renderer {
+                        margin-left: 10px !important; /* Reset margin since parent #items is already shifted */
+                    }
+
+                    /* The Connecting Stems (Cuống lá) for all message cards */
+                    yt-live-chat-text-message-renderer::before,
+                    yt-live-chat-paid-message-renderer::before,
+                    yt-live-chat-membership-item-renderer::before,
+                    ytd-sponsorships-live-chat-gift-purchase-announcement-renderer::before,
+                    ytd-sponsorships-live-chat-gift-redemption-announcement-renderer::before,
+                    yt-live-chat-legacy-paid-message-renderer::before {
+                        content: "" !important;
+                        position: absolute !important;
+                        left: -60px !important;
+                        width: 65px !important;
+                        height: 30px !important;
+                        top: 10px !important;
+                        background-image: var(--stem-svg) !important;
+                        background-repeat: no-repeat !important;
+                        background-size: 100% 100% !important;
+                        z-index: 100 !important;
+                        pointer-events: none !important;
+                    }
+                    
+                    /* Adjust vertical position of stem specifically for paid renderers and legacy/milestones */
+                    yt-live-chat-paid-message-renderer::before,
+                    yt-live-chat-membership-item-renderer::before,
+                    ytd-sponsorships-live-chat-gift-purchase-announcement-renderer::before,
+                    ytd-sponsorships-live-chat-gift-redemption-announcement-renderer::before {
+                        top: 15px !important;
+                    }
+                    
+                    yt-live-chat-legacy-paid-message-renderer::before {
+                        top: 14px !important;
                     }
