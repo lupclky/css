@@ -24,8 +24,6 @@
 
     @import url("https://fonts.googleapis.com/css2?family=Cormorant:wght@500;600;700&family=Spectral:wght@500;600;700;800&display=swap");
 
-    @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap");
-
 
     /* ============================================================
     SECTION 2: CSS VARIABLES
@@ -40,12 +38,12 @@
         overflow: hidden !important;
         background-color: rgba(0, 0, 0, 0);
         --font-mystical: "Itim", "Comfortaa", "Fredoka", "Quicksand", "Nunito", "Noto Sans", sans-serif;
-        --leaf-veins: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%3E%3C/svg%3E");
+        --leaf-veins: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%22100%22%20height%3D%2240%22%20viewBox%3D%220%200%20100%2040%22%3E%0A%20%20%3C%21--%20Constellation%20lines%20--%3E%0A%20%20%3Cpath%20d%3D%22M%2012%2012%20L%2032%2024%20L%2058%2012%20L%2082%2028%22%20stroke%3D%22rgba%28255%2C255%2C255%2C0.2%29%22%20stroke-width%3D%221%22%20fill%3D%22none%22%20stroke-linecap%3D%22round%22%20/%3E%0A%20%20%3Cpath%20d%3D%22M%2032%2024%20L%2048%2030%20L%2078%208%22%20stroke%3D%22rgba%28255%2C255%2C255%2C0.12%29%22%20stroke-width%3D%220.8%22%20fill%3D%22none%22%20stroke-linecap%3D%22round%22%20/%3E%0A%0A%20%20%3C%21--%20Constellation%20Stars%20--%3E%0A%20%20%3C%21--%20Star%201%20--%3E%0A%20%20%3Cpath%20d%3D%22M%2012%209%20Q%2012%2012%2015%2012%20Q%2012%2012%2012%2015%20Q%2012%2012%209%2012%20Q%2012%2012%2012%209%20Z%22%20fill%3D%22rgba%28255%2C255%2C255%2C0.85%29%22%20/%3E%0A%20%20%3C%21--%20Star%202%20--%3E%0A%20%20%3Ccircle%20cx%3D%2232%22%20cy%3D%2224%22%20r%3D%221.5%22%20fill%3D%22rgba%28255%2C255%2C255%2C0.9%29%22%20/%3E%0A%20%20%3C%21--%20Star%203%20--%3E%0A%20%20%3Cpath%20d%3D%22M%2058%209%20Q%2058%2012%2061%2012%20Q%2058%2012%2058%2015%20Q%2058%2012%2055%2012%20Q%2058%2012%2055%209%20Z%22%20fill%3D%22rgba%28255%2C255%2C255%2C0.85%29%22%20/%3E%0A%20%20%3C%21--%20Star%204%20--%3E%0A%20%20%3Ccircle%20cx%3D%2282%22%20cy%3D%2228%22%20r%3D%221.2%22%20fill%3D%22rgba%28255%2C255%2C255%2C0.8%29%22%20/%3E%0A%20%20%3C%21--%20Star%205%20--%3E%0A%20%20%3Ccircle%20cx%3D%2248%22%20cy%3D%2230%22%20r%3D%221%22%20fill%3D%22rgba%28255%2C255%2C255%2C0.7%29%22%20/%3E%0A%20%20%3C%21--%20Star%206%20--%3E%0A%20%20%3Cpath%20d%3D%22M%2078%206%20Q%2078%208%2080%208%20Q%2078%208%2078%2010%20Q%2078%208%2076%208%20Q%2078%208%2078%206%20Z%22%20fill%3D%22rgba%28255%2C255%2C255%2C0.75%29%22%20/%3E%0A%0A%20%20%3C%21--%20Tiny%20magical%20dust%20--%3E%0A%20%20%3Ccircle%20cx%3D%2220%22%20cy%3D%228%22%20r%3D%220.6%22%20fill%3D%22rgba%28255%2C255%2C255%2C0.5%29%22%20/%3E%0A%20%20%3Ccircle%20cx%3D%2270%22%20cy%3D%2232%22%20r%3D%220.5%22%20fill%3D%22rgba%28255%2C255%2C255%2C0.4%29%22%20/%3E%0A%20%20%3Ccircle%20cx%3D%2290%22%20cy%3D%2216%22%20r%3D%220.7%22%20fill%3D%22rgba%28255%2C255%2C255%2C0.6%29%22%20/%3E%0A%3C/svg%3E");
         --greeting-leaf-veins: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='40' viewBox='0 0 120 40'%3E%3Cpath d='M0,25 Q30,20 60,25 T120,25' stroke='rgba(167, 243, 208, 0.15)' stroke-width='1.2' fill='none'/%3E%3Cpath d='M20,24 Q30,10 40,15' stroke='rgba(167, 243, 208, 0.1)' stroke-width='0.8' fill='none'/%3E%3Cpath d='M50,24 Q60,35 70,30' stroke='rgba(167, 243, 208, 0.1)' stroke-width='0.8' fill='none'/%3E%3Cpath d='M80,25 Q90,10 100,15' stroke='rgba(167, 243, 208, 0.1)' stroke-width='0.8' fill='none'/%3E%3Cpath d='M30,12 C32,8 38,8 40,15 C38,17 32,17 30,12 Z' fill='rgba(167, 243, 208, 0.08)' stroke='rgba(167, 243, 208, 0.15)' stroke-width='0.5'/%3E%3Cpath d='M60,33 C62,37 68,37 70,30 C68,28 62,28 60,33 Z' fill='rgba(167, 243, 208, 0.08)' stroke='rgba(167, 243, 208, 0.15)' stroke-width='0.5'/%3E%3Cpath d='M90,12 C92,8 98,8 100,15 C98,17 92,17 90,12 Z' fill='rgba(167, 243, 208, 0.08)' stroke='rgba(167, 243, 208, 0.15)' stroke-width='0.5'/%3E%3Ccircle cx='15' cy='12' r='1.2' fill='%23fef08a' opacity='0.7'/%3E%3Ccircle cx='45' cy='28' r='1.5' fill='%23a7f3d0' opacity='0.6'/%3E%3Ccircle cx='75' cy='8' r='1' fill='%23fef08a' opacity='0.8'/%3E%3Ccircle cx='105' cy='32' r='1.8' fill='%23a7f3d0' opacity='0.5'/%3E%3C/svg%3E");
         --leaf-shadows: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%3E%3C/svg%3E");
         --icon-sprout: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%3E%3Cpath%20d%3D%22M12%2021v-8M12%2013c-2.5%200-5-1.5-6-3.5%201-1.5%203-2%205-1%201%201.5%201%204.5%201%204.5zm0%200c2.5%200%205-1.5%206-3.5-1-1.5-3-2-5-1-1%201.5-1%204.5-1%204.5z%22%20fill%3D%22%2381C784%22%20stroke%3D%22%2333691E%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22/%3E%3C/svg%3E");
         --icon-heart: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%3E%3Cpath%20d%3D%22M12%2021.35l-1.45-1.32C5.4%2015.36%202%2012.28%202%208.5%202%205.42%204.42%203%207.5%203c1.74%200%203.41.81%204.5%202.09C13.09%203.81%2014.76%203%2016.5%203%2019.58%203%2022%205.42%2022%208.5c0%203.78-3.4%206.86-8.55%2011.54L12%2021.35z%22%20fill%3D%22%23FF4081%22%20stroke%3D%22%23880E4F%22%20stroke-width%3D%221.8%22%20stroke-linejoin%3D%22round%22/%3E%3C/svg%3E");
-        --icon-shield: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='M12 21.5s7.5-3.8 7.5-9.5V5.7L12 2.5 4.5 5.7V12c0 5.7 7.5 9.5 7.5 9.5z' fill='%231E293B' stroke='%23FBBF24' stroke-width='2' stroke-linejoin='round'/%3E%3Cpath d='M12 6.5l1.2 3.8 3.8 1.2-3.8 1.2-1.2 3.8-1.2-3.8-3.8-1.2 3.8-1.2z' fill='%2338BDF8'/%3E%3C/svg%3E");
+        --icon-shield: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%3E%3Cpath%20d%3D%22M12%2022s8-4%208-10V5l-8-3-8%203v7c0%206%208%2010%208%2010z%22%20fill%3D%22%2300BCD4%22%20stroke%3D%22%23006064%22%20stroke-width%3D%221.8%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22/%3E%3Cpath%20d%3D%22M9%2011l2%202%204-4%22%20stroke%3D%22%23FFFFFF%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22/%3E%3C/svg%3E");
         --icon-pineapple: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%3E%3Cpath%20d%3D%22M12%201.5c.3%201.5%201.2%202.2%202%202.5-.3-1.5-1.2-2.2-2-2.5z%22%20fill%3D%22%232E7D32%22/%3E%3Cpath%20d%3D%22M12%201.5c-.3%201.5-1.2%202.2-2%202.5.3-1.5%201.2-2.2%202-2.5z%22%20fill%3D%22%232E7D32%22/%3E%3Cpath%20d%3D%22M12%201c0%202%200%203%200%203%22%20stroke%3D%22%231B5E20%22%20stroke-width%3D%221%22/%3E%3Crect%20x%3D%227.5%22%20y%3D%224.5%22%20width%3D%229%22%20height%3D%2211%22%20rx%3D%224.5%22%20fill%3D%22%23FFCA28%22%20stroke%3D%22%23E65100%22%20stroke-width%3D%221.5%22/%3E%3Cpath%20d%3D%22M6%2013.5l3-2%203%202%203-2%203%202v4.5H6v-4.5z%22%20fill%3D%22%23FFD54F%22%20stroke%3D%22%23E65100%22%20stroke-width%3D%221%22/%3E%3Ccircle%20cx%3D%2212%22%20cy%3D%2216%22%20r%3D%221.5%22%20fill%3D%22%23FF1744%22/%3E%3Ccircle%20cx%3D%2210%22%20cy%3D%228.5%22%20r%3D%220.8%22%20fill%3D%22%233E2723%22/%3E%3Ccircle%20cx%3D%2214%22%20cy%3D%228.5%22%20r%3D%220.8%22%20fill%3D%22%233E2723%22/%3E%3Cpath%20d%3D%22M11.5%2010q.5.5%201%200%22%20stroke%3D%22%233E2723%22%20stroke-width%3D%220.8%22%20fill%3D%22none%22%20stroke-linecap%3D%22round%22/%3E%3C/svg%3E");
     }
 
@@ -891,16 +889,19 @@
     @keyframes chatFlowIn {
         0% {
             opacity: 0;
+            filter: brightness(1.5) drop-shadow(0 0 var(--entry-glow-radius, 8px) var(--entry-glow-color));
             transform: translateY(var(--entry-translate-y, 12px)) scale(var(--entry-scale-start, 0.93));
         }
 
         50% {
             opacity: 0.8;
+            filter: brightness(1.2) drop-shadow(0 0 var(--entry-glow-radius-soft, 4px) var(--entry-glow-color-soft));
             transform: translateY(var(--entry-translate-y-mid, -2px)) scale(var(--entry-scale-mid, 1.025));
         }
 
         100% {
             opacity: 1;
+            filter: brightness(1) drop-shadow(0 0 0 transparent);
             transform: translateY(0) scale(1);
         }
     }
@@ -957,7 +958,25 @@
     }
 
     @keyframes shimmer-mystical-member {
-        0%, 100% {
+        0% {
+            box-shadow: 0 4px 12px var(--chip-glow-color-0, rgba(244, 143, 177, 0.55)),
+                0 0 6px var(--chip-glow-color-1, rgba(244, 143, 177, 0.25)),
+                inset 0 2px 4px rgba(255, 255, 255, 0.75);
+        }
+
+        33% {
+            box-shadow: 0 8px 20px var(--chip-glow-color-2, rgba(233, 30, 99, 0.75)),
+                0 0 16px var(--chip-glow-color-3, rgba(225, 190, 231, 0.7)),
+                inset 0 2px 4px rgba(255, 255, 255, 0.95);
+        }
+
+        66% {
+            box-shadow: 0 6px 16px var(--chip-glow-color-4, rgba(186, 104, 200, 0.6)),
+                0 0 12px var(--chip-glow-color-5, rgba(244, 143, 177, 0.55)),
+                inset 0 2px 4px rgba(255, 255, 255, 0.85);
+        }
+
+        100% {
             box-shadow: 0 4px 12px var(--chip-glow-color-0, rgba(244, 143, 177, 0.55)),
                 0 0 6px var(--chip-glow-color-1, rgba(244, 143, 177, 0.25)),
                 inset 0 2px 4px rgba(255, 255, 255, 0.75);
@@ -965,7 +984,25 @@
     }
 
     @keyframes shimmer-mystical-member-golden {
-        0%, 100% {
+        0% {
+            box-shadow: 0 4px 12px rgba(245, 158, 11, 0.65),
+                0 0 6px rgba(254, 240, 138, 0.35),
+                inset 0 2px 4px rgba(255, 255, 255, 0.75);
+        }
+
+        33% {
+            box-shadow: 0 10px 28px rgba(245, 158, 11, 0.95),
+                0 0 22px rgba(254, 240, 138, 0.85),
+                inset 0 2px 5px rgba(255, 255, 255, 0.95);
+        }
+
+        66% {
+            box-shadow: 0 8px 20px rgba(245, 158, 11, 0.8),
+                0 0 16px rgba(254, 240, 138, 0.6),
+                inset 0 2px 4px rgba(255, 255, 255, 0.85);
+        }
+
+        100% {
             box-shadow: 0 4px 12px rgba(245, 158, 11, 0.65),
                 0 0 6px rgba(254, 240, 138, 0.35),
                 inset 0 2px 4px rgba(255, 255, 255, 0.75);
@@ -978,10 +1015,34 @@
                 0 0 22px rgba(245, 158, 11, 0.4),
                 inset 0 0 5px rgba(255, 255, 255, 0.4) !important;
         }
+
+        50% {
+            box-shadow: 0 0 18px rgba(245, 158, 11, 1),
+                0 0 38px rgba(245, 158, 11, 0.8),
+                inset 0 0 10px rgba(255, 255, 255, 0.7) !important;
+        }
     }
 
     @keyframes shimmer-mystical-mod {
-        0%, 100% {
+        0% {
+            box-shadow: 0 4px 12px var(--chip-glow-color-0, rgba(128, 222, 234, 0.55)),
+                0 0 6px var(--chip-glow-color-1, rgba(128, 222, 234, 0.25)),
+                inset 0 2px 4px rgba(255, 255, 255, 0.75);
+        }
+
+        33% {
+            box-shadow: 0 8px 20px var(--chip-glow-color-2, rgba(0, 188, 212, 0.75)),
+                0 0 16px var(--chip-glow-color-3, rgba(178, 235, 242, 0.7)),
+                inset 0 2px 4px rgba(255, 255, 255, 0.95);
+        }
+
+        66% {
+            box-shadow: 0 6px 16px var(--chip-glow-color-4, rgba(77, 208, 225, 0.6)),
+                0 0 12px var(--chip-glow-color-5, rgba(0, 188, 212, 0.5)),
+                inset 0 2px 4px rgba(255, 255, 255, 0.85);
+        }
+
+        100% {
             box-shadow: 0 4px 12px var(--chip-glow-color-0, rgba(128, 222, 234, 0.55)),
                 0 0 6px var(--chip-glow-color-1, rgba(128, 222, 234, 0.25)),
                 inset 0 2px 4px rgba(255, 255, 255, 0.75);
@@ -989,7 +1050,19 @@
     }
 
     @keyframes shimmer-mystical-vip {
-        0%, 100% {
+        0% {
+            box-shadow: 0 5px 15px rgba(255, 179, 0, 0.55), 0 0 8px rgba(244, 143, 177, 0.3), inset 0 2px 4px rgba(255, 255, 255, 0.8);
+        }
+
+        33% {
+            box-shadow: 0 9px 24px rgba(255, 215, 0, 0.75), 0 0 16px rgba(244, 143, 177, 0.6), 0 0 8px rgba(128, 222, 234, 0.4), inset 0 2px 4px rgba(255, 255, 255, 0.95);
+        }
+
+        66% {
+            box-shadow: 0 6px 18px rgba(244, 143, 177, 0.65), 0 0 12px rgba(128, 222, 234, 0.45), 0 0 6px rgba(255, 179, 0, 0.4), inset 0 2px 4px rgba(255, 255, 255, 0.85);
+        }
+
+        100% {
             box-shadow: 0 5px 15px rgba(255, 179, 0, 0.55), 0 0 8px rgba(244, 143, 177, 0.3), inset 0 2px 4px rgba(255, 255, 255, 0.8);
         }
     }
@@ -1337,8 +1410,10 @@
         contain: none !important;
         clip-path: none !important;
         z-index: 1 !important;
+        animation: fadeInSimple 0.15s ease-out forwards !important;
         transform-origin: left center !important;
         transition: none !important;
+        will-change: transform, opacity, filter !important;
 
         width: fit-content !important;
         max-width: 95% !important;
@@ -1367,15 +1442,15 @@
         display: inline !important;
         margin-left: 6px !important;
 
-        font-family: "Nunito Sans", "Montserrat", "Comfortaa", "Fredoka", "Quicksand", "Itim", "Nunito", "Baloo 2", "Patrick Hand", "Noto Sans", sans-serif !important;
+        font-family: "Quicksand", "Comfortaa", "Fredoka", "Itim", "Nunito", "Baloo 2", "Patrick Hand", "Noto Sans", sans-serif !important;
         font-size: 28px !important;
         line-height: 1.3 !important;
-        font-weight: 600 !important;
+        font-weight: 700 !important;
         letter-spacing: 0 !important;
 
         vertical-align: middle !important;
 
-        -webkit-text-stroke: 5px #000000 !important;
+        -webkit-text-stroke: 4.5px #000000 !important;
         paint-order: stroke fill !important;
         text-shadow: 2px 2px 0px #000000, 0 0 6px rgba(86, 160, 255, 0.22) !important;
 
@@ -1392,7 +1467,7 @@
         margin: 0 !important;
         position: static !important;
         color: #2D1557 !important;
-        font-family: "Montserrat", sans-serif !important;
+        font-family: "Nunito", sans-serif !important;
         font-weight: 800 !important;
         font-size: 19px !important;
         line-height: 26px !important;
@@ -1484,14 +1559,14 @@
     /* Regular Hyperlinks - Spacegods Cosmic Style */
 
     yt-live-chat-text-message-renderer #message a {
-        color: #81C784 !important;
-        /* Leaf Green */
+        color: #B388FF !important;
+        /* Cosmic Purple */
         font-family: "Chakra Petch", sans-serif !important;
         font-weight: 700 !important;
         text-decoration: none !important;
-        border-bottom: 2px dashed rgba(129, 199, 132, 0.6) !important;
+        border-bottom: 2px dashed rgba(179, 136, 255, 0.6) !important;
         text-shadow:
-            0 0 10px rgba(129, 199, 132, 0.8),
+            0 0 10px rgba(179, 136, 255, 0.8),
             -1.5px -1.5px 0 #000,
             1.5px -1.5px 0 #000,
             -1.5px 1.5px 0 #000,
@@ -1500,7 +1575,7 @@
     }
 
     yt-live-chat-text-message-renderer #message a:hover {
-        color: #C8E6C9 !important;
+        color: #E1BEE7 !important;
         text-decoration: none !important;
     }
 
@@ -1538,11 +1613,11 @@
 
         /* Variable definitions inside element scope */
         --font-mystical: "Itim", "Comfortaa", "Fredoka", "Quicksand", "Nunito", "Noto Sans", sans-serif;
-        --leaf-veins: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%3E%3C/svg%3E");
+        --leaf-veins: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%22100%22%20height%3D%2240%22%20viewBox%3D%220%200%20100%2040%22%3E%0A%20%20%3C%21--%20Constellation%20lines%20--%3E%0A%20%20%3Cpath%20d%3D%22M%2012%2012%20L%2032%2024%20L%2058%2012%20L%2082%2028%22%20stroke%3D%22rgba%28255%2C255%2C255%2C0.2%29%22%20stroke-width%3D%221%22%20fill%3D%22none%22%20stroke-linecap%3D%22round%22%20/%3E%0A%20%20%3Cpath%20d%3D%22M%2032%2024%20L%2048%2030%20L%2078%208%22%20stroke%3D%22rgba%28255%2C255%2C255%2C0.12%29%22%20stroke-width%3D%220.8%22%20fill%3D%22none%22%20stroke-linecap%3D%22round%22%20/%3E%0A%0A%20%20%3C%21--%20Constellation%20Stars%20--%3E%0A%20%20%3C%21--%20Star%201%20--%3E%0A%20%20%3Cpath%20d%3D%22M%2012%209%20Q%2012%2012%2015%2012%20Q%2012%2012%2012%2015%20Q%2012%2012%209%2012%20Q%2012%2012%2012%209%20Z%22%20fill%3D%22rgba%28255%2C255%2C255%2C0.85%29%22%20/%3E%0A%20%20%3C%21--%20Star%202%20--%3E%0A%20%20%3Ccircle%20cx%3D%2232%22%20cy%3D%2224%22%20r%3D%221.5%22%20fill%3D%22rgba%28255%2C255%2C255%2C0.9%29%22%20/%3E%0A%20%20%3C%21--%20Star%203%20--%3E%0A%20%20%3Cpath%20d%3D%22M%2058%209%20Q%2058%2012%2061%2012%20Q%2058%2012%2058%2015%20Q%2058%2012%2055%2012%20Q%2058%2012%2055%209%20Z%22%20fill%3D%22rgba%28255%2C255%2C255%2C0.85%29%22%20/%3E%0A%20%20%3C%21--%20Star%204%20--%3E%0A%20%20%3Ccircle%20cx%3D%2282%22%20cy%3D%2228%22%20r%3D%221.2%22%20fill%3D%22rgba%28255%2C255%2C255%2C0.8%29%22%20/%3E%0A%20%20%3C%21--%20Star%205%20--%3E%0A%20%20%3Ccircle%20cx%3D%2248%22%20cy%3D%2230%22%20r%3D%221%22%20fill%3D%22rgba%28255%2C255%2C255%2C0.7%29%22%20/%3E%0A%20%20%3C%21--%20Star%206%20--%3E%0A%20%20%3Cpath%20d%3D%22M%2078%206%20Q%2078%208%2080%208%20Q%2078%208%2078%2010%20Q%2078%208%2076%208%20Q%2078%208%2078%206%20Z%22%20fill%3D%22rgba%28255%2C255%2C255%2C0.75%29%22%20/%3E%0A%0A%20%20%3C%21--%20Tiny%20magical%20dust%20--%3E%0A%20%20%3Ccircle%20cx%3D%2220%22%20cy%3D%228%22%20r%3D%220.6%22%20fill%3D%22rgba%28255%2C255%2C255%2C0.5%29%22%20/%3E%0A%20%20%3Ccircle%20cx%3D%2270%22%20cy%3D%2232%22%20r%3D%220.5%22%20fill%3D%22rgba%28255%2C255%2C255%2C0.4%29%22%20/%3E%0A%20%20%3Ccircle%20cx%3D%2290%22%20cy%3D%2216%22%20r%3D%220.7%22%20fill%3D%22rgba%28255%2C255%2C255%2C0.6%29%22%20/%3E%0A%3C/svg%3E");
         --leaf-shadows: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%3E%3C/svg%3E");
         --icon-sprout: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%3E%3Cpath%20d%3D%22M12%2021v-8M12%2013c-2.5%200-5-1.5-6-3.5%201-1.5%203-2%205-1%201%201.5%201%204.5%201%204.5zm0%200c2.5%200%205-1.5%206-3.5-1-1.5-3-2-5-1-1%201.5-1%204.5-1%204.5z%22%20fill%3D%22%2381C784%22%20stroke%3D%22%2333691E%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22/%3E%3C/svg%3E");
         --icon-heart: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%3E%3Cpath%20d%3D%22M12%2021.35l-1.45-1.32C5.4%2015.36%202%2012.28%202%208.5%202%205.42%204.42%203%207.5%203c1.74%200%203.41.81%204.5%202.09C13.09%203.81%2014.76%203%2016.5%203%2019.58%203%2022%205.42%2022%208.5c0%203.78-3.4%206.86-8.55%2011.54L12%2021.35z%22%20fill%3D%22%23FF4081%22%20stroke%3D%22%23880E4F%22%20stroke-width%3D%221.8%22%20stroke-linejoin%3D%22round%22/%3E%3C/svg%3E");
-        --icon-shield: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='M12 21.5s7.5-3.8 7.5-9.5V5.7L12 2.5 4.5 5.7V12c0 5.7 7.5 9.5 7.5 9.5z' fill='%231E293B' stroke='%23FBBF24' stroke-width='2' stroke-linejoin='round'/%3E%3Cpath d='M12 6.5l1.2 3.8 3.8 1.2-3.8 1.2-1.2 3.8-1.2-3.8-3.8-1.2 3.8-1.2z' fill='%2338BDF8'/%3E%3C/svg%3E");
+        --icon-shield: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%3E%3Cpath%20d%3D%22M12%2022s8-4%208-10V5l-8-3-8%203v7c0%206%208%2010%208%2010z%22%20fill%3D%22%2300BCD4%22%20stroke%3D%22%23006064%22%20stroke-width%3D%221.8%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22/%3E%3Cpath%20d%3D%22M9%2011l2%202%204-4%22%20stroke%3D%22%23FFFFFF%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22/%3E%3C/svg%3E");
         --icon-pineapple: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%3E%3Cpath%20d%3D%22M12%201.5c.3%201.5%201.2%202.2%202%202.5-.3-1.5-1.2-2.2-2-2.5z%22%20fill%3D%22%232E7D32%22/%3E%3Cpath%20d%3D%22M12%201.5c-.3%201.5-1.2%202.2-2%202.5.3-1.5%201.2-2.2%202-2.5z%22%20fill%3D%22%232E7D32%22/%3E%3Cpath%20d%3D%22M12%201c0%202%200%203%200%203%22%20stroke%3D%22%231B5E20%22%20stroke-width%3D%221%22/%3E%3Crect%20x%3D%227.5%22%20y%3D%224.5%22%20width%3D%229%22%20height%3D%2211%22%20rx%3D%224.5%22%20fill%3D%22%23FFCA28%22%20stroke%3D%22%23E65100%22%20stroke-width%3D%221.5%22/%3E%3Cpath%20d%3D%22M6%2013.5l3-2%203%202%203-2%203%202v4.5H6v-4.5z%22%20fill%3D%22%23FFD54F%22%20stroke%3D%22%23E65100%22%20stroke-width%3D%221%22/%3E%3Ccircle%20cx%3D%2212%22%20cy%3D%2216%22%20r%3D%221.5%22%20fill%3D%22%23FF1744%22/%3E%3Ccircle%20cx%3D%2210%22%20cy%3D%228.5%22%20r%3D%220.8%22%20fill%3D%22%233E2723%22/%3E%3Ccircle%20cx%3D%2214%22%20cy%3D%228.5%22%20r%3D%220.8%22%20fill%3D%22%233E2723%22/%3E%3Cpath%20d%3D%22M11.5%2010q.5.5%201%200%22%20stroke%3D%22%233E2723%22%20stroke-width%3D%220.8%22%20fill%3D%22none%22%20stroke-linecap%3D%22round%22/%3E%3C/svg%3E");
 
         background-color: rgba(243, 244, 246, 0.95) !important;
@@ -1562,7 +1637,7 @@
         vertical-align: middle !important;
         line-height: 1.1 !important;
         overflow: hidden !important;
-        text-indent: -1.05em !important;
+        text-indent: -0.9em !important;
         white-space: nowrap !important;
         font-size: 19px !important;
         font-weight: 800 !important;
@@ -1571,7 +1646,7 @@
         /* Dark charcoal color */
         text-shadow: none !important;
         /* Remove fuzzy shadow for readability */
-        font-family: "Montserrat", sans-serif !important;
+        font-family: "Nunito", sans-serif !important;
     }
 
     /* Vân lá tạo hiệu ứng bóng phủ chính xác 1/2 chip name bên trái */
@@ -1664,7 +1739,7 @@
         color: #451a03 !important;
         /* Deep dark amber text */
         text-shadow: none !important;
-        font-family: "Montserrat", sans-serif !important;
+        font-family: "Nunito", sans-serif !important;
     }
 
 
@@ -1723,7 +1798,7 @@
     yt-live-chat-text-message-renderer[author-type="moderator"]:has(img[alt*="Hội viên mới" i], img[alt*="New member" i], yt-live-chat-author-badge-renderer[aria-label*="Hội viên mới"], yt-live-chat-author-badge-renderer[aria-label*="New member"]) yt-live-chat-author-chip #author-name {
         color: #166534 !important;
         /* Soft dark green */
-        font-family: "Montserrat", sans-serif !important;
+        font-family: "Nunito", sans-serif !important;
         font-weight: 800 !important;
         text-shadow: 0px 0.5px 0.5px rgba(255, 255, 255, 0.5) !important;
     }
@@ -1747,7 +1822,7 @@
     yt-live-chat-text-message-renderer[author-type="moderator"]:has(img[alt*="1 month" i], img[alt*="1 tháng" i], yt-live-chat-author-badge-renderer[aria-label*="1 month" i], yt-live-chat-author-badge-renderer[aria-label*="1 tháng" i]) yt-live-chat-author-chip #author-name {
         color: #4d7c0f !important;
         /* Soft olive green */
-        font-family: "Montserrat", sans-serif !important;
+        font-family: "Nunito", sans-serif !important;
         font-weight: 800 !important;
         text-shadow: 0px 0.5px 0.5px rgba(255, 255, 255, 0.5) !important;
     }
@@ -1774,7 +1849,7 @@
     yt-live-chat-text-message-renderer[author-type="moderator"]:has(img[alt*="Hội viên mới" i], img[alt*="New member" i], yt-live-chat-author-badge-renderer[aria-label*="Hội viên mới"], yt-live-chat-author-badge-renderer[aria-label*="New member"]) yt-live-chat-author-chip #author-name {
         color: #166534 !important;
         /* Soft dark green */
-        font-family: "Montserrat", sans-serif !important;
+        font-family: "Nunito", sans-serif !important;
         font-weight: 800 !important;
         text-shadow: 0px 0.5px 0.5px rgba(255, 255, 255, 0.5) !important;
     }
@@ -1801,7 +1876,7 @@
     yt-live-chat-text-message-renderer[author-type="moderator"]:has(img[alt*="1 month" i], img[alt*="1 tháng" i], yt-live-chat-author-badge-renderer[aria-label*="1 month" i], yt-live-chat-author-badge-renderer[aria-label*="1 tháng" i]) yt-live-chat-author-chip #author-name {
         color: #4d7c0f !important;
         /* Soft olive green */
-        font-family: "Montserrat", sans-serif !important;
+        font-family: "Nunito", sans-serif !important;
         font-weight: 800 !important;
         text-shadow: 0px 0.5px 0.5px rgba(255, 255, 255, 0.5) !important;
     }
@@ -1828,14 +1903,14 @@
     yt-live-chat-text-message-renderer[author-type="moderator"]:has(img[alt*="2 month" i], img[alt*="2 tháng" i], img[alt*="3 month" i], img[alt*="3 tháng" i], img[alt*="4 month" i], img[alt*="4 tháng" i], img[alt*="5 month" i], img[alt*="5 tháng" i]) yt-live-chat-author-chip #author-name {
         color: #713f12 !important;
         /* Deepest brown-yellow */
-        font-family: "Montserrat", sans-serif !important;
+        font-family: "Nunito", sans-serif !important;
         font-weight: 800 !important;
         text-shadow: 0px 0.5px 0.5px rgba(255, 255, 255, 0.5) !important;
     }
 
     /* Tier 6 Tháng+ - Vàng dứa chín peak pha cam ấm (Premium Sunset Gold Gradient) */
-    yt-live-chat-text-message-renderer[author-type="member"]:has(img:is([alt*="6 month" i], [alt*="6 tháng" i], [alt*="7 month" i], [alt*="7 tháng" i], [alt*="8 month" i], [alt*="8 tháng" i], [alt*="9 month" i], [alt*="9 tháng" i], [alt*="10 month" i], [alt*="10 tháng" i], [alt*="11 month" i], [alt*="11 tháng" i], [alt*="12 month" i], [alt*="12 tháng" i], [alt*="24 month" i], [alt*="24 tháng" i], [alt*="36 month" i], [alt*="36 tháng" i], [alt*="48 month" i], [alt*="48 tháng" i], [alt*="year" i], [alt*="năm" i])) yt-live-chat-author-chip,
-    yt-live-chat-text-message-renderer[author-type="moderator"]:has(img:is([alt*="6 month" i], [alt*="6 tháng" i], [alt*="7 month" i], [alt*="7 tháng" i], [alt*="8 month" i], [alt*="8 tháng" i], [alt*="9 month" i], [alt*="9 tháng" i], [alt*="10 month" i], [alt*="10 tháng" i], [alt*="11 month" i], [alt*="11 tháng" i], [alt*="12 month" i], [alt*="12 tháng" i], [alt*="24 month" i], [alt*="24 tháng" i], [alt*="36 month" i], [alt*="36 tháng" i], [alt*="48 month" i], [alt*="48 tháng" i], [alt*="year" i], [alt*="năm" i])) yt-live-chat-author-chip {
+    yt-live-chat-text-message-renderer[author-type="member"]:has(img[alt*="6 month" i], img[alt*="6 tháng" i], img[alt*="7 month" i], img[alt*="7 tháng" i], img[alt*="8 month" i], img[alt*="8 tháng" i], img[alt*="9 month" i], img[alt*="9 tháng" i], img[alt*="10 month" i], img[alt*="10 tháng" i], img[alt*="11 month" i], img[alt*="11 tháng" i], img[alt*="year" i], img[alt*="năm" i]) yt-live-chat-author-chip,
+    yt-live-chat-text-message-renderer[author-type="moderator"]:has(img[alt*="6 month" i], img[alt*="6 tháng" i], img[alt*="7 month" i], img[alt*="7 tháng" i], img[alt*="8 month" i], img[alt*="8 tháng" i], img[alt*="9 month" i], img[alt*="9 tháng" i], img[alt*="10 month" i], img[alt*="10 tháng" i], img[alt*="11 month" i], img[alt*="11 tháng" i], img[alt*="year" i], img[alt*="năm" i]) yt-live-chat-author-chip {
         --chip-glow-color-0: rgba(245, 158, 11, 0.6);
         --chip-glow-color-1: rgba(245, 158, 11, 0.3);
         --chip-glow-color-2: rgba(245, 158, 11, 0.85);
@@ -1851,11 +1926,11 @@
         animation: shimmer-mystical-member-golden 3.5s infinite ease-in-out !important;
     }
 
-    yt-live-chat-text-message-renderer[author-type="member"]:has(img:is([alt*="6 month" i], [alt*="6 tháng" i], [alt*="7 month" i], [alt*="7 tháng" i], [alt*="8 month" i], [alt*="8 tháng" i], [alt*="9 month" i], [alt*="9 tháng" i], [alt*="10 month" i], [alt*="10 tháng" i], [alt*="11 month" i], [alt*="11 tháng" i], [alt*="12 month" i], [alt*="12 tháng" i], [alt*="24 month" i], [alt*="24 tháng" i], [alt*="36 month" i], [alt*="36 tháng" i], [alt*="48 month" i], [alt*="48 tháng" i], [alt*="year" i], [alt*="năm" i])) yt-live-chat-author-chip #author-name,
-    yt-live-chat-text-message-renderer[author-type="moderator"]:has(img:is([alt*="6 month" i], [alt*="6 tháng" i], [alt*="7 month" i], [alt*="7 tháng" i], [alt*="8 month" i], [alt*="8 tháng" i], [alt*="9 month" i], [alt*="9 tháng" i], [alt*="10 month" i], [alt*="10 tháng" i], [alt*="11 month" i], [alt*="11 tháng" i], [alt*="12 month" i], [alt*="12 tháng" i], [alt*="24 month" i], [alt*="24 tháng" i], [alt*="36 month" i], [alt*="36 tháng" i], [alt*="48 month" i], [alt*="48 tháng" i], [alt*="year" i], [alt*="năm" i])) yt-live-chat-author-chip #author-name {
+    yt-live-chat-text-message-renderer[author-type="member"]:has(img[alt*="6 month" i], img[alt*="6 tháng" i], img[alt*="7 month" i], img[alt*="7 tháng" i], img[alt*="8 month" i], img[alt*="8 tháng" i], img[alt*="9 month" i], img[alt*="9 tháng" i], img[alt*="10 month" i], img[alt*="10 tháng" i], img[alt*="11 month" i], img[alt*="11 tháng" i], img[alt*="year" i], img[alt*="năm" i]) yt-live-chat-author-chip #author-name,
+    yt-live-chat-text-message-renderer[author-type="moderator"]:has(img[alt*="6 month" i], img[alt*="6 tháng" i], img[alt*="7 month" i], img[alt*="7 tháng" i], img[alt*="8 month" i], img[alt*="8 tháng" i], img[alt*="9 month" i], img[alt*="9 tháng" i], img[alt*="10 month" i], img[alt*="10 tháng" i], img[alt*="11 month" i], img[alt*="11 tháng" i], img[alt*="year" i], img[alt*="năm" i]) yt-live-chat-author-chip #author-name {
         color: #713f12 !important;
         /* Deepest brown-yellow */
-        font-family: "Montserrat", sans-serif !important;
+        font-family: "Nunito", sans-serif !important;
         font-weight: 800 !important;
         text-shadow: 0px 0.5px 0.5px rgba(255, 255, 255, 0.5) !important;
     }
@@ -1885,7 +1960,7 @@
         padding-left: 34px !important;
     }
 
-    yt-live-chat-text-message-renderer[author-type="moderator"]:has(img:is([alt*="6 month" i], [alt*="6 tháng" i], [alt*="7 month" i], [alt*="7 tháng" i], [alt*="8 month" i], [alt*="8 tháng" i], [alt*="9 month" i], [alt*="9 tháng" i], [alt*="10 month" i], [alt*="10 tháng" i], [alt*="11 month" i], [alt*="11 tháng" i], [alt*="12 month" i], [alt*="12 tháng" i], [alt*="24 month" i], [alt*="24 tháng" i], [alt*="36 month" i], [alt*="36 tháng" i], [alt*="48 month" i], [alt*="48 tháng" i], [alt*="year" i], [alt*="năm" i])) yt-live-chat-author-chip {
+    yt-live-chat-text-message-renderer[author-type="moderator"]:has(img[alt*="6 month" i], img[alt*="6 tháng" i], img[alt*="7 month" i], img[alt*="7 tháng" i], img[alt*="8 month" i], img[alt*="8 tháng" i], img[alt*="9 month" i], img[alt*="9 tháng" i], img[alt*="10 month" i], img[alt*="10 tháng" i], img[alt*="11 month" i], img[alt*="11 tháng" i], img[alt*="year" i], img[alt*="năm" i]) yt-live-chat-author-chip {
         background-image: var(--leaf-shadows), var(--icon-shield), var(--leaf-veins), linear-gradient(135deg, rgba(254, 240, 138, 0.95) 0%, rgba(245, 158, 11, 0.95) 100%) !important;
         background-repeat: no-repeat, no-repeat, repeat-x, no-repeat !important;
         background-position: center, left 8px center, 0 0, center !important;
@@ -1925,16 +2000,16 @@
         gap: 8px !important;
     }
 
-    yt-live-chat-text-message-renderer[author-type="member"] yt-live-chat-author-chip #chat-badges img:not([alt*="Hội viên mới" i]):not([alt*="New member" i]),
-    yt-live-chat-text-message-renderer[author-type="member"] yt-live-chat-author-chip #author-badges img:not([alt*="Hội viên mới" i]):not([alt*="New member" i]),
-    yt-live-chat-text-message-renderer[author-type="moderator"]:has(yt-live-chat-author-badge-renderer[type="member"]) yt-live-chat-author-chip #chat-badges img:not([alt*="Hội viên mới" i]):not([alt*="New member" i]),
-    yt-live-chat-text-message-renderer[author-type="moderator"]:has(yt-live-chat-author-badge-renderer[type="member"]) yt-live-chat-author-chip #author-badges img:not([alt*="Hội viên mới" i]):not([alt*="New member" i]),
-    :is(yt-live-chat-membership-item-renderer, ytd-sponsorships-live-chat-gift-purchase-announcement-renderer, ytd-sponsorships-live-chat-gift-redemption-announcement-renderer) :is(yt-live-chat-author-badge-renderer, #chat-badges, #author-badges) img:not([alt*="Hội viên mới" i]):not([alt*="New member" i]),
-    :is(yt-live-chat-membership-item-renderer, ytd-sponsorships-live-chat-gift-purchase-announcement-renderer, ytd-sponsorships-live-chat-gift-redemption-announcement-renderer) img[class*="badge"]:not([alt*="Hội viên mới" i]):not([alt*="New member" i]),
-    :is(yt-live-chat-membership-item-renderer, ytd-sponsorships-live-chat-gift-purchase-announcement-renderer, ytd-sponsorships-live-chat-gift-redemption-announcement-renderer) img[id*="badge"]:not([alt*="Hội viên mới" i]):not([alt*="New member" i]),
-    yt-live-chat-paid-message-renderer yt-live-chat-author-badge-renderer[type="member"] img:not([alt*="Hội viên mới" i]):not([alt*="New member" i]),
-    yt-live-chat-paid-message-renderer :is(yt-live-chat-author-badge-renderer, #chat-badges, #author-badges) img:not([src*="moderator"]):not([alt*="moderator"]):not([alt*="quản trị viên"]):not([alt*="Hội viên mới" i]):not([alt*="New member" i]),
-    yt-live-chat-paid-message-renderer img[class*="badge"]:not([src*="moderator"]):not([alt*="moderator"]):not([alt*="quản trị viên"]):not([alt*="Hội viên mới" i]):not([alt*="New member" i]) {
+    yt-live-chat-text-message-renderer[author-type="member"] yt-live-chat-author-chip #chat-badges img,
+    yt-live-chat-text-message-renderer[author-type="member"] yt-live-chat-author-chip #author-badges img,
+    yt-live-chat-text-message-renderer[author-type="moderator"]:has(yt-live-chat-author-badge-renderer[type="member"]) yt-live-chat-author-chip #chat-badges img,
+    yt-live-chat-text-message-renderer[author-type="moderator"]:has(yt-live-chat-author-badge-renderer[type="member"]) yt-live-chat-author-chip #author-badges img,
+    :is(yt-live-chat-membership-item-renderer, ytd-sponsorships-live-chat-gift-purchase-announcement-renderer, ytd-sponsorships-live-chat-gift-redemption-announcement-renderer) :is(yt-live-chat-author-badge-renderer, #chat-badges, #author-badges) img,
+    :is(yt-live-chat-membership-item-renderer, ytd-sponsorships-live-chat-gift-purchase-announcement-renderer, ytd-sponsorships-live-chat-gift-redemption-announcement-renderer) img[class*="badge"],
+    :is(yt-live-chat-membership-item-renderer, ytd-sponsorships-live-chat-gift-purchase-announcement-renderer, ytd-sponsorships-live-chat-gift-redemption-announcement-renderer) img[id*="badge"],
+    yt-live-chat-paid-message-renderer yt-live-chat-author-badge-renderer[type="member"] img,
+    yt-live-chat-paid-message-renderer :is(yt-live-chat-author-badge-renderer, #chat-badges, #author-badges) img:not([src*="moderator"]):not([alt*="moderator"]):not([alt*="quản trị viên"]),
+    yt-live-chat-paid-message-renderer img[class*="badge"]:not([src*="moderator"]):not([alt*="moderator"]):not([alt*="quản trị viên"]) {
         width: 24px !important;
         height: 24px !important;
         border: none !important;
@@ -2009,9 +2084,48 @@
         content: url("https://yt3.googleusercontent.com/2GTPUHO1EM2l-D5Bfuzxc_UvWmfVXZtBylHf_bmd02CFSCGM6z_a_Bd3TFNHdtql6HPrIA3S=s64-k-nd") !important;
     }
 
-    /* Hide badge container completely for New Members across all renderers (chats, welcome cards, milestone banners, etc) */
-    :is(yt-live-chat-text-message-renderer, yt-live-chat-paid-message-renderer, yt-live-chat-membership-item-renderer, ytd-sponsorships-live-chat-gift-purchase-announcement-renderer, ytd-sponsorships-live-chat-gift-redemption-announcement-renderer):has(img:is([alt*="Hội viên mới" i], [alt*="New member" i]), yt-live-chat-author-badge-renderer:is([aria-label*="Hội viên mới" i], [aria-label*="New member" i])) :is(yt-live-chat-author-badge-renderer, #chat-badges, #author-badges, img[class*="badge"], img[id*="badge"]) {
+    /* New member badge hide left side absolute */
+
+    yt-live-chat-text-message-renderer[author-type="member"]:has(img[alt="Hội viên mới"]) yt-live-chat-author-chip #chat-badges,
+    yt-live-chat-text-message-renderer[author-type="member"]:has(img[alt="New member"]) yt-live-chat-author-chip #chat-badges,
+    yt-live-chat-text-message-renderer[author-type="moderator"]:has(yt-live-chat-author-badge-renderer[type="member"]):has(img[alt="Hội viên mới"]) yt-live-chat-author-chip #chat-badges,
+    yt-live-chat-text-message-renderer[author-type="moderator"]:has(yt-live-chat-author-badge-renderer[type="member"]):has(img[alt="New member"]) yt-live-chat-author-chip #chat-badges,
+    yt-live-chat-text-message-renderer[author-type="member"]:has(yt-live-chat-author-badge-renderer[aria-label*="Hội viên mới"]) yt-live-chat-author-chip #chat-badges,
+    yt-live-chat-text-message-renderer[author-type="member"]:has(yt-live-chat-author-badge-renderer[aria-label*="New member"]) yt-live-chat-author-chip #chat-badges,
+    yt-live-chat-text-message-renderer[author-type="moderator"]:has(yt-live-chat-author-badge-renderer[type="member"]):has(yt-live-chat-author-badge-renderer[aria-label*="Hội viên mới"]) yt-live-chat-author-chip #chat-badges,
+    yt-live-chat-text-message-renderer[author-type="moderator"]:has(yt-live-chat-author-badge-renderer[type="member"]):has(yt-live-chat-author-badge-renderer[aria-label*="New member"]) yt-live-chat-author-chip #chat-badges {
         display: none !important;
+    }
+
+    yt-live-chat-text-message-renderer[author-type="member"]:has(img[alt="Hội viên mới"]) yt-live-chat-author-chip #author-badges,
+    yt-live-chat-text-message-renderer[author-type="member"]:has(img[alt="New member"]) yt-live-chat-author-chip #author-badges,
+    yt-live-chat-text-message-renderer[author-type="moderator"]:has(yt-live-chat-author-badge-renderer[type="member"]):has(img[alt="Hội viên mới"]) yt-live-chat-author-chip #author-badges,
+    yt-live-chat-text-message-renderer[author-type="moderator"]:has(yt-live-chat-author-badge-renderer[type="member"]):has(img[alt="New member"]) yt-live-chat-author-chip #author-badges,
+    yt-live-chat-text-message-renderer[author-type="member"]:has(yt-live-chat-author-badge-renderer[aria-label*="Hội viên mới"]) yt-live-chat-author-chip #author-badges,
+    yt-live-chat-text-message-renderer[author-type="member"]:has(yt-live-chat-author-badge-renderer[aria-label*="New member"]) yt-live-chat-author-chip #author-badges,
+    yt-live-chat-text-message-renderer[author-type="moderator"]:has(yt-live-chat-author-badge-renderer[type="member"]):has(yt-live-chat-author-badge-renderer[aria-label*="Hội viên mới"]) yt-live-chat-author-chip #author-badges,
+    yt-live-chat-text-message-renderer[author-type="moderator"]:has(yt-live-chat-author-badge-renderer[type="member"]):has(yt-live-chat-author-badge-renderer[aria-label*="New member"]) yt-live-chat-author-chip #author-badges {
+        position: static !important;
+        left: auto !important;
+        top: auto !important;
+        margin-left: 4px !important;
+        transform: none !important;
+        opacity: 1 !important;
+        display: inline-flex !important;
+    }
+
+    yt-live-chat-text-message-renderer[author-type="member"]:has(img[alt="Hội viên mới"]) yt-live-chat-author-chip #author-badges img,
+    yt-live-chat-text-message-renderer[author-type="member"]:has(img[alt="New member"]) yt-live-chat-author-chip #author-badges img,
+    yt-live-chat-text-message-renderer[author-type="moderator"]:has(yt-live-chat-author-badge-renderer[type="member"]):has(img[alt="Hội viên mới"]) yt-live-chat-author-chip #author-badges img,
+    yt-live-chat-text-message-renderer[author-type="moderator"]:has(yt-live-chat-author-badge-renderer[type="member"]):has(img[alt="New member"]) yt-live-chat-author-chip #author-badges img,
+    yt-live-chat-text-message-renderer[author-type="member"]:has(yt-live-chat-author-badge-renderer[aria-label*="Hội viên mới"]) yt-live-chat-author-chip #author-badges img,
+    yt-live-chat-text-message-renderer[author-type="member"]:has(yt-live-chat-author-badge-renderer[aria-label*="New member"]) yt-live-chat-author-chip #author-badges img,
+    yt-live-chat-text-message-renderer[author-type="moderator"]:has(yt-live-chat-author-badge-renderer[type="member"]):has(yt-live-chat-author-badge-renderer[aria-label*="Hội viên mới"]) yt-live-chat-author-chip #author-badges img,
+    yt-live-chat-text-message-renderer[author-type="moderator"]:has(yt-live-chat-author-badge-renderer[type="member"]):has(yt-live-chat-author-badge-renderer[aria-label*="New member"]) yt-live-chat-author-chip #author-badges img {
+        width: 32px !important;
+        height: 32px !important;
+        filter: none !important;
+        opacity: 1 !important;
     }
 
     /* New member cases where label exists on badge renderer */
@@ -2164,7 +2278,7 @@
     yt-live-chat-reply-badge-renderer yt-formatted-string,
     yt-live-chat-reply-badge-renderer span,
     yt-live-chat-reply-badge-renderer * {
-        font-family: "Nunito Sans", "Montserrat", "Comfortaa", "Fredoka", "Quicksand", "Itim", "Nunito", "Baloo 2", "Patrick Hand", "Noto Sans", sans-serif !important;
+        font-family: "Quicksand", "Comfortaa", "Fredoka", "Itim", "Nunito", "Baloo 2", "Patrick Hand", "Noto Sans", sans-serif !important;
         font-weight: 800 !important;
         font-size: 15px !important;
         color: #fbbf24 !important;
@@ -2220,7 +2334,7 @@
     yt-live-chat-paid-message-renderer .yt-spec-button-shape-next--tonal .yt-spec-button-shape-next__button-text-content {
         color: #fbbf24 !important;
         /* Gold text */
-        font-family: "Nunito Sans", "Montserrat", "Comfortaa", "Fredoka", "Quicksand", "Itim", "Nunito", "Baloo 2", "Patrick Hand", "Noto Sans", sans-serif !important;
+        font-family: "Quicksand", "Comfortaa", "Fredoka", "Itim", "Nunito", "Baloo 2", "Patrick Hand", "Noto Sans", sans-serif !important;
         font-weight: 800 !important;
         font-size: 13px !important;
         text-transform: uppercase !important;
@@ -2433,7 +2547,7 @@
 
     yt-live-chat-paid-message-renderer #author-name {
         color: #FFFFFF !important;
-        font-family: "Montserrat", sans-serif !important;
+        font-family: "Nunito", sans-serif !important;
         font-weight: 800 !important;
         font-size: 17px !important;
         line-height: 1.1 !important;
@@ -2540,7 +2654,7 @@
     }
 
     /* Tier 6 Tháng+ Member - Vàng dứa chín peak pha cam ấm (Premium Sunset Gold Gradient) */
-    yt-live-chat-paid-message-renderer:has(img:is([alt*="6 month" i], [alt*="6 tháng" i], [alt*="7 month" i], [alt*="7 tháng" i], [alt*="8 month" i], [alt*="8 tháng" i], [alt*="9 month" i], [alt*="9 tháng" i], [alt*="10 month" i], [alt*="10 tháng" i], [alt*="11 month" i], [alt*="11 tháng" i], [alt*="12 month" i], [alt*="12 tháng" i], [alt*="24 month" i], [alt*="24 tháng" i], [alt*="36 month" i], [alt*="36 tháng" i], [alt*="48 month" i], [alt*="48 tháng" i], [alt*="year" i], [alt*="năm" i])) #author-name-chip {
+    yt-live-chat-paid-message-renderer:has(img[alt*="6 month" i], img[alt*="6 tháng" i], img[alt*="7 month" i], img[alt*="7 tháng" i], img[alt*="8 month" i], img[alt*="8 tháng" i], img[alt*="9 month" i], img[alt*="9 tháng" i], img[alt*="10 month" i], img[alt*="10 tháng" i], img[alt*="11 month" i], img[alt*="11 tháng" i], img[alt*="year" i], img[alt*="năm" i]) #author-name-chip {
         --chip-glow-color-0: rgba(245, 158, 11, 0.6);
         --chip-glow-color-1: rgba(245, 158, 11, 0.3);
         --chip-glow-color-2: rgba(245, 158, 11, 0.85);
@@ -2556,7 +2670,7 @@
         animation: shimmer-mystical-member 3s infinite ease-in-out !important;
     }
 
-    yt-live-chat-paid-message-renderer:has(img:is([alt*="6 month" i], [alt*="6 tháng" i], [alt*="7 month" i], [alt*="7 tháng" i], [alt*="8 month" i], [alt*="8 tháng" i], [alt*="9 month" i], [alt*="9 tháng" i], [alt*="10 month" i], [alt*="10 tháng" i], [alt*="11 month" i], [alt*="11 tháng" i], [alt*="12 month" i], [alt*="12 tháng" i], [alt*="24 month" i], [alt*="24 tháng" i], [alt*="36 month" i], [alt*="36 tháng" i], [alt*="48 month" i], [alt*="48 tháng" i], [alt*="year" i], [alt*="năm" i])) #author-name {
+    yt-live-chat-paid-message-renderer:has(img[alt*="6 month" i], img[alt*="6 tháng" i], img[alt*="7 month" i], img[alt*="7 tháng" i], img[alt*="8 month" i], img[alt*="8 tháng" i], img[alt*="9 month" i], img[alt*="9 tháng" i], img[alt*="10 month" i], img[alt*="10 tháng" i], img[alt*="11 month" i], img[alt*="11 tháng" i], img[alt*="year" i], img[alt*="năm" i]) #author-name {
         color: #713f12 !important;
     }
 
@@ -2607,8 +2721,8 @@
     }
 
     /* Mod + 6 Tháng+ VIP */
-    yt-live-chat-paid-message-renderer:has(yt-live-chat-author-badge-renderer[type="moderator"]):has(img:is([alt*="6 month" i], [alt*="6 tháng" i], [alt*="7 month" i], [alt*="7 tháng" i], [alt*="8 month" i], [alt*="8 tháng" i], [alt*="9 month" i], [alt*="9 tháng" i], [alt*="10 month" i], [alt*="10 tháng" i], [alt*="11 month" i], [alt*="11 tháng" i], [alt*="12 month" i], [alt*="12 tháng" i], [alt*="24 month" i], [alt*="24 tháng" i], [alt*="36 month" i], [alt*="36 tháng" i], [alt*="48 month" i], [alt*="48 tháng" i], [alt*="year" i], [alt*="năm" i])) #author-name-chip,
-    yt-live-chat-paid-message-renderer[author-type="moderator"]:has(img:is([alt*="6 month" i], [alt*="6 tháng" i], [alt*="7 month" i], [alt*="7 tháng" i], [alt*="8 month" i], [alt*="8 tháng" i], [alt*="9 month" i], [alt*="9 tháng" i], [alt*="10 month" i], [alt*="10 tháng" i], [alt*="11 month" i], [alt*="11 tháng" i], [alt*="12 month" i], [alt*="12 tháng" i], [alt*="24 month" i], [alt*="24 tháng" i], [alt*="36 month" i], [alt*="36 tháng" i], [alt*="48 month" i], [alt*="48 tháng" i], [alt*="year" i], [alt*="năm" i])) #author-name-chip {
+    yt-live-chat-paid-message-renderer:has(yt-live-chat-author-badge-renderer[type="moderator"]):has(img[alt*="6 month" i], img[alt*="6 tháng" i], img[alt*="7 month" i], img[alt*="7 tháng" i], img[alt*="8 month" i], img[alt*="8 tháng" i], img[alt*="9 month" i], img[alt*="9 tháng" i], img[alt*="10 month" i], img[alt*="10 tháng" i], img[alt*="11 month" i], img[alt*="11 tháng" i], img[alt*="year" i], img[alt*="năm" i]) #author-name-chip,
+    yt-live-chat-paid-message-renderer[author-type="moderator"]:has(img[alt*="6 month" i], img[alt*="6 tháng" i], img[alt*="7 month" i], img[alt*="7 tháng" i], img[alt*="8 month" i], img[alt*="8 tháng" i], img[alt*="9 month" i], img[alt*="9 tháng" i], img[alt*="10 month" i], img[alt*="10 tháng" i], img[alt*="11 month" i], img[alt*="11 tháng" i], img[alt*="year" i], img[alt*="năm" i]) #author-name-chip {
         --chip-glow-color-0: rgba(245, 158, 11, 0.6);
         --chip-glow-color-1: rgba(245, 158, 11, 0.3);
         --chip-glow-color-2: rgba(245, 158, 11, 0.85);
@@ -2728,7 +2842,7 @@
     yt-live-chat-paid-message-renderer #purchase-amount-chip yt-formatted-string {
         color: #facc15 !important;
         /* Gold/yellow sáng */
-        font-family: "Montserrat", sans-serif !important;
+        font-family: "Nunito", sans-serif !important;
         font-weight: 900 !important;
         font-size: 26px !important;
         /* Tăng kích thước lên 26px */
@@ -2744,12 +2858,12 @@
     yt-live-chat-paid-message-renderer #message {
 
         color: #FFFFFF !important;
-        font-family: "Nunito Sans", "Montserrat", "Comfortaa", "Fredoka", "Quicksand", "Itim", "Nunito", "Baloo 2", "Patrick Hand", "Noto Sans", sans-serif !important;
+        font-family: "Quicksand", "Comfortaa", "Fredoka", "Itim", "Nunito", "Baloo 2", "Patrick Hand", "Noto Sans", sans-serif !important;
         font-size: 25px !important;
         line-height: 1.4 !important;
-        font-weight: 600 !important;
+        font-weight: 700 !important;
 
-        -webkit-text-stroke: 5px #000000 !important;
+        -webkit-text-stroke: 4.5px #000000 !important;
         paint-order: stroke fill !important;
         text-shadow: 2px 2px 0px #000000 !important;
 
@@ -2780,9 +2894,9 @@
     yt-live-chat-text-message-renderer[author-type="moderator"]:has(yt-live-chat-author-badge-renderer[type="member"]) yt-live-chat-author-chip #chat-badges,
     yt-live-chat-text-message-renderer[author-type="moderator"]:has(yt-live-chat-author-badge-renderer[type="member"]) yt-live-chat-author-chip #author-badges {
         position: absolute !important;
-        left: -66px !important;
+        left: -60px !important;
         /* Shift left to align with the left edge of avatar circle */
-        top: 10px !important;
+        top: 11px !important;
         margin: 0 !important;
         z-index: 1002 !important;
         pointer-events: none !important;
@@ -2883,7 +2997,7 @@
 
     yt-live-chat-membership-item-renderer #author-name {
         color: #166534 !important;
-        font-family: "Montserrat", sans-serif !important;
+        font-family: "Nunito", sans-serif !important;
         font-weight: 800 !important;
         font-size: 24px !important;
         /* Boosted to 24px */
@@ -2895,7 +3009,7 @@
     ytd-sponsorships-live-chat-gift-purchase-announcement-renderer #author-name,
     ytd-sponsorships-live-chat-gift-redemption-announcement-renderer #author-name {
         color: #166534 !important;
-        font-family: "Montserrat", sans-serif !important;
+        font-family: "Nunito", sans-serif !important;
         font-weight: 800 !important;
         font-size: 18px !important;
         -webkit-text-stroke: 1px #ffffff !important;
@@ -2906,7 +3020,7 @@
     yt-live-chat-membership-item-renderer #header-subtext,
     yt-live-chat-membership-item-renderer #header-primary-text {
         color: #15803d !important;
-        font-family: "Montserrat", sans-serif !important;
+        font-family: "Nunito", sans-serif !important;
         font-weight: 700 !important;
         font-size: 19px !important;
         /* Boosted to 19px */
@@ -2937,7 +3051,7 @@
 
     ytd-sponsorships-live-chat-header-renderer #primary-text {
         color: #15803d !important;
-        font-family: "Montserrat", sans-serif !important;
+        font-family: "Nunito", sans-serif !important;
         font-weight: 800 !important;
         font-size: 19px !important;
         -webkit-text-stroke: 1.2px #ffffff !important;
@@ -2947,7 +3061,7 @@
 
     ytd-sponsorships-live-chat-header-renderer #secondary-text {
         color: #166534 !important;
-        font-family: "Montserrat", sans-serif !important;
+        font-family: "Nunito", sans-serif !important;
         font-weight: 700 !important;
         font-size: 15px !important;
         -webkit-text-stroke: 1px #ffffff !important;
@@ -3571,11 +3685,18 @@
     /* Synchronize avatar border with name chip colors & Add pulsing mystical forest glow */
 
     @keyframes avatarGlowPulse {
+
         0%,
         100% {
             box-shadow: 0 0 8px var(--avatar-glow-color),
                 0 0 18px var(--avatar-glow-color-opaque),
                 inset 0 0 5px rgba(255, 255, 255, 0.4) !important;
+        }
+
+        50% {
+            box-shadow: 0 0 14px var(--avatar-glow-color),
+                0 0 32px var(--avatar-glow-color),
+                inset 0 0 8px rgba(255, 255, 255, 0.6) !important;
         }
     }
 
@@ -3644,8 +3765,8 @@
     }
 
     /* Member Tier 4 & 5: Sunset Gold / Honey / Caramelized (6+ Tháng) */
-    yt-live-chat-text-message-renderer[author-type="member"]:has(img:is([alt*="6 month" i], [alt*="6 tháng" i], [alt*="7 month" i], [alt*="7 tháng" i], [alt*="8 month" i], [alt*="8 tháng" i], [alt*="9 month" i], [alt*="9 tháng" i], [alt*="10 month" i], [alt*="10 tháng" i], [alt*="11 month" i], [alt*="11 tháng" i], [alt*="12 month" i], [alt*="12 tháng" i], [alt*="24 month" i], [alt*="24 tháng" i], [alt*="36 month" i], [alt*="36 tháng" i], [alt*="48 month" i], [alt*="48 tháng" i], [alt*="year" i], [alt*="năm" i])) #author-photo,
-    yt-live-chat-text-message-renderer[author-type="moderator"]:has(img:is([alt*="6 month" i], [alt*="6 tháng" i], [alt*="7 month" i], [alt*="7 tháng" i], [alt*="8 month" i], [alt*="8 tháng" i], [alt*="9 month" i], [alt*="9 tháng" i], [alt*="10 month" i], [alt*="10 tháng" i], [alt*="11 month" i], [alt*="11 tháng" i], [alt*="12 month" i], [alt*="12 tháng" i], [alt*="24 month" i], [alt*="24 tháng" i], [alt*="36 month" i], [alt*="36 tháng" i], [alt*="48 month" i], [alt*="48 tháng" i], [alt*="year" i], [alt*="năm" i])) #author-photo {
+    yt-live-chat-text-message-renderer[author-type="member"]:has(img[alt*="6 month" i], img[alt*="6 tháng" i], img[alt*="7 month" i], img[alt*="7 tháng" i], img[alt*="8 month" i], img[alt*="8 tháng" i], img[alt*="9 month" i], img[alt*="9 tháng" i], img[alt*="10 month" i], img[alt*="10 tháng" i], img[alt*="11 month" i], img[alt*="11 tháng" i], img[alt*="year" i], img[alt*="năm" i]) #author-photo,
+    yt-live-chat-text-message-renderer[author-type="moderator"]:has(img[alt*="6 month" i], img[alt*="6 tháng" i], img[alt*="7 month" i], img[alt*="7 tháng" i], img[alt*="8 month" i], img[alt*="8 tháng" i], img[alt*="9 month" i], img[alt*="9 tháng" i], img[alt*="10 month" i], img[alt*="10 tháng" i], img[alt*="11 month" i], img[alt*="11 tháng" i], img[alt*="year" i], img[alt*="năm" i]) #author-photo {
         border-color: rgba(245, 158, 11, 0.9) !important;
         --avatar-glow-color: #f59e0b;
         --avatar-glow-color-opaque: rgba(245, 158, 11, 0.4);
@@ -3664,6 +3785,7 @@
         --entry-scale-mid: 1;
         --entry-rotate-start: 0deg;
         --entry-rotate-mid: 0deg;
+        animation: fadeInSimple 0.15s ease-out forwards !important;
     }
 
     /* Owner (Gold - Epic Tier entry / Heavy Spring Bounce) */
@@ -3678,6 +3800,7 @@
         --entry-scale-mid: 1.06;
         --entry-rotate-start: -3deg;
         --entry-rotate-mid: 1.2deg;
+        animation: chatFlowIn 0.48s cubic-bezier(0.34, 1.68, 0.64, 1) forwards !important;
     }
 
     /* Moderator (Sky Blue - Energetic entry / Active Spring Bounce) */
@@ -3692,6 +3815,7 @@
         --entry-scale-mid: 1.04;
         --entry-rotate-start: -2deg;
         --entry-rotate-mid: 0.8deg;
+        animation: chatFlowIn 0.42s cubic-bezier(0.34, 1.45, 0.64, 1) forwards !important;
     }
 
     /* Moderator + Member (Violet - Epic Tier entry / Heavy Spring Bounce) */
@@ -3708,6 +3832,7 @@
         --entry-scale-mid: 1.06;
         --entry-rotate-start: -3deg;
         --entry-rotate-mid: 1.2deg;
+        animation: chatFlowIn 0.48s cubic-bezier(0.34, 1.68, 0.64, 1) forwards !important;
     }
 
     /* Member Tier 1: Moss Sprout Green (New Member) - Nhẹ nhàng */
@@ -3723,6 +3848,7 @@
         --entry-scale-mid: 1.02;
         --entry-rotate-start: -1deg;
         --entry-rotate-mid: 0.3deg;
+        animation: chatFlowIn 0.34s cubic-bezier(0.25, 1, 0.5, 1) forwards !important;
     }
 
     /* Member Tier 2: Lime Ripening Green (1 Tháng) - Nhún nhảy nhẹ */
@@ -3738,6 +3864,7 @@
         --entry-scale-mid: 1.04;
         --entry-rotate-start: -2deg;
         --entry-rotate-mid: 0.6deg;
+        animation: chatFlowIn 0.38s cubic-bezier(0.34, 1.3, 0.64, 1) forwards !important;
     }
 
     /* Member Tier 3: Ripe Yellow (2-5 Tháng) - Nhún nhảy năng động */
@@ -3753,6 +3880,7 @@
         --entry-scale-mid: 1.07;
         --entry-rotate-start: -3.5deg;
         --entry-rotate-mid: 1deg;
+        animation: chatFlowIn 0.42s cubic-bezier(0.34, 1.45, 0.64, 1) forwards !important;
     }
 
     /* Member Tier 4: Sunset Gold (6-11 Tháng) - Pop out siêu mạnh và nảy đàn hồi */
@@ -3768,11 +3896,12 @@
         --entry-scale-mid: 1.15;
         --entry-rotate-start: -6deg;
         --entry-rotate-mid: 2deg;
+        animation: chatFlowIn 0.52s cubic-bezier(0.34, 1.8, 0.5, 1) forwards !important;
     }
 
     /* Member Tier 5: Golden Honey / Reddish Orange (12+ Tháng / 1 Năm+) - Pop out siêu cực mạnh, nảy bung nóc */
-    yt-live-chat-text-message-renderer[author-type="member"]:has(img:is([alt*="1 year" i], [alt*="1 năm" i], [alt*="12 month" i], [alt*="12 tháng" i], [alt*="13 month" i], [alt*="13 tháng" i], [alt*="23 month" i], [alt*="23 tháng" i], [alt*="24 month" i], [alt*="24 tháng" i], [alt*="36 month" i], [alt*="36 tháng" i], [alt*="48 month" i], [alt*="48 tháng" i], [alt*="2 year" i], [alt*="2 năm" i], [alt*="3 year" i], [alt*="3 năm" i], [alt*="4 year" i], [alt*="4 năm" i])),
-    yt-live-chat-text-message-renderer[author-type="moderator"]:has(img:is([alt*="1 year" i], [alt*="1 năm" i], [alt*="12 month" i], [alt*="12 tháng" i], [alt*="13 month" i], [alt*="13 tháng" i], [alt*="23 month" i], [alt*="23 tháng" i], [alt*="24 month" i], [alt*="24 tháng" i], [alt*="36 month" i], [alt*="36 tháng" i], [alt*="48 month" i], [alt*="48 tháng" i], [alt*="2 year" i], [alt*="2 năm" i], [alt*="3 year" i], [alt*="3 năm" i], [alt*="4 year" i], [alt*="4 năm" i])) {
+    yt-live-chat-text-message-renderer[author-type="member"]:has(img[alt*="1 year" i], img[alt*="1 năm" i], img[alt*="12 month" i], img[alt*="12 tháng" i], img[alt*="13 month" i], img[alt*="13 tháng" i], img[alt*="23 month" i], img[alt*="23 tháng" i], img[alt*="2 year" i], img[alt*="2 năm" i], img[alt*="3 year" i], img[alt*="3 năm" i], img[alt*="4 year" i], img[alt*="4 năm" i]),
+    yt-live-chat-text-message-renderer[author-type="moderator"]:has(img[alt*="1 year" i], img[alt*="1 năm" i], img[alt*="12 month" i], img[alt*="12 tháng" i], img[alt*="13 month" i], img[alt*="13 tháng" i], img[alt*="23 month" i], img[alt*="23 tháng" i], img[alt*="2 year" i], img[alt*="2 năm" i], img[alt*="3 year" i], img[alt*="3 năm" i], img[alt*="4 year" i], img[alt*="4 năm" i]) {
         --entry-glow-color: rgba(245, 158, 11, 0.95);
         --entry-glow-color-soft: rgba(245, 158, 11, 0.6);
         --entry-glow-radius: 24px;
@@ -3783,6 +3912,7 @@
         --entry-scale-mid: 1.20;
         --entry-rotate-start: -9deg;
         --entry-rotate-mid: 3deg;
+        animation: chatFlowIn 0.58s cubic-bezier(0.34, 1.95, 0.45, 1.05) forwards !important;
     }
 
     /* Tối ưu hóa hiển thị cho tài khoản thường (Không có hội viên hay mod) */
@@ -3834,7 +3964,38 @@
         box-shadow: none !important;
     }
 
+    /* Hiển thị khiên của moderator nếu mod không đăng ký hội viên (sử dụng khiên đã custom lại) */
+    yt-live-chat-text-message-renderer[author-type="moderator"]:not(:has(yt-live-chat-author-badge-renderer[type="member"])) yt-live-chat-author-chip yt-live-chat-author-badge-renderer:is([type="moderator"], :has(img[src*="moderator"], img[alt*="Moderator"], img[alt*="quản trị viên"])) {
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        width: 18px !important;
+        height: 18px !important;
+        margin-left: 0 !important;
+        margin-right: 6px !important;
+        vertical-align: middle !important;
+        order: 1 !important;
+    }
 
+    yt-live-chat-text-message-renderer[author-type="moderator"]:not(:has(yt-live-chat-author-badge-renderer[type="member"])) yt-live-chat-author-chip #author-name {
+        order: 2 !important;
+    }
+
+    yt-live-chat-text-message-renderer[author-type="moderator"]:not(:has(yt-live-chat-author-badge-renderer[type="member"])) yt-live-chat-author-chip yt-live-chat-author-badge-renderer:is([type="moderator"], :has(img[src*="moderator"], img[alt*="Moderator"], img[alt*="quản trị viên"])) * {
+        display: none !important;
+        /* Ẩn cờ lê mặc định của YouTube */
+    }
+
+    yt-live-chat-text-message-renderer[author-type="moderator"]:not(:has(yt-live-chat-author-badge-renderer[type="member"])) yt-live-chat-author-chip yt-live-chat-author-badge-renderer:is([type="moderator"], :has(img[src*="moderator"], img[alt*="Moderator"], img[alt*="quản trị viên"]))::before {
+        content: "" !important;
+        display: block !important;
+        width: 18px !important;
+        height: 18px !important;
+        background-image: var(--icon-shield) !important;
+        background-size: contain !important;
+        background-repeat: no-repeat !important;
+        background-position: center !important;
+    }
 
     /* 2. Tin nhắn Super Chat */
     yt-live-chat-paid-message-renderer:not(:has(yt-live-chat-author-badge-renderer[type="member"])):not(:has(yt-live-chat-author-badge-renderer[type="moderator"])):not(:has(yt-live-chat-author-badge-renderer[type="owner"])) #author-photo {
@@ -3917,26 +4078,26 @@
     }
 
     /* Add pineapple leaves on top of 6+ months members' avatars (excluding owner who has crown) */
-    :is(yt-live-chat-text-message-renderer, yt-live-chat-paid-message-renderer, yt-live-chat-membership-item-renderer, ytd-sponsorships-live-chat-gift-purchase-announcement-renderer, ytd-sponsorships-live-chat-gift-redemption-announcement-renderer):not([author-type="owner"]):not(:has(yt-live-chat-author-badge-renderer[type="owner"])):has(img:is([alt*="6 month" i], [alt*="6 tháng" i], [alt*="7 month" i], [alt*="7 tháng" i], [alt*="8 month" i], [alt*="8 tháng" i], [alt*="9 month" i], [alt*="9 tháng" i], [alt*="10 month" i], [alt*="10 tháng" i], [alt*="11 month" i], [alt*="11 tháng" i], [alt*="12 month" i], [alt*="12 tháng" i], [alt*="24 month" i], [alt*="24 tháng" i], [alt*="36 month" i], [alt*="36 tháng" i], [alt*="48 month" i], [alt*="48 tháng" i], [alt*="year" i], [alt*="năm" i])) #author-photo {
+    :is(yt-live-chat-text-message-renderer, yt-live-chat-paid-message-renderer, yt-live-chat-membership-item-renderer, ytd-sponsorships-live-chat-gift-purchase-announcement-renderer, ytd-sponsorships-live-chat-gift-redemption-announcement-renderer):not([author-type="owner"]):not(:has(yt-live-chat-author-badge-renderer[type="owner"])):has(img[alt*="6 month" i], img[alt*="6 tháng" i], img[alt*="7 month" i], img[alt*="7 tháng" i], img[alt*="8 month" i], img[alt*="8 tháng" i], img[alt*="9 month" i], img[alt*="9 tháng" i], img[alt*="10 month" i], img[alt*="10 tháng" i], img[alt*="11 month" i], img[alt*="11 tháng" i], img[alt*="year" i], img[alt*="năm" i]) #author-photo {
         overflow: visible !important;
         transform-style: preserve-3d !important;
     }
 
-    :is(yt-live-chat-text-message-renderer, yt-live-chat-paid-message-renderer, yt-live-chat-membership-item-renderer, ytd-sponsorships-live-chat-gift-purchase-announcement-renderer, ytd-sponsorships-live-chat-gift-redemption-announcement-renderer):not([author-type="owner"]):not(:has(yt-live-chat-author-badge-renderer[type="owner"])):has(img:is([alt*="6 month" i], [alt*="6 tháng" i], [alt*="7 month" i], [alt*="7 tháng" i], [alt*="8 month" i], [alt*="8 tháng" i], [alt*="9 month" i], [alt*="9 tháng" i], [alt*="10 month" i], [alt*="10 tháng" i], [alt*="11 month" i], [alt*="11 tháng" i], [alt*="12 month" i], [alt*="12 tháng" i], [alt*="24 month" i], [alt*="24 tháng" i], [alt*="36 month" i], [alt*="36 tháng" i], [alt*="48 month" i], [alt*="48 tháng" i], [alt*="year" i], [alt*="năm" i])) #author-photo img,
-    :is(yt-live-chat-text-message-renderer, yt-live-chat-paid-message-renderer, yt-live-chat-membership-item-renderer, ytd-sponsorships-live-chat-gift-purchase-announcement-renderer, ytd-sponsorships-live-chat-gift-redemption-announcement-renderer):not([author-type="owner"]):not(:has(yt-live-chat-author-badge-renderer[type="owner"])):has(img:is([alt*="6 month" i], [alt*="6 tháng" i], [alt*="7 month" i], [alt*="7 tháng" i], [alt*="8 month" i], [alt*="8 tháng" i], [alt*="9 month" i], [alt*="9 tháng" i], [alt*="10 month" i], [alt*="10 tháng" i], [alt*="11 month" i], [alt*="11 tháng" i], [alt*="12 month" i], [alt*="12 tháng" i], [alt*="24 month" i], [alt*="24 tháng" i], [alt*="36 month" i], [alt*="36 tháng" i], [alt*="48 month" i], [alt*="48 tháng" i], [alt*="year" i], [alt*="năm" i])) #author-photo yt-img-shadow {
+    :is(yt-live-chat-text-message-renderer, yt-live-chat-paid-message-renderer, yt-live-chat-membership-item-renderer, ytd-sponsorships-live-chat-gift-purchase-announcement-renderer, ytd-sponsorships-live-chat-gift-redemption-announcement-renderer):not([author-type="owner"]):not(:has(yt-live-chat-author-badge-renderer[type="owner"])):has(img[alt*="6 month" i], img[alt*="6 tháng" i], img[alt*="7 month" i], img[alt*="7 tháng" i], img[alt*="8 month" i], img[alt*="8 tháng" i], img[alt*="9 month" i], img[alt*="9 tháng" i], img[alt*="10 month" i], img[alt*="10 tháng" i], img[alt*="11 month" i], img[alt*="11 tháng" i], img[alt*="year" i], img[alt*="năm" i]) #author-photo img,
+    :is(yt-live-chat-text-message-renderer, yt-live-chat-paid-message-renderer, yt-live-chat-membership-item-renderer, ytd-sponsorships-live-chat-gift-purchase-announcement-renderer, ytd-sponsorships-live-chat-gift-redemption-announcement-renderer):not([author-type="owner"]):not(:has(yt-live-chat-author-badge-renderer[type="owner"])):has(img[alt*="6 month" i], img[alt*="6 tháng" i], img[alt*="7 month" i], img[alt*="7 tháng" i], img[alt*="8 month" i], img[alt*="8 tháng" i], img[alt*="9 month" i], img[alt*="9 tháng" i], img[alt*="10 month" i], img[alt*="10 tháng" i], img[alt*="11 month" i], img[alt*="11 tháng" i], img[alt*="year" i], img[alt*="năm" i]) #author-photo yt-img-shadow {
         border-radius: 50% !important;
         overflow: hidden !important;
     }
 
-    :is(yt-live-chat-text-message-renderer, yt-live-chat-paid-message-renderer, yt-live-chat-membership-item-renderer, ytd-sponsorships-live-chat-gift-purchase-announcement-renderer, ytd-sponsorships-live-chat-gift-redemption-announcement-renderer):not([author-type="owner"]):not(:has(yt-live-chat-author-badge-renderer[type="owner"])):has(img:is([alt*="6 month" i], [alt*="6 tháng" i], [alt*="7 month" i], [alt*="7 tháng" i], [alt*="8 month" i], [alt*="8 tháng" i], [alt*="9 month" i], [alt*="9 tháng" i], [alt*="10 month" i], [alt*="10 tháng" i], [alt*="11 month" i], [alt*="11 tháng" i], [alt*="12 month" i], [alt*="12 tháng" i], [alt*="24 month" i], [alt*="24 tháng" i], [alt*="36 month" i], [alt*="36 tháng" i], [alt*="48 month" i], [alt*="48 tháng" i], [alt*="year" i], [alt*="năm" i])) #author-photo::after {
+    :is(yt-live-chat-text-message-renderer, yt-live-chat-paid-message-renderer, yt-live-chat-membership-item-renderer, ytd-sponsorships-live-chat-gift-purchase-announcement-renderer, ytd-sponsorships-live-chat-gift-redemption-announcement-renderer):not([author-type="owner"]):not(:has(yt-live-chat-author-badge-renderer[type="owner"])):has(img[alt*="6 month" i], img[alt*="6 tháng" i], img[alt*="7 month" i], img[alt*="7 tháng" i], img[alt*="8 month" i], img[alt*="8 tháng" i], img[alt*="9 month" i], img[alt*="9 tháng" i], img[alt*="10 month" i], img[alt*="10 tháng" i], img[alt*="11 month" i], img[alt*="11 tháng" i], img[alt*="year" i], img[alt*="năm" i]) #author-photo::after {
         content: "" !important;
         position: absolute !important;
-        top: -16px !important;
-        left: 53% !important;
+        top: -15px !important;
+        left: 50% !important;
         transform: translateX(-50%) translateZ(10px) !important;
-        width: 26px !important;
-        height: 16px !important;
-        background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAASCAYAAABM8m7ZAAAE3klEQVR4nL2UW2xUVRSGv73PmTOnM+30ArTTUqINoVawUCgGAgqIYmJiQCNEDagRNATBGkSFEi4RpFwMqMirUYlE1OiLRFEDRqRIDVdpoVBaWyjtDIV2Opeemem5mBnQhAgIPLje1l57r3+tf61/w23ZwJznKKjg/7Sl+Gt2bS92fq+9y6l6dpCziaINf8eepOCeV/HPfB5/3q3mE7d6ccf6weFpb2pZjRdCbDxmUHwqg6Jl+mc508XoytfUEb6BgqNfmhxdZ5a/T7D+v/KpNwsuxP+IAgXSH2/35JLVFYkTDEdQ+zVCBf1MrfHMmbxY41xPlH3tfdQWuqjA8xhwZ8DVFN7nf4ITYxapeHMF4S4XJz+2iXkSHCtWaeuH+Yd8TN7ioq45SDTRz/ZWF+NaVBSo5U6pXo0/+FJEz7ewiRomPo+LhO2wpDrCqN/cBCYlWLk8h1O9l4nG4+xqU7gUVJkwL/N0NZ1ltwKsXu8wb5bI13XJwaYuIslEujpVQskMlcbhNmMWemhfEKPX7MN2JF11birW6kTh4jL87wLfbyCw97Y7Xo7/8CsRfcyJjstE4gmEEAgBfUnBtiZJvqFQudnDkGUGwTkexu5U8ZdLXG6IheDsTxZN1fb+VXQ+eCNgeX0aRM2ebw0My0ZVQKbKc8CrOQhT0Jtt0jOtn5wOH/OMDEbOcOEtclDzHPJLofRlwaWZ5gObKBp7U6oXUzjEixhu4eg29HXi7GWuOLH7E6d8Sp5CSZbDoEyHcEJguxyK9utMH5vJyKcVGs+HudDbm2ZEFdBtCJb8qVDVn52is/uGVK+h8OeCKqaIISbZPgVMSbQZLmxxCN1v0TjX4OIAC6Vf4FXBFZQstHOoXCCpawpi2xZSSi5GBWd6JHtCUN6uUbEu48gboc7KGwKvwO8sMt2GlRQZqkzNUoBwcBzoaLCpW2VST5LTc2JEJczek81TH7g52NzB5ZigoVtyMCwwgFIJfkOh5IxG9Gt1c+ykCAlSCuOSDfUbCfzyD/BKCjdUfKgsHf2iYF9jO17NRYZLI8vtJt+nMyjHTcNuk+8eT9I3v5/X3/FyKNDNj20WB6KCe1s18o+p+HYqDETB/5bEN0zgGQiKi3QD8YhDT4tD8wobC7a/TecL6a2uxl/78FfahOxJBq3BEA4i/cB2bHTVRcXdg0i0Sz4ti1NWm+C9DoOyFp2SpToVa1SGPqpQMEyiZ4ORsDCSFqaVygKaquB1K6iKSPs/rE9yerW9IL1c6wlMFLP8x8Z/o436I08yKg8UJVWtgu1YHGrpIImX+q0O+kQvY5YKJps6U7vdoNsEQgYNl+KEzhvY6bKvyC8FJFK+SIlCo6FHQ0XDjeK5RsdrKayv32yMODc4yTgf5OkO2lXBBfrgSExQ0qIxclsGs1s1Glp7CYSjKFKipIZ5Ve8pxFgSeg1Bd1zQFhUcMKAsqFJZ5aUIT1qh11gNhZHDn4czUzqwAUs42AKkvPJ7xVSLCV9kMuKhBL6xMVRNQVEFgYikPSxoj0paYgLTBiHBUR1yY5IRv2Yw4CNX0vY5I5eHO0//68t0IZ8pPq7vCo7vQ49KCtsgszmBftxCOwy5ZOMtzybe6ia2URA5G8UgRKhUxZmgYAwz0UqSyAyb/C4XQ/fp5OxQTWDJMjq2Er6C8xf4Pe8zvidgrwAAAABJRU5ErkJggg==") !important;
+        width: 22px !important;
+        height: 22px !important;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath d='M16,30 C12,18 6,12 4,6 C9,10 13,16 16,22 C19,16 23,10 28,6 C26,12 20,18 16,30 Z' fill='%2315803d'/%3E%3Cpath d='M16,30 C13,20 9,14 6,10 C11,13 14,18 16,24 C18,18 21,13 26,10 C23,14 19,20 16,30 Z' fill='%2322c55e'/%3E%3Cpath d='M16,30 C15,18 13,8 15,0 C17,8 17,18 16,30 Z' fill='%234ade80'/%3E%3C/svg%3E") !important;
         background-size: contain !important;
         background-repeat: no-repeat !important;
         background-position: center bottom !important;

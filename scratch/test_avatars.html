@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>YouTube Live Chat Custom Styling Test</title>
+    <!-- Link to the custom CSS -->
+    <link rel="stylesheet" href="../css.css">
+    <style>
+        body {
+            background-color: #0f172a; /* Dark slate background to inspect glow and leaf contrast */
+            color: #f8fafc;
+            font-family: sans-serif;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        h2 {
+            border-bottom: 1px solid #334155;
+            padding-bottom: 10px;
+            color: #38bdf8;
+        }
+        .test-container {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            background: rgba(30, 41, 59, 0.5);
+            padding: 20px;
+            border-radius: 12px;
+            border: 1px solid #334155;
+        }
+        /* Make sure mock elements resemble YouTube hierarchy for layout */
+        yt-live-chat-text-message-renderer, 
+        yt-live-chat-paid-message-renderer, 
+        yt-live-chat-membership-item-renderer {
+            display: flex !important;
+            align-items: center !important;
+            padding: 8px 12px !important;
+            background: rgba(15, 23, 42, 0.6) !important;
+            border-radius: 8px !important;
+            margin-bottom: 8px !important;
+            position: relative !important;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>YouTube Chat Avatars & Badges Preview</h2>
+
+    <div class="test-container">
+        <!-- 1. Normal User (No member, no mod) -->
+        <div class="test-label">1. Normal User (No leaves, no crown)</div>
+        <yt-live-chat-text-message-renderer>
+            <div id="author-photo">
+                <img src="https://picsum.photos/id/1011/64/64" alt="Avatar">
+            </div>
+            <yt-live-chat-author-chip>
+                <span id="author-name">NormalUser</span>
+            </yt-live-chat-author-chip>
+            <span id="message">Hello everyone!</span>
+        </yt-live-chat-text-message-renderer>
+
+        <!-- 2. Member 1 Month -->
+        <div class="test-label">2. Member 1 Month (No leaves)</div>
+        <yt-live-chat-text-message-renderer author-type="member">
+            <div id="author-photo">
+                <img src="https://picsum.photos/id/1012/64/64" alt="Avatar">
+            </div>
+            <yt-live-chat-author-chip>
+                <span id="author-name">Member1M</span>
+                <span id="chat-badges">
+                    <yt-live-chat-author-badge-renderer type="member" aria-label="Hội viên (1 tháng)">
+                        <img src="https://yt3.googleusercontent.com/SqlEzIx7yEmd85A621B7kdK4zlK2D7xMNeA20714gh5r019cEibVJNycM-AvqCRzC2fvwVKMwVo=s64-k-nd" alt="Hội viên (1 tháng)">
+                    </yt-live-chat-author-badge-renderer>
+                </span>
+            </yt-live-chat-author-chip>
+            <span id="message">Glad to join the stream!</span>
+        </yt-live-chat-text-message-renderer>
+
+        <!-- 3. Member 2 Months -->
+        <div class="test-label">3. Member 2 Months (No leaves)</div>
+        <yt-live-chat-text-message-renderer author-type="member">
+            <div id="author-photo">
+                <img src="https://picsum.photos/id/1013/64/64" alt="Avatar">
+            </div>
+            <yt-live-chat-author-chip>
+                <span id="author-name">Member2M</span>
+                <span id="chat-badges">
+                    <yt-live-chat-author-badge-renderer type="member" aria-label="Member (2 months)">
+                        <img src="https://yt3.googleusercontent.com/SqlEzIx7yEmd85A621B7kdK4zlK2D7xMNeA20714gh5r019cEibVJNycM-AvqCRzC2fvwVKMwVo=s64-k-nd" alt="Member (2 months)">
+                    </yt-live-chat-author-badge-renderer>
+                </span>
+            </yt-live-chat-author-chip>
+            <span id="message">Happy 2 months milestone!</span>
+        </yt-live-chat-text-message-renderer>
+
+        <!-- 4. Member 6 Months (Should have Pineapple Leaves) -->
+        <div class="test-label">4. Member 6 Months (Should have Pineapple Leaves)</div>
+        <yt-live-chat-text-message-renderer author-type="member">
+            <div id="author-photo">
+                <img src="https://picsum.photos/id/1015/64/64" alt="Avatar">
+            </div>
+            <yt-live-chat-author-chip>
+                <span id="author-name">Member6M</span>
+                <span id="chat-badges">
+                    <yt-live-chat-author-badge-renderer type="member" aria-label="Hội viên (6 tháng)">
+                        <img src="https://yt3.googleusercontent.com/Ttgy6rr2oUDq8vp47r-tUeNzgnQ8YT2hPSLDE_dkay6C-c5lU-RxLK29qAU1p6VpsMdzoVe9LQ=s64-k-nd" alt="Hội viên (6 tháng)">
+                    </yt-live-chat-author-badge-renderer>
+                </span>
+            </yt-live-chat-author-chip>
+            <span id="message">Here is my 6+ month pineapple leaves test!</span>
+        </yt-live-chat-text-message-renderer>
+
+        <!-- 5. Member 12 Months (Should have Pineapple Leaves) -->
+        <div class="test-label">5. Member 12 Months / 1 Year (Should have Pineapple Leaves)</div>
+        <yt-live-chat-text-message-renderer author-type="member">
+            <div id="author-photo">
+                <img src="https://picsum.photos/id/1016/64/64" alt="Avatar">
+            </div>
+            <yt-live-chat-author-chip>
+                <span id="author-name">Member12M</span>
+                <span id="chat-badges">
+                    <yt-live-chat-author-badge-renderer type="member" aria-label="Member (12 months)">
+                        <img src="https://yt3.googleusercontent.com/VuezLnJqdG6HLTIX3SihAvbkf-8OFPb__sY_8dxUapA-f7uR7ZIFs4p5MyOhu187eZUZBCwLyw=s64-k-nd" alt="Member (12 months)">
+                    </yt-live-chat-author-badge-renderer>
+                </span>
+            </yt-live-chat-author-chip>
+            <span id="message">Testing with "Member (12 months)" badge!</span>
+        </yt-live-chat-text-message-renderer>
+
+        <!-- 6. Member 24 Months (Should have Pineapple Leaves) -->
+        <div class="test-label">6. Member 24 Months / 2 Years (Should have Pineapple Leaves)</div>
+        <yt-live-chat-text-message-renderer author-type="member">
+            <div id="author-photo">
+                <img src="https://picsum.photos/id/1018/64/64" alt="Avatar">
+            </div>
+            <yt-live-chat-author-chip>
+                <span id="author-name">Member24M</span>
+                <span id="chat-badges">
+                    <yt-live-chat-author-badge-renderer type="member" aria-label="Member (2 years)">
+                        <img src="https://yt3.googleusercontent.com/2GTPUHO1EM2l-D5Bfuzxc_UvWmfVXZtBylHf_bmd02CFSCGM6z_a_Bd3TFNHdtql6HPrIA3S=s64-k-nd" alt="Member (2 years)">
+                    </yt-live-chat-author-badge-renderer>
+                </span>
+            </yt-live-chat-author-chip>
+            <span id="message">Testing with "Member (2 years)" badge!</span>
+        </yt-live-chat-text-message-renderer>
+
+        <!-- 7. Moderator who is a 12-Month Member (Should have Pineapple Leaves + Mod glow/shield) -->
+        <div class="test-label">7. Moderator + 12M Member (Should have Pineapple Leaves)</div>
+        <yt-live-chat-text-message-renderer author-type="moderator">
+            <div id="author-photo">
+                <img src="https://picsum.photos/id/1019/64/64" alt="Avatar">
+            </div>
+            <yt-live-chat-author-chip>
+                <span id="author-name">ModMember12M</span>
+                <span id="chat-badges">
+                    <yt-live-chat-author-badge-renderer type="moderator" aria-label="Moderator">
+                        <img src="" alt="Moderator">
+                    </yt-live-chat-author-badge-renderer>
+                    <yt-live-chat-author-badge-renderer type="member" aria-label="Hội viên (12 tháng)">
+                        <img src="https://yt3.googleusercontent.com/VuezLnJqdG6HLTIX3SihAvbkf-8OFPb__sY_8dxUapA-f7uR7ZIFs4p5MyOhu187eZUZBCwLyw=s64-k-nd" alt="Hội viên (12 tháng)">
+                    </yt-live-chat-author-badge-renderer>
+                </span>
+            </yt-live-chat-author-chip>
+            <span id="message">Keep it friendly in chat!</span>
+        </yt-live-chat-text-message-renderer>
+
+        <!-- 8. Owner (Should have Crown, NO Pineapple Leaves) -->
+        <div class="test-label">8. Channel Owner (Should have Crown only)</div>
+        <yt-live-chat-text-message-renderer author-type="owner">
+            <div id="author-photo">
+                <img src="https://picsum.photos/id/1025/64/64" alt="Avatar">
+            </div>
+            <yt-live-chat-author-chip>
+                <span id="author-name">OwnerName</span>
+                <span id="chat-badges">
+                    <yt-live-chat-author-badge-renderer type="owner" aria-label="Owner">
+                        <img src="" alt="Owner">
+                    </yt-live-chat-author-badge-renderer>
+                </span>
+            </yt-live-chat-author-chip>
+            <span id="message">Welcome to my stream!</span>
+        </yt-live-chat-text-message-renderer>
+    </div>
+
+</body>
+</html>
